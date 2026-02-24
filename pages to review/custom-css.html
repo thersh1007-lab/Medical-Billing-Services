@@ -1,0 +1,780 @@
+/* =========================================================
+   MEDBILLINGCO — MBS3 (FINAL SINGLE-BLOCK CSS FOR GHL)
+   Paste into ONE Custom Code block (CSS only) on the page.
+
+   Keeps:
+   ✅ Light gray soft sections (no green tint)
+   ✅ Waves fill correctly (soft gray or white) + full-bleed
+   ✅ 4-tile grid is aligned (your current row id)
+   ✅ Tile cards consistent height + button alignment
+   ✅ “Book a Consultation” + “Watch Kamil” button styling
+   ✅ Kicker pill + callout styles
+   ✅ Bullet lists converted to ✓ style
+
+   Notes:
+   - Your tile columns currently include BOTH classes: mbs3-tile + mbs3-tiles.
+     This CSS safely handles that (without forcing mbs3-tiles to act like a container).
+========================================================= */
+
+/* ---------- FONT ---------- */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+/* ---------- TOKENS ---------- */
+:root {
+    --mbs-bg: #ffffff;
+    --mbs-ink: #0b1220;
+    --mbs-muted: #4b5563;
+    --mbs-line: rgba(15,23,42,.10);
+  /* IMPORTANT: soft sections are LIGHT GRAY (NOT GREEN) */
+    --mbs-soft: #f6f8fb;
+    --mbs-accent: #168a5b;
+    --mbs-accent2: #0f6e48;
+    --mbs-accentSoft: rgba(22,138,91,.08);
+ /* only for callouts/pills */
+    --mbs-shadow: 0 26px 64px rgba(2,6,23,.12);
+    --mbs-shadow2: 0 14px 34px rgba(2,6,23,.10);
+    --mbs-shadow3: 0 12px 26px rgba(2,6,23,.08);
+    --mbs-r: 18px;
+    --mbs-r2: 28px;
+    --mbs-max: 1160px;
+    --mbs-hdr-h: 96px;
+  /* Optional hero image if you use .mbs3-hero__shell */
+    --mbs-heroImg: url("https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/698d166ac21b035d347b2852.jpg");
+}
+
+/* ---------- BASE / GLOBAL ---------- */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--mbs-hdr-h);
+}
+
+body {
+    font-family: Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    color: var(--mbs-ink);
+}
+
+/* Prevent content hiding under fixed header */
+#preview-container.preview-container {
+    margin-top: 0 !important;
+    padding-top: var(--mbs-hdr-h) !important;
+}
+
+/* Visual-only “one H1” polish: make non-hero H1 look like H2 */
+body .c-heading h1 {
+    margin: 0;
+    font-weight: 900;
+    letter-spacing: -.03em;
+    font-size: clamp(26px,2.6vw,34px);
+    line-height: 1.12;
+    color: var(--mbs-ink);
+}
+
+.mbs3-hero .c-heading h1 {
+ /* hero stays big */
+    font-size: clamp(30px,3.4vw,52px);
+    line-height: 1.06;
+    letter-spacing: -.04em;
+    color: #fff;
+}
+
+/* ---------- WRAP ---------- */
+.mbs3-wrap {
+    width: 100%;
+    max-width: var(--mbs-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* ---------- SECTION HELPERS ---------- */
+.mbs3-sec {
+    padding: 76px 0;
+    background: var(--mbs-bg);
+}
+
+.mbs3-sec--tight {
+    padding: 52px 0;
+}
+
+.mbs3-soft {
+    background: var(--mbs-soft) !important;
+    border-top: 1px solid rgba(15,23,42,.06);
+    border-bottom: 1px solid rgba(15,23,42,.06);
+}
+
+/* ---------- SECTION HEADERS ---------- */
+.mbs3-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 26px;
+}
+
+.mbs3-head h2 {
+    margin: 0;
+    font-weight: 900;
+    letter-spacing: -.03em;
+    font-size: clamp(24px,2.8vw,34px);
+    color: var(--mbs-ink);
+}
+
+.mbs3-head p {
+    margin: 0;
+    color: var(--mbs-muted);
+    max-width: 72ch;
+    line-height: 1.7;
+    font-size: 14.2px;
+}
+
+/* ---------- HEADER ---------- */
+.mbs3-hdr {
+    position: sticky;
+ /* inline fixed on element will override; fine */
+    top: 0;
+    z-index: 9999 !important;
+    width: 100%;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(15,23,42,.08);
+}
+
+.mbs3-hdr img {
+    height: 38px;
+    width: auto;
+    display: block;
+}
+
+.mbs3-nav a,
+.mbs3-nav button {
+    padding: 10px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 900;
+    background: transparent;
+    border: 0;
+    color: rgba(2,6,23,.78);
+    text-decoration: none;
+}
+
+.mbs3-nav a:hover,
+.mbs3-nav button:hover {
+    background: rgba(2,6,23,.05);
+    color: rgba(2,6,23,.92);
+}
+
+.mbs3-nav ul ul,
+.mbs3-nav .dropdown-menu,
+.mbs3-nav [class*="submenu"],
+.mbs3-nav .submenu {
+    background: #fff;
+    border: 1px solid rgba(15,23,42,.10);
+    border-radius: 16px;
+    box-shadow: var(--mbs-shadow2);
+    padding: 8px;
+}
+
+/* ---------- BUTTON SYSTEM (optional wrapper classes) ---------- */
+.mbs3-btn {
+    text-decoration: none !important;
+}
+
+.c-button.mbs3-btn button {
+    background: transparent !important;
+    color: inherit !important;
+    border: 1px solid transparent !important;
+    border-radius: 999px !important;
+    box-shadow: none !important;
+    padding: 12px 16px !important;
+    font-weight: 900 !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    transition: .18s ease !important;
+}
+
+.c-button.mbs3-btn--primary button {
+    background: var(--mbs-accent) !important;
+    color: #fff !important;
+    box-shadow: 0 10px 22px rgba(22,138,91,.22) !important;
+}
+
+.c-button.mbs3-btn--primary button:hover {
+    background: var(--mbs-accent2) !important;
+    transform: translateY(-1px);
+}
+
+.c-button.mbs3-btn--ghost button {
+    background: #fff !important;
+    color: rgba(2,6,23,.88) !important;
+    border-color: rgba(15,23,42,.14) !important;
+}
+
+.c-button.mbs3-btn--ghost button:hover {
+    background: rgba(2,6,23,.04) !important;
+}
+
+.c-button.mbs3-btn--link button {
+    background: transparent !important;
+    border-color: transparent !important;
+    color: var(--mbs-accent) !important;
+    padding: 10px 0 !important;
+    border-radius: 12px !important;
+}
+
+.c-button.mbs3-btn--link button:hover {
+    opacity: .9;
+}
+
+/* ---------- HERO ---------- */
+.mbs3-hero {
+    padding: 22px 0 26px;
+    background: var(--mbs-bg);
+}
+
+.mbs3-hero__shell {
+    position: relative;
+    border-radius: clamp(22px,3vw,34px);
+    overflow: hidden;
+    box-shadow: var(--mbs-shadow);
+    background: #0b1220;
+    background-image: var(--mbs-heroImg);
+    background-size: cover;
+    background-position: center;
+}
+
+.mbs3-hero__shell::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(900px 520px at 16% 26%, rgba(255,255,255,.14), rgba(255,255,255,0) 62%),
+    linear-gradient(90deg, rgba(11,18,32,.78) 0%, rgba(11,18,32,.40) 58%, rgba(11,18,32,.66) 100%);
+    pointer-events: none;
+}
+
+.mbs3-hero__content {
+    position: relative;
+    z-index: 1;
+    padding: clamp(28px,4.2vw,58px);
+    min-height: clamp(420px,58vh,600px);
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.mbs3-hero p,
+.mbs3-hero .c-paragraph p {
+    margin: 0;
+    color: rgba(255,255,255,.86);
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 72ch;
+}
+
+.mbs3-scale {
+    margin: 0 0 10px;
+    color: rgba(255,255,255,.92);
+    font-weight: 900;
+    letter-spacing: -.01em;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.mbs3-scale::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 99px;
+    background: rgba(255,255,255,.85);
+    opacity: .75;
+}
+
+/* ---------- WAVES (single system: currentColor) ---------- */
+/* Full-bleed: remove container padding/inset */
+.mbs3-wave {
+    line-height: 0;
+    pointer-events: none;
+    position: relative;
+    height: 44px;
+    margin: -14px 0 -18px;
+}
+
+.mbs3-wave > .inner {
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.mbs3-wave .c-column {
+    padding: 0 !important;
+}
+
+.mbs3-wave svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.mbs3-wave path {
+    fill: currentColor !important;
+}
+
+/* Row class drives color -> fill */
+.mbs3-wave--toSoft {
+    color: var(--mbs-soft) !important;
+}
+
+.mbs3-wave--toWhite {
+    color: var(--mbs-bg) !important;
+}
+
+/* Support your custom markup too: <div class="wave toSoft"> */
+.wave {
+    line-height: 0;
+    pointer-events: none;
+    position: relative;
+    height: 44px;
+    margin: -14px 0 -18px;
+    background: transparent;
+}
+
+.wave svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.wave path {
+    fill: currentColor !important;
+}
+
+.wave.toSoft {
+    color: var(--mbs-soft) !important;
+}
+
+.wave.toWhite {
+    color: var(--mbs-bg) !important;
+}
+
+/* ---------- TILE GRID (your current row id) ---------- */
+/* Force the 4-tile area into a grid */
+#row-gyG6yztK51 > .inner {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0,1fr)) !important;
+    gap: 22px !important;
+    align-items: stretch !important;
+}
+
+/* Remove “mystery padding” from tile columns */
+#row-gyG6yztK51 > .inner > .c-column,
+#row-gyG6yztK51 > .inner > .c-nested-column {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Responsive */
+@media (max-width:1024px) {
+    #row-gyG6yztK51 > .inner {
+        grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+    }
+}
+
+@media (max-width:640px) {
+    #row-gyG6yztK51 > .inner {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Tile card styling */
+#row-gyG6yztK51 .mbs3-tile {
+    background: #fff !important;
+    border: 1px solid rgba(11,18,32,.12) !important;
+    border-radius: 22px !important;
+    box-shadow: 0 10px 30px rgba(11,18,32,.06) !important;
+    padding: 16px !important;
+    height: 100% !important;
+    min-height: 410px !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* If tile also has mbs3-tiles class, keep it behaving like a tile */
+#row-gyG6yztK51 .mbs3-tiles.mbs3-tile {
+    flex-wrap: nowrap !important;
+    gap: 0 !important;
+}
+
+/* Stack inner content + stick button to bottom */
+#row-gyG6yztK51 .mbs3-tile .vertical.inner {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+}
+
+/* Top strip alignment (01 + pill) */
+#row-gyG6yztK51 .mbs3-tile .c-row:first-of-type > .inner {
+    align-items: center !important;
+}
+
+#row-gyG6yztK51 .mbs3-tile .c-row:first-of-type .c-paragraph p {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 8px 12px !important;
+    border-radius: 999px !important;
+    border: 1px solid rgba(11,18,32,.14) !important;
+    background: rgba(255,255,255,.88) !important;
+    color: rgba(11,18,32,.82) !important;
+    font-weight: 900 !important;
+    font-size: 12.5px !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+}
+
+/* Tile image */
+#row-gyG6yztK51 img.mbs3-tile__img {
+    width: 100% !important;
+    height: 170px !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(11,18,32,.10) !important;
+    display: block !important;
+}
+
+/* Tile title consistency */
+#row-gyG6yztK51 .c-sub-heading h2 {
+    margin: 14px 0 0 !important;
+    font-weight: 900 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -.02em !important;
+    font-size: 18px !important;
+    min-height: 2.35em !important;
+}
+
+/* Tile description */
+#row-gyG6yztK51 .mbs3-tile .c-sub-heading + .c-paragraph p {
+    margin: 10px 0 0 !important;
+    color: rgba(11,18,32,.72) !important;
+    line-height: 1.55 !important;
+    font-size: 13.8px !important;
+}
+
+/* Tile button pinned bottom */
+#row-gyG6yztK51 .c-button {
+    margin-top: auto !important;
+    padding-top: 14px !important;
+}
+
+#row-gyG6yztK51 .c-button button {
+    width: 100% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 10px 14px !important;
+    border-radius: 999px !important;
+    border: 1.5px solid rgba(22,138,91,.28) !important;
+    background: #fff !important;
+    color: var(--mbs-accent) !important;
+    font-weight: 900 !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    box-shadow: none !important;
+}
+
+#row-gyG6yztK51 .c-button button:hover {
+    border-color: rgba(22,138,91,.55) !important;
+    background: rgba(22,138,91,.06) !important;
+}
+
+/* ---------- CTA BUTTONS UNDER THE TILES (your row id) ---------- */
+#row-zUl2pW4T6z > .inner {
+    display: flex !important;
+    gap: 12px !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+}
+
+#row-zUl2pW4T6z > .inner > .c-column {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: auto !important;
+}
+
+/* All “Book a Consultation” buttons */
+button[aria-label^="Book a Consultation"] {
+    padding: 11px 16px !important;
+    border-radius: 999px !important;
+    border: 1px solid var(--mbs-accent) !important;
+    background: var(--mbs-accent) !important;
+    color: #fff !important;
+    font-weight: 900 !important;
+    font-size: 14.5px !important;
+    line-height: 1 !important;
+    box-shadow: 0 10px 22px rgba(22,138,91,.18) !important;
+}
+
+button[aria-label^="Book a Consultation"]:hover {
+    filter: brightness(.96) !important;
+}
+
+/* “Watch Kamil…” buttons */
+button[aria-label^="Watch Kamil"] {
+    padding: 11px 16px !important;
+    border-radius: 999px !important;
+    border: 1.5px solid rgba(22,138,91,.35) !important;
+    background: #fff !important;
+    color: var(--mbs-accent) !important;
+    font-weight: 900 !important;
+    font-size: 14.5px !important;
+    line-height: 1 !important;
+    box-shadow: none !important;
+}
+
+button[aria-label^="Watch Kamil"]:hover {
+    background: rgba(22,138,91,.06) !important;
+    border-color: rgba(22,138,91,.55) !important;
+}
+
+/* ---------- CARDS / CALLOUTS / LISTS ---------- */
+.mbs3-card {
+    background: #fff;
+    border: 1px solid rgba(15,23,42,.10);
+    border-radius: 24px;
+    padding: 18px;
+    box-shadow: 0 12px 24px rgba(2,6,23,.06);
+}
+
+.mbs3-callout {
+    margin-top: 14px;
+    padding: 14px;
+    border-radius: 18px;
+    background: var(--mbs-accentSoft);
+    border: 1px solid rgba(22,138,91,.16);
+    color: rgba(2,6,23,.80);
+    line-height: 1.65;
+    font-size: 13.8px;
+}
+
+/* Make GHL bullet lists look like ✓ list */
+.mbs3-card .c-bullet-list ul {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin: 14px 0 0 !important;
+    display: grid;
+    gap: 10px;
+}
+
+.mbs3-card .c-bullet-list li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    color: rgba(2,6,23,.82);
+    line-height: 1.6;
+}
+
+.mbs3-card .c-bullet-list li::before {
+    content: "✓";
+    width: 22px;
+    height: 22px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(22,138,91,.10);
+    border: 1px solid rgba(22,138,91,.18);
+    color: var(--mbs-accent);
+    flex: 0 0 auto;
+    font-size: 12px;
+    font-weight: 900;
+    transform: translateY(1px);
+}
+
+/* ---------- KICKER PILL ---------- */
+.kicker p {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 8px 12px !important;
+    border-radius: 999px !important;
+    background: rgba(22,138,91,.10) !important;
+    border: 1px solid rgba(22,138,91,.18) !important;
+    color: var(--mbs-accent) !important;
+    font-weight: 900 !important;
+    font-size: 12.5px !important;
+    line-height: 1 !important;
+    width: fit-content !important;
+    margin: 0 0 10px 0 !important;
+}
+
+.kicker p::before {
+    content: "" !important;
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 999px !important;
+    background: var(--mbs-accent) !important;
+    box-shadow: 0 0 0 4px rgba(22,138,91,.12) !important;
+    display: inline-block !important;
+}
+
+/* ---------- NOTE + INSIGHT CALLOUT LINES ---------- */
+.mbs3-note p {
+    margin-top: 12px !important;
+    padding: 12px 14px !important;
+    border-radius: 14px !important;
+    background: var(--mbs-accentSoft) !important;
+    border: 1px solid rgba(22,138,91,.14) !important;
+    color: rgba(11,18,32,.78) !important;
+    font-weight: 650 !important;
+}
+
+.mbs3-insight p {
+    margin-top: 14px !important;
+    padding: 14px 16px !important;
+    border-left: 4px solid var(--mbs-accent) !important;
+    border-radius: 12px !important;
+    background: rgba(11,18,32,.03) !important;
+    color: rgba(11,18,32,.86) !important;
+    font-weight: 800 !important;
+}
+
+/* ---------- VIDEO (optional frame helpers if you use them) ---------- */
+.mbs3-video__frame {
+    border-radius: 28px;
+    overflow: hidden;
+    border: 1px solid rgba(15,23,42,.10);
+    box-shadow: var(--mbs-shadow2);
+    background: #fff;
+}
+
+.mbs3-video__ratio {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    background: rgba(2,6,23,.04);
+}
+
+.mbs3-video__ratio iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* ---------- FAQ ---------- */
+.mbs3-faq .hl-faq-child {
+    border-radius: 18px;
+    border: 1px solid rgba(15,23,42,.10);
+    background: #fff;
+    margin-bottom: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(2,6,23,.05);
+}
+
+.mbs3-faq .hl-faq-child-heading {
+    padding: 14px 14px;
+    font-weight: 900;
+    color: var(--mbs-ink);
+}
+
+.mbs3-faq .hl-faq-child-panel {
+    padding: 14px 14px !important;
+    background: #fff;
+}
+
+.mbs3-faq .hl-faq-child-panel p {
+    margin: 0;
+    color: var(--mbs-muted);
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+/* ---------- CONTACT GRID ---------- */
+.mbs3-contact {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: stretch;
+}
+
+.mbs3-contact > .mbs3-contact__card {
+    flex: 1 1 calc(33.333% - 10px);
+    min-width: 260px;
+}
+
+.mbs3-contact__card {
+    background: #fff;
+    border: 1px solid rgba(15,23,42,.10);
+    border-radius: 22px;
+    padding: 18px;
+    box-shadow: 0 12px 24px rgba(2,6,23,.06);
+}
+
+.mbs3-contact__card b {
+    display: block;
+    font-weight: 900;
+    letter-spacing: -.02em;
+}
+
+.mbs3-contact__card span,
+.mbs3-contact__card p {
+    display: block;
+    margin-top: 6px;
+    color: var(--mbs-muted);
+    font-size: 13.8px;
+    line-height: 1.55;
+}
+
+/* ---------- FOOTER ---------- */
+.mbs3-footer {
+    padding: 42px 0;
+    border-top: 1px solid rgba(15,23,42,.08);
+    background: #fff;
+}
+
+.mbs3-footer a {
+    color: var(--mbs-muted);
+    text-decoration: none;
+}
+
+.mbs3-footer a:hover {
+    color: var(--mbs-ink);
+}
+
+.mbs3-footer h4 {
+    margin: 0 0 10px;
+    font-size: 13px;
+    letter-spacing: -.01em;
+    font-weight: 900;
+}
+
+.mbs3-copy {
+    margin-top: 12px;
+    color: var(--mbs-muted);
+    font-size: 12.5px;
+    line-height: 1.6;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:520px) {
+    .mbs3-wrap {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .mbs3-tile:hover {
+        transform: none !important;
+    }
+
+    .c-button.mbs3-btn button {
+        transition: none !important;
+    }
+}
