@@ -1,0 +1,674 @@
+/* =============================================================
+   MBS3 DESIGN FRAMEWORK — Universal (GHL + WordPress)
+   =============================================================
+
+   HOW TO INSTALL:
+   ─ GHL:        Page Settings → Custom CSS → paste this file
+   ─ WordPress:  Appearance → Additional CSS  (or enqueue as stylesheet)
+
+   HOW TO USE (inside the builder, per element):
+   ─ GHL:       Click element → General → "Custom CSS class" field
+   ─ Elementor: Widget → Advanced → CSS Classes
+   ─ Gutenberg: Block → Advanced → Additional CSS class(es)
+
+   ─────────────────────────────────────────────────────────────
+   CLASS REFERENCE (quick copy/paste guide)
+   ─────────────────────────────────────────────────────────────
+
+   SECTIONS  ───────────────────────────────────────────────────
+   mbs3-sec              standard content section (72px top/bottom)
+   mbs3-sec--tight       tighter section (48px)
+   mbs3-sec--soft        soft gray background (#f6f8fb)
+   mbs3-sec--white       explicit white background
+   mbs3-sec--dark        dark background (ink color) for CTAs
+   mbs3-sec--hero        hero section (dark bg + hero image support)
+   mbs3-wave--toSoft     wave divider → transitions to soft gray below
+   mbs3-wave--toWhite    wave divider → transitions to white below
+
+   ROWS (max-width containers + grid layouts)  ─────────────────
+   mbs3-wrap             centered max-width container (1160px)
+   mbs3-grid-4           4-column equal grid (→2 col tablet, →1 mobile)
+   mbs3-grid-3           3-column equal grid (→1 mobile)
+   mbs3-grid-2           2-column equal grid (→1 mobile)
+   mbs3-grid-2--wide     2-column, left wider (1.05fr .95fr)
+   mbs3-cta-row          flex row for CTA buttons (centered, wrapping)
+   mbs3-head-row         section heading + optional link on same line
+
+   COLUMNS (card + tile styles) ────────────────────────────────
+   mbs3-card             white card with border + shadow
+   mbs3-card--accent     card with green accent border
+   mbs3-tile             service tile (full height, button pinned bottom)
+   mbs3-hero-left        hero left content pane
+   mbs3-hero-right       hero right image pane
+
+   TEXT ELEMENTS  ──────────────────────────────────────────────
+   kicker                pill badge label (green)
+   mbs3-h1               hero headline (large, white)
+   mbs3-lede             hero subtext (white, readable)
+   mbs3-h2               section heading
+   mbs3-sub              section subheading (muted)
+   mbs3-scale            hero stat/scale row
+   mbs3-callout          green callout box
+   mbs3-list             styled bullet → checkmark list
+
+   BUTTONS  ────────────────────────────────────────────────────
+   mbs3-btn--primary     solid green button
+   mbs3-btn--ghost       white button with border
+   mbs3-btn--link        link-style button (no bg)
+
+   ============================================================= */
+
+/* ── FONT ── */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+/* ── DESIGN TOKENS ── */
+:root {
+  --mbs-bg:          #ffffff;
+  --mbs-soft:        #f6f8fb;
+  --mbs-ink:         #0b1220;
+  --mbs-muted:       rgba(11,18,32,.62);
+  --mbs-line:        rgba(11,18,32,.10);
+  --mbs-accent:      #168a5b;
+  --mbs-accent2:     #0f6e48;
+  --mbs-accentSoft:  rgba(22,138,91,.08);
+  --mbs-max:         1160px;
+  --mbs-pad:         24px;
+  --mbs-r:           18px;
+  --mbs-r2:          22px;
+  --mbs-r3:          28px;
+  --mbs-shadow:      0 18px 50px rgba(11,18,32,.08);
+  --mbs-shadow2:     0 10px 28px rgba(11,18,32,.06);
+  --mbs-shadow-hero: 0 30px 90px rgba(11,18,32,.18);
+}
+
+/* ── BASE ── */
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--mbs-ink);
+}
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+/* =============================================================
+   STEP 1 — ZERO OUT BUILDER DEFAULTS
+   ─────────────────────────────────────────────────────────────
+   GHL wraps every element in section > .inner > row > .inner >
+   column > .vertical.inner. Each layer has default padding.
+   We kill it all here, then re-apply only where we want it.
+
+   ─ GHL:       targets #preview-container (GHL's page wrapper)
+   ─ WordPress: remove the #preview-container prefix if needed
+   ============================================================= */
+
+/* GHL: kill section/row/column defaults inside the page */
+#preview-container .c-section > .inner,
+#preview-container .c-row > .inner,
+#preview-container .c-column > .vertical.inner,
+#preview-container .c-nested-column > .vertical.inner {
+  padding: 0 !important;
+  margin:  0 !important;
+}
+
+/* WordPress (Elementor): uncomment if needed */
+/*
+.elementor-section .elementor-container,
+.elementor-column .elementor-widget-wrap {
+  padding: 0 !important;
+}
+*/
+
+/* Prevent body/html from fighting our design */
+#preview-container.preview-container {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* =============================================================
+   STEP 2 — SECTION CLASSES
+   Add these to the GHL Section element → "Custom CSS class"
+   ============================================================= */
+
+/* Base section reset (always add this alongside a variant) */
+.c-section.mbs3-sec,
+.c-section.mbs3-sec--tight,
+.c-section.mbs3-sec--soft,
+.c-section.mbs3-sec--white,
+.c-section.mbs3-sec--dark,
+.c-section.mbs3-sec--hero {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.c-section.mbs3-sec > .inner         { padding: 72px 0 !important; }
+.c-section.mbs3-sec--tight > .inner  { padding: 48px 0 !important; }
+
+.c-section.mbs3-sec--soft  { background: var(--mbs-soft)  !important; }
+.c-section.mbs3-sec--white { background: var(--mbs-bg)    !important; }
+.c-section.mbs3-sec--dark  { background: var(--mbs-ink)   !important; }
+
+/* Inherit tight padding when combined: "mbs3-sec mbs3-sec--soft" */
+.c-section.mbs3-sec--soft > .inner,
+.c-section.mbs3-sec--white > .inner {
+  padding: 72px 0 !important;
+}
+
+/* ── Hero Section ── */
+.c-section.mbs3-sec--hero {
+  overflow: hidden !important;
+  border-radius: var(--mbs-r3) !important;
+  box-shadow: var(--mbs-shadow-hero) !important;
+  margin: 22px var(--mbs-pad) !important;
+}
+.c-section.mbs3-sec--hero > .bg {
+  border-radius: inherit !important;
+}
+.c-section.mbs3-sec--hero > .inner {
+  padding: clamp(28px,4vw,58px) !important;
+  min-height: clamp(400px,55vh,580px) !important;
+  display: flex !important;
+  align-items: flex-end !important;
+}
+
+/* ── Wave Dividers ── */
+/* Add "mbs3-wave--toSoft" or "mbs3-wave--toWhite" to a Section.
+   Place a Custom Code element inside it with only the SVG. */
+.c-section.mbs3-wave--toSoft,
+.c-section.mbs3-wave--toWhite {
+  height: 44px !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+  margin: -14px 0 -18px !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  background: transparent !important;
+  pointer-events: none;
+  z-index: 1;
+  position: relative;
+}
+.c-section.mbs3-wave--toSoft > .inner,
+.c-section.mbs3-wave--toWhite > .inner {
+  padding: 0 !important;
+  height: 44px !important;
+}
+.c-section.mbs3-wave--toSoft path  { fill: var(--mbs-soft) !important; }
+.c-section.mbs3-wave--toWhite path { fill: var(--mbs-bg) !important; }
+.c-section.mbs3-wave--toSoft svg,
+.c-section.mbs3-wave--toWhite svg {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+/* Remove column/row wrappers around the SVG */
+.c-section.mbs3-wave--toSoft .c-row > .inner,
+.c-section.mbs3-wave--toWhite .c-row > .inner,
+.c-section.mbs3-wave--toSoft .c-column > .vertical.inner,
+.c-section.mbs3-wave--toWhite .c-column > .vertical.inner {
+  padding: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* =============================================================
+   STEP 3 — ROW CLASSES
+   Add these to the GHL Row element → "Custom CSS class"
+   ============================================================= */
+
+/* Max-width centered container */
+.c-row.mbs3-wrap > .inner {
+  max-width: var(--mbs-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--mbs-pad) !important;
+  padding-right: var(--mbs-pad) !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Grid layouts */
+.c-row.mbs3-grid-4 > .inner {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0,1fr)) !important;
+  gap: 22px !important;
+  align-items: stretch !important;
+}
+.c-row.mbs3-grid-3 > .inner {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0,1fr)) !important;
+  gap: 22px !important;
+  align-items: stretch !important;
+}
+.c-row.mbs3-grid-2 > .inner {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 22px !important;
+  align-items: start !important;
+}
+.c-row.mbs3-grid-2--wide > .inner {
+  display: grid !important;
+  grid-template-columns: 1.05fr .95fr !important;
+  gap: 22px !important;
+  align-items: start !important;
+}
+
+/* CTA button row */
+.c-row.mbs3-cta-row > .inner {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  align-items: center !important;
+  padding-top: 8px !important;
+}
+.c-row.mbs3-cta-row > .inner > .c-column {
+  width: auto !important;
+  flex: 0 0 auto !important;
+}
+
+/* Section heading + optional link side by side */
+.c-row.mbs3-head-row > .inner {
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: space-between !important;
+  gap: 18px !important;
+}
+
+/* Responsive grid breakdowns */
+@media (max-width: 1024px) {
+  .c-row.mbs3-grid-4 > .inner { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
+}
+@media (max-width: 768px) {
+  .c-row.mbs3-grid-3 > .inner,
+  .c-row.mbs3-grid-2 > .inner,
+  .c-row.mbs3-grid-2--wide > .inner { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 640px) {
+  .c-row.mbs3-grid-4 > .inner { grid-template-columns: 1fr !important; }
+  .c-row.mbs3-wrap > .inner { padding-left: 16px !important; padding-right: 16px !important; }
+}
+
+/* =============================================================
+   STEP 4 — COLUMN CLASSES
+   Add these to the GHL Column element → "Custom CSS class"
+   ============================================================= */
+
+/* White card */
+.c-column.mbs3-card > .vertical.inner {
+  background: #fff !important;
+  border: 1px solid var(--mbs-line) !important;
+  border-radius: var(--mbs-r2) !important;
+  box-shadow: var(--mbs-shadow) !important;
+  padding: 22px !important;
+  height: 100% !important;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+@media (hover:hover) {
+  .c-column.mbs3-card:hover > .vertical.inner {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 24px 60px rgba(11,18,32,.12) !important;
+  }
+}
+
+/* Green accent card */
+.c-column.mbs3-card--accent > .vertical.inner {
+  border-color: rgba(22,138,91,.22) !important;
+  background: rgba(22,138,91,.04) !important;
+}
+
+/* Service tile (full height, button sticks to bottom) */
+.c-column.mbs3-tile > .vertical.inner {
+  background: #fff !important;
+  border: 1px solid var(--mbs-line) !important;
+  border-radius: var(--mbs-r2) !important;
+  box-shadow: var(--mbs-shadow2) !important;
+  padding: 18px !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+@media (hover:hover) {
+  .c-column.mbs3-tile:hover > .vertical.inner {
+    transform: translateY(-3px) !important;
+    box-shadow: var(--mbs-shadow) !important;
+  }
+}
+/* Pin the last button inside a tile to the bottom */
+.c-column.mbs3-tile > .vertical.inner > .c-button:last-child,
+.c-column.mbs3-tile > .vertical.inner > div:last-child {
+  margin-top: auto !important;
+  padding-top: 14px !important;
+}
+/* Tile button style */
+.c-column.mbs3-tile .c-button button {
+  width: 100% !important;
+  border-radius: 999px !important;
+  border: 1.5px solid rgba(22,138,91,.28) !important;
+  background: #fff !important;
+  color: var(--mbs-accent) !important;
+  font-weight: 900 !important;
+  font-size: 14px !important;
+  padding: 10px 14px !important;
+  box-shadow: none !important;
+}
+.c-column.mbs3-tile .c-button button:hover {
+  border-color: rgba(22,138,91,.55) !important;
+  background: var(--mbs-accentSoft) !important;
+}
+
+/* =============================================================
+   STEP 5 — TEXT & CONTENT CLASSES
+   Add these to individual text/heading/paragraph elements
+   ============================================================= */
+
+/* Kicker pill label */
+.kicker p, .kicker .c-paragraph p {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 7px 12px !important;
+  border-radius: 999px !important;
+  background: var(--mbs-accentSoft) !important;
+  border: 1px solid rgba(22,138,91,.18) !important;
+  color: var(--mbs-accent) !important;
+  font-weight: 900 !important;
+  font-size: 12.5px !important;
+  line-height: 1 !important;
+  margin: 0 0 14px !important;
+}
+.kicker p::before, .kicker .c-paragraph p::before {
+  content: "";
+  width: 8px; height: 8px;
+  border-radius: 99px;
+  background: var(--mbs-accent);
+  flex: 0 0 auto;
+}
+
+/* Hero headline */
+.mbs3-h1 .c-heading h1,
+.mbs3-h1 .c-heading h2 {
+  font-size: clamp(30px, 3.6vw, 54px) !important;
+  line-height: 1.06 !important;
+  letter-spacing: -.04em !important;
+  font-weight: 900 !important;
+  color: #fff !important;
+  margin: 0 0 14px !important;
+}
+
+/* Hero subtext */
+.mbs3-lede .c-paragraph p {
+  font-size: 15.5px !important;
+  line-height: 1.7 !important;
+  color: rgba(255,255,255,.84) !important;
+  max-width: 68ch !important;
+  margin: 0 0 18px !important;
+}
+
+/* Section heading */
+.mbs3-h2 .c-heading h2,
+.mbs3-h2 .c-heading h1 {
+  font-size: clamp(22px, 2.8vw, 34px) !important;
+  font-weight: 900 !important;
+  letter-spacing: -.03em !important;
+  line-height: 1.12 !important;
+  color: var(--mbs-ink) !important;
+  margin: 0 0 10px !important;
+}
+
+/* Section subheading */
+.mbs3-sub .c-paragraph p {
+  font-size: 14.5px !important;
+  line-height: 1.7 !important;
+  color: var(--mbs-muted) !important;
+  max-width: 72ch !important;
+  margin: 0 0 22px !important;
+}
+
+/* Hero stat scale row */
+.mbs3-scale .c-paragraph p {
+  font-size: 13.5px !important;
+  font-weight: 900 !important;
+  color: rgba(255,255,255,.88) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+  margin: 0 !important;
+}
+.mbs3-scale .c-paragraph p::before {
+  content: "";
+  width: 8px; height: 8px;
+  border-radius: 99px;
+  background: rgba(255,255,255,.7);
+  flex: 0 0 auto;
+}
+
+/* Green callout box */
+.mbs3-callout .c-paragraph p,
+.mbs3-callout p {
+  padding: 14px 16px !important;
+  border-radius: var(--mbs-r) !important;
+  background: var(--mbs-accentSoft) !important;
+  border: 1px solid rgba(22,138,91,.16) !important;
+  font-size: 13.8px !important;
+  line-height: 1.65 !important;
+  color: var(--mbs-ink) !important;
+}
+
+/* Bullet list → checkmark list */
+.mbs3-list .c-bullet-list ul,
+.mbs3-list ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+  display: grid;
+  gap: 10px;
+}
+.mbs3-list .c-bullet-list li,
+.mbs3-list li {
+  display: flex !important;
+  gap: 10px !important;
+  align-items: flex-start !important;
+  color: var(--mbs-ink) !important;
+  line-height: 1.6 !important;
+}
+.mbs3-list .c-bullet-list li::before,
+.mbs3-list li::before {
+  content: "✓";
+  width: 20px; height: 20px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--mbs-accentSoft);
+  border: 1px solid rgba(22,138,91,.18);
+  color: var(--mbs-accent);
+  font-size: 11px; font-weight: 900;
+  flex: 0 0 auto;
+  transform: translateY(2px);
+}
+
+/* =============================================================
+   STEP 6 — BUTTON CLASSES
+   Add to the GHL Button element → "Custom CSS class"
+   ============================================================= */
+
+.c-button.mbs3-btn--primary button {
+  background: var(--mbs-accent) !important;
+  color: #fff !important;
+  border: 1px solid var(--mbs-accent) !important;
+  border-radius: 999px !important;
+  padding: 12px 18px !important;
+  font-weight: 900 !important;
+  font-size: 14.5px !important;
+  box-shadow: 0 10px 22px rgba(22,138,91,.22) !important;
+  transition: .16s ease !important;
+}
+.c-button.mbs3-btn--primary button:hover {
+  background: var(--mbs-accent2) !important;
+  transform: translateY(-1px) !important;
+}
+
+.c-button.mbs3-btn--ghost button {
+  background: #fff !important;
+  color: var(--mbs-ink) !important;
+  border: 1.5px solid var(--mbs-line) !important;
+  border-radius: 999px !important;
+  padding: 12px 18px !important;
+  font-weight: 900 !important;
+  font-size: 14.5px !important;
+  box-shadow: none !important;
+  transition: .16s ease !important;
+}
+.c-button.mbs3-btn--ghost button:hover {
+  background: rgba(11,18,32,.04) !important;
+}
+
+.c-button.mbs3-btn--link button {
+  background: transparent !important;
+  border: none !important;
+  color: var(--mbs-accent) !important;
+  font-weight: 900 !important;
+  padding: 10px 0 !important;
+  text-decoration: none !important;
+}
+
+/* =============================================================
+   STEP 7 — HEADER
+   Add "mbs3-hdr" to the header Section
+   ============================================================= */
+.c-section.mbs3-hdr {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 9999 !important;
+  background: rgba(255,255,255,.92) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-bottom: 1px solid var(--mbs-line) !important;
+  box-shadow: 0 10px 30px rgba(11,18,32,.06) !important;
+}
+.c-section.mbs3-hdr > .inner { padding: 0 !important; }
+.c-section.mbs3-hdr .c-row > .inner {
+  padding: 14px var(--mbs-pad) !important;
+  max-width: var(--mbs-max) !important;
+  margin: 0 auto !important;
+}
+/* Nav links */
+.c-section.mbs3-hdr .mbs3-nav a,
+.c-section.mbs3-hdr .mbs3-nav button {
+  padding: 8px 12px !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  font-size: 13.5px !important;
+  color: rgba(11,18,32,.76) !important;
+  transition: background .14s ease !important;
+}
+.c-section.mbs3-hdr .mbs3-nav a:hover,
+.c-section.mbs3-hdr .mbs3-nav button:hover {
+  background: rgba(11,18,32,.05) !important;
+}
+
+/* =============================================================
+   STEP 8 — UNIVERSAL CARD POLISH
+   GHL builder cards (bordered columns) automatically get
+   elevated using this rule — no class needed on the element.
+   ============================================================= */
+.c-column > .vertical.inner.borderFull.radius20,
+.c-column > .vertical.inner.borderFull.radius25,
+.c-nested-column > .vertical.inner.borderFull.radius20,
+.c-nested-column > .vertical.inner.borderFull.radius25 {
+  background: #fff !important;
+  border: 1px solid var(--mbs-line) !important;
+  border-radius: var(--mbs-r2) !important;
+  box-shadow: var(--mbs-shadow) !important;
+  overflow: hidden !important;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+@media (hover:hover) {
+  .c-column:hover > .vertical.inner.borderFull.radius20,
+  .c-column:hover > .vertical.inner.borderFull.radius25,
+  .c-nested-column:hover > .vertical.inner.borderFull.radius20,
+  .c-nested-column:hover > .vertical.inner.borderFull.radius25 {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 24px 60px rgba(11,18,32,.12) !important;
+  }
+}
+/* bg layer clips to rounded corners */
+.c-column > .vertical.inner.borderFull.radius20 > .bg,
+.c-column > .vertical.inner.borderFull.radius25 > .bg {
+  border-radius: inherit !important;
+}
+
+/* =============================================================
+   STEP 9 — MISC UTILITIES
+   ============================================================= */
+
+/* Full-width image inside a tile/card */
+.mbs3-img-cover img {
+  width: 100% !important;
+  height: 160px !important;
+  object-fit: cover !important;
+  border-radius: 14px !important;
+  display: block !important;
+}
+
+/* Number badge (01, 02, etc.) */
+.mbs3-badge .c-paragraph p {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 28px !important; height: 28px !important;
+  border-radius: 8px !important;
+  background: var(--mbs-accentSoft) !important;
+  border: 1px solid rgba(22,138,91,.18) !important;
+  color: var(--mbs-accent) !important;
+  font-size: 11px !important; font-weight: 900 !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+}
+
+/* FAQ accordion clean-up */
+.mbs3-faq details {
+  background: #fff !important;
+  border: 1px solid var(--mbs-line) !important;
+  border-radius: var(--mbs-r) !important;
+  padding: 14px 18px !important;
+  margin-bottom: 8px !important;
+}
+.mbs3-faq details summary {
+  cursor: pointer !important;
+  font-weight: 800 !important;
+  position: relative !important;
+  padding-right: 28px !important;
+  list-style: none !important;
+}
+.mbs3-faq details summary::-webkit-details-marker { display: none; }
+.mbs3-faq details summary::after {
+  content: '+';
+  position: absolute; right: 0; top: 0;
+  font-size: 18px; font-weight: 400;
+  opacity: .5;
+  transition: transform .2s ease;
+}
+.mbs3-faq details[open] summary::after { transform: rotate(45deg); }
+
+/* Page background gradient (subtle green tint) */
+.mbs3-page-bg {
+  background:
+    radial-gradient(900px 420px at 8% -5%, rgba(22,138,91,.09), transparent 60%),
+    radial-gradient(700px 360px at 85% 5%, rgba(22,138,91,.06), transparent 55%),
+    #f7fbf9 !important;
+}
+
+/* =============================================================
+   RESPONSIVE UTILITIES
+   ============================================================= */
+@media (max-width: 640px) {
+  .c-section.mbs3-sec > .inner,
+  .c-section.mbs3-sec--soft > .inner,
+  .c-section.mbs3-sec--white > .inner { padding: 36px 0 !important; }
+  .c-section.mbs3-sec--tight > .inner { padding: 28px 0 !important; }
+  .c-section.mbs3-sec--hero > .inner  { min-height: 380px !important; }
+  .c-section.mbs3-sec--hero { margin: 12px 12px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .c-column.mbs3-tile, .c-column.mbs3-card,
+  .c-column > .vertical.inner.borderFull { transition: none !important; }
+}
