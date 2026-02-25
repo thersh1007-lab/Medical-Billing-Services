@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RCFE Licensing | Medical Billing Services</title>
-</head>
-<body>
 <!--
 MEDBILLINGCO.COM — RCFE LICENSING PAGE (PREMIUM STYLE + STORYBRAND ORDER) — v2
 Paste into ONE GoHighLevel Custom Code block.
@@ -321,92 +313,23 @@ Booking links (Licensing Consultation Calendar):
     .mbsRcfeLic main{padding-bottom:74px} /* room for sticky CTA */
   }
   @media (prefers-reduced-motion: reduce){ .mbsRcfeLic .btn{transition:none} }
-
-  /* ========= POLISH PACK ========= */
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
-  .reveal.visible{opacity:1;transform:none}
-  .reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
-
-  /* Hero gradient */
-  .heroGradient{
-    background:linear-gradient(135deg,rgba(255,255,255,1) 40%,rgba(255,255,255,.70));
-    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  }
-
-  /* Card + step hover lift */
-  @media(hover:hover){
-    .mbsRcfeLic .card,.mbsRcfeLic .step,.mbsRcfeLic .pCard,.mbsRcfeLic .cCard{transition:transform .18s ease,box-shadow .18s ease}
-    .mbsRcfeLic .card:hover,.mbsRcfeLic .step:hover,.mbsRcfeLic .pCard:hover,.mbsRcfeLic .cCard:hover{
-      transform:translateY(-3px);box-shadow:0 24px 60px rgba(2,6,23,.13);
-    }
-  }
-
-  /* Nav transition */
-  .mbsRcfeLic .menu>a,.mbsRcfeLic .dd>button{transition:background .15s ease,color .15s ease}
-
-  /* FAQ chevron + reveal */
-  .mbsRcfeLic summary{position:relative;padding-right:28px}
-  .mbsRcfeLic summary::after{
-    content:'+';position:absolute;right:4px;top:0;
-    transition:transform .2s ease;font-weight:400;opacity:.65;font-size:18px;line-height:1.2;
-  }
-  .mbsRcfeLic details[open] summary::after{transform:rotate(45deg)}
-  .mbsRcfeLic details p{animation:faqRevealR .28s ease}
-  @keyframes faqRevealR{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  /* SCROLL REVEAL */
+  .mbs3-reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease;}
+  .mbs3-reveal.is-visible{opacity:1;transform:none;}
+  .mbs3-reveal-d1{transition-delay:.12s;} .mbs3-reveal-d2{transition-delay:.24s;} .mbs3-reveal-d3{transition-delay:.36s;}
+  @media(prefers-reduced-motion:reduce){.mbs3-reveal{opacity:1;transform:none;transition:none;}}
+  /* FAQ CHEVRON */
+  .mbsRcfeLic details summary{list-style:none;cursor:pointer;padding-right:30px;position:relative;}
+  .mbsRcfeLic details summary::-webkit-details-marker{display:none;}
+  .mbsRcfeLic details summary::after{content:'+';position:absolute;right:0;top:0;font-size:20px;font-weight:300;opacity:.45;transition:transform .22s ease;}
+  .mbsRcfeLic details[open] summary::after{transform:rotate(45deg);}
+  .mbsRcfeLic details > *:not(summary){animation:faqOpen .25s ease;}
+  @keyframes faqOpen{from{opacity:0;transform:translateY(-5px);}to{opacity:1;transform:none;}}
 </style>
 
 <div class="mbsRcfeLic" id="top">
   <!-- HEADER -->
-  <header class="hdr" role="banner">
-    <div class="wrap">
-      <div class="nav">
-        <a class="brand" href="HOME_LINK" aria-label="Medical Billing Services home">
-          <img src="https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-4897-994e-1ec4194e612d.png" alt="Medical Billing Services logo">
-        </a>
-
-        <button class="mToggle" type="button" aria-controls="primaryNav" aria-expanded="false">Menu</button>
-
-        <nav class="menu" id="primaryNav" aria-label="Primary navigation">
-          <a href="BILLING_LINK">ALW Billing</a>
-
-          <div class="dd" aria-label="Licensing dropdown">
-            <button class="ddBtn" type="button" aria-haspopup="true" aria-expanded="false">
-              Licensing
-              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" style="opacity:.8;transform:translateY(1px)">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-            <div class="panel" role="menu" aria-label="Licensing options">
-              <a class="active" href="LIC_RCFE_LINK">
-                <div>
-                  <div>RCFE</div>
-                  <div class="mini">Residential Care Facility for the Elderly</div>
-                </div>
-              </a>
-              <a href="ARF_LIC_LINK">
-                <div>
-                  <div>ARF</div>
-                  <div class="mini">Adult Residential Facility</div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <a href="ALW_APP_LINK">ALW Application</a>
-          <a href="FUNDING_LINK">Increase Funding</a>
-          <a href="CONSULTING_LINK">RCFE Consulting</a>
-        </nav>
-
-        <div class="hdrCtas">
-          <a class="phonePill" href="tel:{{custom_values.companyphone_display}}">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 13 19.79 19.79 0 0 1 1 4.18 2 2 0 0 1 2.98 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 17l.92-.08z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            {{custom_values.companyphone_display}}
-          </a>
-          <a class="btn primary" href="BOOKING_LINK_LIC">Book a Licensing Consultation</a>
-        </div>
-      </div>
-    </div>
-  </header>
+ 
 
   <main>
     <!-- HERO -->
@@ -420,7 +343,7 @@ Booking links (Licensing Consultation Calendar):
             <div style="max-width:900px">
               <div class="pill"><span class="dot"></span> California RCFE licensing support (startup + expansion)</div>
 
-              <h1>Get RCFE-Licensed in California — without <span class="heroGradient">guesswork or rework</span>.</h1>
+              <h1>Get RCFE-Licensed in California — without guesswork or rework.</h1>
 
               <p>
                 An <b>RCFE license</b> is required to legally operate a residential care facility for older adults in California.
@@ -472,7 +395,7 @@ Booking links (Licensing Consultation Calendar):
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>What RCFE licensing is (and why it matters)</h2>
+            <h2 class="mbs3-reveal">What RCFE licensing is (and why it matters)</h2>
             <p>
               RCFE licensing is the gate that allows you to operate — and it’s where many owners lose time due to unclear steps,
               missing documents, and rework. We help you make the next step obvious.
@@ -538,7 +461,7 @@ Booking links (Licensing Consultation Calendar):
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>What usually goes wrong (and costs you time)</h2>
+            <h2 class="mbs3-reveal">What usually goes wrong (and costs you time)</h2>
             <p>
               Most delays don’t come from “big” issues — they come from small mismatches that trigger follow-ups,
               resubmissions, or readiness gaps. Here are the most common ones we see.
@@ -574,23 +497,23 @@ Booking links (Licensing Consultation Calendar):
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Our simple plan</h2>
+            <h2 class="mbs3-reveal">Our simple plan</h2>
             <p>Clear steps. No overwhelm. The goal is momentum — with fewer preventable delays.</p>
           </div>
         </div>
 
         <div class="plan3">
-          <div class="step">
+          <div class="step mbs3-reveal mbs3-reveal-d1">
             <div class="stepTop"><div class="numBox">01</div><div class="tagPill">Clarity</div></div>
             <b>Book the licensing consult</b>
             <span>We confirm your situation, timeline, facility context, and what path makes sense.</span>
           </div>
-          <div class="step">
+          <div class="step mbs3-reveal mbs3-reveal-d2">
             <div class="stepTop"><div class="numBox">02</div><div class="tagPill">Roadmap</div></div>
             <b>Get your checklist + priorities</b>
             <span>You’ll know what to do next, what to ignore, and how to sequence the work.</span>
           </div>
-          <div class="step">
+          <div class="step mbs3-reveal mbs3-reveal-d3">
             <div class="stepTop"><div class="numBox">03</div><div class="tagPill">Execute</div></div>
             <b>Prepare clean materials</b>
             <span>We help you reduce rework and stay aligned with practical readiness expectations.</span>
@@ -616,7 +539,7 @@ Booking links (Licensing Consultation Calendar):
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>What’s included (RCFE)</h2>
+            <h2 class="mbs3-reveal">What’s included (RCFE)</h2>
             <p>Support designed to keep licensing work organized, compliant, and moving forward.</p>
           </div>
         </div>
@@ -687,7 +610,7 @@ Booking links (Licensing Consultation Calendar):
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Your guide through the process</h2>
+            <h2 class="mbs3-reveal">Your guide through the process</h2>
             <p>We keep this practical and organized — so you’re not stuck guessing what’s next.</p>
           </div>
         </div>
@@ -723,7 +646,7 @@ Booking links (Licensing Consultation Calendar):
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Book a Licensing Consultation</h2>
+            <h2 class="mbs3-reveal">Book a Licensing Consultation</h2>
             <p>We’ll clarify what’s realistic for your situation and route you to the right next step.</p>
           </div>
         </div>
@@ -776,7 +699,7 @@ Booking links (Licensing Consultation Calendar):
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>RCFE Licensing FAQs</h2>
+            <h2 class="mbs3-reveal">RCFE Licensing FAQs</h2>
             <p>Clear answers — without overwhelming you.</p>
           </div>
         </div>
@@ -813,86 +736,13 @@ Booking links (Licensing Consultation Calendar):
   </main>
 
 <script>
-  (function(){
-    const replacements = {
-      "BOOKING_LINK_LIC": "https://api.leadconnectorhq.com/widget/bookings/alw-application-call05zqka",
-      "BOOKING_IFRAME_LIC": "https://api.leadconnectorhq.com/widget/booking/H3K9LIzRf7zxAwtfyrdN",
-
-      // nav links
-      "HOME_LINK": "./Home-page-html.html",
-      "BILLING_LINK": "./alw-billing-100html.html",
-      "LIC_RCFE_LINK": "./rcfe-licensing-html.html",
-      "ARF_LIC_LINK": "./arf-licensing-html.html",
-      "ALW_APP_LINK": "./alw-waiver-html.html",
-      "FUNDING_LINK": "./funding-html.html",
-      "CONSULTING_LINK": "./Consulting-html.html"
-    };
-
-    const root = document.querySelector(".mbsRcfeLic");
-    if(!root) return;
-
-    // Year
-    const yr = root.querySelector("#yr");
-    if(yr) yr.textContent = new Date().getFullYear();
-
-    // Replace href/src tokens
-    const setAttr = (sel, attr) => {
-      root.querySelectorAll(sel).forEach(el=>{
-        const v = el.getAttribute(attr);
-        if(!v) return;
-        Object.keys(replacements).forEach(k=>{
-          if(v.indexOf(k) !== -1) el.setAttribute(attr, v.split(k).join(replacements[k]));
-        });
-      });
-    };
-    setAttr("a[href]", "href");
-    setAttr("iframe[src]", "src");
-
-    // Mobile menu toggle
-    const toggle = root.querySelector(".mToggle");
-    const menu = root.querySelector(".menu");
-    if(toggle && menu){
-      toggle.addEventListener("click", ()=>{
-        const open = menu.classList.toggle("open");
-        toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      });
-    }
-
-    // Dropdown click support (mobile)
-    root.querySelectorAll(".dd .ddBtn").forEach(btn=>{
-      btn.addEventListener("click",(e)=>{
-        e.preventDefault();
-        const dd = btn.closest(".dd");
-        const isOpen = dd.classList.toggle("open");
-        btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      });
-    });
-
-    // Smooth scroll
-    root.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener("click",(e)=>{
-        const id = a.getAttribute("href");
-        if(!id || id === "#") return;
-        const el = root.querySelector(id);
-        if(!el) return;
-        e.preventDefault();
-        el.scrollIntoView({behavior:"smooth", block:"start"});
-      });
-    });
-
-    // === SCROLL REVEAL ===
-    root.querySelectorAll(".card, .step, .pCard, .cCard, .head h2, .proofChip").forEach(el=>{
-      if(!el.classList.contains("reveal")) el.classList.add("reveal");
-    });
-    (function(){
-      const obs = new IntersectionObserver((entries, ob)=>{
-        entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("visible"); ob.unobserve(e.target); }});
-      }, {threshold:0.10});
-      root.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
-    })();
-  })();
+(function(){
+  var els=document.querySelectorAll('.mbs3-reveal');
+  if(!els.length)return;
+  var io=new IntersectionObserver(function(entries,obs){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');obs.unobserve(e.target);}});
+  },{threshold:0.12});
+  els.forEach(function(el){io.observe(el);});
+})();
 </script>
-</div><!-- /mbsRcfeLic -->
-</body>
-</html>
 

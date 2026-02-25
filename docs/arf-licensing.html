@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Increase Funding | Medical Billing Services</title>
-</head>
-<body>
 <!--
 MEDBILLINGCO.COM — INCREASE FUNDING / REVENUE OPTIMIZATION (PREMIUM) — v2
 Paste into ONE GoHighLevel Custom Code block.
@@ -324,71 +316,18 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
     .mbsFunding main{padding-bottom:74px}
   }
   @media (prefers-reduced-motion: reduce){ .mbsFunding .btn{transition:none} }
-
-  /* ========= POLISH PACK (ARF page) ========= */
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
-  .reveal.visible{opacity:1;transform:none}
-  .reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
-
-  /* Hero gradient */
-  .heroGradient{
-    background:linear-gradient(135deg,rgba(255,255,255,1) 40%,rgba(255,255,255,.70));
-    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  }
-
-  /* microProof pill row (was completely unstyled) */
-  .mbsFunding .microProof{
-    display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;
-  }
-  .mbsFunding .microProof span{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:8px 14px;border-radius:999px;
-    background:rgba(255,255,255,.14);border:1px solid rgba(22,138,91,.30);
-    color:rgba(255,255,255,.92);font-weight:800;font-size:12.5px;
-    backdrop-filter:blur(10px);
-  }
-  .mbsFunding .microProof span::before{
-    content:'✓';color:var(--accent);font-weight:900;font-size:13px;
-  }
-
-  /* Hero right column proof card */
-  .mbsFunding .heroStatCard{
-    background:rgba(255,255,255,.96);border:1px solid rgba(15,23,42,.14);
-    border-radius:24px;box-shadow:0 22px 52px rgba(2,6,23,.18);
-    padding:20px;align-self:end;
-  }
-  .mbsFunding .heroStatCard .hsTitle{
-    font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.6px;
-    color:rgba(2,6,23,.52);margin:0 0 14px;
-  }
-  .mbsFunding .heroStatKpis{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .mbsFunding .heroKpi{
-    padding:12px;border-radius:16px;background:rgba(22,138,91,.06);
-    border:1px solid rgba(22,138,91,.14);
-  }
-  .mbsFunding .heroKpi b{display:block;font-size:22px;font-weight:900;letter-spacing:-0.8px;color:var(--accent)}
-  .mbsFunding .heroKpi span{display:block;font-size:11.5px;color:rgba(2,6,23,.58);font-weight:700;margin-top:3px;line-height:1.3}
-
-  /* Card + pillar hover lift */
-  @media(hover:hover){
-    .mbsFunding .card,.mbsFunding .pillar,.mbsFunding .pCard{transition:transform .18s ease,box-shadow .18s ease}
-    .mbsFunding .card:hover,.mbsFunding .pillar:hover,.mbsFunding .pCard:hover{
-      transform:translateY(-3px);box-shadow:0 24px 60px rgba(2,6,23,.13);
-    }
-  }
-
-  /* Nav transition */
-  .mbsFunding .menu>a,.mbsFunding .dd>button{transition:background .15s ease,color .15s ease}
-
-  /* FAQ chevron + reveal */
-  .mbsFunding summary{position:relative;padding-right:28px}
-  .mbsFunding summary::after{
-    content:'+';position:absolute;right:4px;top:0;
-    transition:transform .2s ease;font-weight:400;opacity:.65;font-size:18px;line-height:1.2;
-  }
-  .mbsFunding details[open] summary::after{transform:rotate(45deg)}
-  .mbsFunding details p{animation:faqRevealARF .28s ease}
-  @keyframes faqRevealARF{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  /* SCROLL REVEAL */
+  .mbs3-reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease;}
+  .mbs3-reveal.is-visible{opacity:1;transform:none;}
+  .mbs3-reveal-d1{transition-delay:.12s;} .mbs3-reveal-d2{transition-delay:.24s;} .mbs3-reveal-d3{transition-delay:.36s;}
+  @media(prefers-reduced-motion:reduce){.mbs3-reveal{opacity:1;transform:none;transition:none;}}
+  /* FAQ CHEVRON */
+  .mbsFunding details summary{list-style:none;cursor:pointer;padding-right:30px;position:relative;}
+  .mbsFunding details summary::-webkit-details-marker{display:none;}
+  .mbsFunding details summary::after{content:'+';position:absolute;right:0;top:0;font-size:20px;font-weight:300;opacity:.45;transition:transform .22s ease;}
+  .mbsFunding details[open] summary::after{transform:rotate(45deg);}
+  .mbsFunding details > *:not(summary){animation:faqOpen .25s ease;}
+  @keyframes faqOpen{from{opacity:0;transform:translateY(-5px);}to{opacity:1;transform:none;}}
 </style>
 
 <div class="mbsFunding" id="top">
@@ -407,7 +346,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
               <div>
                 <div class="pill"><span class="dot"></span> Funding & revenue optimization (ALW • RCFE • ARF)</div>
 
-                <h1>Increase funding by fixing visibility and <span class="heroGradient">process</span> — not by guessing.</h1>
+                <h1>Increase funding by fixing visibility and process — not by guessing.</h1>
 
                 <p>
                   “Increase funding” usually means <b>finding avoidable leakage</b> in your current workflow — missed steps, unclear tracking,
@@ -425,34 +364,12 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
   <span>Practical levers</span>
   <span>Clear next actions</span>
 </div>
-              </div><!-- /left column -->
+              
 
-              <!-- RIGHT: Revenue proof card -->
-              <div class="heroStatCard" aria-label="Revenue proof metrics">
-                <p class="hsTitle">Typical results after optimization</p>
-                <div class="heroStatKpis">
-                  <div class="heroKpi">
-                    <b>22</b>
-                    <span>avg. AR days<br>(down from 67)</span>
-                  </div>
-                  <div class="heroKpi">
-                    <b>$1.5M+</b>
-                    <span>billed monthly for providers</span>
-                  </div>
-                  <div class="heroKpi">
-                    <b>3–4×</b>
-                    <span>faster denial resolution</span>
-                  </div>
-                  <div class="heroKpi">
-                    <b>0</b>
-                    <span>hidden fees — pay-for-performance</span>
-                  </div>
-                </div>
-              </div><!-- /right column -->
-            </div><!-- /heroGrid -->
-          </div><!-- /heroInner -->
-        </div><!-- /heroShell -->
-      </div><!-- /wrap -->
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- Wave to white -->
     <div class="wave toWhite" aria-hidden="true">
@@ -466,7 +383,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>What “increase funding” means (in real life)</h2>
+            <h2 class=”mbs3-reveal”>What “increase funding” means (in real life)</h2>
             <p>
               Most facilities don’t need “magic.” They need clarity on what’s happening — and a tighter process where leakage is occurring.
               Here are the three buckets we typically look at first.
@@ -474,16 +391,16 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
           </div>
         </div>
 
-        <div class="tri">
-          <div class="card">
+        <div class=”tri”>
+          <div class=”card mbs3-reveal mbs3-reveal-d1”>
             <h3>ALW optimization</h3>
             <p>Evaluate current workflow, visibility, and opportunities to reduce friction in your current approach.</p>
           </div>
-          <div class="card">
+          <div class=”card mbs3-reveal mbs3-reveal-d2”>
             <h3>Billing workflow</h3>
             <p>Make the process predictable: fewer surprises, clearer monthly tracking, cleaner handoffs.</p>
           </div>
-          <div class="card">
+          <div class=”card mbs3-reveal mbs3-reveal-d3”>
             <h3>Documentation readiness</h3>
             <p>Reduce “avoidable setbacks” by ensuring documentation matches what reviewers expect to see.</p>
           </div>
@@ -512,7 +429,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Where revenue leaks most often</h2>
+            <h2 class="mbs3-reveal">Where revenue leaks most often</h2>
             <p>
               Many issues are not “big failures” — they’re small mismatches that stack up over time.
               We focus on pinpointing the few levers that matter most for your facility context.
@@ -548,7 +465,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>The Funding Playbook (simple, practical)</h2>
+            <h2 class="mbs3-reveal">The Funding Playbook (simple, practical)</h2>
             <p>
               No long reports you’ll never open. We keep it structured and actionable so you can move forward.
             </p>
@@ -601,7 +518,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>What the Revenue Call covers</h2>
+            <h2 class="mbs3-reveal">What the Revenue Call covers</h2>
             <p>
               A fast, structured review that focuses on clarity and next actions — not overwhelm.
             </p>
@@ -651,7 +568,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Book a Revenue Call</h2>
+            <h2 class="mbs3-reveal">Book a Revenue Call</h2>
             <p>We’ll evaluate what’s realistic for your situation and outline a clear next-step plan.</p>
           </div>
         </div>
@@ -699,7 +616,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Frequently asked questions</h2>
+            <h2 class="mbs3-reveal">Frequently asked questions</h2>
             <p>Clear answers — without overwhelming you.</p>
           </div>
         </div>
@@ -777,15 +694,15 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
       "BOOKING_IFRAME_REV": "https://api.leadconnectorhq.com/widget/booking/GCyM1GS3QXkgVDFllYMu",
 
       // optional nav links
-      "HOME_LINK": "./Home-page-html.html",
-      "RCFE_LIC_LINK": "./rcfe-licensing-html.html",
-      "ARF_LIC_LINK": "./arf-licensing-html.html",
-      "ALW_APP_LINK": "./alw-waiver-html.html",
-      "CONSULTING_LINK": "./Consulting-html.html",
-      "FUNDING_LINK": "./funding-html.html",
+      "HOME_LINK": "#",
+      "RCFE_LIC_LINK": "#",
+      "ARF_LIC_LINK": "#",
+      "ALW_APP_LINK": "#",
+      "CONSULTING_LINK": "#",
+      "FUNDING_LINK": "#",
 
       // schema URL swap (optional)
-      "FUNDING_PAGE_URL": "./arf-licensing-html.html"
+      "FUNDING_PAGE_URL": "#"
     };
 
     const root = document.querySelector(".mbsFunding");
@@ -845,18 +762,15 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
         el.scrollIntoView({behavior:"smooth", block:"start"});
       });
     });
-
-    // === SCROLL REVEAL ===
-    root.querySelectorAll(".card, .pillar, .pCard, .head h2, .heroStatCard").forEach(el=>{
-      if(!el.classList.contains("reveal")) el.classList.add("reveal");
-    });
-    (function(){
-      const obs = new IntersectionObserver((entries, ob)=>{
-        entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("visible"); ob.unobserve(e.target); }});
-      }, {threshold:0.10});
-      root.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
-    })();
   })();
 </script>
-</body>
-</html>
+<script>
+(function(){
+  var els=document.querySelectorAll('.mbs3-reveal');
+  if(!els.length)return;
+  var io=new IntersectionObserver(function(entries,obs){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');obs.unobserve(e.target);}});
+  },{threshold:0.12});
+  els.forEach(function(el){io.observe(el);});
+})();
+</script>

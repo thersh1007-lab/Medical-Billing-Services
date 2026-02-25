@@ -401,6 +401,18 @@ CONSULTING_LINK
     .mbsConsultV2 main{padding-bottom:74px}
   }
   @media (prefers-reduced-motion: reduce){ .mbsConsultV2 .btn{transition:none} }
+  /* SCROLL REVEAL */
+  .mbs3-reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease;}
+  .mbs3-reveal.is-visible{opacity:1;transform:none;}
+  .mbs3-reveal-d1{transition-delay:.12s;} .mbs3-reveal-d2{transition-delay:.24s;} .mbs3-reveal-d3{transition-delay:.36s;}
+  @media(prefers-reduced-motion:reduce){.mbs3-reveal{opacity:1;transform:none;transition:none;}}
+  /* FAQ CHEVRON */
+  .mbsConsultV2 details summary{list-style:none;cursor:pointer;padding-right:30px;position:relative;}
+  .mbsConsultV2 details summary::-webkit-details-marker{display:none;}
+  .mbsConsultV2 details summary::after{content:'+';position:absolute;right:0;top:0;font-size:20px;font-weight:300;opacity:.45;transition:transform .22s ease;}
+  .mbsConsultV2 details[open] summary::after{transform:rotate(45deg);}
+  .mbsConsultV2 details > *:not(summary){animation:faqOpen .25s ease;}
+  @keyframes faqOpen{from{opacity:0;transform:translateY(-5px);}to{opacity:1;transform:none;}}
 </style>
 
 <div class="mbsConsultV2" id="top">
@@ -470,7 +482,7 @@ CONSULTING_LINK
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>What RCFE consulting means here</h2>
+            <h2 class="mbs3-reveal">What RCFE consulting means here</h2>
             <p>
               We explain it simply: we help you build a plan, then guide you through execution.
               It’s detailed behind the scenes, but easy to understand.
@@ -479,19 +491,19 @@ CONSULTING_LINK
         </div>
 
         <div class="tri">
-          <div class="card">
+          <div class="card mbs3-reveal mbs3-reveal-d1">
             <h3>Roadmap + consulting deck</h3>
             <p>
               You get a clear roadmap and a PowerPoint-style deck that lays out the phases, priorities, and what to do next.
             </p>
           </div>
-          <div class="card">
+          <div class="card mbs3-reveal mbs3-reveal-d2">
             <h3>Guided execution</h3>
             <p>
               We help you move step-by-step so you don’t waste time doing the wrong tasks first.
             </p>
           </div>
-          <div class="card">
+          <div class="card mbs3-reveal mbs3-reveal-d3">
             <h3>Ongoing support (optional)</h3>
             <p>
               If you want continued guidance, we can provide advisory check-ins as the facility grows and changes.
@@ -522,7 +534,7 @@ CONSULTING_LINK
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>The consulting phases</h2>
+            <h2 class="mbs3-reveal">The consulting phases</h2>
             <p>
               This is the structure Cam described: a phased approach. We keep the website simple — the details are covered in the consulting deck and during your consult.
             </p>
@@ -530,17 +542,17 @@ CONSULTING_LINK
         </div>
 
         <div class="phases">
-          <div class="phase">
+          <div class="phase mbs3-reveal mbs3-reveal-d1">
             <div class="phaseTop"><div class="numBox">01</div><div class="tagPill">Start</div></div>
             <b>Facility plan + licensing path</b>
             <span>Clarify the facility direction and map the licensing path (what to do first, what to avoid, what timing looks like).</span>
           </div>
-          <div class="phase">
+          <div class="phase mbs3-reveal mbs3-reveal-d2">
             <div class="phaseTop"><div class="numBox">02</div><div class="tagPill">Operate</div></div>
             <b>Operations & readiness</b>
             <span>Build the systems that make the facility run: roles, routines, documentation readiness, and a repeatable operating rhythm.</span>
           </div>
-          <div class="phase">
+          <div class="phase mbs3-reveal mbs3-reveal-d3">
             <div class="phaseTop"><div class="numBox">03</div><div class="tagPill">Sustain</div></div>
             <b>Sustain and improve</b>
             <span>Help you maintain consistency over time and improve outcomes as the facility grows (including ALW alignment if relevant).</span>
@@ -588,7 +600,7 @@ CONSULTING_LINK
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>What you’ll get</h2>
+            <h2 class="mbs3-reveal">What you’ll get</h2>
             <p>
               Tangible outputs — so you’re not leaving with “more information,” you’re leaving with a plan you can follow.
             </p>
@@ -633,7 +645,7 @@ CONSULTING_LINK
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Who this is for</h2>
+            <h2 class="mbs3-reveal">Who this is for</h2>
             <p>
               RCFE consulting is best for operators who want a real plan and guidance — not just a quick opinion.
             </p>
@@ -667,7 +679,7 @@ CONSULTING_LINK
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Book an RCFE Consulting Call</h2>
+            <h2 class="mbs3-reveal">Book an RCFE Consulting Call</h2>
             <p>We’ll clarify your situation and map the cleanest next steps.</p>
           </div>
         </div>
@@ -716,7 +728,7 @@ CONSULTING_LINK
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>FAQs</h2>
+            <h2 class="mbs3-reveal">FAQs</h2>
             <p>Short answers to common questions.</p>
           </div>
         </div>
@@ -871,6 +883,16 @@ CONSULTING_LINK
       });
     });
   })();
+</script>
+<script>
+(function(){
+  var els=document.querySelectorAll('.mbs3-reveal');
+  if(!els.length)return;
+  var io=new IntersectionObserver(function(entries,obs){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');obs.unobserve(e.target);}});
+  },{threshold:0.12});
+  els.forEach(function(el){io.observe(el);});
+})();
 </script>
 <style>
 #mbConsultModal .mb-modal__dialog{

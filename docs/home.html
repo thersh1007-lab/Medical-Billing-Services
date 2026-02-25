@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Medical Billing Services | California ALW Billing for RCFE &amp; ARF</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-</head>
-<body>
 <!-- =========================================================
 MEDBILLINGCO.COM — HOMEPAGE (CLEAN / GREEN / FULL-WIDTH) — v3
 Single-file paste for GoHighLevel (one Custom Code block)
@@ -54,9 +43,9 @@ Quick edits (search these):
     --muted:rgba(11,18,32,.68);
     --line:rgba(11,18,32,.10);
 
-    --accent:#168a5b;          /* primary green */
-    --accent-2:#0f6e48;        /* darker */
-    --pill:rgba(22,138,91,.10);
+    --accent:#0f6d4c;          /* primary green */
+    --accent-2:#0b5a3e;        /* darker */
+    --pill:rgba(15,109,76,.10);
 
     --radius-xl:28px;
     --radius-lg:20px;
@@ -67,11 +56,11 @@ Quick edits (search these):
 
     --max:1180px;
     --pad:24px;
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     color:var(--ink);
     background:
-      radial-gradient(900px 420px at 10% 0%, rgba(22,138,91,.14), transparent 60%),
-      radial-gradient(700px 360px at 65% 12%, rgba(22,138,91,.10), transparent 55%),
+      radial-gradient(900px 420px at 10% 0%, rgba(15,109,76,.14), transparent 60%),
+      radial-gradient(700px 360px at 65% 12%, rgba(15,109,76,.10), transparent 55%),
       linear-gradient(#ffffff, var(--bg));
   }
 
@@ -129,8 +118,8 @@ Quick edits (search these):
     width:38px; height:38px;
     border-radius:12px;
     display:grid; place-items:center;
-    background:rgba(22,138,91,.12);
-    border:1px solid rgba(22,138,91,.20);
+    background:rgba(15,109,76,.12);
+    border:1px solid rgba(15,109,76,.20);
     color:var(--accent);
     font-weight:900;
     letter-spacing:.5px;
@@ -180,7 +169,7 @@ Quick edits (search these):
   .mbs3-dot{
     width:10px; height:10px; border-radius:99px;
     background:var(--accent);
-    box-shadow:0 0 0 6px rgba(22,138,91,.14);
+    box-shadow:0 0 0 6px rgba(15,109,76,.14);
   }
 
   .mbs3-btn{
@@ -199,7 +188,7 @@ Quick edits (search these):
   .mbs3-btn:hover{ transform: translateY(-1px); box-shadow: var(--shadow-soft); }
   .mbs3-btn--primary{
     background:var(--accent);
-    border-color:rgba(22,138,91,.35);
+    border-color:rgba(15,109,76,.35);
     color:#fff;
   }
   .mbs3-btn--primary:hover{ background:var(--accent-2); }
@@ -261,7 +250,7 @@ Quick edits (search these):
     padding:8px 12px;
     border-radius:999px;
     background:var(--pill);
-    border:1px solid rgba(22,138,91,.18);
+    border:1px solid rgba(15,109,76,.18);
     color:var(--accent);
     font-weight:900;
     font-size:13px;
@@ -401,8 +390,8 @@ Quick edits (search these):
     outline:none;
   }
   .mbs3-input:focus{
-    border-color: rgba(22,138,91,.45);
-    box-shadow: 0 0 0 6px rgba(22,138,91,.12);
+    border-color: rgba(15,109,76,.45);
+    box-shadow: 0 0 0 6px rgba(15,109,76,.12);
   }
   .mbs3-small{
     font-size:12.5px;
@@ -462,9 +451,9 @@ Quick edits (search these):
   .mbs3-final-card{
     border-radius:var(--radius-xl);
     padding:34px;
-    border:1px solid rgba(22,138,91,.20);
+    border:1px solid rgba(15,109,76,.20);
     background:
-      radial-gradient(900px 340px at 18% 0%, rgba(22,138,91,.22), transparent 60%),
+      radial-gradient(900px 340px at 18% 0%, rgba(15,109,76,.22), transparent 60%),
       rgba(255,255,255,.78);
     box-shadow: var(--shadow);
     display:flex;
@@ -483,6 +472,39 @@ Quick edits (search these):
     color:rgba(11,18,32,.62);
     font-size:13.5px;
   }
+
+  /* ===================== SCROLL REVEAL ===================== */
+  .mbs3-reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease;}
+  .mbs3-reveal.is-visible{opacity:1;transform:none;}
+  .mbs3-reveal-d1{transition-delay:.12s;}
+  .mbs3-reveal-d2{transition-delay:.24s;}
+  .mbs3-reveal-d3{transition-delay:.36s;}
+  @media(prefers-reduced-motion:reduce){.mbs3-reveal{opacity:1;transform:none;transition:none;}}
+
+  /* ===================== FAQ CHEVRON ===================== */
+  details.mbs3-faqitem summary{list-style:none;cursor:pointer;padding-right:30px;position:relative;}
+  details.mbs3-faqitem summary::-webkit-details-marker{display:none;}
+  details.mbs3-faqitem summary::after{content:'+';position:absolute;right:0;top:0;font-size:20px;font-weight:300;opacity:.45;transition:transform .22s ease;}
+  details.mbs3-faqitem[open] summary::after{transform:rotate(45deg);}
+  details.mbs3-faqitem .mbs3-faqbody{animation:faqOpen .25s ease;}
+  @keyframes faqOpen{from{opacity:0;transform:translateY(-5px);}to{opacity:1;transform:none;}}
+
+  /* ===================== TESTIMONIALS ===================== */
+  .mbs3-stars{color:#f59e0b;font-size:15px;letter-spacing:1px;margin-bottom:10px;}
+  .mbs3-quote-author{margin-top:14px;padding-top:12px;border-top:1px solid rgba(11,18,32,.08);}
+  .mbs3-quote-author b{display:block;font-weight:800;font-size:14px;color:var(--ink);}
+  .mbs3-quote-author span{display:block;font-size:12px;color:var(--muted);margin-top:2px;}
+
+  /* ===================== KAM'S CORNER ===================== */
+  .mbs3-kam{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;}
+  .mbs3-kam-avatar{width:72px;height:72px;border-radius:20px;background:rgba(15,109,76,.12);border:1px solid rgba(15,109,76,.20);display:grid;place-items:center;font-size:22px;font-weight:900;color:var(--accent);flex-shrink:0;}
+  .mbs3-kam-label{font-size:11px;font-weight:900;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
+  .mbs3-kam-name{font-size:20px;font-weight:900;letter-spacing:-.02em;margin:0 0 2px;}
+  .mbs3-kam-title{font-size:13px;color:var(--muted);margin:0 0 14px;}
+  .mbs3-kam-bio{font-size:14.5px;line-height:1.65;color:rgba(11,18,32,.74);margin:0 0 14px;}
+  .mbs3-kam-tip{padding:13px 15px;border-radius:14px;background:var(--pill);border:1px solid rgba(15,109,76,.18);font-size:13.5px;line-height:1.6;color:rgba(11,18,32,.78);}
+  .mbs3-kam-tip b{color:var(--accent);}
+  @media(max-width:560px){.mbs3-kam{grid-template-columns:1fr;}.mbs3-kam-avatar{width:56px;height:56px;font-size:18px;}}
 
   /* ===================== RESPONSIVE ===================== */
   @media (max-width: 980px){
@@ -505,133 +527,6 @@ Quick edits (search these):
     .mbs3-header-actions{ gap:10px; }
     .mbs3-phone{ display:none; } /* keep header clean on very small screens */
   }
-
-  /* ========= POLISH PACK: ANIMATIONS + ENHANCEMENTS ========= */
-  /* Scroll Reveal */
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
-  .reveal.visible{opacity:1;transform:none}
-  .reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
-
-  /* Hero Gradient accent */
-  .heroGradient{
-    background:linear-gradient(135deg,var(--accent) 0%,#0a5c3a 100%);
-    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  }
-
-  /* Card + tile hover lift */
-  @media(hover:hover){
-    .mbs3-card,.mbs3-tile,.mbs3-quote{transition:transform .18s ease,box-shadow .18s ease}
-    .mbs3-card:hover,.mbs3-tile:hover,.mbs3-quote:hover{
-      transform:translateY(-3px);box-shadow:0 24px 60px rgba(11,18,32,.13);
-    }
-  }
-
-  /* Nav link transition */
-  .mbs3-nav a{transition:background .15s ease,color .15s ease}
-
-  /* FAQ chevron + reveal animation */
-  details.mbs3-faqitem summary{position:relative;padding-right:28px}
-  details.mbs3-faqitem summary::after{
-    content:'+';position:absolute;right:4px;top:0;
-    transition:transform .2s ease;font-weight:400;opacity:.65;font-size:18px;line-height:1.2;
-  }
-  details.mbs3-faqitem[open] summary::after{transform:rotate(45deg)}
-  details.mbs3-faqitem .mbs3-faqbody{animation:faqReveal .28s ease}
-  @keyframes faqReveal{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
-
-  /* Testimonials: stars + role label */
-  .mbs3-stars{color:#f59e0b;font-size:14px;letter-spacing:2px;margin-bottom:8px}
-  .mbs3-quote-role{display:block;margin-top:4px;font-size:12px;color:rgba(11,18,32,.45);font-weight:600}
-
-  /* Stat Bar */
-  .mbs3-statbar{padding:0 0 32px}
-  .mbs3-stats{
-    display:grid;grid-template-columns:repeat(4,1fr);
-    background:rgba(255,255,255,.85);border:1px solid rgba(11,18,32,.08);
-    border-radius:20px;box-shadow:0 12px 32px rgba(11,18,32,.06);overflow:hidden;
-  }
-  .mbs3-stat{
-    padding:22px 16px;text-align:center;
-    border-right:1px solid rgba(11,18,32,.06);
-  }
-  .mbs3-stat:last-child{border-right:0}
-  .mbs3-stat-num{
-    font-size:36px;font-weight:900;letter-spacing:-1.2px;
-    color:var(--accent);line-height:1;margin-bottom:6px;
-  }
-  .mbs3-stat-label{font-size:12.5px;color:rgba(11,18,32,.55);font-weight:700;line-height:1.4}
-  @media(max-width:640px){
-    .mbs3-stats{grid-template-columns:repeat(2,1fr)}
-    .mbs3-stat:nth-child(2){border-right:0}
-    .mbs3-stat:nth-child(n+3){border-top:1px solid rgba(11,18,32,.06)}
-  }
-
-  /* Kam's Corner */
-  .mbs3-kam{display:grid;grid-template-columns:110px 1fr;gap:20px;align-items:center}
-  .mbs3-kam-avatar{
-    width:110px;height:110px;border-radius:24px;flex:0 0 auto;
-    background:linear-gradient(135deg,rgba(22,138,91,.18),rgba(22,138,91,.08));
-    border:2px solid rgba(22,138,91,.22);
-    display:flex;align-items:center;justify-content:center;
-    font-size:34px;font-weight:900;color:var(--accent);
-  }
-  .mbs3-kam h3{margin:0 0 3px;font-size:19px;letter-spacing:-.3px}
-  .mbs3-kam-title{font-size:12.5px;color:rgba(11,18,32,.52);font-weight:700;margin:0 0 10px;display:block}
-  .mbs3-kam p{margin:0;color:rgba(11,18,32,.66);line-height:1.7;font-size:14.5px}
-  .mbs3-kam-tips{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px;
-  }
-  .mbs3-kam-tip{
-    padding:12px 14px;border-radius:14px;border:1px solid rgba(22,138,91,.14);
-    background:rgba(22,138,91,.06);font-size:13px;color:rgba(11,18,32,.72);line-height:1.55;
-  }
-  .mbs3-kam-tip b{display:block;color:var(--accent);font-size:12px;margin-bottom:4px;font-weight:900;text-transform:uppercase;letter-spacing:.5px}
-  @media(max-width:760px){.mbs3-kam-tips{grid-template-columns:1fr}}
-  @media(max-width:560px){.mbs3-kam{grid-template-columns:1fr;text-align:center}.mbs3-kam-avatar{margin:0 auto}}
-
-  /* ===================== MOBILE OPTIMIZATIONS ===================== */
-  /* Tighter shell padding on small phones */
-  @media(max-width:480px){
-    .mbs3{--pad:16px}
-  }
-  /* ≤640px core mobile pass */
-  @media(max-width:640px){
-    .mbs3-topbar{display:none}                    /* sticky CTA replaces this */
-    .mbs3-hero-right{display:none}                /* drop hero image — text gets full width */
-    .mbs3-hero-grid{grid-template-columns:1fr !important}
-    .mbs3-section{padding:36px 0}
-    .mbs3-final{padding:36px 0 52px}
-    .mbs3-final-card{flex-direction:column;padding:24px 20px;gap:16px}
-    .mbs3-final-card h2{font-size:24px}
-    .mbs3-footer{padding-bottom:84px}             /* room for sticky CTA */
-  }
-  @media(max-width:400px){
-    .mbs3-h1{font-size:34px}
-    .mbs3-stat-num{font-size:28px}
-    .mbs3-stat{padding:16px 10px}
-  }
-
-  /* Mobile sticky CTA bar */
-  .mbs3-stickyCta{
-    display:none;
-    position:fixed;left:0;right:0;bottom:0;z-index:80;
-    padding:10px 20px 16px;
-    background:rgba(255,255,255,.96);
-    backdrop-filter:blur(14px);
-    border-top:1px solid rgba(11,18,32,.10);
-    box-shadow:0 -8px 28px rgba(11,18,32,.10);
-  }
-  @media(max-width:640px){.mbs3-stickyCta{display:block}}
-  .mbs3-stickyCta-inner{display:flex;align-items:center;justify-content:space-between;gap:14px}
-  .mbs3-stickyCta-text{font-size:13px;font-weight:700;color:rgba(11,18,32,.68);line-height:1.35}
-
-  /* Wave section dividers */
-  .mbs3 .mbs3-wave{height:44px;margin:-14px 0 -18px;pointer-events:none;position:relative;z-index:1}
-  .mbs3 .mbs3-wave svg{width:100%;height:100%;display:block}
-  .mbs3 .mbs3-wave.toWhite path{fill:#ffffff}
-  .mbs3 .mbs3-wave.toSoft path{fill:var(--bg)}
-  .mbs3 .mbs3-section--white{background:#ffffff}
-  .mbs3 .mbs3-section--soft{background:var(--bg)}
 </style>
 
 <div class="mbs3" id="top">
@@ -662,7 +557,18 @@ Quick edits (search these):
           </div>
         </a>
 
+        <nav class="mbs3-nav" aria-label="Primary">
+          <a href="#services">Services</a>
+          <a href="#difference">Why this feels different</a>
+          <a href="#resources">Resources</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
         <div class="mbs3-header-actions">
+          <a class="mbs3-menu-btn mbs3-btn" href="javascript:void(0)" aria-label="Open menu" data-mbs3-menu>
+            Menu
+          </a>
+
           <a class="mbs3-phone mbs3-phone-link" href="#" data-phone="{{custom_values.companyphone_display}}">
             <span class="mbs3-dot" aria-hidden="true"></span>
             <span>{{custom_values.companyphone_display}}</span>
@@ -672,6 +578,15 @@ Quick edits (search these):
         </div>
       </div>
 
+      <!-- MOBILE MENU PANEL -->
+      <div class="mbs3-menu-panel" data-mbs3-panel>
+        <a href="#services">Services</a>
+        <a href="#difference">Why this feels different</a>
+        <a href="#resources">Resources</a>
+        <a href="#checklist">Checklist</a>
+        <a href="#faq">FAQ</a>
+        <a href="BOOKING_LINK">Book a consult</a>
+      </div>
     </div>
   </header>
 
@@ -686,7 +601,7 @@ Quick edits (search these):
               California ALW + RCFE/ARF support
             </div>
 
-            <h1 class="mbs3-h1">Clarity, structure, and execution for owners navigating <span class="heroGradient">ALW</span>.</h1>
+            <h1 class="mbs3-h1">Clarity, structure, and execution for owners navigating ALW.</h1>
 
             <p class="mbs3-lede">
               If you’re running (or starting) an RCFE/ARF and you want fewer surprises, cleaner next steps,
@@ -743,39 +658,8 @@ Quick edits (search these):
     </div>
   </section>
 
-  <!-- STAT BAR -->
-  <div class="mbs3-statbar">
-    <div class="mbs3-shell">
-      <div class="mbs3-stats reveal" id="mbs3-stats">
-        <div class="mbs3-stat">
-          <div class="mbs3-stat-num" data-count="15" data-suffix="+">15+</div>
-          <div class="mbs3-stat-label">Years operator experience</div>
-        </div>
-        <div class="mbs3-stat">
-          <div class="mbs3-stat-num" data-count="200" data-suffix="+">200+</div>
-          <div class="mbs3-stat-label">Providers supported</div>
-        </div>
-        <div class="mbs3-stat">
-          <div class="mbs3-stat-num" data-count="22" data-suffix=" days">22 days</div>
-          <div class="mbs3-stat-label">Avg. AR days achieved</div>
-        </div>
-        <div class="mbs3-stat">
-          <div class="mbs3-stat-num" data-count="1" data-prefix="$" data-suffix=".5M+">$1.5M+</div>
-          <div class="mbs3-stat-label">Billed monthly for providers</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Wave: gradient → white -->
-  <div class="mbs3-wave toWhite" aria-hidden="true">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-    </svg>
-  </div>
-
   <!-- WHY DIFFERENT -->
-  <section class="mbs3-section mbs3-section--white" id="difference">
+  <section class="mbs3-section" id="difference">
     <div class="mbs3-shell">
       <h2>Why this feels different</h2>
       <p class="mbs3-sub">
@@ -806,7 +690,7 @@ Quick edits (search these):
   </section>
 
   <!-- RESOURCES -->
-  <section class="mbs3-section mbs3-section--white" id="resources" style="padding-top:0;">
+  <section class="mbs3-section" id="resources" style="padding-top:0;">
     <div class="mbs3-shell">
       <h2>Resources</h2>
       <p class="mbs3-sub">
@@ -833,15 +717,8 @@ Quick edits (search these):
     </div>
   </section>
 
-  <!-- Wave: white → soft -->
-  <div class="mbs3-wave toSoft" aria-hidden="true">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path d="M0,64 C240,128 480,128 720,64 C960,0 1200,0 1440,64 L1440,120 L0,120 Z"></path>
-    </svg>
-  </div>
-
   <!-- CHECKLIST / LEAD MAGNET -->
-  <section class="mbs3-section mbs3-section--soft" id="checklist">
+  <section class="mbs3-section" id="checklist">
     <div class="mbs3-shell">
       <h2>Free ALW readiness checklist</h2>
       <p class="mbs3-sub">
@@ -881,82 +758,65 @@ Quick edits (search these):
     </div>
   </section>
 
-  <!-- Wave: soft → white -->
-  <div class="mbs3-wave toWhite" aria-hidden="true">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-    </svg>
-  </div>
-
   <!-- TESTIMONIALS -->
-  <section class="mbs3-section mbs3-section--white">
-    <div class="mbs3-shell">
-      <h2>Owners choose us for follow-through</h2>
-      <p class="mbs3-sub">A calm, structured process — so you’re not carrying everything alone.</p>
+  <section class=”mbs3-section” style=”padding-top:0;”>
+    <div class=”mbs3-shell”>
+      <h2 class=”mbs3-reveal”>Owners choose us for follow-through</h2>
+      <p class=”mbs3-sub mbs3-reveal”>A calm, structured process — so you’re not carrying everything alone.</p>
 
       <div class=”mbs3-quotes”>
-        <div class=”mbs3-quote reveal reveal-d1”>
-          <div class=”mbs3-stars”>★★★★★</div>
-          <p>”We finally had a clear plan and the process stopped feeling chaotic. Our AR days dropped from 67 to 22.”</p>
-          <b>RCFE Administrator</b>
-          <span class=”mbs3-quote-role”>32-bed facility, Riverside County</span>
+        <div class=”mbs3-quote mbs3-reveal mbs3-reveal-d1”>
+          <div class=”mbs3-stars” aria-label=”5 stars”>★★★★★</div>
+          <p>”We finally had a clear plan and the process stopped feeling chaotic. Our denials dropped significantly within the first 90 days.”</p>
+          <div class=”mbs3-quote-author”>
+            <b>Maria L.</b>
+            <span>RCFE Administrator · 28-bed facility, Sacramento</span>
+          </div>
         </div>
-        <div class=”mbs3-quote reveal reveal-d2”>
-          <div class=”mbs3-stars”>★★★★★</div>
-          <p>”The checklist alone saved us weeks of back-and-forth with the state. The sequencing advice was exactly what we needed.”</p>
-          <b>ARF Operator</b>
-          <span class=”mbs3-quote-role”>Adult Residential Facility, San Bernardino</span>
+        <div class=”mbs3-quote mbs3-reveal mbs3-reveal-d2”>
+          <div class=”mbs3-stars” aria-label=”5 stars”>★★★★★</div>
+          <p>”The checklist alone saved us weeks of back-and-forth with the licensing office. We knew exactly what was needed and when.”</p>
+          <div class=”mbs3-quote-author”>
+            <b>David R.</b>
+            <span>ALW Provider · 16-bed facility, Los Angeles</span>
+          </div>
         </div>
-        <div class=”mbs3-quote reveal reveal-d3”>
-          <div class=”mbs3-stars”>★★★★★</div>
-          <p>”Fast answers, realistic next steps, and real follow-through — not just a call where someone reads off a checklist.”</p>
-          <b>Provider Operator</b>
-          <span class=”mbs3-quote-role”>RCFE startup, licensing + ALW track</span>
+        <div class=”mbs3-quote mbs3-reveal mbs3-reveal-d3”>
+          <div class=”mbs3-stars” aria-label=”5 stars”>★★★★★</div>
+          <p>”Fast answers, realistic next steps, and real follow-through. We stopped guessing and started collecting what we were owed.”</p>
+          <div class=”mbs3-quote-author”>
+            <b>Sandra K.</b>
+            <span>RCFE Operator · Multi-facility, San Diego</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- KAM’S CORNER -->
-  <section class="mbs3-section mbs3-section--white" style="padding-top:0;">
+  <section class="mbs3-section" style="padding-top:0;">
     <div class="mbs3-shell">
-      <div class="mbs3-card reveal">
-        <h2 style="margin:0 0 18px;">Kam’s Corner</h2>
+      <div class="mbs3-card mbs3-reveal">
         <div class="mbs3-kam">
-          <div class="mbs3-kam-avatar" aria-hidden="true">KH</div>
+          <div class="mbs3-kam-avatar" aria-hidden="true">KA</div>
           <div>
-            <h3 class="mbs3-kam-name" style="margin:0 0 3px;">Kamil Hershberger</h3>
-            <span class="mbs3-kam-title">Operator · ALW Billing Specialist · 15+ Years California RCFE/ARF</span>
-            <p>
-              I’ve been on both sides of the ALW process — as an operator and as the person helping others navigate it.
-              The problems that slow people down are almost always the same: unclear sequencing, documentation that doesn’t match what reviewers expect,
-              and no one to give you a straight answer. That’s exactly what I’ve built this practice to fix.
+            <div class="mbs3-kam-label">Kam’s Corner</div>
+            <div class="mbs3-kam-name">Kamil A.</div>
+            <div class="mbs3-kam-title">Founder · RCFE &amp; ALW Operations Specialist</div>
+            <p class="mbs3-kam-bio">
+              I spent years on the operator side — navigating licensing delays, chasing down denied claims, and trying to make sense of a system that wasn’t built to be straightforward. That experience is what drives how we work. We don’t just process paperwork. We treat every file like it belongs to our own facility.
             </p>
+            <div class="mbs3-kam-tip">
+              <b>Quick tip:</b> The most common reason ALW billing gets stuck isn’t a documentation problem — it’s a follow-up timing problem. If you’re not acting on every open claim within 72 hours of a status change, you’re losing revenue you’ve already earned.
+            </div>
           </div>
-        </div>
-        <div class="mbs3-kam-tips">
-          <div class="mbs3-kam-tip">
-            <b>On billing delays</b>
-            The #1 cause of AR problems isn’t coding errors — it’s missing authorization documentation that was never flagged until claim time.
-          </div>
-          <div class="mbs3-kam-tip">
-            <b>On licensing timing</b>
-            RCFE licensing and ALW readiness have to be sequenced correctly. Starting ALW too early costs owners 3–6 months of rework.
-          </div>
-          <div class="mbs3-kam-tip">
-            <b>On follow-through</b>
-            Most providers have a biller. What they don’t have is someone who surfaces issues before they become denials.
-          </div>
-        </div>
-        <div style="margin-top:16px">
-          <a class="mbs3-btn mbs3-btn--primary" href="BOOKING_LINK">Book a consult with Kamil</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="mbs3-section mbs3-section--white" id="faq" style="padding-top:0;">
+  <section class="mbs3-section" id="faq" style="padding-top:0;">
     <div class="mbs3-shell">
       <h2>FAQ</h2>
       <p class="mbs3-sub">If you don’t see your question here, book a consult and we’ll route you quickly.</p>
@@ -986,15 +846,8 @@ Quick edits (search these):
     </div>
   </section>
 
-  <!-- Wave: white → soft -->
-  <div class="mbs3-wave toSoft" aria-hidden="true">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path d="M0,64 C240,128 480,128 720,64 C960,0 1200,0 1440,64 L1440,120 L0,120 Z"></path>
-    </svg>
-  </div>
-
   <!-- FINAL CTA -->
-  <section class="mbs3-final mbs3-section--soft">
+  <section class="mbs3-final">
     <div class="mbs3-shell">
       <div class="mbs3-final-card">
         <div>
@@ -1011,14 +864,6 @@ Quick edits (search these):
       </div>
     </div>
   </section>
-
-  <!-- MOBILE STICKY CTA -->
-  <div class="mbs3-stickyCta" aria-label="Mobile booking bar">
-    <div class="mbs3-stickyCta-inner">
-      <div class="mbs3-stickyCta-text">Ready to simplify your<br>ALW process?</div>
-      <a class="mbs3-btn mbs3-btn--primary" href="BOOKING_LINK">Book a consult</a>
-    </div>
-  </div>
 
   <!-- FOOTER -->
   <footer class="mbs3-footer">
@@ -1068,6 +913,18 @@ Quick edits (search these):
     var y = document.getElementById('mbs3-year');
     if(y){ y.textContent = new Date().getFullYear(); }
 
+    // Scroll reveal
+    (function(){
+      var els = document.querySelectorAll('.mbs3-reveal');
+      if(!els.length) return;
+      var io = new IntersectionObserver(function(entries, obs){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function(el){ io.observe(el); });
+    })();
+
     // Smooth scroll for in-page anchors
     document.querySelectorAll('.mbs3 a[href^="#"]').forEach(function(a){
       a.addEventListener('click', function(e){
@@ -1079,54 +936,5 @@ Quick edits (search these):
         el.scrollIntoView({behavior:'smooth', block:'start'});
       });
     });
-
-    // === SCROLL REVEAL ===
-    (function(){
-      var els = document.querySelectorAll('.mbs3-card, .mbs3-tile, .mbs3-quote, .mbs3-faqitem, .mbs3-section h2, .mbs3-final-card, .mbs3-stats');
-      els.forEach(function(el){ if(!el.classList.contains('reveal')) el.classList.add('reveal'); });
-      var obs = new IntersectionObserver(function(entries, ob){
-        entries.forEach(function(e){
-          if(e.isIntersecting){ e.target.classList.add('visible'); ob.unobserve(e.target); }
-        });
-      }, {threshold:0.10});
-      document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
-    })();
-
-    // === COUNT-UP ANIMATION ===
-    (function(){
-      var statsEl = document.getElementById('mbs3-stats');
-      if(!statsEl) return;
-      var fired = false;
-      function runCountUp(){
-        if(fired) return; fired = true;
-        statsEl.querySelectorAll('.mbs3-stat-num[data-count]').forEach(function(el){
-          var end = parseFloat(el.getAttribute('data-count'));
-          var prefix = el.getAttribute('data-prefix') || '';
-          var suffix = el.getAttribute('data-suffix') || '';
-          var duration = 1000;
-          var startTime = null;
-          function animate(ts){
-            if(!startTime) startTime = ts;
-            var progress = Math.min((ts - startTime) / duration, 1);
-            var eased = 1 - Math.pow(1 - progress, 3);
-            var current = Math.round(eased * end);
-            // Special case for $1.5M+
-            if(prefix === '$' && suffix === '.5M+'){
-              el.textContent = (progress >= 1) ? '$1.5M+' : '$' + current;
-            } else {
-              el.textContent = prefix + current + suffix;
-            }
-            if(progress < 1) requestAnimationFrame(animate);
-          }
-          requestAnimationFrame(animate);
-        });
-      }
-      var obs = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){ if(e.isIntersecting) runCountUp(); });
-      }, {threshold:0.3});
-      obs.observe(statsEl);
-    })();
   })();
 </script>
-</body>
-</html>

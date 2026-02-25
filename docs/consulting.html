@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RCFE Consulting | Medical Billing Services</title>
-</head>
-<body>
 <style id="mbs3-polish-pack">
   /* ============================
      MBS3 POLISH PACK (Elevated)
@@ -409,93 +401,22 @@ CONSULTING_LINK
     .mbsConsultV2 main{padding-bottom:74px}
   }
   @media (prefers-reduced-motion: reduce){ .mbsConsultV2 .btn{transition:none} }
-
-  /* ========= POLISH PACK ========= */
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
-  .reveal.visible{opacity:1;transform:none}
-  .reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
-
-  /* Hero gradient */
-  .heroGradient{
-    background:linear-gradient(135deg,rgba(255,255,255,1) 40%,rgba(255,255,255,.70));
-    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  }
-
-  /* Card + phase hover lift */
-  @media(hover:hover){
-    .mbsConsultV2 .card,.mbsConsultV2 .phase{transition:transform .18s ease,box-shadow .18s ease}
-    .mbsConsultV2 .card:hover,.mbsConsultV2 .phase:hover{
-      transform:translateY(-3px);box-shadow:0 24px 60px rgba(2,6,23,.13);
-    }
-  }
-
-  /* Nav transition */
-  .mbsConsultV2 .menu>a,.mbsConsultV2 .dd>button{transition:background .15s ease,color .15s ease}
-
-  /* FAQ chevron + reveal */
-  .mbsConsultV2 summary{position:relative;padding-right:28px}
-  .mbsConsultV2 summary::after{
-    content:'+';position:absolute;right:4px;top:0;
-    transition:transform .2s ease;font-weight:400;opacity:.65;font-size:18px;line-height:1.2;
-  }
-  .mbsConsultV2 details[open] summary::after{transform:rotate(45deg)}
-  .mbsConsultV2 details p{animation:faqRevealC .28s ease}
-  @keyframes faqRevealC{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  /* SCROLL REVEAL */
+  .mbs3-reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease;}
+  .mbs3-reveal.is-visible{opacity:1;transform:none;}
+  .mbs3-reveal-d1{transition-delay:.12s;} .mbs3-reveal-d2{transition-delay:.24s;} .mbs3-reveal-d3{transition-delay:.36s;}
+  @media(prefers-reduced-motion:reduce){.mbs3-reveal{opacity:1;transform:none;transition:none;}}
+  /* FAQ CHEVRON */
+  .mbsConsultV2 details summary{list-style:none;cursor:pointer;padding-right:30px;position:relative;}
+  .mbsConsultV2 details summary::-webkit-details-marker{display:none;}
+  .mbsConsultV2 details summary::after{content:'+';position:absolute;right:0;top:0;font-size:20px;font-weight:300;opacity:.45;transition:transform .22s ease;}
+  .mbsConsultV2 details[open] summary::after{transform:rotate(45deg);}
+  .mbsConsultV2 details > *:not(summary){animation:faqOpen .25s ease;}
+  @keyframes faqOpen{from{opacity:0;transform:translateY(-5px);}to{opacity:1;transform:none;}}
 </style>
 
 <div class="mbsConsultV2" id="top">
   <!-- HEADER -->
-  <header class="hdr" role="banner">
-    <div class="wrap">
-      <div class="nav">
-        <a class="brand" href="HOME_LINK" aria-label="Medical Billing Services home">
-          <img src="https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-4897-994e-1ec4194e612d.png" alt="Medical Billing Services logo">
-        </a>
-
-        <button class="mToggle" type="button" aria-controls="primaryNav" aria-expanded="false">Menu</button>
-
-        <nav class="menu" id="primaryNav" aria-label="Primary navigation">
-          <a href="ALW_BILLING_LINK">ALW Billing</a>
-
-          <div class="dd" aria-label="Licensing dropdown">
-            <button class="ddBtn" type="button" aria-haspopup="true" aria-expanded="false">
-              Licensing
-              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" style="opacity:.8;transform:translateY(1px)">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-            <div class="panel" role="menu" aria-label="Licensing options">
-              <a href="STATE_LIC_RCFE_LINK">
-                <div>
-                  <div>RCFE</div>
-                  <div class="mini">Residential Care Facility for the Elderly</div>
-                </div>
-              </a>
-              <a href="STATE_LIC_ARF_LINK">
-                <div>
-                  <div>ARF</div>
-                  <div class="mini">Adult Residential Facility</div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <a href="ALW_APP_LINK">ALW Application</a>
-          <a href="ALW_FUNDING_LINK">Increase Funding</a>
-          <a class="active" href="CONSULTING_LINK">RCFE Consulting</a>
-        </nav>
-
-        <div class="hdrCtas">
-          <a class="phonePill" href="tel:{{custom_values.companyphone_display}}">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 13 19.79 19.79 0 0 1 1 4.18 2 2 0 0 1 2.98 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 17l.92-.08z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            {{custom_values.companyphone_display}}
-          </a>
-          <a class="btn primary" href="BOOKING_LINK_CONSULT">Book a Consulting Call</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
   <main>
     <!-- HERO -->
     <section class="hero" aria-label="RCFE consulting hero">
@@ -508,7 +429,7 @@ CONSULTING_LINK
             <div style="max-width:960px">
               <div class="pill"><span class="dot"></span> RCFE Consulting (California) • roadmap + phases</div>
 
-              <h1>RCFE consulting: build the roadmap, then <span class="heroGradient">execute it</span>.</h1>
+              <h1>RCFE consulting: build the roadmap, then execute it.</h1>
 
               <p>
                 This is not a one-call “quick fix.”
@@ -561,7 +482,7 @@ CONSULTING_LINK
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>What RCFE consulting means here</h2>
+            <h2 class="mbs3-reveal">What RCFE consulting means here</h2>
             <p>
               We explain it simply: we help you build a plan, then guide you through execution.
               It’s detailed behind the scenes, but easy to understand.
@@ -570,19 +491,19 @@ CONSULTING_LINK
         </div>
 
         <div class="tri">
-          <div class="card">
+          <div class="card mbs3-reveal mbs3-reveal-d1">
             <h3>Roadmap + consulting deck</h3>
             <p>
               You get a clear roadmap and a PowerPoint-style deck that lays out the phases, priorities, and what to do next.
             </p>
           </div>
-          <div class="card">
+          <div class="card mbs3-reveal mbs3-reveal-d2">
             <h3>Guided execution</h3>
             <p>
               We help you move step-by-step so you don’t waste time doing the wrong tasks first.
             </p>
           </div>
-          <div class="card">
+          <div class="card mbs3-reveal mbs3-reveal-d3">
             <h3>Ongoing support (optional)</h3>
             <p>
               If you want continued guidance, we can provide advisory check-ins as the facility grows and changes.
@@ -613,7 +534,7 @@ CONSULTING_LINK
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>The consulting phases</h2>
+            <h2 class="mbs3-reveal">The consulting phases</h2>
             <p>
               This is the structure Cam described: a phased approach. We keep the website simple — the details are covered in the consulting deck and during your consult.
             </p>
@@ -621,17 +542,17 @@ CONSULTING_LINK
         </div>
 
         <div class="phases">
-          <div class="phase">
+          <div class="phase mbs3-reveal mbs3-reveal-d1">
             <div class="phaseTop"><div class="numBox">01</div><div class="tagPill">Start</div></div>
             <b>Facility plan + licensing path</b>
             <span>Clarify the facility direction and map the licensing path (what to do first, what to avoid, what timing looks like).</span>
           </div>
-          <div class="phase">
+          <div class="phase mbs3-reveal mbs3-reveal-d2">
             <div class="phaseTop"><div class="numBox">02</div><div class="tagPill">Operate</div></div>
             <b>Operations & readiness</b>
             <span>Build the systems that make the facility run: roles, routines, documentation readiness, and a repeatable operating rhythm.</span>
           </div>
-          <div class="phase">
+          <div class="phase mbs3-reveal mbs3-reveal-d3">
             <div class="phaseTop"><div class="numBox">03</div><div class="tagPill">Sustain</div></div>
             <b>Sustain and improve</b>
             <span>Help you maintain consistency over time and improve outcomes as the facility grows (including ALW alignment if relevant).</span>
@@ -679,7 +600,7 @@ CONSULTING_LINK
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>What you’ll get</h2>
+            <h2 class="mbs3-reveal">What you’ll get</h2>
             <p>
               Tangible outputs — so you’re not leaving with “more information,” you’re leaving with a plan you can follow.
             </p>
@@ -724,7 +645,7 @@ CONSULTING_LINK
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Who this is for</h2>
+            <h2 class="mbs3-reveal">Who this is for</h2>
             <p>
               RCFE consulting is best for operators who want a real plan and guidance — not just a quick opinion.
             </p>
@@ -758,7 +679,7 @@ CONSULTING_LINK
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Book an RCFE Consulting Call</h2>
+            <h2 class="mbs3-reveal">Book an RCFE Consulting Call</h2>
             <p>We’ll clarify your situation and map the cleanest next steps.</p>
           </div>
         </div>
@@ -807,7 +728,7 @@ CONSULTING_LINK
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>FAQs</h2>
+            <h2 class="mbs3-reveal">FAQs</h2>
             <p>Short answers to common questions.</p>
           </div>
         </div>
@@ -892,16 +813,16 @@ CONSULTING_LINK
       "BOOKING_IFRAME_CONSULT": "https://api.leadconnectorhq.com/widget/booking/X33A2JTTT3wOSCed356R",
 
       // nav links (update to your real slugs)
-      "HOME_LINK": "./Home-page-html.html",
-      "STATE_LIC_RCFE_LINK": "./rcfe-licensing-html.html",
-      "STATE_LIC_ARF_LINK": "./arf-licensing-html.html",
-      "ALW_APP_LINK": "./alw-waiver-html.html",
-      "ALW_BILLING_LINK": "./alw-billing-100html.html",
-      "ALW_FUNDING_LINK": "./funding-html.html",
-      "CONSULTING_LINK": "./Consulting-html.html",
+      "HOME_LINK": "#",
+      "STATE_LIC_RCFE_LINK": "#",
+      "STATE_LIC_ARF_LINK": "#",
+      "ALW_APP_LINK": "#",
+      "ALW_BILLING_LINK": "#",
+      "ALW_FUNDING_LINK": "#",
+      "CONSULTING_LINK": "#",
 
       // schema URL (optional)
-      "CONSULTING_PAGE_URL": "./Consulting-html.html"
+      "CONSULTING_PAGE_URL": "#"
     };
 
     const root = document.querySelector(".mbsConsultV2");
@@ -961,18 +882,17 @@ CONSULTING_LINK
         el.scrollIntoView({behavior:"smooth", block:"start"});
       });
     });
-
-    // === SCROLL REVEAL ===
-    root.querySelectorAll(".card, .phase, .head h2, .proofChip").forEach(el=>{
-      if(!el.classList.contains("reveal")) el.classList.add("reveal");
-    });
-    (function(){
-      const obs = new IntersectionObserver((entries, ob)=>{
-        entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("visible"); ob.unobserve(e.target); }});
-      }, {threshold:0.10});
-      root.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
-    })();
   })();
+</script>
+<script>
+(function(){
+  var els=document.querySelectorAll('.mbs3-reveal');
+  if(!els.length)return;
+  var io=new IntersectionObserver(function(entries,obs){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');obs.unobserve(e.target);}});
+  },{threshold:0.12});
+  els.forEach(function(el){io.observe(el);});
+})();
 </script>
 <style>
 #mbConsultModal .mb-modal__dialog{
@@ -986,5 +906,3 @@ CONSULTING_LINK
   height: calc(100vh - 260px);
 }
 </style>
-</body>
-</html>

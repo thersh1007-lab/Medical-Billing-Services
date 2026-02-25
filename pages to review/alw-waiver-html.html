@@ -207,6 +207,18 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
     .mbsAlwApp .grid6{grid-template-columns:1fr}
   }
   @media (prefers-reduced-motion: reduce){ .mbsAlwApp .btn{transition:none} }
+  /* SCROLL REVEAL */
+  .mbs3-reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease;}
+  .mbs3-reveal.is-visible{opacity:1;transform:none;}
+  .mbs3-reveal-d1{transition-delay:.12s;} .mbs3-reveal-d2{transition-delay:.24s;} .mbs3-reveal-d3{transition-delay:.36s;}
+  @media(prefers-reduced-motion:reduce){.mbs3-reveal{opacity:1;transform:none;transition:none;}}
+  /* FAQ CHEVRON */
+  .mbsAlwApp details summary{list-style:none;cursor:pointer;padding-right:30px;position:relative;}
+  .mbsAlwApp details summary::-webkit-details-marker{display:none;}
+  .mbsAlwApp details summary::after{content:'+';position:absolute;right:0;top:0;font-size:20px;font-weight:300;opacity:.45;transition:transform .22s ease;}
+  .mbsAlwApp details[open] summary::after{transform:rotate(45deg);}
+  .mbsAlwApp details > *:not(summary){animation:faqOpen .25s ease;}
+  @keyframes faqOpen{from{opacity:0;transform:translateY(-5px);}to{opacity:1;transform:none;}}
 </style>
 
 <div class="mbsAlwApp" id="alwTop">
@@ -273,7 +285,7 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
     <div class="wrap">
       <div class="head">
         <div>
-          <h2>What the ALW Waiver is (and why it matters)</h2>
+          <h2 class="mbs3-reveal">What the ALW Waiver is (and why it matters)</h2>
           <p>
             The Assisted Living Waiver (ALW) is a pathway many providers pursue to support residents through a structured program.
             The challenge is rarely “one big thing” — it’s usually small missteps that create delays, confusion, or rework.
@@ -345,7 +357,7 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
     <div class="wrap">
       <div class="head">
         <div>
-          <h2>What’s included (ALW application)</h2>
+          <h2 class="mbs3-reveal">What’s included (ALW application)</h2>
           <p>
             A structured approach to keep your application work organized, compliant, and moving forward — without overwhelm.
           </p>
@@ -353,15 +365,15 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
       </div>
 
       <div class="tri">
-        <div class="card">
+        <div class="card mbs3-reveal mbs3-reveal-d1">
           <h3>Application clarity</h3>
           <p>What’s required, what’s optional, what to prioritize, and what to do next.</p>
         </div>
-        <div class="card">
+        <div class="card mbs3-reveal mbs3-reveal-d2">
           <h3>Documentation readiness</h3>
           <p>Organize materials so they’re consistent, complete, and less likely to create preventable rework.</p>
         </div>
-        <div class="card">
+        <div class="card mbs3-reveal mbs3-reveal-d3">
           <h3>Routing & sequencing</h3>
           <p>We help you understand the order of steps so momentum doesn’t stall.</p>
         </div>
@@ -416,7 +428,7 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
     <div class="wrap">
       <div class="head">
         <div>
-          <h2>How the process works</h2>
+          <h2 class="mbs3-reveal">How the process works</h2>
           <p>A clean, step-by-step flow that keeps you moving without overwhelm.</p>
         </div>
       </div>
@@ -463,7 +475,7 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
     <div class="wrap">
       <div class="head">
         <div>
-          <h2>Book an ALW Application Call</h2>
+          <h2 class="mbs3-reveal">Book an ALW Application Call</h2>
           <p>We’ll clarify what’s realistic for your situation and route you to the right next step.</p>
         </div>
       </div>
@@ -521,7 +533,7 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
     <div class="wrap">
       <div class="head">
         <div>
-          <h2>ALW Application FAQs</h2>
+          <h2 class="mbs3-reveal">ALW Application FAQs</h2>
           <p>Clear answers — without overwhelming you.</p>
         </div>
       </div>
@@ -553,6 +565,17 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
   </section>
 
 </div>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.mbs3-reveal');
+  if(!els.length)return;
+  var io=new IntersectionObserver(function(entries,obs){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');obs.unobserve(e.target);}});
+  },{threshold:0.12});
+  els.forEach(function(el){io.observe(el);});
+})();
+</script>
 
 <script>
   // Smooth scroll (safe + scoped)

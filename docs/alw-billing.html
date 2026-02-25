@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALW Billing Services | Medical Billing Services</title>
-</head>
-<body>
 <!--
 MEDBILLINGCO.COM — BILLING PAGE (SAME PREMIUM STYLE) — v1
 Single paste into ONE GoHighLevel Custom Code block.
@@ -441,38 +433,18 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
   @media (prefers-reduced-motion: reduce){
     .mbsBilling .btn{transition:none}
   }
-
-  /* ========= POLISH PACK ========= */
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
-  .reveal.visible{opacity:1;transform:none}
-  .reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
-
-  /* Hero gradient */
-  .heroGradient{
-    background:linear-gradient(135deg,rgba(255,255,255,1) 40%,rgba(255,255,255,.70));
-    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  }
-
-  /* Card + step hover lift */
-  @media(hover:hover){
-    .mbsBilling .card,.mbsBilling .step,.mbsBilling .cCard{transition:transform .18s ease,box-shadow .18s ease}
-    .mbsBilling .card:hover,.mbsBilling .step:hover,.mbsBilling .cCard:hover{
-      transform:translateY(-3px);box-shadow:0 24px 60px rgba(2,6,23,.13);
-    }
-  }
-
-  /* Nav transition */
-  .mbsBilling .menu>a,.mbsBilling .dd>button{transition:background .15s ease,color .15s ease}
-
-  /* FAQ chevron + reveal animation */
-  .mbsBilling summary{position:relative;padding-right:28px}
-  .mbsBilling summary::after{
-    content:'+';position:absolute;right:4px;top:0;
-    transition:transform .2s ease;font-weight:400;opacity:.65;font-size:18px;line-height:1.2;
-  }
-  .mbsBilling details[open] summary::after{transform:rotate(45deg)}
-  .mbsBilling details p{animation:faqRevealB .28s ease}
-  @keyframes faqRevealB{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  /* SCROLL REVEAL */
+  .mbs3-reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease;}
+  .mbs3-reveal.is-visible{opacity:1;transform:none;}
+  .mbs3-reveal-d1{transition-delay:.12s;} .mbs3-reveal-d2{transition-delay:.24s;} .mbs3-reveal-d3{transition-delay:.36s;}
+  @media(prefers-reduced-motion:reduce){.mbs3-reveal{opacity:1;transform:none;transition:none;}}
+  /* FAQ CHEVRON */
+  .mbsBilling details summary{list-style:none;cursor:pointer;padding-right:30px;position:relative;}
+  .mbsBilling details summary::-webkit-details-marker{display:none;}
+  .mbsBilling details summary::after{content:'+';position:absolute;right:0;top:0;font-size:20px;font-weight:300;opacity:.45;transition:transform .22s ease;}
+  .mbsBilling details[open] summary::after{transform:rotate(45deg);}
+  .mbsBilling details > *:not(summary){animation:faqOpen .25s ease;}
+  @keyframes faqOpen{from{opacity:0;transform:translateY(-5px);}to{opacity:1;transform:none;}}
 </style>
 
 <div class="mbsBilling" id="top">
@@ -537,7 +509,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
             <div class="heroContent">
               <div class="pill"><span class="dot"></span> ALW billing end-to-end for California RCFE &amp; ARF providers</div>
 
-              <h1>ALW Billing That Feels Clear — Not <span class="heroGradient">Vague</span>.</h1>
+              <h1>ALW Billing That Feels Clear — Not Vague.</h1>
 
               <div class="scale">
                 <span class="bar"></span>
@@ -585,12 +557,12 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
                   </div>
                 </div>
 
-              </div><!-- /proofBar -->
+      
 
-            </div><!-- /heroContent -->
-          </div><!-- /heroInner -->
-        </div><!-- /heroShell -->
-      </div><!-- /wrap -->
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Wave to soft -->
@@ -605,7 +577,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>What you get when we handle your billing</h2>
+            <h2 class="mbs3-reveal">What you get when we handle your billing</h2>
             <p>
               We handle ALW billing end-to-end so your team isn’t chasing claims, denials, and Medi-Cal rules —
               and you get clearer visibility into what’s happening.
@@ -614,7 +586,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
         </div>
 
         <div class="split">
-          <div class="card">
+          <div class="card mbs3-reveal mbs3-reveal-d1">
             <h3 style="margin:0 0 8px">The core outcomes</h3>
             <ul class="list" aria-label="Billing outcomes list">
               <li>
@@ -647,7 +619,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
             </div>
           </div>
 
-          <div class="card">
+          <div class="card mbs3-reveal mbs3-reveal-d2">
             <h3 style="margin:0 0 8px">More than billing conversations</h3>
             <p>
               Many clients call with operational questions that directly impact outcomes — not just billing.
@@ -682,7 +654,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>How we bring structure (without chaos)</h2>
+            <h2 class="mbs3-reveal">How we bring structure (without chaos)</h2>
             <p>
               A simple, repeatable process that creates visibility and momentum — while keeping your day-to-day operations steady.
             </p>
@@ -690,7 +662,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
         </div>
 
         <div class="steps">
-          <div class="step">
+          <div class="step mbs3-reveal mbs3-reveal-d1">
             <div class="stepTop">
               <div class="numBox">01</div>
               <div class="tagPill">Assess</div>
@@ -699,7 +671,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
             <span>We clarify where you are now, what’s unclear, and what a realistic plan looks like for your facility.</span>
           </div>
 
-          <div class="step">
+          <div class="step mbs3-reveal mbs3-reveal-d2">
             <div class="stepTop">
               <div class="numBox">02</div>
               <div class="tagPill">Stabilize</div>
@@ -708,7 +680,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
             <span>We align on process, communication cadence, documentation expectations, and what “good” looks like.</span>
           </div>
 
-          <div class="step">
+          <div class="step mbs3-reveal mbs3-reveal-d3">
             <div class="stepTop">
               <div class="numBox">03</div>
               <div class="tagPill">Improve</div>
@@ -737,7 +709,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Book a Billing Consultation</h2>
+            <h2 class="mbs3-reveal">Book a Billing Consultation</h2>
             <p>
               Tell us what you’re trying to solve — we’ll keep it simple and route you to the right next step.
             </p>
@@ -802,7 +774,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Billing FAQs</h2>
+            <h2 class="mbs3-reveal">Billing FAQs</h2>
             <p>Clear answers — without overwhelming you.</p>
           </div>
         </div>
@@ -846,7 +818,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Talk to us</h2>
+            <h2 class="mbs3-reveal">Talk to us</h2>
             <p>Tell us what you’re trying to solve. We’ll keep it simple and point you to the right next step.</p>
           </div>
         </div>
@@ -914,12 +886,12 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
       "BOOKING_IFRAME_BILLING": "https://api.leadconnectorhq.com/widget/booking/GCyM1GS3QXkgVDFllYMu",
 
       // Optional nav links (set these if you want real nav)
-      "HOME_LINK": "./Home-page-html.html",
-      "LIC_RCFE_LINK": "./rcfe-licensing-html.html",
-      "LIC_ARF_LINK": "./arf-licensing-html.html",
-      "ALW_APP_LINK": "./alw-waiver-html.html",
-      "FUNDING_LINK": "./funding-html.html",
-      "CONSULTING_LINK": "./Consulting-html.html"
+      "HOME_LINK": "#",
+      "LIC_RCFE_LINK": "#",
+      "LIC_ARF_LINK": "#",
+      "ALW_APP_LINK": "#",
+      "FUNDING_LINK": "#",
+      "CONSULTING_LINK": "#"
     };
 
     const root = document.querySelector(".mbsBilling");
@@ -963,22 +935,15 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
         btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
       });
     });
-
-    // === SCROLL REVEAL ===
-    const revealEls = root.querySelectorAll(".card, .step, .cCard, .head h2, .proofChip");
-    revealEls.forEach(el=>{ if(!el.classList.contains("reveal")) el.classList.add("reveal"); });
-    new IntersectionObserver((entries, obs)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("visible"); obs.unobserve(e.target); }});
-    }, {threshold:0.10}).observe(root);
-    // Observe all .reveal in root
-    (function observeAll(){
-      const all = root.querySelectorAll(".reveal");
-      const obs = new IntersectionObserver((entries, ob)=>{
-        entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("visible"); ob.unobserve(e.target); }});
-      }, {threshold:0.10});
-      all.forEach(el=>obs.observe(el));
-    })();
   })();
 </script>
-</body>
-</html>
+<script>
+(function(){
+  var els=document.querySelectorAll('.mbs3-reveal');
+  if(!els.length)return;
+  var io=new IntersectionObserver(function(entries,obs){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');obs.unobserve(e.target);}});
+  },{threshold:0.12});
+  els.forEach(function(el){io.observe(el);});
+})();
+</script>

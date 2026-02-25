@@ -313,6 +313,18 @@ Booking links (Licensing Consultation Calendar):
     .mbsRcfeLic main{padding-bottom:74px} /* room for sticky CTA */
   }
   @media (prefers-reduced-motion: reduce){ .mbsRcfeLic .btn{transition:none} }
+  /* SCROLL REVEAL */
+  .mbs3-reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease;}
+  .mbs3-reveal.is-visible{opacity:1;transform:none;}
+  .mbs3-reveal-d1{transition-delay:.12s;} .mbs3-reveal-d2{transition-delay:.24s;} .mbs3-reveal-d3{transition-delay:.36s;}
+  @media(prefers-reduced-motion:reduce){.mbs3-reveal{opacity:1;transform:none;transition:none;}}
+  /* FAQ CHEVRON */
+  .mbsRcfeLic details summary{list-style:none;cursor:pointer;padding-right:30px;position:relative;}
+  .mbsRcfeLic details summary::-webkit-details-marker{display:none;}
+  .mbsRcfeLic details summary::after{content:'+';position:absolute;right:0;top:0;font-size:20px;font-weight:300;opacity:.45;transition:transform .22s ease;}
+  .mbsRcfeLic details[open] summary::after{transform:rotate(45deg);}
+  .mbsRcfeLic details > *:not(summary){animation:faqOpen .25s ease;}
+  @keyframes faqOpen{from{opacity:0;transform:translateY(-5px);}to{opacity:1;transform:none;}}
 </style>
 
 <div class="mbsRcfeLic" id="top">
@@ -383,7 +395,7 @@ Booking links (Licensing Consultation Calendar):
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>What RCFE licensing is (and why it matters)</h2>
+            <h2 class="mbs3-reveal">What RCFE licensing is (and why it matters)</h2>
             <p>
               RCFE licensing is the gate that allows you to operate — and it’s where many owners lose time due to unclear steps,
               missing documents, and rework. We help you make the next step obvious.
@@ -449,7 +461,7 @@ Booking links (Licensing Consultation Calendar):
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>What usually goes wrong (and costs you time)</h2>
+            <h2 class="mbs3-reveal">What usually goes wrong (and costs you time)</h2>
             <p>
               Most delays don’t come from “big” issues — they come from small mismatches that trigger follow-ups,
               resubmissions, or readiness gaps. Here are the most common ones we see.
@@ -485,23 +497,23 @@ Booking links (Licensing Consultation Calendar):
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Our simple plan</h2>
+            <h2 class="mbs3-reveal">Our simple plan</h2>
             <p>Clear steps. No overwhelm. The goal is momentum — with fewer preventable delays.</p>
           </div>
         </div>
 
         <div class="plan3">
-          <div class="step">
+          <div class="step mbs3-reveal mbs3-reveal-d1">
             <div class="stepTop"><div class="numBox">01</div><div class="tagPill">Clarity</div></div>
             <b>Book the licensing consult</b>
             <span>We confirm your situation, timeline, facility context, and what path makes sense.</span>
           </div>
-          <div class="step">
+          <div class="step mbs3-reveal mbs3-reveal-d2">
             <div class="stepTop"><div class="numBox">02</div><div class="tagPill">Roadmap</div></div>
             <b>Get your checklist + priorities</b>
             <span>You’ll know what to do next, what to ignore, and how to sequence the work.</span>
           </div>
-          <div class="step">
+          <div class="step mbs3-reveal mbs3-reveal-d3">
             <div class="stepTop"><div class="numBox">03</div><div class="tagPill">Execute</div></div>
             <b>Prepare clean materials</b>
             <span>We help you reduce rework and stay aligned with practical readiness expectations.</span>
@@ -527,7 +539,7 @@ Booking links (Licensing Consultation Calendar):
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>What’s included (RCFE)</h2>
+            <h2 class="mbs3-reveal">What’s included (RCFE)</h2>
             <p>Support designed to keep licensing work organized, compliant, and moving forward.</p>
           </div>
         </div>
@@ -598,7 +610,7 @@ Booking links (Licensing Consultation Calendar):
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Your guide through the process</h2>
+            <h2 class="mbs3-reveal">Your guide through the process</h2>
             <p>We keep this practical and organized — so you’re not stuck guessing what’s next.</p>
           </div>
         </div>
@@ -634,7 +646,7 @@ Booking links (Licensing Consultation Calendar):
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Book a Licensing Consultation</h2>
+            <h2 class="mbs3-reveal">Book a Licensing Consultation</h2>
             <p>We’ll clarify what’s realistic for your situation and route you to the right next step.</p>
           </div>
         </div>
@@ -687,7 +699,7 @@ Booking links (Licensing Consultation Calendar):
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>RCFE Licensing FAQs</h2>
+            <h2 class="mbs3-reveal">RCFE Licensing FAQs</h2>
             <p>Clear answers — without overwhelming you.</p>
           </div>
         </div>
@@ -722,4 +734,15 @@ Booking links (Licensing Consultation Calendar):
       </div>
     </section>
   </main>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.mbs3-reveal');
+  if(!els.length)return;
+  var io=new IntersectionObserver(function(entries,obs){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');obs.unobserve(e.target);}});
+  },{threshold:0.12});
+  els.forEach(function(el){io.observe(el);});
+})();
+</script>
 

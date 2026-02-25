@@ -316,6 +316,18 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
     .mbsFunding main{padding-bottom:74px}
   }
   @media (prefers-reduced-motion: reduce){ .mbsFunding .btn{transition:none} }
+  /* SCROLL REVEAL */
+  .mbs3-reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease;}
+  .mbs3-reveal.is-visible{opacity:1;transform:none;}
+  .mbs3-reveal-d1{transition-delay:.12s;} .mbs3-reveal-d2{transition-delay:.24s;} .mbs3-reveal-d3{transition-delay:.36s;}
+  @media(prefers-reduced-motion:reduce){.mbs3-reveal{opacity:1;transform:none;transition:none;}}
+  /* FAQ CHEVRON */
+  .mbsFunding details summary{list-style:none;cursor:pointer;padding-right:30px;position:relative;}
+  .mbsFunding details summary::-webkit-details-marker{display:none;}
+  .mbsFunding details summary::after{content:'+';position:absolute;right:0;top:0;font-size:20px;font-weight:300;opacity:.45;transition:transform .22s ease;}
+  .mbsFunding details[open] summary::after{transform:rotate(45deg);}
+  .mbsFunding details > *:not(summary){animation:faqOpen .25s ease;}
+  @keyframes faqOpen{from{opacity:0;transform:translateY(-5px);}to{opacity:1;transform:none;}}
 </style>
 
 <div class="mbsFunding" id="top">
@@ -371,7 +383,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>What “increase funding” means (in real life)</h2>
+            <h2 class=”mbs3-reveal”>What “increase funding” means (in real life)</h2>
             <p>
               Most facilities don’t need “magic.” They need clarity on what’s happening — and a tighter process where leakage is occurring.
               Here are the three buckets we typically look at first.
@@ -379,16 +391,16 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
           </div>
         </div>
 
-        <div class="tri">
-          <div class="card">
+        <div class=”tri”>
+          <div class=”card mbs3-reveal mbs3-reveal-d1”>
             <h3>ALW optimization</h3>
             <p>Evaluate current workflow, visibility, and opportunities to reduce friction in your current approach.</p>
           </div>
-          <div class="card">
+          <div class=”card mbs3-reveal mbs3-reveal-d2”>
             <h3>Billing workflow</h3>
             <p>Make the process predictable: fewer surprises, clearer monthly tracking, cleaner handoffs.</p>
           </div>
-          <div class="card">
+          <div class=”card mbs3-reveal mbs3-reveal-d3”>
             <h3>Documentation readiness</h3>
             <p>Reduce “avoidable setbacks” by ensuring documentation matches what reviewers expect to see.</p>
           </div>
@@ -417,7 +429,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Where revenue leaks most often</h2>
+            <h2 class="mbs3-reveal">Where revenue leaks most often</h2>
             <p>
               Many issues are not “big failures” — they’re small mismatches that stack up over time.
               We focus on pinpointing the few levers that matter most for your facility context.
@@ -453,7 +465,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>The Funding Playbook (simple, practical)</h2>
+            <h2 class="mbs3-reveal">The Funding Playbook (simple, practical)</h2>
             <p>
               No long reports you’ll never open. We keep it structured and actionable so you can move forward.
             </p>
@@ -506,7 +518,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>What the Revenue Call covers</h2>
+            <h2 class="mbs3-reveal">What the Revenue Call covers</h2>
             <p>
               A fast, structured review that focuses on clarity and next actions — not overwhelm.
             </p>
@@ -556,7 +568,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Book a Revenue Call</h2>
+            <h2 class="mbs3-reveal">Book a Revenue Call</h2>
             <p>We’ll evaluate what’s realistic for your situation and outline a clear next-step plan.</p>
           </div>
         </div>
@@ -604,7 +616,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Frequently asked questions</h2>
+            <h2 class="mbs3-reveal">Frequently asked questions</h2>
             <p>Clear answers — without overwhelming you.</p>
           </div>
         </div>
@@ -751,4 +763,14 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
       });
     });
   })();
+</script>
+<script>
+(function(){
+  var els=document.querySelectorAll('.mbs3-reveal');
+  if(!els.length)return;
+  var io=new IntersectionObserver(function(entries,obs){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');obs.unobserve(e.target);}});
+  },{threshold:0.12});
+  els.forEach(function(el){io.observe(el);});
+})();
 </script>

@@ -433,6 +433,18 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
   @media (prefers-reduced-motion: reduce){
     .mbsBilling .btn{transition:none}
   }
+  /* SCROLL REVEAL */
+  .mbs3-reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease;}
+  .mbs3-reveal.is-visible{opacity:1;transform:none;}
+  .mbs3-reveal-d1{transition-delay:.12s;} .mbs3-reveal-d2{transition-delay:.24s;} .mbs3-reveal-d3{transition-delay:.36s;}
+  @media(prefers-reduced-motion:reduce){.mbs3-reveal{opacity:1;transform:none;transition:none;}}
+  /* FAQ CHEVRON */
+  .mbsBilling details summary{list-style:none;cursor:pointer;padding-right:30px;position:relative;}
+  .mbsBilling details summary::-webkit-details-marker{display:none;}
+  .mbsBilling details summary::after{content:'+';position:absolute;right:0;top:0;font-size:20px;font-weight:300;opacity:.45;transition:transform .22s ease;}
+  .mbsBilling details[open] summary::after{transform:rotate(45deg);}
+  .mbsBilling details > *:not(summary){animation:faqOpen .25s ease;}
+  @keyframes faqOpen{from{opacity:0;transform:translateY(-5px);}to{opacity:1;transform:none;}}
 </style>
 
 <div class="mbsBilling" id="top">
@@ -565,7 +577,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>What you get when we handle your billing</h2>
+            <h2 class="mbs3-reveal">What you get when we handle your billing</h2>
             <p>
               We handle ALW billing end-to-end so your team isn’t chasing claims, denials, and Medi-Cal rules —
               and you get clearer visibility into what’s happening.
@@ -574,7 +586,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
         </div>
 
         <div class="split">
-          <div class="card">
+          <div class="card mbs3-reveal mbs3-reveal-d1">
             <h3 style="margin:0 0 8px">The core outcomes</h3>
             <ul class="list" aria-label="Billing outcomes list">
               <li>
@@ -607,7 +619,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
             </div>
           </div>
 
-          <div class="card">
+          <div class="card mbs3-reveal mbs3-reveal-d2">
             <h3 style="margin:0 0 8px">More than billing conversations</h3>
             <p>
               Many clients call with operational questions that directly impact outcomes — not just billing.
@@ -642,7 +654,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>How we bring structure (without chaos)</h2>
+            <h2 class="mbs3-reveal">How we bring structure (without chaos)</h2>
             <p>
               A simple, repeatable process that creates visibility and momentum — while keeping your day-to-day operations steady.
             </p>
@@ -650,7 +662,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
         </div>
 
         <div class="steps">
-          <div class="step">
+          <div class="step mbs3-reveal mbs3-reveal-d1">
             <div class="stepTop">
               <div class="numBox">01</div>
               <div class="tagPill">Assess</div>
@@ -659,7 +671,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
             <span>We clarify where you are now, what’s unclear, and what a realistic plan looks like for your facility.</span>
           </div>
 
-          <div class="step">
+          <div class="step mbs3-reveal mbs3-reveal-d2">
             <div class="stepTop">
               <div class="numBox">02</div>
               <div class="tagPill">Stabilize</div>
@@ -668,7 +680,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
             <span>We align on process, communication cadence, documentation expectations, and what “good” looks like.</span>
           </div>
 
-          <div class="step">
+          <div class="step mbs3-reveal mbs3-reveal-d3">
             <div class="stepTop">
               <div class="numBox">03</div>
               <div class="tagPill">Improve</div>
@@ -697,7 +709,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Book a Billing Consultation</h2>
+            <h2 class="mbs3-reveal">Book a Billing Consultation</h2>
             <p>
               Tell us what you’re trying to solve — we’ll keep it simple and route you to the right next step.
             </p>
@@ -762,7 +774,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Billing FAQs</h2>
+            <h2 class="mbs3-reveal">Billing FAQs</h2>
             <p>Clear answers — without overwhelming you.</p>
           </div>
         </div>
@@ -806,7 +818,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Talk to us</h2>
+            <h2 class="mbs3-reveal">Talk to us</h2>
             <p>Tell us what you’re trying to solve. We’ll keep it simple and point you to the right next step.</p>
           </div>
         </div>
@@ -924,4 +936,14 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
       });
     });
   })();
+</script>
+<script>
+(function(){
+  var els=document.querySelectorAll('.mbs3-reveal');
+  if(!els.length)return;
+  var io=new IntersectionObserver(function(entries,obs){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');obs.unobserve(e.target);}});
+  },{threshold:0.12});
+  els.forEach(function(el){io.observe(el);});
+})();
 </script>

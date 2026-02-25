@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALW Waiver Application | Medical Billing Services</title>
-</head>
-<body>
 <!--
 MEDBILLINGCO.COM — ALW WAIVER APPLICATION PAGE (NO HEADER/FOOTER) — v1
 Paste into ONE GoHighLevel Custom Code block.
@@ -215,53 +207,18 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
     .mbsAlwApp .grid6{grid-template-columns:1fr}
   }
   @media (prefers-reduced-motion: reduce){ .mbsAlwApp .btn{transition:none} }
-
-  /* ========= POLISH PACK ========= */
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
-  .reveal.visible{opacity:1;transform:none}
-  .reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
-
-  /* Hero gradient */
-  .heroGradient{
-    background:linear-gradient(135deg,rgba(255,255,255,1) 40%,rgba(255,255,255,.70));
-    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  }
-
-  /* Card + step hover lift */
-  @media(hover:hover){
-    .mbsAlwApp .card,.mbsAlwApp .step,.mbsAlwApp .pCard,.mbsAlwApp .imgCard{transition:transform .18s ease,box-shadow .18s ease}
-    .mbsAlwApp .card:hover,.mbsAlwApp .step:hover,.mbsAlwApp .pCard:hover,.mbsAlwApp .imgCard:hover{
-      transform:translateY(-3px);box-shadow:0 24px 60px rgba(2,6,23,.13);
-    }
-  }
-
-  /* FAQ chevron + reveal */
-  .mbsAlwApp summary{position:relative;padding-right:28px}
-  .mbsAlwApp summary::after{
-    content:'+';position:absolute;right:4px;top:0;
-    transition:transform .2s ease;font-weight:400;opacity:.65;font-size:18px;line-height:1.2;
-  }
-  .mbsAlwApp details[open] summary::after{transform:rotate(45deg)}
-  .mbsAlwApp details p{animation:faqRevealA .28s ease}
-  @keyframes faqRevealA{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
-
-  /* Mobile sticky CTA */
-  .mbsAlwApp .stickyBook{
-    display:none;position:fixed;left:0;right:0;bottom:0;z-index:90;
-    padding:10px 12px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
-    border-top:1px solid rgba(15,23,42,.10);
-  }
-  .mbsAlwApp .stickyBook .inner{
-    width:min(var(--max),calc(100% - 24px));margin:0 auto;
-    display:flex;gap:10px;align-items:center;justify-content:space-between;
-  }
-  .mbsAlwApp .stickyBook .miniTxt{
-    font-size:12.5px;color:rgba(2,6,23,.78);font-weight:900;letter-spacing:-.01em;
-  }
-  @media(max-width:640px){
-    .mbsAlwApp .stickyBook{display:block}
-    .mbsAlwApp main{padding-bottom:74px}
-  }
+  /* SCROLL REVEAL */
+  .mbs3-reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease;}
+  .mbs3-reveal.is-visible{opacity:1;transform:none;}
+  .mbs3-reveal-d1{transition-delay:.12s;} .mbs3-reveal-d2{transition-delay:.24s;} .mbs3-reveal-d3{transition-delay:.36s;}
+  @media(prefers-reduced-motion:reduce){.mbs3-reveal{opacity:1;transform:none;transition:none;}}
+  /* FAQ CHEVRON */
+  .mbsAlwApp details summary{list-style:none;cursor:pointer;padding-right:30px;position:relative;}
+  .mbsAlwApp details summary::-webkit-details-marker{display:none;}
+  .mbsAlwApp details summary::after{content:'+';position:absolute;right:0;top:0;font-size:20px;font-weight:300;opacity:.45;transition:transform .22s ease;}
+  .mbsAlwApp details[open] summary::after{transform:rotate(45deg);}
+  .mbsAlwApp details > *:not(summary){animation:faqOpen .25s ease;}
+  @keyframes faqOpen{from{opacity:0;transform:translateY(-5px);}to{opacity:1;transform:none;}}
 </style>
 
 <div class="mbsAlwApp" id="alwTop">
@@ -277,7 +234,7 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
           <div style="max-width:980px">
             <div class="pill"><span class="dot"></span> Assisted Living Waiver (ALW) application support (California)</div>
 
-            <h1>ALW Waiver Application Support — <span class="heroGradient">clear steps, clean paperwork</span>, fewer avoidable delays.</h1>
+            <h1>ALW Waiver Application Support — clear steps, clean paperwork, fewer avoidable delays.</h1>
 
             <p>
               If you’re starting ALW (or you’re stuck mid-process), we help you understand <b>what it is</b>, <b>why it matters</b>,
@@ -328,7 +285,7 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
     <div class="wrap">
       <div class="head">
         <div>
-          <h2>What the ALW Waiver is (and why it matters)</h2>
+          <h2 class="mbs3-reveal">What the ALW Waiver is (and why it matters)</h2>
           <p>
             The Assisted Living Waiver (ALW) is a pathway many providers pursue to support residents through a structured program.
             The challenge is rarely “one big thing” — it’s usually small missteps that create delays, confusion, or rework.
@@ -400,7 +357,7 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
     <div class="wrap">
       <div class="head">
         <div>
-          <h2>What’s included (ALW application)</h2>
+          <h2 class="mbs3-reveal">What’s included (ALW application)</h2>
           <p>
             A structured approach to keep your application work organized, compliant, and moving forward — without overwhelm.
           </p>
@@ -408,15 +365,15 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
       </div>
 
       <div class="tri">
-        <div class="card">
+        <div class="card mbs3-reveal mbs3-reveal-d1">
           <h3>Application clarity</h3>
           <p>What’s required, what’s optional, what to prioritize, and what to do next.</p>
         </div>
-        <div class="card">
+        <div class="card mbs3-reveal mbs3-reveal-d2">
           <h3>Documentation readiness</h3>
           <p>Organize materials so they’re consistent, complete, and less likely to create preventable rework.</p>
         </div>
-        <div class="card">
+        <div class="card mbs3-reveal mbs3-reveal-d3">
           <h3>Routing & sequencing</h3>
           <p>We help you understand the order of steps so momentum doesn’t stall.</p>
         </div>
@@ -471,7 +428,7 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
     <div class="wrap">
       <div class="head">
         <div>
-          <h2>How the process works</h2>
+          <h2 class="mbs3-reveal">How the process works</h2>
           <p>A clean, step-by-step flow that keeps you moving without overwhelm.</p>
         </div>
       </div>
@@ -518,7 +475,7 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
     <div class="wrap">
       <div class="head">
         <div>
-          <h2>Book an ALW Application Call</h2>
+          <h2 class="mbs3-reveal">Book an ALW Application Call</h2>
           <p>We’ll clarify what’s realistic for your situation and route you to the right next step.</p>
         </div>
       </div>
@@ -576,7 +533,7 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
     <div class="wrap">
       <div class="head">
         <div>
-          <h2>ALW Application FAQs</h2>
+          <h2 class="mbs3-reveal">ALW Application FAQs</h2>
           <p>Clear answers — without overwhelming you.</p>
         </div>
       </div>
@@ -609,13 +566,16 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
 
 </div>
 
-<!-- Mobile sticky CTA -->
-<div class="mbsAlwApp stickyBook" aria-label="Sticky book bar">
-  <div class="inner">
-    <div class="miniTxt">Ready to start your ALW application?</div>
-    <a class="btn primary" href="https://api.leadconnectorhq.com/widget/bookings/alw-application-call">Book ALW call</a>
-  </div>
-</div>
+<script>
+(function(){
+  var els=document.querySelectorAll('.mbs3-reveal');
+  if(!els.length)return;
+  var io=new IntersectionObserver(function(entries,obs){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');obs.unobserve(e.target);}});
+  },{threshold:0.12});
+  els.forEach(function(el){io.observe(el);});
+})();
+</script>
 
 <script>
   // Smooth scroll (safe + scoped)
@@ -632,19 +592,5 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
         el.scrollIntoView({behavior:"smooth", block:"start"});
       });
     });
-
-    // === SCROLL REVEAL ===
-    root.querySelectorAll(".card, .step, .pCard, .imgCard, .head h2, .proofChip").forEach(el=>{
-      if(!el.classList.contains("reveal")) el.classList.add("reveal");
-    });
-    (function(){
-      const obs = new IntersectionObserver((entries, ob)=>{
-        entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("visible"); ob.unobserve(e.target); }});
-      }, {threshold:0.10});
-      root.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
-    })();
   })();
-</script>
-</body>
-</html>
 </script>
