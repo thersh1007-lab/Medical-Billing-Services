@@ -1,0 +1,871 @@
+/* ================================================================
+   MEDBILLINGCO — HOME PAGE CSS  (FINAL v4 · 2026-02-25)
+   ─────────────────────────────────────────────────────────────────
+   HOW TO INSTALL:
+   Page Settings → Custom CSS → replace everything with this file
+   ================================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+/* ══════════════════════════════════════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════════════════════════════════════ */
+:root {
+  --mbs-bg:         #ffffff;
+  --mbs-soft:       #f6f8fb;
+  --mbs-ink:        #0b1220;
+  --mbs-muted:      rgba(11,18,32,.62);
+  --mbs-line:       rgba(11,18,32,.10);
+  --mbs-accent:     #168a5b;
+  --mbs-accent2:    #0f6e48;
+  --mbs-accentSoft: rgba(22,138,91,.08);
+  --mbs-shadow:     0 26px 64px rgba(2,6,23,.12);
+  --mbs-shadow2:    0 14px 34px rgba(2,6,23,.08);
+  --mbs-r:          18px;
+  --mbs-r2:         24px;
+  --mbs-max:        1160px;
+  --mbs-hdr-h:      70px;
+  /* Calendar widget */
+  --appointment_widgets-primary-color: #168a5b;
+  --appointment_widgets-light-primary-color: rgba(22,138,91,.14);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   BASE
+══════════════════════════════════════════════════════════════════ */
+html { scroll-behavior: smooth; scroll-padding-top: var(--mbs-hdr-h); }
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--mbs-ink);
+}
+#preview-container.preview-container {
+  margin-top:  0 !important;
+  padding-top: var(--mbs-hdr-h) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   GHL BUILDER DEFAULT RESET
+   Kills the padding GHL injects at every level of its wrapper stack.
+   Spacing is re-applied only through our own classes.
+══════════════════════════════════════════════════════════════════ */
+#preview-container .c-section > .inner,
+#preview-container .c-row    > .inner,
+#preview-container .c-column        > .vertical.inner,
+#preview-container .c-nested-column > .vertical.inner {
+  padding: 0 !important;
+  margin:  0 !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   CONTENT WRAPPER
+   Add "mbs3-wrap" to any Row to centre it at 1160px.
+══════════════════════════════════════════════════════════════════ */
+.mbs3-wrap {
+  max-width:     var(--mbs-max) !important;
+  margin-left:   auto !important;
+  margin-right:  auto !important;
+  padding-left:  24px !important;
+  padding-right: 24px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+@media (max-width: 520px) {
+  .mbs3-wrap { padding-left: 16px !important; padding-right: 16px !important; }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   STICKY HEADER
+   Add "mbs3-hdr" to the header Section.
+══════════════════════════════════════════════════════════════════ */
+.mbs3-hdr {
+  position:           sticky    !important;
+  top:                0         !important;
+  z-index:            9999      !important;
+  background:         rgba(255,255,255,.92) !important;
+  backdrop-filter:    blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-bottom:      1px solid var(--mbs-line) !important;
+  box-shadow:         0 6px 20px rgba(11,18,32,.06) !important;
+}
+.mbs3-hdr > .inner { padding: 0 !important; }
+.mbs3-hdr .c-row > .inner {
+  padding:    14px 24px !important;
+  max-width:  var(--mbs-max) !important;
+  margin:     0 auto !important;
+}
+.mbs3-hdr img { height: 38px !important; width: auto !important; display: block !important; }
+
+/* Nav links */
+.mbs3-nav a,
+.mbs3-nav button {
+  padding:         8px 12px !important;
+  border-radius:   10px !important;
+  font-weight:     700 !important;
+  font-size:       13.5px !important;
+  color:           rgba(11,18,32,.76) !important;
+  background:      transparent !important;
+  border:          0 !important;
+  text-decoration: none !important;
+  transition:      background .14s ease !important;
+}
+.mbs3-nav a:hover,
+.mbs3-nav button:hover { background: rgba(11,18,32,.05) !important; }
+
+/* Dropdown submenu */
+.mbs3-nav .submenu-content-container {
+  background:    #fff !important;
+  border:        1px solid var(--mbs-line) !important;
+  border-radius: 16px !important;
+  box-shadow:    var(--mbs-shadow2) !important;
+  padding:       8px !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   BUTTON SYSTEM
+══════════════════════════════════════════════════════════════════ */
+
+/* Primary — solid green */
+.c-button.mbs3-btn--primary button {
+  background:    var(--mbs-accent) !important;
+  color:         #fff !important;
+  border:        1px solid var(--mbs-accent) !important;
+  border-radius: 999px !important;
+  padding:       12px 18px !important;
+  font-weight:   900 !important;
+  font-size:     14.5px !important;
+  line-height:   1 !important;
+  box-shadow:    0 10px 22px rgba(22,138,91,.22) !important;
+  transition:    .16s ease !important;
+}
+.c-button.mbs3-btn--primary button:hover {
+  background:  var(--mbs-accent2) !important;
+  transform:   translateY(-1px) !important;
+}
+
+/* Ghost — white with border */
+.c-button.mbs3-btn--ghost button {
+  background:    #fff !important;
+  color:         rgba(11,18,32,.88) !important;
+  border:        1.5px solid rgba(11,18,32,.14) !important;
+  border-radius: 999px !important;
+  padding:       12px 18px !important;
+  font-weight:   900 !important;
+  font-size:     14.5px !important;
+  line-height:   1 !important;
+  box-shadow:    none !important;
+  transition:    .16s ease !important;
+}
+.c-button.mbs3-btn--ghost button:hover { background: rgba(11,18,32,.04) !important; }
+
+/* Link — text only */
+.c-button.mbs3-btn--link button {
+  background:  transparent !important;
+  border:      none !important;
+  color:       var(--mbs-accent) !important;
+  font-weight: 900 !important;
+  padding:     10px 0 !important;
+  font-size:   14.5px !important;
+  transition:  opacity .14s ease !important;
+}
+.c-button.mbs3-btn--link button:hover { opacity: .8 !important; }
+
+/* By aria-label (fallback for unlabelled button elements) */
+button[aria-label^="Book a Consultation"] {
+  padding:       12px 18px !important;
+  border-radius: 999px !important;
+  border:        1px solid var(--mbs-accent) !important;
+  background:    var(--mbs-accent) !important;
+  color:         #fff !important;
+  font-weight:   900 !important;
+  font-size:     14.5px !important;
+  line-height:   1 !important;
+  box-shadow:    0 10px 22px rgba(22,138,91,.18) !important;
+  transition:    .15s ease !important;
+}
+button[aria-label^="Book a Consultation"]:hover {
+  filter:    brightness(.94) !important;
+  transform: translateY(-1px) !important;
+}
+button[aria-label^="Watch Kamil"] {
+  padding:       12px 18px !important;
+  border-radius: 999px !important;
+  border:        1.5px solid rgba(22,138,91,.35) !important;
+  background:    #fff !important;
+  color:         var(--mbs-accent) !important;
+  font-weight:   900 !important;
+  font-size:     14.5px !important;
+  line-height:   1 !important;
+  box-shadow:    none !important;
+  transition:    .15s ease !important;
+}
+button[aria-label^="Watch Kamil"]:hover {
+  background:   rgba(22,138,91,.06) !important;
+  border-color: rgba(22,138,91,.55) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   HERO SECTION  (#section-1D1ckiYOsk)
+   ─────────────────────────────────────────────────────────────────
+   Fixes: rounded corners, drop shadow, dark overlay over BG image,
+   full background opacity (GHL defaults to 0.5), text colours.
+══════════════════════════════════════════════════════════════════ */
+#section-1D1ckiYOsk {
+  border-radius: clamp(22px, 3vw, 38px) !important;
+  overflow:      hidden !important;
+  box-shadow:    0 30px 80px rgba(11,18,32,.18) !important;
+  margin:        22px 22px !important;
+}
+#section-1D1ckiYOsk .bg { opacity: 1 !important; }
+
+/* Dark overlay via ::after so text stays on top */
+.mbs3-hero { position: relative !important; }
+.mbs3-hero::after {
+  content:        "";
+  position:       absolute;
+  inset:          0;
+  background:
+    radial-gradient(900px 520px at 16% 26%, rgba(255,255,255,.10), transparent 62%),
+    linear-gradient(90deg, rgba(11,18,32,.82) 0%, rgba(11,18,32,.44) 55%, rgba(11,18,32,.66) 100%);
+  pointer-events: none;
+  z-index:        1;
+}
+.mbs3-hero .inner { position: relative !important; z-index: 2 !important; }
+
+/* Hero typography */
+.mbs3-hero .c-heading h1 {
+  font-size:      clamp(30px, 3.6vw, 54px) !important;
+  line-height:    1.06 !important;
+  letter-spacing: -.04em !important;
+  font-weight:    900 !important;
+  color:          #fff !important;
+  margin:         0 0 14px !important;
+}
+.mbs3-hero .c-heading h2 {
+  font-size:      clamp(26px, 2.8vw, 38px) !important;
+  line-height:    1.08 !important;
+  letter-spacing: -.03em !important;
+  font-weight:    900 !important;
+  color:          #fff !important;
+}
+.mbs3-hero p,
+.mbs3-hero .c-paragraph p {
+  color:      rgba(255,255,255,.86) !important;
+  font-size:  15.5px !important;
+  line-height: 1.7 !important;
+  max-width:  72ch;
+}
+.mbs3-hero h3,
+.mbs3-hero .c-sub-heading h3 {
+  color:       rgba(255,255,255,.80) !important;
+  font-weight: 400 !important;
+  font-size:   15px !important;
+  line-height: 1.7 !important;
+}
+
+/* Hero proof chips (kicker pills inside hero) */
+.mbs3-hero .kicker p {
+  background:   rgba(255,255,255,.12) !important;
+  border-color: rgba(255,255,255,.20) !important;
+  color:        rgba(255,255,255,.92) !important;
+  margin:       10px 10px 0 0 !important;
+}
+.mbs3-hero .kicker p::before {
+  background: rgba(255,255,255,.90) !important;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.12) !important;
+}
+
+/* Scale / stat line */
+.mbs3-scale {
+  color:       rgba(255,255,255,.90) !important;
+  font-weight: 900 !important;
+  font-size:   14px !important;
+  display:     flex !important;
+  align-items: center !important;
+  gap:         10px !important;
+  flex-wrap:   wrap !important;
+  margin:      0 !important;
+}
+.mbs3-scale::before {
+  content:       "";
+  width:         8px; height: 8px;
+  border-radius: 99px;
+  background:    rgba(255,255,255,.80);
+  flex:          0 0 auto;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   PROOF BAR (hero bottom chips — mbs3-proofbar)
+══════════════════════════════════════════════════════════════════ */
+.mbs3-proofbar {
+  display:    flex;
+  flex-wrap:  wrap;
+  gap:        12px;
+  margin-top: 18px;
+}
+.mbs3-proof {
+  display:        flex;
+  align-items:    center;
+  gap:            10px;
+  padding:        10px 14px;
+  border-radius:  14px;
+  background:     rgba(255,255,255,.12);
+  border:         1px solid rgba(255,255,255,.18);
+  color:          rgba(255,255,255,.95);
+  backdrop-filter:         blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow:     0 14px 40px rgba(0,0,0,.28);
+}
+.mbs3-proof__icon {
+  width:         22px; height: 22px;
+  border-radius: 999px;
+  display:       grid; place-items: center;
+  font-weight:   900; font-size: 12px; line-height: 1;
+  color:         #eafff6;
+  background:    rgba(17,153,102,.22);
+  border:        1px solid rgba(17,153,102,.45);
+  box-shadow:    0 0 0 6px rgba(17,153,102,.12);
+  flex:          0 0 auto;
+}
+.mbs3-proof__text { font-size: 14px; font-weight: 700; line-height: 1.35; }
+
+/* ══════════════════════════════════════════════════════════════════
+   WAVE SYSTEM
+   ─────────────────────────────────────────────────────────────────
+   Three ways waves appear in GHL:
+   A) Wave Section (add "mbs3-waveSec" to Section)
+   B) Wave Row (add "mbs3-wave" to a Row)
+   C) Custom Code SVG (add class="wave toSoft" to the div)
+══════════════════════════════════════════════════════════════════ */
+
+/* A — Wave Section */
+.mbs3-waveSec {
+  padding:     0 !important;
+  margin:      0 !important;
+  background:  transparent !important;
+  overflow:    visible !important;
+  line-height: 0 !important;
+  margin-bottom: -1px !important;
+}
+.mbs3-waveSec > .inner { max-width: 100% !important; padding: 0 !important; }
+
+/* B — Wave Row */
+.mbs3-wave {
+  line-height:    0;
+  pointer-events: none;
+  position:       relative;
+  height:         44px;
+  margin:         -14px 0 -18px;
+}
+.mbs3-wave > .inner { max-width: 100% !important; padding: 0 !important; }
+.mbs3-wave .c-column,
+.mbs3-wave .c-custom-code,
+.mbs3-wave .custom-code-container { padding: 0 !important; margin: 0 !important; }
+.mbs3-wave svg { width: 100%; height: 100%; display: block; }
+.mbs3-wave path { fill: currentColor !important; }
+.mbs3-wave--toSoft  { color: var(--mbs-soft) !important; }
+.mbs3-wave--toWhite { color: var(--mbs-bg)   !important; }
+
+/* C — Custom Code SVG div */
+.wave {
+  width:          100vw !important;
+  margin-left:    calc(50% - 50vw) !important;
+  height:         44px !important;
+  line-height:    0 !important;
+  pointer-events: none;
+  position:       relative; z-index: 2;
+}
+.wave svg  { width: 100% !important; height: 100% !important; display: block; }
+.wave path { fill: currentColor !important; }
+.wave.toSoft  { color: var(--mbs-soft) !important; }
+.wave.toWhite { color: var(--mbs-bg)   !important; }
+
+/* ══════════════════════════════════════════════════════════════════
+   SECTION BACKGROUNDS
+══════════════════════════════════════════════════════════════════ */
+.mbs3-sec   { padding: 76px 0; background: var(--mbs-bg); }
+.mbs3-soft  { background: var(--mbs-soft) !important; }
+.mbs3-sec--tight { padding: 52px 0; }
+
+/* Remove GHL inner section padding (rows use mbs3-wrap instead) */
+.mbs3-sec > .inner,
+.mbs3-soft > .inner,
+.mbs3-video > .inner,
+.mbs3-footer > .inner { padding-left: 0 !important; padding-right: 0 !important; }
+
+/* ══════════════════════════════════════════════════════════════════
+   TYPOGRAPHY — non-hero
+══════════════════════════════════════════════════════════════════ */
+:not(.mbs3-hero) .c-heading h1 {
+  font-size:      clamp(26px, 2.6vw, 36px) !important;
+  line-height:    1.12 !important;
+  letter-spacing: -.03em !important;
+  font-weight:    900 !important;
+  color:          var(--mbs-ink) !important;
+  margin:         0 0 10px;
+}
+:not(.mbs3-hero) .c-heading h2 {
+  font-size:      clamp(22px, 2.4vw, 34px) !important;
+  line-height:    1.14 !important;
+  letter-spacing: -.03em !important;
+  font-weight:    900 !important;
+  color:          var(--mbs-ink) !important;
+  margin:         0 0 10px;
+}
+.c-paragraph p { line-height: 1.65 !important; }
+
+/* ══════════════════════════════════════════════════════════════════
+   KICKER PILL
+   Add "kicker" class to a Paragraph element.
+══════════════════════════════════════════════════════════════════ */
+.kicker p {
+  display:       inline-flex !important;
+  align-items:   center !important;
+  gap:           10px !important;
+  padding:       7px 12px !important;
+  border-radius: 999px !important;
+  background:    rgba(22,138,91,.10) !important;
+  border:        1px solid rgba(22,138,91,.18) !important;
+  color:         var(--mbs-accent) !important;
+  font-weight:   900 !important;
+  font-size:     12.5px !important;
+  line-height:   1 !important;
+  width:         fit-content !important;
+  margin:        0 0 12px !important;
+}
+.kicker p::before {
+  content:       "" !important;
+  width:         8px !important; height: 8px !important;
+  border-radius: 999px !important;
+  background:    var(--mbs-accent) !important;
+  box-shadow:    0 0 0 4px rgba(22,138,91,.12) !important;
+  display:       inline-block !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   SERVICE TILE GRID
+   ─────────────────────────────────────────────────────────────────
+   Class-based (add "mbs3-grid-4" to the Row) and
+   ID fallback (#row-gyG6yztK51) — both work.
+══════════════════════════════════════════════════════════════════ */
+.c-row.mbs3-grid-4 > .inner,
+#row-gyG6yztK51 > .inner {
+  display:               grid !important;
+  grid-template-columns: repeat(4, minmax(0,1fr)) !important;
+  gap:                   22px !important;
+  align-items:           stretch !important;
+}
+.c-row.mbs3-grid-4 > .inner > .c-column,
+.c-row.mbs3-grid-4 > .inner > .c-nested-column,
+#row-gyG6yztK51 > .inner > .c-column,
+#row-gyG6yztK51 > .inner > .c-nested-column {
+  padding-left:  0 !important;
+  padding-right: 0 !important;
+  width:         100% !important;
+  max-width:     100% !important;
+}
+@media (max-width: 1024px) {
+  .c-row.mbs3-grid-4 > .inner,
+  #row-gyG6yztK51 > .inner {
+    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+  }
+}
+@media (max-width: 640px) {
+  .c-row.mbs3-grid-4 > .inner,
+  #row-gyG6yztK51 > .inner {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Tile card ── */
+.mbs3-tile {
+  background:     #fff !important;
+  border:         1px solid var(--mbs-line) !important;
+  border-radius:  24px !important;
+  box-shadow:     var(--mbs-shadow2) !important;
+  padding:        18px !important;
+  height:         100% !important;
+  min-height:     400px !important;
+  display:        flex !important;
+  flex-direction: column !important;
+  transition:     transform .18s ease, box-shadow .18s ease !important;
+}
+@media (hover:hover) {
+  .mbs3-tile:hover {
+    transform:  translateY(-3px) !important;
+    box-shadow: var(--mbs-shadow) !important;
+  }
+}
+/* Prevent mbs3-tiles (grid alias on same el) from overriding flex direction */
+.mbs3-tiles.mbs3-tile { flex-wrap: nowrap !important; gap: 0 !important; }
+.mbs3-tile .vertical.inner { display: flex !important; flex-direction: column !important; height: 100% !important; }
+
+/* Tile image */
+img.mbs3-tile__img {
+  width:         100% !important;
+  height:        168px !important;
+  object-fit:    cover !important;
+  border-radius: 16px !important;
+  border:        1px solid var(--mbs-line) !important;
+  display:       block !important;
+}
+
+/* Tile badge (01, 02 …) */
+.mbs3-tile .c-row:first-of-type .c-paragraph p {
+  display:        inline-flex !important;
+  align-items:    center !important;
+  justify-content:center !important;
+  padding:        7px 11px !important;
+  border-radius:  999px !important;
+  border:         1px solid var(--mbs-line) !important;
+  background:     rgba(255,255,255,.88) !important;
+  color:          rgba(11,18,32,.82) !important;
+  font-weight:    900 !important;
+  font-size:      12px !important;
+  line-height:    1 !important;
+  margin:         0 !important;
+}
+
+/* Tile heading */
+#row-gyG6yztK51 .c-sub-heading h2,
+.c-row.mbs3-grid-4 .c-sub-heading h2 {
+  margin:         12px 0 0 !important;
+  font-weight:    900 !important;
+  line-height:    1.15 !important;
+  letter-spacing: -.02em !important;
+  font-size:      18px !important;
+  min-height:     2.35em !important;
+}
+
+/* Tile description */
+#row-gyG6yztK51 .mbs3-tile .c-sub-heading + .c-paragraph p,
+.c-row.mbs3-grid-4 .mbs3-tile .c-sub-heading + .c-paragraph p {
+  margin:      10px 0 0 !important;
+  color:       var(--mbs-muted) !important;
+  line-height: 1.55 !important;
+  font-size:   13.8px !important;
+}
+
+/* Tile button pinned to bottom */
+#row-gyG6yztK51 .c-button,
+.c-row.mbs3-grid-4 .c-button {
+  margin-top:   auto !important;
+  padding-top:  14px !important;
+}
+#row-gyG6yztK51 .c-button button,
+.c-row.mbs3-grid-4 .c-button button {
+  width:           100% !important;
+  display:         inline-flex !important;
+  align-items:     center !important;
+  justify-content: center !important;
+  padding:         10px 14px !important;
+  border-radius:   999px !important;
+  border:          1.5px solid rgba(22,138,91,.28) !important;
+  background:      #fff !important;
+  color:           var(--mbs-accent) !important;
+  font-weight:     900 !important;
+  font-size:       14px !important;
+  line-height:     1 !important;
+  box-shadow:      none !important;
+  transition:      .15s ease !important;
+}
+#row-gyG6yztK51 .c-button button:hover,
+.c-row.mbs3-grid-4 .c-button button:hover {
+  border-color: rgba(22,138,91,.55) !important;
+  background:   rgba(22,138,91,.06) !important;
+}
+
+/* ── CTA row (row below tile grid) ── */
+#row-zUl2pW4T6z > .inner {
+  display:     flex !important;
+  gap:         12px !important;
+  flex-wrap:   wrap !important;
+  align-items: center !important;
+}
+#row-zUl2pW4T6z > .inner > .c-column {
+  padding:  0 !important;
+  width:    auto !important;
+  flex:     0 0 auto !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   CARDS
+   Add "mbs3-card" to a Column.
+══════════════════════════════════════════════════════════════════ */
+.mbs3-card {
+  background:    #fff !important;
+  border:        1px solid var(--mbs-line) !important;
+  border-radius: 24px !important;
+  box-shadow:    var(--mbs-shadow2) !important;
+  transition:    transform .18s ease, box-shadow .18s ease;
+}
+.mbs3-card .vertical.inner { padding: 22px !important; }
+@media (hover:hover) {
+  .mbs3-card:hover {
+    transform:  translateY(-2px) !important;
+    box-shadow: var(--mbs-shadow) !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   CALLOUTS & INLINE NOTES
+══════════════════════════════════════════════════════════════════ */
+.mbs3-callout,
+.mbs3-callout p {
+  padding:       14px 16px !important;
+  border-radius: var(--mbs-r) !important;
+  background:    var(--mbs-accentSoft) !important;
+  border:        1px solid rgba(22,138,91,.16) !important;
+  font-size:     13.8px !important;
+  line-height:   1.65 !important;
+  color:         var(--mbs-ink) !important;
+}
+.mbs3-note p {
+  margin-top:    12px !important;
+  padding:       12px 14px !important;
+  border-radius: 14px !important;
+  background:    var(--mbs-accentSoft) !important;
+  border:        1px solid rgba(22,138,91,.14) !important;
+  color:         rgba(11,18,32,.78) !important;
+}
+.mbs3-insight p {
+  margin-top:   14px !important;
+  padding:      14px 16px !important;
+  border-left:  4px solid var(--mbs-accent) !important;
+  border-radius:12px !important;
+  background:   rgba(11,18,32,.03) !important;
+  color:        rgba(11,18,32,.86) !important;
+  font-weight:  800 !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   BULLET LISTS → CHECKMARK LISTS
+   Works on GHL bullet-list elements inside .mbs3-card,
+   or any element with the "mbs3-list" class.
+══════════════════════════════════════════════════════════════════ */
+.mbs3-card .c-bullet-list ul,
+.mbs3-list ul {
+  list-style:   none !important;
+  padding-left: 0 !important;
+  margin:       14px 0 0 !important;
+  display:      grid !important;
+  gap:          10px !important;
+}
+.mbs3-card .c-bullet-list li,
+.mbs3-list li {
+  display:     flex !important;
+  gap:         10px !important;
+  align-items: flex-start !important;
+  color:       rgba(11,18,32,.82) !important;
+  line-height: 1.6 !important;
+}
+.mbs3-card .c-bullet-list li::before,
+.mbs3-list li::before {
+  content:       "✓";
+  width:         22px; height: 22px;
+  border-radius: 10px;
+  display:       flex; align-items: center; justify-content: center;
+  background:    rgba(22,138,91,.10);
+  border:        1px solid rgba(22,138,91,.18);
+  color:         var(--mbs-accent);
+  font-size:     12px; font-weight: 900;
+  flex:          0 0 auto;
+  transform:     translateY(1px);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   FAQ
+   Add "mbs3-faq" to the section or FAQ block wrapper.
+══════════════════════════════════════════════════════════════════ */
+.mbs3-faq .hl-faq-child {
+  border-radius: 18px !important;
+  border:        1px solid var(--mbs-line) !important;
+  background:    #fff !important;
+  margin-bottom: 10px !important;
+  overflow:      hidden !important;
+  box-shadow:    0 10px 20px rgba(2,6,23,.05) !important;
+  transition:    box-shadow .18s ease !important;
+}
+.mbs3-faq .hl-faq-child:hover { box-shadow: 0 14px 30px rgba(2,6,23,.10) !important; }
+.mbs3-faq .hl-faq-child-heading {
+  padding:     14px 18px !important;
+  font-weight: 900 !important;
+  color:       var(--mbs-ink) !important;
+}
+.mbs3-faq .hl-faq-child-panel {
+  padding:    0 18px 14px !important;
+  background: #fff !important;
+}
+.mbs3-faq .hl-faq-child-panel p {
+  margin:      0 !important;
+  color:       var(--mbs-muted) !important;
+  line-height: 1.7 !important;
+  font-size:   14px !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   VIDEO SECTION
+   Add "mbs3-video" to the Section, and optionally wrap the
+   embed in a div.mbs3-video__frame > div.mbs3-video__ratio.
+══════════════════════════════════════════════════════════════════ */
+.mbs3-video { padding: 76px 0; }
+.mbs3-video__frame {
+  border-radius: 28px !important;
+  overflow:      hidden !important;
+  border:        1px solid var(--mbs-line) !important;
+  box-shadow:    var(--mbs-shadow) !important;
+  background:    var(--mbs-ink) !important;
+}
+.mbs3-video__ratio {
+  position:    relative;
+  width:       100%;
+  padding-top: 56.25%;
+  background:  rgba(11,18,32,.06);
+}
+.mbs3-video__ratio iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: 0; display: block;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   NUMBERED SVG ICONS
+══════════════════════════════════════════════════════════════════ */
+.mbs3-numsvg { display: block !important; margin-bottom: 14px !important; }
+
+/* ══════════════════════════════════════════════════════════════════
+   UNIVERSAL GHL CARD POLISH
+   Auto-applies to any GHL column with "borderFull + radius20/25"
+   — no extra class needed. Adds consistent border, shadow, hover.
+══════════════════════════════════════════════════════════════════ */
+.c-column        > .vertical.inner.borderFull.radius20,
+.c-column        > .vertical.inner.borderFull.radius25,
+.c-nested-column > .vertical.inner.borderFull.radius20,
+.c-nested-column > .vertical.inner.borderFull.radius25 {
+  background:    #fff !important;
+  border:        1px solid var(--mbs-line) !important;
+  border-radius: 24px !important;
+  box-shadow:    var(--mbs-shadow2) !important;
+  overflow:      hidden !important;
+  transition:    transform .18s ease, box-shadow .18s ease;
+}
+@media (hover:hover) {
+  .c-column:hover > .vertical.inner.borderFull.radius20,
+  .c-column:hover > .vertical.inner.borderFull.radius25 {
+    transform:  translateY(-2px) !important;
+    box-shadow: var(--mbs-shadow) !important;
+  }
+}
+/* Don't hover-lift inside the hero */
+.mbs3-hero .c-column > .vertical.inner.borderFull {
+  transition: none !important;
+}
+/* Consistent border colours everywhere */
+.mbs3-sec  .borderFull,
+.mbs3-soft .borderFull { border-color: var(--mbs-line) !important; }
+
+/* ══════════════════════════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════════════════════════ */
+.mbs3-footer {
+  padding:    42px 0;
+  border-top: 1px solid var(--mbs-line);
+  background: #fff;
+}
+.mbs3-footer a { color: var(--mbs-muted); text-decoration: none; }
+.mbs3-footer a:hover { color: var(--mbs-ink); }
+.mbs3-footer h4 { margin: 0 0 10px; font-size: 13px; font-weight: 900; }
+.mbs3-copy { margin-top: 12px; color: var(--mbs-muted); font-size: 12.5px; line-height: 1.6; }
+
+/* ══════════════════════════════════════════════════════════════════
+   SCROLL REVEAL
+   CSS side only — opacity + transform.
+   Add a Custom Code block with the JS below (see comment).
+══════════════════════════════════════════════════════════════════ */
+.mbs3-reveal {
+  opacity:    0;
+  transform:  translateY(22px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.mbs3-reveal.is-visible {
+  opacity:   1;
+  transform: none;
+}
+.mbs3-reveal-d1 { transition-delay: .10s; }
+.mbs3-reveal-d2 { transition-delay: .20s; }
+.mbs3-reveal-d3 { transition-delay: .30s; }
+
+/*
+   ── SCROLL REVEAL JS (paste into a Custom Code block) ──
+
+   <script>
+   (function(){
+     var els = document.querySelectorAll('.mbs3-reveal');
+     if(!els.length) return;
+     var io = new IntersectionObserver(function(entries, obs){
+       entries.forEach(function(e){
+         if(e.isIntersecting){ e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+       });
+     }, { threshold: 0.12 });
+     els.forEach(function(el){ io.observe(el); });
+   })();
+   </script>
+
+   Then add class "mbs3-reveal" (+ optionally mbs3-reveal-d1/d2/d3)
+   to any card, heading, or stat block you want to animate in.
+*/
+
+/* ══════════════════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .mbs3-sec,
+  .mbs3-video  { padding: 52px 0; }
+}
+@media (max-width: 640px) {
+  #section-1D1ckiYOsk { margin: 12px 12px !important; }
+  .mbs3-sec,
+  .mbs3-video  { padding: 36px 0; }
+  .mbs3-sec--tight { padding: 24px 0; }
+  .mbs3-hero .c-heading h1 { font-size: 30px !important; }
+  .mbs3-tile { min-height: unset !important; }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   CONSULTATION MODAL  (#mbConsultModal)
+   ─────────────────────────────────────────────────────────────────
+   Used on most pages. Styles the booking/calendar popup overlay.
+══════════════════════════════════════════════════════════════════ */
+#mbConsultModal .mb-modal__dialog {
+  width:  min(1320px, calc(100% - 16px));
+  margin: 10px auto;
+}
+#mbConsultModal .mb-modal__body {
+  min-height:    calc(100vh - 120px);
+  border-radius: 22px;
+  overflow:      hidden;
+  border:        1px solid var(--mbs-line);
+  box-shadow:    0 30px 80px rgba(11,18,32,.22);
+}
+#mbConsultModal .mb-iframe {
+  height:       calc(100vh - 260px);
+  border-radius: inherit;
+}
+/* Close button */
+#mbConsultModal .mb-modal__close {
+  border-radius: 999px !important;
+  background:    rgba(11,18,32,.08) !important;
+  border:        1px solid var(--mbs-line) !important;
+  transition:    background .14s ease !important;
+}
+#mbConsultModal .mb-modal__close:hover { background: rgba(11,18,32,.14) !important; }
+
+/* ══════════════════════════════════════════════════════════════════
+   ACCESSIBILITY
+══════════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .mbs3-tile,
+  .mbs3-card,
+  .mbs3-reveal,
+  .c-column > .vertical.inner.borderFull,
+  .c-button button { transition: none !important; }
+}
