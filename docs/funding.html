@@ -425,11 +425,9 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
         <button class="mToggle" type="button" aria-controls="primaryNav" aria-expanded="false">Menu</button>
 
         <nav class="menu" id="primaryNav" aria-label="Primary navigation">
-          <a href="BILLING_LINK">ALW Billing</a>
-
-          <div class="dd" aria-label="Licensing dropdown">
+          <div class="dd" aria-label="State Licensing dropdown">
             <button class="ddBtn" type="button" aria-haspopup="true" aria-expanded="false">
-              Licensing
+              State Licensing
               <svg viewBox="0 0 24 24" width="12" height="12" fill="none" style="opacity:.8;transform:translateY(1px)">
                 <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
@@ -437,21 +435,43 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
             <div class="panel" role="menu" aria-label="Licensing options">
               <a href="RCFE_LIC_LINK">
                 <div>
-                  <div>RCFE</div>
+                  <div>RCFE Licensing</div>
                   <div class="mini">Residential Care Facility for the Elderly</div>
                 </div>
               </a>
               <a href="ARF_LIC_LINK">
                 <div>
-                  <div>ARF</div>
+                  <div>ARF Licensing</div>
                   <div class="mini">Adult Residential Facility</div>
                 </div>
               </a>
             </div>
           </div>
 
-          <a href="ALW_APP_LINK">ALW Application</a>
-          <a class="active" href="FUNDING_LINK">Increase Funding</a>
+          <div class="dd" aria-label="ALW Waiver Support dropdown">
+            <button class="ddBtn" type="button" aria-haspopup="true" aria-expanded="false">
+              ALW Waiver Support
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" style="opacity:.8;transform:translateY(1px)">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="panel" role="menu" aria-label="ALW Waiver options">
+              <a href="BILLING_LINK">
+                <div>
+                  <div>ALW Billing</div>
+                  <div class="mini">End-to-end billing for RCFE &amp; ARF providers</div>
+                </div>
+              </a>
+              <a href="ALW_APP_LINK">
+                <div>
+                  <div>ALW Application</div>
+                  <div class="mini">Waiver application guidance and support</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <a class="active" href="FUNDING_LINK">ALW Funding/Revenue</a>
           <a href="CONSULTING_LINK">RCFE Consulting</a>
         </nav>
 
