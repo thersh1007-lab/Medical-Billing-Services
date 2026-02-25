@@ -50,6 +50,7 @@ Quick edits (search these):
   .mbs3{
     --bg:#f4f7f6;
     --card:#ffffff;
+    --heroImg:url("https://images.pexels.com/photos/7651555/pexels-photo-7651555.jpeg");
     --ink:#0b1220;
     --muted:rgba(11,18,32,.68);
     --line:rgba(11,18,32,.10);
@@ -223,35 +224,35 @@ Quick edits (search these):
   }
   .mbs3-menu-panel a:hover{ background:rgba(255,255,255,.75); }
 
-  /* ===================== HERO ===================== */
+  /* ===================== HERO (full-bleed dark) ===================== */
   .mbs3-hero{
-    padding:26px 0 22px;
+    padding:22px 0 26px;
   }
   .mbs3-hero-card{
-    background:rgba(255,255,255,.65);
-    border:1px solid rgba(11,18,32,.08);
-    border-radius:var(--radius-xl);
-    box-shadow:var(--shadow);
+    position:relative;
+    border-radius:clamp(22px,3vw,34px);
     overflow:hidden;
+    box-shadow:var(--shadow);
+    background:#0b1220;
   }
-  .mbs3-hero-grid{
-    display:grid;
-    grid-template-columns: 1.05fr .95fr;
-    gap:0;
-    align-items:stretch;
+  .mbs3-heroBg{
+    position:absolute;inset:0;
+    background-image:var(--heroImg);
+    background-size:cover;
+    background-position:center;
+    transform:scale(1.02);
+    filter:saturate(1.02) contrast(1.02);
+  }
+  .mbs3-heroOverlay{
+    position:absolute;inset:0;
+    background:
+      radial-gradient(900px 520px at 16% 26%, rgba(255,255,255,.18), rgba(255,255,255,0) 62%),
+      linear-gradient(90deg, rgba(11,18,32,.72) 0%, rgba(11,18,32,.38) 58%, rgba(11,18,32,.60) 100%);
   }
   .mbs3-hero-left{
-    padding:42px 42px 36px;
-  }
-  .mbs3-hero-right{
     position:relative;
-    min-height:420px;
-    background:#e9efed;
-  }
-  .mbs3-hero-right img{
-    position:absolute; inset:0;
-    width:100%; height:100%;
-    object-fit:cover;
+    padding:clamp(28px,4.2vw,58px);
+    max-width:820px;
   }
 
   .mbs3-pill{
@@ -260,9 +261,9 @@ Quick edits (search these):
     gap:10px;
     padding:8px 12px;
     border-radius:999px;
-    background:var(--pill);
-    border:1px solid rgba(22,138,91,.18);
-    color:var(--accent);
+    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.18);
+    color:rgba(255,255,255,.92);
     font-weight:900;
     font-size:13px;
   }
@@ -270,16 +271,18 @@ Quick edits (search these):
 
   .mbs3-h1{
     margin:18px 0 10px;
-    font-size:58px;
-    line-height:1.02;
+    font-size:clamp(32px,3.6vw,58px);
+    line-height:1.04;
     letter-spacing:-1.2px;
+    color:#fff;
+    text-shadow:0 10px 30px rgba(0,0,0,.25);
   }
   .mbs3-lede{
     margin:0 0 18px;
     font-size:16.5px;
     line-height:1.55;
-    color:rgba(11,18,32,.68);
-    max-width:520px;
+    color:rgba(255,255,255,.86);
+    max-width:620px;
   }
 
   .mbs3-hero-ctas{
@@ -301,15 +304,16 @@ Quick edits (search these):
     gap:10px;
     padding:10px 14px;
     border-radius:999px;
-    border:1px solid rgba(11,18,32,.10);
-    background:rgba(255,255,255,.70);
+    border:1px solid rgba(255,255,255,.18);
+    background:rgba(255,255,255,.14);
     font-weight:800;
-    color:rgba(11,18,32,.62);
+    color:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);
   }
   .mbs3-chip .mbs3-dot{
     width:9px; height:9px;
-    background:rgba(11,18,32,.22);
-    box-shadow:none;
+    background:var(--accent);
+    box-shadow:0 0 0 4px rgba(22,138,91,.20);
   }
 
   /* Service tiles under hero */
@@ -486,8 +490,7 @@ Quick edits (search these):
 
   /* ===================== RESPONSIVE ===================== */
   @media (max-width: 980px){
-    .mbs3-hero-grid{ grid-template-columns:1fr; }
-    .mbs3-hero-right{ min-height:320px; }
+    .mbs3-hero-left{ padding:clamp(24px,3vw,42px); }
     .mbs3-tiles{ grid-template-columns: repeat(2, 1fr); }
     .mbs3-grid-2{ grid-template-columns:1fr; }
     .mbs3-checklist{ grid-template-columns:1fr; }
@@ -597,8 +600,7 @@ Quick edits (search these):
   /* ≤640px core mobile pass */
   @media(max-width:640px){
     .mbs3-topbar{display:none}                    /* sticky CTA replaces this */
-    .mbs3-hero-right{display:none}                /* drop hero image — text gets full width */
-    .mbs3-hero-grid{grid-template-columns:1fr !important}
+    .mbs3-hero-left{padding:24px 20px}
     .mbs3-section{padding:36px 0}
     .mbs3-final{padding:36px 0 52px}
     .mbs3-final-card{flex-direction:column;padding:24px 20px;gap:16px}
@@ -816,66 +818,66 @@ Quick edits (search these):
   <section class="mbs3-hero">
     <div class="mbs3-shell">
       <div class="mbs3-hero-card">
-        <div class="mbs3-hero-grid">
-          <div class="mbs3-hero-left">
-            <div class="mbs3-pill">
-              <span class="mbs3-dot" aria-hidden="true"></span>
-              RCFE Owner/Operator
-            </div>
+        <div class="mbs3-heroBg" role="img" aria-label="Facility and care image"></div>
+        <div class="mbs3-heroOverlay" aria-hidden="true"></div>
 
-            <h1 class="mbs3-h1"><span class="heroGradient">ALW</span> Billing &amp; Licensing Support for RCFE + ARF Owners</h1>
-
-            <p class="mbs3-lede">
-              If you’re tired of guessing what’s pending, what’s denied, and what’s next,
-              we bring structure, proactive follow-through, and operator-level guidance,
-              built specifically for the Assisted Living Waiver (ALW) space.
-            </p>
-
-            <div class="mbs3-hero-ctas">
-              <a class="mbs3-btn mbs3-btn--primary mb-open-consult" href="BOOKING_LINK">Book the right consult</a>
-              <a class="mbs3-btn" href="#services">See services</a>
-            </div>
-
-            <div class="mbs3-chips" aria-label="Highlights">
-              <div class="mbs3-chip"><span class="mbs3-dot" aria-hidden="true"></span> Over $1.5M billed monthly</div>
-              <div class="mbs3-chip"><span class="mbs3-dot" aria-hidden="true"></span> ALW-focused (not generic)</div>
-              <div class="mbs3-chip"><span class="mbs3-dot" aria-hidden="true"></span> Proactive follow-through</div>
-            </div>
-
-            <div class="mbs3-tiles" id="services">
-              <div class="mbs3-tile">
-                <h3>ALW Medical Billing</h3>
-                <p>Already operating in ALW? We manage billing with structure, proactive follow-up, and clear visibility into what’s happening.</p>
-                <a class="mbs3-link" href="BOOKING_LINK">Explore ALW Billing <span>→</span></a>
-              </div>
-
-              <div class="mbs3-tile">
-                <h3>California Licensing + ALW Applications</h3>
-                <p>Starting up or expanding? We guide the state application process and ALW application steps with clear requirements and a clean handoff.</p>
-                <a class="mbs3-link" href="BOOKING_LINK">Start Licensing / Application <span>→</span></a>
-              </div>
-
-              <div class="mbs3-tile">
-                <h3>Revenue Improvement / Additional Funding</h3>
-                <p>If you suspect the program can support more, we’ll identify improvement opportunities and map a practical plan for your business.</p>
-                <a class="mbs3-link" href="BOOKING_LINK">Explore Revenue Improvement <span>→</span></a>
-              </div>
-
-              <div class="mbs3-tile">
-                <h3>RCFE Consulting</h3>
-                <p>Operator-focused guidance beyond billing. Best practices, documentation readiness, program changes, and smarter decisions as you grow.</p>
-                <a class="mbs3-link" href="BOOKING_LINK">Learn More <span>→</span></a>
-              </div>
-            </div>
+        <div class="mbs3-hero-left">
+          <div class="mbs3-pill">
+            <span class="mbs3-dot" aria-hidden="true"></span>
+            Over $1.5 Million Billed Monthly for ARF &amp; RCFE Providers.
           </div>
 
-          <div class="mbs3-hero-right" aria-label="Hero image">
-            <img
-              src="HERO_IMAGE_URL"
-              alt="Medical billing clipboard"
-              loading="eager"
-            />
+          <h1 class="mbs3-h1"><span class="heroGradient">ALW</span> Billing &amp; Licensing Support for RCFE + ARF Owners</h1>
+
+          <p class="mbs3-lede">
+            If you’re tired of guessing what’s pending, what’s denied, and what’s next,
+            we bring structure, proactive follow-through, and operator-level guidance,
+            built specifically for the Assisted Living Waiver (ALW) space.
+          </p>
+
+          <div class="mbs3-hero-ctas">
+            <a class="mbs3-btn mbs3-btn--primary mb-open-consult" href="BOOKING_LINK">Book the right consult</a>
+            <a class="mbs3-btn" href="#services">See services</a>
           </div>
+
+          <div class="mbs3-chips" aria-label="Highlights">
+            <div class="mbs3-chip"><span class="mbs3-dot" aria-hidden="true"></span> ALW-focused (not generic)</div>
+            <div class="mbs3-chip"><span class="mbs3-dot" aria-hidden="true"></span> Proactive follow-through</div>
+            <div class="mbs3-chip"><span class="mbs3-dot" aria-hidden="true"></span> Pay-for-performance</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE TILES -->
+  <section class="mbs3-section mbs3-section--white" id="services" style="padding-top:36px;">
+    <div class="mbs3-shell">
+      <h2>Choose the path that fits your situation.</h2>
+      <p class="mbs3-sub">Pick what you need. We’ll route you to the right next step without confusion.</p>
+      <div class="mbs3-tiles">
+        <div class="mbs3-tile">
+          <h3>ALW Medical Billing</h3>
+          <p>Already operating in ALW? We manage billing with structure, proactive follow-up, and clear visibility into what’s happening.</p>
+          <a class="mbs3-link" href="BOOKING_LINK">Explore ALW Billing <span>→</span></a>
+        </div>
+
+        <div class="mbs3-tile">
+          <h3>California Licensing + ALW Applications</h3>
+          <p>Starting up or expanding? We guide the state application process and ALW application steps with clear requirements and a clean handoff.</p>
+          <a class="mbs3-link" href="BOOKING_LINK">Start Licensing / Application <span>→</span></a>
+        </div>
+
+        <div class="mbs3-tile">
+          <h3>Revenue Improvement / Additional Funding</h3>
+          <p>If you suspect the program can support more, we’ll identify improvement opportunities and map a practical plan for your business.</p>
+          <a class="mbs3-link" href="BOOKING_LINK">Explore Revenue Improvement <span>→</span></a>
+        </div>
+
+        <div class="mbs3-tile">
+          <h3>RCFE Consulting</h3>
+          <p>Operator-focused guidance beyond billing. Best practices, documentation readiness, program changes, and smarter decisions as you grow.</p>
+          <a class="mbs3-link" href="BOOKING_LINK">Learn More <span>→</span></a>
         </div>
       </div>
     </div>
@@ -1202,8 +1204,7 @@ Quick edits (search these):
       });
     }
 
-    var heroImg = document.querySelector('.mbs3-hero-right img');
-    if(heroImg && heroImg.getAttribute('src') === "HERO_IMAGE_URL"){ heroImg.src = HERO_IMAGE; }
+    // Hero image now uses CSS background (--heroImg variable)
 
     // Mobile nav toggle
     var toggle = root && root.querySelector('.mToggle');
