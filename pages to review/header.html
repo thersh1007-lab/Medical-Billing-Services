@@ -1,0 +1,136 @@
+<style id="mbs3-polish-pack">
+  /* ============================
+     MBS3 POLISH PACK (Elevated)
+     ============================ */
+
+  :root{
+    --mbs-ink:#0b1220;
+    --mbs-muted:rgba(11,18,32,.74);
+
+    /* Surfaces */
+    --mbs-page:#f7fbf9;
+    --mbs-card:#ffffff;
+
+    /* Borders / accents */
+    --mbs-border:rgba(11,18,32,.10);
+    --mbs-accent:#0E7F54;
+
+    /* Radii */
+    --mbs-r-lg:22px;      /* cards */
+    --mbs-r-hero:74px;    /* hero container (matches your inline) */
+
+    /* Shadows (one system) */
+    --mbs-shadow: 0 18px 50px rgba(11,18,32,.10), 0 1px 0 rgba(11,18,32,.04);
+    --mbs-shadow-hover: 0 28px 70px rgba(11,18,32,.14), 0 1px 0 rgba(11,18,32,.04);
+
+    --mbs-shadow-hero: 0 30px 90px rgba(11,18,32,.18);
+  }
+
+  /* ---- Page backdrop (subtle, makes white cards “lift”) ---- */
+  html, body{
+    background:
+      radial-gradient(900px 520px at 12% -10%, rgba(14,127,84,.10), transparent 60%),
+      radial-gradient(900px 520px at 88%  0%, rgba(14,127,84,.07), transparent 55%),
+      var(--mbs-page) !important;
+  }
+
+  /* ---- Sticky header: more premium (soft glass + consistent shadow) ---- */
+  .mbs3-hdr{
+    background: rgba(255,255,255,.86) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(11,18,32,.08) !important;
+    box-shadow: 0 10px 30px rgba(11,18,32,.08) !important;
+  }
+
+  /* ---- HERO container: ensure the rounded edges are clean + add lift ---- */
+  /* .mbs3-hero covers all pages; IDs kept as per-page fallbacks */
+  .mbs3-hero,
+  #section-pi0HpEv3g,   /* billing page hero */
+  #section-1D1ckiYOsk{  /* home page hero */
+    overflow: hidden !important;
+    border-radius: var(--mbs-r-hero) !important;
+    box-shadow: var(--mbs-shadow-hero) !important;
+  }
+  /* Force the GHL background layer inside the hero to respect radius */
+  .mbs3-hero > .bg,
+  #section-pi0HpEv3g > .bg,
+  #section-1D1ckiYOsk > .bg{
+    border-radius: inherit !important;
+  }
+
+  /* ---- UNIVERSAL “Card System” for your bordered blocks ----
+     Targets: column inner wrappers (not buttons) using borderFull + radius20/25
+  */
+  .c-column > .vertical.inner.borderFull.radius20,
+  .c-column > .vertical.inner.borderFull.radius25,
+  .c-nested-column > .vertical.inner.borderFull.radius20,
+  .c-nested-column > .vertical.inner.borderFull.radius25,
+  .c-row.borderFull.radius20,
+  .c-row.borderFull.radius25{
+    background: var(--mbs-card) !important;
+    border: 1px solid var(--mbs-border) !important;
+
+    /* unify the look */
+    border-radius: var(--mbs-r-lg) !important;
+    box-shadow: var(--mbs-shadow) !important;
+
+    /* fixes “weird edges” */
+    overflow: hidden !important;
+
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+
+  /* Hover lift (desktop only) */
+  @media (hover:hover){
+    .c-column:hover > .vertical.inner.borderFull.radius20,
+    .c-column:hover > .vertical.inner.borderFull.radius25,
+    .c-nested-column:hover > .vertical.inner.borderFull.radius20,
+    .c-nested-column:hover > .vertical.inner.borderFull.radius25,
+    .c-row.borderFull.radius20:hover,
+    .c-row.borderFull.radius25:hover{
+      transform: translateY(-2px);
+      box-shadow: var(--mbs-shadow-hover) !important;
+      border-color: rgba(11,18,32,.14) !important;
+    }
+  }
+
+  /* Make *any* bg layer inside rounded bordered sections/rows clip correctly */
+  .c-section.borderFull[class*="radius"] > .bg,
+  .c-row.borderFull[class*="radius"] > .bg{
+    border-radius: inherit !important;
+  }
+
+  /* Images inside these rounded wrappers: prevent corner “bleed” */
+  .c-row.borderFull.radius25 img,
+  .c-column > .vertical.inner.borderFull.radius25 img,
+  .c-column > .vertical.inner.borderFull.radius20 img{
+    display:block;
+  }
+
+  /* ---- Section: "If billing feels vague..." micro polish ---- */
+  #section-gwJFLuomW9{
+    background: transparent !important;
+  }
+  #section-gwJFLuomW9 .row-4O8xTIPtUu > .inner{
+    gap: 22px !important; /* cleaner spacing between the 3 cards */
+  }
+  #section-gwJFLuomW9 .c-svg{
+    margin-bottom: 14px !important;
+  }
+  #section-gwJFLuomW9 .c-paragraph p{
+    color: var(--mbs-muted);
+  }
+</style>
+<style>
+#mbConsultModal .mb-modal__dialog{
+  width: min(1320px, calc(100% - 16px));
+  margin: 10px auto;
+}
+#mbConsultModal .mb-modal__body{
+  min-height: calc(100vh - 120px); /* fill the viewport */
+}
+#mbConsultModal .mb-iframe{
+  height: calc(100vh - 260px);
+}
+</style>

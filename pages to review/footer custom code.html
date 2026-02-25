@@ -1,0 +1,880 @@
+<!-- =========================================================
+MEDBILLINGCO.COM — HOMEPAGE CONSULT MODAL (SLEEK / 4-STEP) — v2.1
+Single paste into ONE GoHighLevel Custom Code block.
+
+Changes in v2.1:
+✅ Removed auto-open completely
+✅ Fixed invalid nested <style> tags (all CSS in one style block)
+✅ GHL button trigger via .mb-open-consult
+✅ Senior-friendly typography + larger modal sizing included
+
+EDIT THESE:
+- WEBHOOK_URL (already set)
+- CONSULT_OPTIONS[4].calendarUrl (replace placeholder)
+
+Flow:
+Step 1: First/Last, Facility Name, Email, Phone (required)
+Step 2: Zip (CA gate), Beds, Years + 3 checkboxes
+Step 3: Select consult type (5 options)
+Step 4: Calendar embed loads based on selection
+========================================================= -->
+
+<style>
+  :root{
+    --mb-ink:#0b1220;
+    --mb-muted:#5b667a;
+    --mb-bg: rgba(11,18,32,.55);
+    --mb-card:#ffffff;
+    --mb-line: rgba(11,18,32,.10);
+
+    --mb-accent:#16a34a;
+    --mb-accent2:#0ea5a4;
+    --mb-soft:#f3f7f5;
+    --mb-danger:#b91c1c;
+
+    --mb-radius:18px;
+    --mb-shadow: 0 30px 80px rgba(0,0,0,.35);
+    --mb-font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  }
+
+  .mb-consult-launch{
+    display:inline-flex; align-items:center; gap:.55rem;
+    padding:.85rem 1.05rem;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.22);
+    background: linear-gradient(135deg, rgba(22,163,74,.14), rgba(14,165,164,.12));
+    color:#fff; font-family: var(--mb-font);
+    font-weight:650; letter-spacing:.2px;
+    cursor:pointer;
+    transition: transform .12s ease, filter .12s ease;
+    user-select:none;
+  }
+  .mb-consult-launch:hover{ transform: translateY(-1px); filter: brightness(1.03); }
+  .mb-consult-launch:active{ transform: translateY(0px); }
+
+  .mb-modal{ position:fixed; inset:0; display:none; z-index:999999; font-family: var(--mb-font); }
+  .mb-modal.is-open{ display:block; }
+  .mb-modal__backdrop{ position:absolute; inset:0; background: var(--mb-bg); backdrop-filter: blur(10px); }
+
+  /* ===== Modal Size (bigger) ===== */
+  .mb-modal__dialog{
+    position:relative;
+    width: min(1180px, calc(100% - 24px));
+    margin: clamp(12px, 2.5vh, 24px) auto;
+    background: var(--mb-card);
+    border-radius: var(--mb-radius);
+    box-shadow: var(--mb-shadow);
+    overflow:hidden;
+  }
+
+  .mb-modal__top{
+    display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
+    padding: 18px 18px 14px 18px;
+    border-bottom:1px solid var(--mb-line);
+    background:
+      radial-gradient(1200px 240px at 10% 0%, rgba(22,163,74,.10), transparent 60%),
+      radial-gradient(900px 220px at 90% 0%, rgba(14,165,164,.10), transparent 55%),
+      linear-gradient(#fff, #fff);
+  }
+
+  .mb-modal__headline{ display:flex; flex-direction:column; gap:6px; padding-right:10px; }
+
+  /* ===== Senior-friendly typography ===== */
+  #mbConsultModal{ font-size: 16px; }
+
+  .mb-modal__title{
+    margin:0;
+    font-size: clamp(22px, 2.2vw, 30px);
+    line-height: 1.12;
+    letter-spacing: -0.2px;
+    color: var(--mb-ink);
+    font-weight: 760;
+  }
+  .mb-modal__sub{
+    margin:0;
+    font-size: 16px;
+    color: var(--mb-muted);
+    line-height:1.45;
+    max-width: 70ch;
+  }
+
+  .mb-modal__close{
+    border:1px solid rgba(11,18,32,.14);
+    background:#fff;
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    cursor:pointer;
+    display:grid; place-items:center;
+    transition: transform .12s ease, background .12s ease;
+  }
+  .mb-modal__close:hover{ background: rgba(11,18,32,.03); transform: translateY(-1px); }
+  .mb-modal__close:active{ transform: translateY(0px); }
+  .mb-x{ width:18px; height:18px; }
+
+  .mb-modal__body{
+    display:grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 0;
+    min-height: 680px;
+  }
+  @media (max-width: 860px){
+    .mb-modal__body{ grid-template-columns: 1fr; min-height: unset; }
+  }
+
+  .mb-form{ padding: 18px; }
+
+  .mb-steps{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    margin: 4px 0 14px 0;
+  }
+  .mb-step{
+    flex:1;
+    display:flex; align-items:center; gap:10px;
+    padding: 12px 14px;
+    border:1px solid var(--mb-line);
+    border-radius: 14px;
+    background:#fff;
+  }
+  .mb-step__dot{
+    width:30px; height:30px; border-radius:999px;
+    display:grid; place-items:center;
+    font-weight:750; font-size: 14px;
+    color: var(--mb-muted);
+    border:1px solid rgba(11,18,32,.14);
+    background:#fff;
+  }
+  .mb-step.is-active .mb-step__dot{
+    color:#fff; border-color: transparent;
+    background: linear-gradient(135deg, var(--mb-accent), var(--mb-accent2));
+  }
+  .mb-step.is-done .mb-step__dot{
+    color:#fff; border-color: transparent;
+    background: linear-gradient(135deg, var(--mb-accent), var(--mb-accent));
+  }
+  .mb-step__label{ display:flex; flex-direction:column; line-height:1.1; }
+  .mb-step__label b{ font-size: 15px; color: var(--mb-ink); font-weight: 760; }
+  .mb-step__label span{ font-size: 14px; color: var(--mb-muted); }
+
+  .mb-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+  @media (max-width: 520px){ .mb-grid{ grid-template-columns: 1fr; } }
+
+  .mb-field{ display:flex; flex-direction:column; gap:7px; }
+  .mb-label{ font-size: 14.5px; color: var(--mb-ink); font-weight: 700; }
+  .mb-label small{ font-weight: 650; color: var(--mb-muted); }
+
+  /* Inputs/selects: 16px prevents iOS zoom */
+  .mb-input, .mb-select{
+    width:100%;
+    border:1px solid rgba(11,18,32,.14);
+    border-radius: 14px;
+    padding: 14px 14px;
+    font-size: 16px;
+    outline:none;
+    transition: box-shadow .12s ease, border-color .12s ease;
+    background:#fff;
+  }
+  .mb-input:focus, .mb-select:focus{
+    border-color: rgba(22,163,74,.55);
+    box-shadow: 0 0 0 4px rgba(22,163,74,.12);
+  }
+
+  .mb-help{ margin-top: 10px; font-size: 15.5px; color: var(--mb-muted); line-height:1.5; }
+
+  .mb-error{
+    display:none;
+    margin-top: 10px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border:1px solid rgba(185,28,28,.25);
+    background: rgba(185,28,28,.06);
+    color: #7a0f0f;
+    font-size: 15px;
+    line-height:1.35;
+  }
+  .mb-error.is-show{ display:block; }
+
+  .mb-actions{
+    display:flex; justify-content:space-between; align-items:center; gap: 10px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--mb-line);
+  }
+
+  .mb-btn{
+    border-radius: 999px;
+    padding: 13px 16px;
+    font-weight: 760;
+    font-size: 16px;
+    border: 1px solid rgba(11,18,32,.14);
+    background: #fff;
+    cursor:pointer;
+    transition: transform .12s ease, filter .12s ease, background .12s ease;
+    display:inline-flex; align-items:center; gap:.55rem;
+  }
+  .mb-btn:hover{ transform: translateY(-1px); filter: brightness(1.02); }
+  .mb-btn:active{ transform: translateY(0px); }
+  .mb-btn--primary{
+    border-color: transparent;
+    color:#fff;
+    background: linear-gradient(135deg, var(--mb-accent), var(--mb-accent2));
+  }
+  .mb-btn--ghost{ background: rgba(11,18,32,.02); }
+  .mb-btn[disabled]{ opacity:.55; cursor:not-allowed; transform:none; }
+
+  .mb-side{
+    border-left: 1px solid var(--mb-line);
+    background:
+      radial-gradient(900px 260px at 90% 0%, rgba(22,163,74,.08), transparent 55%),
+      radial-gradient(900px 260px at 20% 40%, rgba(14,165,164,.08), transparent 55%),
+      linear-gradient(#fff, #fff);
+    padding: 18px;
+  }
+  @media (max-width: 860px){
+    .mb-side{ border-left:none; border-top:1px solid var(--mb-line); }
+  }
+
+  .mb-side__card{
+    border:1px solid var(--mb-line);
+    background:#fff;
+    border-radius: 16px;
+    padding: 16px;
+  }
+  .mb-side__kicker{
+    font-size: 12px;
+    font-weight: 850;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mb-muted);
+    margin: 0 0 8px 0;
+  }
+  .mb-side__h{
+    margin: 0 0 8px 0;
+    font-size: clamp(20px, 1.6vw, 24px);
+    font-weight: 800;
+    color: var(--mb-ink);
+    letter-spacing: -.2px;
+    line-height: 1.22;
+  }
+  .mb-side__p{ margin:0; font-size: 15.5px; color: var(--mb-muted); line-height:1.55; }
+  .mb-bullets{ margin: 12px 0 0 0; padding: 0 0 0 18px; color: var(--mb-muted); font-size: 15.5px; line-height:1.55; }
+  .mb-bullets li{ margin: 8px 0; }
+
+  .mb-calendarWrap{
+    margin-top: 14px;
+    border:1px solid var(--mb-line);
+    border-radius: 16px;
+    overflow:hidden;
+    background:#fff;
+    display:none;
+  }
+  .mb-calendarTitle{
+    padding: 10px 12px;
+    border-bottom:1px solid var(--mb-line);
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--mb-ink);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+  }
+  .mb-calendarHint{ font-size: 13px; font-weight: 650; color: var(--mb-muted); }
+
+  /* Calendar bigger */
+  .mb-iframe{ width:100%; height: 520px; border:0; display:block; background:#fff; }
+  @media (max-width: 520px){ .mb-iframe{ height: 620px; } }
+
+  .mb-pane{ display:none; }
+  .mb-pane.is-show{ display:block; }
+
+  .mb-legal{ margin-top: 10px; font-size: 13px; color: rgba(91,102,122,.92); line-height:1.4; }
+
+  /* Checkboxes */
+  .mb-checks{
+    grid-column: 1 / -1;
+    border: 1px solid var(--mb-line);
+    background: rgba(11,18,32,.015);
+    border-radius: 14px;
+    padding: 14px;
+    display:grid;
+    gap:12px;
+  }
+  .mb-check{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    font-size: 15.5px;
+    color: var(--mb-ink);
+    line-height:1.35;
+  }
+  .mb-check input{
+    margin-top: 4px;
+    width: 18px; height: 18px;
+    accent-color: var(--mb-accent);
+  }
+  .mb-check span{
+    color: var(--mb-muted);
+    font-size: 14.5px;
+    display:block;
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+
+  /* Consult choice cards */
+  .mb-choiceGrid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 14px;
+  }
+  @media (max-width: 520px){ .mb-choiceGrid{ grid-template-columns: 1fr; } }
+
+  .mb-choice{
+    border:1px solid rgba(11,18,32,.14);
+    background:#fff;
+    border-radius: 16px;
+    padding: 14px;
+    cursor:pointer;
+    transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  .mb-choice:hover{ transform: translateY(-1px); box-shadow: 0 10px 24px rgba(0,0,0,.08); }
+  .mb-choice.is-selected{
+    border-color: rgba(22,163,74,.65);
+    box-shadow: 0 0 0 4px rgba(22,163,74,.12);
+  }
+  .mb-choice b{ color: var(--mb-ink); font-weight: 820; font-size: 16px; letter-spacing:-.15px; }
+  .mb-choice p{ margin:0; color: var(--mb-muted); font-size: 15px; line-height:1.45; }
+</style>
+
+<div class="mb-modal" id="mbConsultModal" aria-hidden="true">
+  <div class="mb-modal__backdrop" data-mb-close></div>
+
+  <div class="mb-modal__dialog" role="dialog" aria-modal="true" aria-label="Request a consult">
+    <div class="mb-modal__top">
+      <div class="mb-modal__headline">
+        <h2 class="mb-modal__title">Set Up Your Consult</h2>
+        <p class="mb-modal__sub">Answer a few quick questions, then choose the consult you’d like to schedule. (California facilities only.)</p>
+      </div>
+
+      <button class="mb-modal__close" type="button" aria-label="Close" data-mb-close>
+        <svg class="mb-x" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mb-modal__body">
+      <!-- LEFT -->
+      <div class="mb-form">
+        <div class="mb-steps" aria-label="Steps">
+          <div class="mb-step is-active" data-step-ind="1">
+            <div class="mb-step__dot">1</div>
+            <div class="mb-step__label"><b>Details</b><span>Contact</span></div>
+          </div>
+          <div class="mb-step" data-step-ind="2">
+            <div class="mb-step__dot">2</div>
+            <div class="mb-step__label"><b>Facility</b><span>Quick fit</span></div>
+          </div>
+          <div class="mb-step" data-step-ind="3">
+            <div class="mb-step__dot">3</div>
+            <div class="mb-step__label"><b>Consult</b><span>Select</span></div>
+          </div>
+          <div class="mb-step" data-step-ind="4">
+            <div class="mb-step__dot">4</div>
+            <div class="mb-step__label"><b>Schedule</b><span>Book</span></div>
+          </div>
+        </div>
+
+        <div class="mb-error" id="mbErr"></div>
+
+        <!-- STEP 1 -->
+        <div class="mb-pane is-show" data-step="1">
+          <div class="mb-grid">
+            <div class="mb-field">
+              <label class="mb-label" for="mbFirst">First name <small>(required)</small></label>
+              <input class="mb-input" id="mbFirst" type="text" autocomplete="given-name" required />
+            </div>
+            <div class="mb-field">
+              <label class="mb-label" for="mbLast">Last name <small>(required)</small></label>
+              <input class="mb-input" id="mbLast" type="text" autocomplete="family-name" required />
+            </div>
+
+            <div class="mb-field" style="grid-column:1/-1;">
+              <label class="mb-label" for="mbFacility">Facility / business name <small>(required)</small></label>
+              <input class="mb-input" id="mbFacility" type="text" autocomplete="organization" required />
+            </div>
+
+            <div class="mb-field">
+              <label class="mb-label" for="mbEmail">Email <small>(required)</small></label>
+              <input class="mb-input" id="mbEmail" type="email" autocomplete="email" required />
+            </div>
+            <div class="mb-field">
+              <label class="mb-label" for="mbPhone">Phone <small>(required)</small></label>
+              <input class="mb-input" id="mbPhone" type="tel" inputmode="tel" autocomplete="tel" required />
+            </div>
+          </div>
+
+          <p class="mb-help">Next, we’ll confirm you’re in California and collect a couple facility details so we can route your consult correctly.</p>
+
+          <div class="mb-actions">
+            <button class="mb-btn mb-btn--ghost" type="button" data-mb-close>Not now</button>
+            <button class="mb-btn mb-btn--primary" type="button" id="mbNext1">Continue</button>
+          </div>
+
+          <div class="mb-legal">By continuing, you agree to be contacted about your consultation request. (No spam.)</div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="mb-pane" data-step="2">
+          <div class="mb-grid">
+            <div class="mb-field" style="grid-column:1/-1;">
+              <label class="mb-label" for="mbZip">Facility Zip Code <small>(required)</small></label>
+              <input class="mb-input" id="mbZip" type="text" inputmode="numeric" pattern="\\d{5}" placeholder="e.g., 90210" required />
+            </div>
+
+            <div class="mb-field">
+              <label class="mb-label" for="mbBeds">How many beds? <small>(required)</small></label>
+              <select class="mb-select" id="mbBeds" required>
+                <option value="" selected disabled>Select…</option>
+                <option value="1-10">1–10 beds</option>
+                <option value="11-25">11–25 beds</option>
+                <option value="26+">26+ beds</option>
+              </select>
+            </div>
+
+            <div class="mb-field">
+              <label class="mb-label" for="mbYears">Years in business <small>(required)</small></label>
+              <select class="mb-select" id="mbYears" required>
+                <option value="" selected disabled>Select…</option>
+                <option value="New (0-1)">New business (0–1 years)</option>
+                <option value="1-2">1–2 years</option>
+                <option value="3-5">3–5 years</option>
+                <option value="6+">6+ years</option>
+              </select>
+            </div>
+
+            <div class="mb-checks">
+              <label class="mb-check">
+                <input type="checkbox" id="mbAlw" />
+                <div>
+                  <div><strong>Currently on the ALW waiver?</strong></div>
+                  <span>Check if your facility is actively participating in ALW.</span>
+                </div>
+              </label>
+
+              <label class="mb-check">
+                <input type="checkbox" id="mbRcfe" />
+                <div>
+                  <div><strong>Currently licensed as RCFE?</strong></div>
+                  <span>Check if you already hold an active RCFE license.</span>
+                </div>
+              </label>
+
+              <label class="mb-check">
+                <input type="checkbox" id="mbArf" />
+                <div>
+                  <div><strong>Currently licensed as ARF?</strong></div>
+                  <span>Check if you already hold an active ARF license.</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <p class="mb-help">If your Zip is outside California, we’ll stop scheduling in the next step.</p>
+
+          <div class="mb-actions">
+            <button class="mb-btn" type="button" id="mbBack2">Back</button>
+            <button class="mb-btn mb-btn--primary" type="button" id="mbNext2">Continue</button>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="mb-pane" data-step="3">
+          <p class="mb-help" style="margin-top:0;">
+            What kind of consult would you like to schedule? Choose one option below.
+          </p>
+
+          <div class="mb-choiceGrid" id="mbChoices"></div>
+
+          <div class="mb-actions">
+            <button class="mb-btn" type="button" id="mbBack3">Back</button>
+            <button class="mb-btn mb-btn--primary" type="button" id="mbNext3" disabled>Continue to scheduling</button>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="mb-pane" data-step="4">
+          <p class="mb-help" style="margin-top:0;">
+            Great — schedule your selected consult below. You’ll receive confirmation after booking.
+          </p>
+
+          <div class="mb-actions">
+            <button class="mb-btn" type="button" id="mbBack4">Back</button>
+            <button class="mb-btn mb-btn--primary" type="button" id="mbDone">Close</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="mb-side">
+        <div class="mb-side__card">
+          <p class="mb-side__kicker">Consultation</p>
+          <h3 class="mb-side__h">Pick the right consult in under 60 seconds</h3>
+          <p class="mb-side__p">We’ll capture basic facility info, then route you to the correct scheduling option.</p>
+          <ul class="mb-bullets">
+            <li>Quick fit screening (California facilities)</li>
+            <li>Choose the consult you actually need</li>
+            <li>Clear next steps after booking</li>
+          </ul>
+        </div>
+
+        <div class="mb-calendarWrap" id="mbCalendarWrap">
+          <div class="mb-calendarTitle">
+            <span id="mbCalendarTitleText">Schedule your consult</span>
+            <span class="mb-calendarHint">Step 4</span>
+          </div>
+          <iframe class="mb-iframe" id="mbCalendar" src="about:blank" loading="lazy" title="Book a consult"></iframe>
+        </div>
+
+        <div class="mb-side__card" id="mbCAOnlyCard" style="margin-top:14px;">
+          <p class="mb-side__kicker">Eligibility</p>
+          <h3 class="mb-side__h">California facilities only</h3>
+          <p class="mb-side__p">We verify your Zip in Step 2. If you're outside CA, scheduling will be blocked.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  /* ===========================
+     CONFIG
+  ============================ */
+  const WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/mxGAJ81pMGDwP9gcmCOZ/webhook-trigger/261d9566-f352-458f-9ecd-60a8d187ba52";
+
+  const CONSULT_OPTIONS = [
+    {
+      key: "licensing_consultation",
+      label: "Licensing Consultation",
+      desc: "Guidance for licensing, startup, and compliance steps.",
+      calendarUrl: "https://api.leadconnectorhq.com/widget/booking/H3K9LIzRf7zxAwtfyrdN",
+      tag: "consult: licensing consultation"
+    },
+    {
+      key: "alw_waiver_consultation",
+      label: "ALW Waiver Consultation",
+      desc: "Help with ALW waiver program application and requirements.",
+      calendarUrl: "https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsONye",
+      tag: "consult: alw waiver consultation"
+    },
+    {
+      key: "billing_strategy_consult",
+      label: "Billing Strategy Consult",
+      desc: "Billing workflow review and revenue optimization discussion.",
+      calendarUrl: "https://api.leadconnectorhq.com/widget/booking/GCyM1GS3QXkgVDFllYMu",
+      tag: "consult: billing strategy"
+    },
+    {
+      key: "consult_with_kamil",
+      label: "Consultation With Kamil",
+      desc: "Speak directly with Kamil for higher-level routing and next steps.",
+      calendarUrl: "https://api.leadconnectorhq.com/widget/booking/X33A2JTTT3wOSCed356R",
+      tag: "consult: consultation with kamil"
+    },
+    {
+      key: "additional_consult_5",
+      label: "Funding / Revenue Expansion Consult",
+      desc: "Additional funding / habilitation / expansion strategy (edit label if needed).",
+      calendarUrl: "CALENDAR_URL_5_PLACEHOLDER",
+      tag: "consult: funding revenue expansion"
+    }
+  ];
+
+  const TAGS = {
+    step1: "step one complete",
+    step2: "step two complete",
+    step3: "step three complete",
+    step4: "step four viewed",
+    booked: "appointment booked"
+  };
+
+  function isCaliforniaZip(zip){
+    const z = String(zip || "").trim();
+    if(!/^\d{5}$/.test(z)) return false;
+    const n = parseInt(z, 10);
+    return (n >= 90001 && n <= 96162);
+  }
+
+  const modal = document.getElementById("mbConsultModal");
+  const errBox = document.getElementById("mbErr");
+
+  const panes = {
+    1: modal.querySelector('[data-step="1"]'),
+    2: modal.querySelector('[data-step="2"]'),
+    3: modal.querySelector('[data-step="3"]'),
+    4: modal.querySelector('[data-step="4"]')
+  };
+
+  const stepInd = {
+    1: modal.querySelector('[data-step-ind="1"]'),
+    2: modal.querySelector('[data-step-ind="2"]'),
+    3: modal.querySelector('[data-step-ind="3"]'),
+    4: modal.querySelector('[data-step-ind="4"]')
+  };
+
+  const calendarWrap = document.getElementById("mbCalendarWrap");
+  const calendarFrame = document.getElementById("mbCalendar");
+  const calendarTitleText = document.getElementById("mbCalendarTitleText");
+
+  const choicesWrap = document.getElementById("mbChoices");
+  const btnNext3 = document.getElementById("mbNext3");
+
+  const f = {
+    first: document.getElementById("mbFirst"),
+    last: document.getElementById("mbLast"),
+    facility: document.getElementById("mbFacility"),
+    email: document.getElementById("mbEmail"),
+    phone: document.getElementById("mbPhone"),
+    zip: document.getElementById("mbZip"),
+    beds: document.getElementById("mbBeds"),
+    years: document.getElementById("mbYears"),
+
+    alw: document.getElementById("mbAlw"),
+    rcfe: document.getElementById("mbRcfe"),
+    arf: document.getElementById("mbArf"),
+  };
+
+  const btnNext1 = document.getElementById("mbNext1");
+  const btnNext2 = document.getElementById("mbNext2");
+  const btnBack2 = document.getElementById("mbBack2");
+  const btnBack3 = document.getElementById("mbBack3");
+  const btnBack4 = document.getElementById("mbBack4");
+  const btnDone  = document.getElementById("mbDone");
+
+  let selectedConsult = null;
+
+  function showError(msg){
+    errBox.textContent = msg;
+    errBox.classList.add("is-show");
+  }
+  function clearError(){
+    errBox.textContent = "";
+    errBox.classList.remove("is-show");
+  }
+
+  function setStep(n){
+    clearError();
+    Object.keys(panes).forEach(k => panes[k].classList.remove("is-show"));
+    panes[n].classList.add("is-show");
+
+    [1,2,3,4].forEach(i => {
+      stepInd[i].classList.remove("is-active");
+      if(i < n) stepInd[i].classList.add("is-done");
+      else stepInd[i].classList.remove("is-done");
+    });
+    stepInd[n].classList.add("is-active");
+
+    calendarWrap.style.display = (n === 4) ? "block" : "none";
+  }
+
+  function normalizeZip(){
+    const digits = (f.zip.value || "").replace(/\D/g, "").slice(0,5);
+    f.zip.value = digits;
+  }
+
+  function isValidEmail(email){
+    const e = String(email || "").trim();
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+  }
+
+  function requiredFilledStep1(){
+    return (
+      (f.first.value || "").trim() &&
+      (f.last.value || "").trim() &&
+      (f.facility.value || "").trim() &&
+      (f.email.value || "").trim() &&
+      (f.phone.value || "").trim()
+    );
+  }
+
+  function requiredFilledStep2(){
+    return (
+      (f.zip.value || "").trim() &&
+      (f.beds.value || "").trim() &&
+      (f.years.value || "").trim()
+    );
+  }
+
+  function getPayload(extra = {}){
+    return {
+      source: "medbillingco.com consult modal",
+      page_url: window.location.href,
+      timestamp: new Date().toISOString(),
+      contact: {
+        first_name: (f.first.value || "").trim(),
+        last_name: (f.last.value || "").trim(),
+        facility_name: (f.facility.value || "").trim(),
+        email: (f.email.value || "").trim(),
+        phone: (f.phone.value || "").trim(),
+      },
+      facility: {
+        zip: (f.zip.value || "").trim(),
+        beds: (f.beds.value || "").trim(),
+        years_in_business: (f.years.value || "").trim(),
+        is_ca_zip: isCaliforniaZip((f.zip.value || "").trim()),
+        currently_on_alw_waiver: !!(f.alw && f.alw.checked),
+        licensed_rcfe: !!(f.rcfe && f.rcfe.checked),
+        licensed_arf: !!(f.arf && f.arf.checked)
+      },
+      consult_selection: selectedConsult ? {
+        key: selectedConsult.key,
+        label: selectedConsult.label,
+        calendar_url: selectedConsult.calendarUrl,
+        tag: selectedConsult.tag
+      } : null,
+      ...extra
+    };
+  }
+
+  async function postWebhook(payload){
+    if(!WEBHOOK_URL) return;
+    try{
+      await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type":"application/json" },
+        body: JSON.stringify(payload)
+      });
+    }catch(e){}
+  }
+
+  function openModal(){
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden","false");
+    document.body.style.overflow = "hidden";
+    selectedConsult = null;
+    btnNext3.disabled = true;
+    setStep(1);
+    setTimeout(() => f.first.focus(), 50);
+  }
+
+  function closeModal(){
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden","true");
+    document.body.style.overflow = "";
+    clearError();
+  }
+
+  /* Open: any [data-mb-open] OR any element with .mb-open-consult */
+  document.addEventListener("click", (e) => {
+    const wantsOpen = e.target.closest("[data-mb-open], .mb-open-consult");
+    if(!wantsOpen) return;
+    e.preventDefault();
+    openModal();
+  });
+
+  modal.addEventListener("click", (e) => {
+    if(e.target.closest("[data-mb-close]")) closeModal();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+  });
+
+  function renderChoices(){
+    choicesWrap.innerHTML = "";
+    CONSULT_OPTIONS.forEach(opt => {
+      const card = document.createElement("div");
+      card.className = "mb-choice";
+      card.setAttribute("role","button");
+      card.setAttribute("tabindex","0");
+
+      card.innerHTML = `<b>${opt.label}</b><p>${opt.desc || ""}</p>`;
+
+      function selectThis(){
+        [...choicesWrap.querySelectorAll(".mb-choice")].forEach(el => el.classList.remove("is-selected"));
+        card.classList.add("is-selected");
+        selectedConsult = opt;
+        btnNext3.disabled = false;
+      }
+
+      card.addEventListener("click", selectThis);
+      card.addEventListener("keydown", (ev) => {
+        if(ev.key === "Enter" || ev.key === " "){ ev.preventDefault(); selectThis(); }
+      });
+
+      choicesWrap.appendChild(card);
+    });
+  }
+  renderChoices();
+
+  f.zip.addEventListener("input", normalizeZip);
+
+  btnNext1.addEventListener("click", async () => {
+    clearError();
+    if(!requiredFilledStep1()) return showError("Please complete all fields to continue.");
+    if(!isValidEmail(f.email.value)) return showError("Please enter a valid email address.");
+
+    await postWebhook(getPayload({ event:"step_complete", step:1, tags:[TAGS.step1] }));
+    setStep(2); f.zip.focus();
+  });
+
+  btnBack2.addEventListener("click", () => setStep(1));
+
+  btnNext2.addEventListener("click", async () => {
+    clearError(); normalizeZip();
+    if(!requiredFilledStep2()) return showError("Please complete all required fields to continue.");
+    if(!/^\d{5}$/.test((f.zip.value||"").trim())) return showError("Please enter a valid 5-digit Zip Code.");
+    if(!isCaliforniaZip(f.zip.value)){
+      await postWebhook(getPayload({ event:"blocked_non_ca", step:2, tags:["non-ca blocked"] }));
+      return showError("At the moment, this consult request is for California facilities only. If you're outside CA, please contact us for alternative options.");
+    }
+
+    await postWebhook(getPayload({ event:"step_complete", step:2, tags:[TAGS.step2] }));
+
+    selectedConsult = null;
+    btnNext3.disabled = true;
+    [...choicesWrap.querySelectorAll(".mb-choice")].forEach(el => el.classList.remove("is-selected"));
+
+    setStep(3);
+  });
+
+  btnBack3.addEventListener("click", () => setStep(2));
+
+  btnNext3.addEventListener("click", async () => {
+    clearError();
+    if(!selectedConsult) return showError("Please choose a consult type to continue.");
+
+    const consultTag = selectedConsult.tag || `consult: ${selectedConsult.label}`.toLowerCase();
+
+    await postWebhook(getPayload({
+      event: "step_complete",
+      step: 3,
+      tags: [TAGS.step3, consultTag],
+      consult_choice: { key:selectedConsult.key, label:selectedConsult.label, calendar_url:selectedConsult.calendarUrl }
+    }));
+
+    const url = selectedConsult.calendarUrl || "about:blank";
+    calendarTitleText.textContent = `Schedule: ${selectedConsult.label}`;
+    calendarFrame.src = url;
+
+    await postWebhook(getPayload({ event:"step_viewed", step:4, tags:[TAGS.step4, consultTag] }));
+
+    setStep(4);
+  });
+
+  btnBack4.addEventListener("click", () => setStep(3));
+  btnDone.addEventListener("click", () => closeModal());
+
+  calendarWrap.addEventListener("click", async () => {
+    const consultTag = selectedConsult?.tag || (selectedConsult ? `consult: ${selectedConsult.label}`.toLowerCase() : null);
+    await postWebhook(getPayload({
+      event: "calendar_interaction",
+      tags: [TAGS.booked].concat(consultTag ? [consultTag] : [])
+    }));
+  });
+})();
+</script>

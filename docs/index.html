@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Billing Services — Site Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;
+    background:
+      radial-gradient(900px 420px at 5% 0%, rgba(22,138,91,.13), transparent 60%),
+      radial-gradient(700px 360px at 80% 10%, rgba(22,138,91,.09), transparent 55%),
+      linear-gradient(#ffffff,#f4f7f6);
+    min-height:100vh;
+    color:#0b1220;
+  }
+  a{color:inherit;text-decoration:none}
+
+  .shell{max-width:960px;margin:0 auto;padding:0 24px}
+
+  /* Header */
+  .hdr{padding:36px 0 28px}
+  .hdr-inner{
+    display:flex;align-items:flex-start;justify-content:space-between;
+    gap:20px;flex-wrap:wrap;
+  }
+  .logo-row{display:flex;align-items:center;gap:14px}
+  .logo-icon{
+    width:44px;height:44px;border-radius:14px;
+    background:rgba(22,138,91,.12);border:1px solid rgba(22,138,91,.22);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:900;font-size:13px;color:#168a5b;letter-spacing:.5px;
+  }
+  .logo-text{display:flex;flex-direction:column;gap:3px;line-height:1.1}
+  .logo-name{font-weight:800;font-size:17px}
+  .logo-sub{font-size:13px;color:rgba(11,18,32,.55);font-weight:500}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:8px 14px;border-radius:999px;
+    background:rgba(22,138,91,.10);border:1px solid rgba(22,138,91,.18);
+    color:#168a5b;font-weight:800;font-size:13px;
+  }
+  .badge-dot{width:8px;height:8px;border-radius:99px;background:#168a5b}
+
+  /* Intro */
+  .intro{padding:0 0 48px}
+  .intro h1{
+    font-size:36px;font-weight:900;letter-spacing:-.8px;line-height:1.1;
+    margin-bottom:12px;
+  }
+  .intro h1 span{
+    background:linear-gradient(135deg,#168a5b,#0a5c3a);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  }
+  .intro p{font-size:16px;color:rgba(11,18,32,.62);line-height:1.65;max-width:620px}
+
+  /* Grid */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:18px;
+    padding-bottom:64px;
+  }
+
+  .card{
+    background:rgba(255,255,255,.85);
+    border:1px solid rgba(11,18,32,.08);
+    border-radius:22px;
+    box-shadow:0 14px 40px rgba(11,18,32,.06);
+    padding:24px;
+    display:flex;flex-direction:column;
+    transition:transform .18s ease,box-shadow .18s ease;
+    position:relative;overflow:hidden;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 24px 60px rgba(11,18,32,.12)}
+  .card-tag{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:5px 10px;border-radius:999px;
+    background:var(--tag-bg,rgba(22,138,91,.08));
+    border:1px solid var(--tag-border,rgba(22,138,91,.15));
+    color:var(--tag-color,#168a5b);
+    font-size:11.5px;font-weight:800;margin-bottom:14px;
+    width:fit-content;text-transform:uppercase;letter-spacing:.5px;
+  }
+  .card-tag-dot{width:6px;height:6px;border-radius:99px;background:currentColor}
+  .card h2{font-size:19px;font-weight:800;letter-spacing:-.3px;margin-bottom:8px;line-height:1.2}
+  .card p{font-size:14px;color:rgba(11,18,32,.60);line-height:1.6;flex:1;margin-bottom:20px}
+  .card-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 18px;border-radius:999px;
+    background:#168a5b;color:#fff;
+    font-weight:800;font-size:14px;width:fit-content;
+    transition:background .14s ease;
+  }
+  .card-btn:hover{background:#0f6e48}
+
+  /* Home card — featured */
+  .card-featured{
+    grid-column:1/-1;
+    flex-direction:row;align-items:center;gap:24px;flex-wrap:wrap;
+    background:
+      radial-gradient(600px 280px at 0% 50%, rgba(22,138,91,.10), transparent 60%),
+      rgba(255,255,255,.90);
+    border-color:rgba(22,138,91,.14);
+  }
+  .card-featured-text{flex:1;min-width:200px}
+  .card-featured h2{font-size:22px}
+
+  /* Footer */
+  .foot{
+    border-top:1px solid rgba(11,18,32,.07);
+    padding:20px 0 28px;
+    color:rgba(11,18,32,.42);font-size:13px;
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  }
+
+  @media(max-width:640px){
+    .intro h1{font-size:28px}
+    .card-featured{flex-direction:column}
+    .hdr-inner{flex-direction:column;gap:14px}
+  }
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- HEADER -->
+  <div class="hdr">
+    <div class="hdr-inner">
+      <div class="logo-row">
+        <div class="logo-icon">MB</div>
+        <div class="logo-text">
+          <div class="logo-name">Medical Billing Services</div>
+          <div class="logo-sub">California ALW · RCFE/ARF specialists</div>
+        </div>
+      </div>
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Site Preview — For Review
+      </div>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="intro">
+    <h1>Here are the <span>7 pages</span> we built for you.</h1>
+    <p>
+      Click any page below to preview it full-screen. Each page is fully functional —
+      buttons, animations, and mobile view all work. Let us know your feedback on any page.
+    </p>
+  </div>
+
+  <!-- PAGE GRID -->
+  <div class="grid">
+
+    <!-- HOME (featured) -->
+    <a class="card card-featured" href="home.html">
+      <div class="card-featured-text">
+        <div class="card-tag" style="--tag-bg:rgba(22,138,91,.10);--tag-border:rgba(22,138,91,.18);--tag-color:#168a5b;">
+          <span class="card-tag-dot"></span> Homepage
+        </div>
+        <h2>Main Homepage</h2>
+        <p>The primary landing page — hero section, service tiles, stat bar, testimonials, Kam's Corner, FAQ, and final CTA. This is the first thing visitors see.</p>
+      </div>
+      <div class="card-btn">Preview page →</div>
+    </a>
+
+    <!-- ALW BILLING -->
+    <a class="card" href="alw-billing.html">
+      <div class="card-tag">
+        <span class="card-tag-dot"></span> Service Page
+      </div>
+      <h2>ALW Billing</h2>
+      <p>For existing RCFE/ARF providers who want cleaner billing outcomes — how we bill, what we track, and what to expect.</p>
+      <div class="card-btn">Preview page →</div>
+    </a>
+
+    <!-- CONSULTING -->
+    <a class="card" href="consulting.html">
+      <div class="card-tag">
+        <span class="card-tag-dot"></span> Service Page
+      </div>
+      <h2>RCFE Consulting</h2>
+      <p>Operator-level guidance — building a roadmap, navigating licensing, and executing with structured follow-through.</p>
+      <div class="card-btn">Preview page →</div>
+    </a>
+
+    <!-- FUNDING -->
+    <a class="card" href="funding.html">
+      <div class="card-tag">
+        <span class="card-tag-dot"></span> Service Page
+      </div>
+      <h2>ALW Funding Optimization</h2>
+      <p>Helping providers identify and recover revenue they're leaving on the table through better billing strategy and rate setup.</p>
+      <div class="card-btn">Preview page →</div>
+    </a>
+
+    <!-- RCFE LICENSING -->
+    <a class="card" href="rcfe-licensing.html">
+      <div class="card-tag">
+        <span class="card-tag-dot"></span> Service Page
+      </div>
+      <h2>RCFE Licensing</h2>
+      <p>Clear, sequenced guidance through California RCFE licensing — documents, timelines, and state interaction without the guesswork.</p>
+      <div class="card-btn">Preview page →</div>
+    </a>
+
+    <!-- ARF LICENSING -->
+    <a class="card" href="arf-licensing.html">
+      <div class="card-tag">
+        <span class="card-tag-dot"></span> Service Page
+      </div>
+      <h2>ARF Licensing</h2>
+      <p>Adult Residential Facility licensing support — covering the ARF-specific requirements and approval path alongside ALW readiness.</p>
+      <div class="card-btn">Preview page →</div>
+    </a>
+
+    <!-- ALW WAIVER -->
+    <a class="card" href="alw-waiver.html">
+      <div class="card-tag">
+        <span class="card-tag-dot"></span> Service Page
+      </div>
+      <h2>ALW Waiver Application</h2>
+      <p>Step-by-step support for the ALW application process — clear paperwork, right sequencing, and no missed steps.</p>
+      <div class="card-btn">Preview page →</div>
+    </a>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="foot">
+    <div>Medical Billing Services · Site Preview</div>
+    <div>Questions? Reply to this link or book a call.</div>
+  </div>
+
+</div>
+
+</body>
+</html>

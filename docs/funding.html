@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Increase Funding &amp; Revenue Optimization | Medical Billing Services</title>
+</head>
+<body>
+<!--
+MEDBILLINGCO.COM — INCREASE FUNDING / REVENUE OPTIMIZATION (PREMIUM) — v2
+Paste into ONE GoHighLevel Custom Code block.
+
+Booking assets (Billing Strategy Consult):
+- Booking link:  https://api.leadconnectorhq.com/widget/bookings/billing-strategy-call
+- Embed iframe:  https://api.leadconnectorhq.com/widget/booking/GCyM1GS3QXkgVDFllYMu
+
+Logo:
+https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-4897-994e-1ec4194e612d.png
+
+Optional nav tokens:
+HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_LINK
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+  .mbsFunding{
+    --bg:#ffffff; --ink:#0b1220; --muted:#4b5563; --soft:#f6f8fb;
+    --accent:#168a5b; --accent2:#0f6e48;
+    --line:rgba(15,23,42,.10);
+    --shadow:0 26px 64px rgba(2,6,23,.12);
+    --shadow2:0 14px 34px rgba(2,6,23,.10);
+    --max:1160px;
+    --heroImg:url("https://assets.cdn.filesafe.space/mxGAJ81pMGDwP9gcmCOZ/media/699a0cd420c0353099b2b4a6.jpg");
+  }
+  .mbsFunding *{box-sizing:border-box}
+  .mbsFunding{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+  .mbsFunding a{color:inherit;text-decoration:none}
+  .mbsFunding img{max-width:100%;display:block}
+  .mbsFunding .wrap{width:min(var(--max),calc(100% - 48px));margin:0 auto}
+
+  /* Buttons */
+  .mbsFunding .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:12px 16px;border-radius:999px;
+    font-weight:900;font-size:14px;border:1px solid transparent;
+    transition:.18s ease;white-space:nowrap;user-select:none;
+  }
+  .mbsFunding .btn.primary{background:var(--accent);color:#fff;box-shadow:0 10px 22px rgba(22,138,91,.22)}
+  .mbsFunding .btn.primary:hover{background:var(--accent2);transform:translateY(-1px)}
+  .mbsFunding .btn.ghost{background:#fff;border-color:rgba(15,23,42,.14);color:rgba(2,6,23,.88)}
+  .mbsFunding .btn.ghost:hover{background:rgba(2,6,23,.04)}
+  .mbsFunding .btn.link{background:transparent;border-color:transparent;padding:10px 0;border-radius:12px;color:var(--accent);font-weight:900}
+  .mbsFunding .btn.link:hover{opacity:.9}
+
+  /* Header */
+  .mbsFunding .hdr{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(15,23,42,.08);
+  }
+  .mbsFunding .nav{
+    display:grid;grid-template-columns:220px 1fr auto;
+    align-items:center;gap:16px;padding:14px 0;
+  }
+  .mbsFunding .brand{display:flex;align-items:center;gap:10px;min-width:180px}
+  .mbsFunding .brand img{height:38px;width:auto}
+
+  .mbsFunding .menu{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+  .mbsFunding .menu>a,.mbsFunding .dd>button{
+    padding:10px 10px;border-radius:12px;font-size:13px;
+    color:rgba(2,6,23,.78);border:0;background:transparent;cursor:pointer;
+    font-family:inherit;font-weight:900;
+  }
+  .mbsFunding .menu>a:hover,.mbsFunding .dd>button:hover{background:rgba(2,6,23,.05)}
+  .mbsFunding .active{
+    background:rgba(22,138,91,.10);
+    border:1px solid rgba(22,138,91,.18);
+    color:rgba(2,6,23,.86);
+  }
+  .mbsFunding .dd{position:relative}
+  .mbsFunding .dd>button{display:inline-flex;align-items:center;gap:8px}
+  .mbsFunding .panel{
+    position:absolute;top:calc(100% + 10px);left:0;min-width:260px;
+    background:#fff;border:1px solid rgba(15,23,42,.10);
+    border-radius:16px;box-shadow:var(--shadow2);padding:8px;display:none;
+  }
+  .mbsFunding .panel a{
+    display:flex;gap:10px;align-items:flex-start;padding:10px 10px;
+    border-radius:12px;font-size:13px;color:rgba(2,6,23,.82);font-weight:900;
+  }
+  .mbsFunding .panel a:hover{background:rgba(2,6,23,.05)}
+  .mbsFunding .panel .mini{font-size:12px;color:var(--muted);font-weight:600;margin-top:2px}
+  .mbsFunding .dd:hover .panel{display:block}
+  .mbsFunding .dd.open .panel{display:block}
+
+  .mbsFunding .hdrCtas{display:flex;align-items:center;gap:10px;justify-content:flex-end}
+  .mbsFunding .phonePill{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:10px 12px;border-radius:999px;
+    background:#fff;border:1px solid rgba(15,23,42,.12);
+    color:rgba(2,6,23,.82);font-weight:900;font-size:13px;
+  }
+  .mbsFunding .phonePill:hover{background:rgba(2,6,23,.03)}
+
+  .mbsFunding .mToggle{
+    display:none;justify-self:center;
+    padding:10px 12px;border-radius:12px;border:1px solid rgba(15,23,42,.12);
+    background:#fff;font-weight:900;cursor:pointer;
+  }
+
+  /* Hero */
+  .mbsFunding .hero{padding:22px 0 26px}
+  .mbsFunding .heroShell{
+    position:relative;border-radius:clamp(22px,3vw,34px);
+    overflow:hidden;box-shadow:var(--shadow);background:#0b1220;
+  }
+  .mbsFunding .heroBg{
+    position:absolute;inset:0;background-image:var(--heroImg);
+    background-size:cover;background-position:center;transform:scale(1.02);
+    filter:saturate(1.02) contrast(1.02);
+  }
+  .mbsFunding .heroOverlay{
+    position:absolute;inset:0;
+    background:
+      radial-gradient(900px 520px at 16% 26%, rgba(255,255,255,.16), rgba(255,255,255,0) 62%),
+      linear-gradient(90deg, rgba(11,18,32,.74) 0%, rgba(11,18,32,.40) 58%, rgba(11,18,32,.64) 100%);
+  }
+  .mbsFunding .heroInner{
+    position:relative;padding:clamp(26px,4.2vw,56px);
+    min-height:clamp(460px,58vh,640px);
+    display:flex;align-items:stretch;
+  }
+  .mbsFunding .heroGrid{
+    width:100%;
+    display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:end;
+  }
+  .mbsFunding .pill{
+    display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;
+    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);
+    color:rgba(255,255,255,.92);font-weight:800;font-size:12.5px;width:fit-content;
+  }
+  .mbsFunding .dot{width:8px;height:8px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 4px rgba(22,138,91,.20)}
+
+  .mbsFunding .hero h1{
+    margin:14px 0 10px;font-size:clamp(30px,3.4vw,54px);
+    line-height:1.05;letter-spacing:-0.045em;color:#fff;text-shadow:0 10px 30px rgba(0,0,0,.25);
+  }
+  .mbsFunding .hero p{
+    margin:0;color:rgba(255,255,255,.88);font-size:15.2px;line-height:1.72;max-width:84ch;
+  }
+  .mbsFunding .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+
+  .mbsFunding .proofBar{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap}
+  .mbsFunding .proofChip{
+    display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:16px;
+    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);
+  }
+  .mbsFunding .check{
+    width:22px;height:22px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    background:rgba(22,138,91,.20);border:1px solid rgba(22,138,91,.28);flex:0 0 auto;
+  }
+  .mbsFunding .proofChip b{display:block;font-size:12.8px;letter-spacing:-.01em}
+  .mbsFunding .proofChip span{display:block;font-size:12px;opacity:.9;margin-top:2px}
+
+  /* Hero card (premium) */
+  .mbsFunding .auditCard{
+    background:rgba(255,255,255,.96);
+    border:1px solid rgba(15,23,42,.14);
+    border-radius:26px;
+    box-shadow:0 22px 52px rgba(2,6,23,.18);
+    overflow:hidden;
+  }
+  .mbsFunding .auditHead{
+    padding:16px 16px 12px;
+    border-bottom:1px solid rgba(15,23,42,.10);
+    background:
+      radial-gradient(520px 220px at 10% 0%, rgba(22,138,91,.16), rgba(22,138,91,0) 60%),
+      linear-gradient(180deg, rgba(2,6,23,.02), rgba(2,6,23,0));
+  }
+  .mbsFunding .auditHead b{display:block;letter-spacing:-.02em}
+  .mbsFunding .auditHead span{display:block;margin-top:4px;color:rgba(2,6,23,.70);font-weight:700;font-size:13px;line-height:1.45}
+  .mbsFunding .auditBody{padding:14px 16px 16px}
+  .mbsFunding .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .mbsFunding .kpi{
+    border:1px solid rgba(15,23,42,.10);
+    border-radius:18px;padding:12px;background:#fff;
+  }
+  .mbsFunding .kpi b{display:block;font-size:12.5px;letter-spacing:-.01em;color:rgba(2,6,23,.84)}
+  .mbsFunding .kpi span{display:block;margin-top:6px;font-weight:900;letter-spacing:-.02em}
+  .mbsFunding .kpi em{display:block;margin-top:4px;font-style:normal;color:rgba(2,6,23,.62);font-size:12px}
+
+  .mbsFunding .miniRule{height:1px;background:rgba(15,23,42,.10);margin:14px 0}
+  .mbsFunding .miniList{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+  .mbsFunding .miniList li{display:flex;gap:10px;align-items:flex-start;color:rgba(2,6,23,.80);font-size:13.8px;line-height:1.55}
+  .mbsFunding .tick{
+    width:22px;height:22px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    background:rgba(22,138,91,.10);border:1px solid rgba(22,138,91,.18);color:var(--accent);flex:0 0 auto;
+    transform:translateY(1px);
+  }
+
+  /* Sections + waves */
+  .mbsFunding section{padding:76px 0}
+  .mbsFunding .soft{background:var(--soft);border-top:1px solid rgba(15,23,42,.06);border-bottom:1px solid rgba(15,23,42,.06)}
+  .mbsFunding .head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:26px}
+  .mbsFunding .head h2{margin:0;font-size:clamp(24px,2.8vw,34px);letter-spacing:-.03em}
+  .mbsFunding .head p{margin:0;color:var(--muted);max-width:86ch;line-height:1.7;font-size:14.2px}
+  .mbsFunding .wave{height:44px;margin:-14px 0 -18px;pointer-events:none}
+  .mbsFunding .wave svg{width:100%;height:100%;display:block}
+  .mbsFunding .wave.toSoft path{fill:var(--soft)}
+  .mbsFunding .wave.toWhite path{fill:var(--bg)}
+
+  /* Cards + layout */
+  .mbsFunding .split{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:start}
+  .mbsFunding .card{
+    background:#fff;border:1px solid var(--line);border-radius:24px;padding:18px;
+    box-shadow:0 12px 24px rgba(2,6,23,.06);
+  }
+  .mbsFunding .card h3{margin:0 0 8px;letter-spacing:-.02em}
+  .mbsFunding .card p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
+  .mbsFunding .centerRow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+
+  /* 3 cards */
+  .mbsFunding .tri{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+
+  /* Leak grid */
+  .mbsFunding .grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .mbsFunding .pCard{
+    background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;
+    box-shadow:0 12px 24px rgba(2,6,23,.06);
+  }
+  .mbsFunding .pCard b{display:block;letter-spacing:-.02em;font-size:15px}
+  .mbsFunding .pCard span{display:block;margin-top:6px;color:var(--muted);line-height:1.65;font-size:13.6px}
+
+  /* Pillars */
+  .mbsFunding .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .mbsFunding .pillar{
+    background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;
+    box-shadow:0 12px 24px rgba(2,6,23,.06);
+  }
+  .mbsFunding .pTop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+  .mbsFunding .numBox{
+    width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    background:rgba(22,138,91,.10);border:1px solid rgba(22,138,91,.20);color:var(--accent);
+    font-weight:900;letter-spacing:-.02em;font-size:18px;
+  }
+  .mbsFunding .tagPill{
+    padding:8px 12px;border-radius:999px;background:rgba(2,6,23,.04);border:1px solid rgba(2,6,23,.08);
+    color:rgba(2,6,23,.68);font-weight:900;font-size:12px;white-space:nowrap;
+  }
+  .mbsFunding .pillar b{display:block;letter-spacing:-.02em;font-size:15px}
+  .mbsFunding .pillar span{display:block;margin-top:6px;color:var(--muted);line-height:1.65;font-size:13.5px}
+
+  .mbsFunding .callout{
+    margin-top:14px;padding:14px 14px;border-radius:18px;
+    background:rgba(22,138,91,.08);border:1px solid rgba(22,138,91,.16);
+    color:rgba(2,6,23,.80);line-height:1.65;font-size:13.8px;
+  }
+
+  /* Booking embed */
+  .mbsFunding .embed{
+    border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow2);background:#fff;
+  }
+  .mbsFunding .ratio{position:relative;width:100%;padding-top:62%;background:rgba(2,6,23,.04)}
+  .mbsFunding .ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .mbsFunding .embedNote{padding:14px 16px;color:var(--muted);font-size:12.8px;line-height:1.55}
+
+  /* FAQ */
+  .mbsFunding .faq{display:grid;gap:10px}
+  .mbsFunding details{
+    background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 14px;
+    box-shadow:0 10px 20px rgba(2,6,23,.05);
+  }
+  .mbsFunding summary{cursor:pointer;font-weight:900;letter-spacing:-.01em;list-style:none}
+  .mbsFunding summary::-webkit-details-marker{display:none}
+  .mbsFunding details p{margin:10px 0 0;color:var(--muted);line-height:1.7;font-size:14px}
+
+  /* Footer */
+  .mbsFunding footer{padding:42px 0;border-top:1px solid rgba(15,23,42,.08);background:#fff}
+  .mbsFunding .foot{display:grid;grid-template-columns:1.1fr .9fr .9fr;gap:14px;align-items:start}
+  .mbsFunding .foot h4{margin:0 0 10px;font-size:13px;letter-spacing:-.01em}
+  .mbsFunding .foot a{display:block;padding:8px 0;color:var(--muted);font-size:13.5px}
+  .mbsFunding .foot a:hover{color:var(--ink)}
+  .mbsFunding .copy{margin-top:12px;color:var(--muted);font-size:12.5px;line-height:1.6}
+
+  /* Mobile sticky CTA */
+  .mbsFunding .stickyBook{
+    display:none;position:fixed;left:0;right:0;bottom:0;z-index:90;
+    padding:10px 12px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+    border-top:1px solid rgba(15,23,42,.10);
+  }
+  .mbsFunding .stickyBook .inner{
+    width:min(var(--max),calc(100% - 24px));margin:0 auto;
+    display:flex;gap:10px;align-items:center;justify-content:space-between;
+  }
+  .mbsFunding .stickyBook .miniTxt{
+    font-size:12.5px;color:rgba(2,6,23,.78);font-weight:900;letter-spacing:-.01em;
+  }
+
+  /* Responsive */
+  @media (max-width:1120px){
+    .mbsFunding .heroGrid{grid-template-columns:1fr}
+    .mbsFunding .tri{grid-template-columns:1fr}
+    .mbsFunding .grid6{grid-template-columns:repeat(2,1fr)}
+    .mbsFunding .pillars{grid-template-columns:1fr}
+    .mbsFunding .split{grid-template-columns:1fr}
+  }
+  @media (max-width:980px){
+    .mbsFunding .nav{grid-template-columns:1fr auto}
+    .mbsFunding .menu{display:none;justify-content:flex-start;grid-column:1/-1;padding-bottom:10px}
+    .mbsFunding .menu.open{display:flex}
+    .mbsFunding .mToggle{display:inline-flex}
+    .mbsFunding .hdrCtas{grid-column:1/-1;justify-content:flex-start}
+  }
+  @media (max-width:640px){
+    .mbsFunding .wrap{width:min(var(--max),calc(100% - 32px))}
+    .mbsFunding .ratio{padding-top:86%}
+    .mbsFunding .grid6{grid-template-columns:1fr}
+    .mbsFunding .kpis{grid-template-columns:1fr}
+    .mbsFunding .stickyBook{display:block}
+    .mbsFunding main{padding-bottom:74px}
+  }
+  @media (prefers-reduced-motion: reduce){ .mbsFunding .btn{transition:none} }
+
+  /* ========= POLISH PACK ========= */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+  .reveal.visible{opacity:1;transform:none}
+  .reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
+
+  /* Hero gradient */
+  .heroGradient{
+    background:linear-gradient(135deg,rgba(255,255,255,1) 40%,rgba(255,255,255,.70));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  }
+
+  /* microProof pill row (was unstyled) */
+  .mbsFunding .microProof{
+    display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;
+  }
+  .mbsFunding .microProof span{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:8px 14px;border-radius:999px;
+    background:rgba(255,255,255,.14);border:1px solid rgba(22,138,91,.30);
+    color:rgba(255,255,255,.92);font-weight:800;font-size:12.5px;
+    backdrop-filter:blur(10px);
+  }
+  .mbsFunding .microProof span::before{
+    content:'✓';color:var(--accent);font-weight:900;font-size:13px;
+  }
+
+  /* Hero right column proof card */
+  .mbsFunding .heroStatCard{
+    background:rgba(255,255,255,.96);border:1px solid rgba(15,23,42,.14);
+    border-radius:24px;box-shadow:0 22px 52px rgba(2,6,23,.18);
+    padding:20px;align-self:end;
+  }
+  .mbsFunding .heroStatCard .hsTitle{
+    font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.6px;
+    color:rgba(2,6,23,.52);margin:0 0 14px;
+  }
+  .mbsFunding .heroStatKpis{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .mbsFunding .heroKpi{
+    padding:12px;border-radius:16px;background:rgba(22,138,91,.06);
+    border:1px solid rgba(22,138,91,.14);
+  }
+  .mbsFunding .heroKpi b{display:block;font-size:22px;font-weight:900;letter-spacing:-0.8px;color:var(--accent)}
+  .mbsFunding .heroKpi span{display:block;font-size:11.5px;color:rgba(2,6,23,.58);font-weight:700;margin-top:3px;line-height:1.3}
+
+  /* Card + pillar hover lift */
+  @media(hover:hover){
+    .mbsFunding .card,.mbsFunding .pillar,.mbsFunding .pCard{transition:transform .18s ease,box-shadow .18s ease}
+    .mbsFunding .card:hover,.mbsFunding .pillar:hover,.mbsFunding .pCard:hover{
+      transform:translateY(-3px);box-shadow:0 24px 60px rgba(2,6,23,.13);
+    }
+  }
+
+  /* Nav transition */
+  .mbsFunding .menu>a,.mbsFunding .dd>button{transition:background .15s ease,color .15s ease}
+
+  /* FAQ chevron + reveal */
+  .mbsFunding summary{position:relative;padding-right:28px}
+  .mbsFunding summary::after{
+    content:'+';position:absolute;right:4px;top:0;
+    transition:transform .2s ease;font-weight:400;opacity:.65;font-size:18px;line-height:1.2;
+  }
+  .mbsFunding details[open] summary::after{transform:rotate(45deg)}
+  .mbsFunding details p{animation:faqRevealF .28s ease}
+  @keyframes faqRevealF{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+</style>
+
+<div class="mbsFunding" id="top">
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-label="Funding / revenue optimization hero">
+      <div class="wrap">
+        <div class="heroShell">
+          <div class="heroBg" role="img" aria-label="Facility and care image"></div>
+          <div class="heroOverlay" aria-hidden="true"></div>
+
+          <div class="heroInner">
+            <div class="heroGrid">
+              <!-- LEFT -->
+              <div>
+                <div class="pill"><span class="dot"></span> Funding & revenue optimization (ALW • RCFE • ARF)</div>
+
+                <h1>Increase funding by fixing visibility and <span class="heroGradient">process</span> — not by guessing.</h1>
+
+                <p>
+                  “Increase funding” usually means <b>finding avoidable leakage</b> in your current workflow — missed steps, unclear tracking,
+                  documentation gaps, and preventable delays.
+                </p>
+
+                <div class="ctaRow">
+                  <a class="btn primary" href="BOOKING_LINK_REV">Book a Revenue Call</a>
+                  <a class="btn ghost" href="#meaning">What “increase funding” means</a>
+                </div>
+
+               
+<div class="microProof" aria-label="Proof points">
+  <span>Facility-context review</span>
+  <span>Practical levers</span>
+  <span>Clear next actions</span>
+</div>
+
+              </div><!-- /left column -->
+
+              <!-- RIGHT: Revenue proof card -->
+              <div class="heroStatCard" aria-label="Revenue proof metrics">
+                <p class="hsTitle">Typical results after optimization</p>
+                <div class="heroStatKpis">
+                  <div class="heroKpi">
+                    <b>22</b>
+                    <span>avg. AR days<br>(down from 67)</span>
+                  </div>
+                  <div class="heroKpi">
+                    <b>$1.5M+</b>
+                    <span>billed monthly for providers</span>
+                  </div>
+                  <div class="heroKpi">
+                    <b>3–4×</b>
+                    <span>faster denial resolution</span>
+                  </div>
+                  <div class="heroKpi">
+                    <b>0</b>
+                    <span>hidden fees — pay-for-performance</span>
+                  </div>
+                </div>
+              </div><!-- /right column -->
+            </div><!-- /heroGrid -->
+          </div><!-- /heroInner -->
+        </div><!-- /heroShell -->
+      </div><!-- /wrap -->
+    </section>
+    <!-- Wave to white -->
+    <div class="wave toWhite" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+      </svg>
+    </div>
+
+    <!-- MEANING -->
+    <section id="meaning" aria-label="What increase funding means">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>What “increase funding” means (in real life)</h2>
+            <p>
+              Most facilities don’t need “magic.” They need clarity on what’s happening — and a tighter process where leakage is occurring.
+              Here are the three buckets we typically look at first.
+            </p>
+          </div>
+        </div>
+
+        <div class="tri">
+          <div class="card">
+            <h3>ALW optimization</h3>
+            <p>Evaluate current workflow, visibility, and opportunities to reduce friction in your current approach.</p>
+          </div>
+          <div class="card">
+            <h3>Billing workflow</h3>
+            <p>Make the process predictable: fewer surprises, clearer monthly tracking, cleaner handoffs.</p>
+          </div>
+          <div class="card">
+            <h3>Documentation readiness</h3>
+            <p>Reduce “avoidable setbacks” by ensuring documentation matches what reviewers expect to see.</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <b>Important:</b> We don’t publish guarantees. The call is about evaluating what’s realistic for your situation and mapping usable next steps.
+        </div>
+
+        <div class="centerRow" style="margin-top:14px">
+          <a class="btn primary" href="#leaks">See common revenue leaks</a>
+          <a class="btn ghost" href="#book">Book the call</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave to soft -->
+    <div class="wave toSoft" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+      </svg>
+    </div>
+
+    <!-- LEAKS -->
+    <section id="leaks" class="soft" aria-label="Where revenue leaks">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>Where revenue leaks most often</h2>
+            <p>
+              Many issues are not “big failures” — they’re small mismatches that stack up over time.
+              We focus on pinpointing the few levers that matter most for your facility context.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid6">
+          <div class="pCard"><b>Visibility gaps</b><span>No simple monthly view of what matters → surprises feel constant.</span></div>
+          <div class="pCard"><b>Process bottlenecks</b><span>Handoffs and timing issues cause preventable slowdowns.</span></div>
+          <div class="pCard"><b>Documentation mismatch</b><span>Small issues trigger rework loops and longer timelines.</span></div>
+          <div class="pCard"><b>Authorization / timing</b><span>Work gets done, but timing or sequence creates friction.</span></div>
+          <div class="pCard"><b>Denials and rework</b><span>Denials aren’t always avoidable — but repeat patterns often are.</span></div>
+          <div class="pCard"><b>Owner overwhelm</b><span>No clear “next best action,” so progress stalls.</span></div>
+        </div>
+
+        <div class="centerRow" style="margin-top:18px">
+          <a class="btn primary" href="#playbook">See the Funding Playbook</a>
+          <a class="btn ghost" href="#book">Book the Revenue Call</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave to white -->
+    <div class="wave toWhite" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+      </svg>
+    </div>
+
+    <!-- PLAYBOOK -->
+    <section id="playbook" aria-label="Funding playbook">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>The Funding Playbook (simple, practical)</h2>
+            <p>
+              No long reports you’ll never open. We keep it structured and actionable so you can move forward.
+            </p>
+          </div>
+        </div>
+
+        <div class="pillars">
+          <div class="pillar">
+            <div class="pTop"><div class="numBox">01</div><div class="tagPill">Assess</div></div>
+            <b>Understand your current reality</b>
+            <span>Facility type, where you are in ALW, and where friction is happening today.</span>
+          </div>
+          <div class="pillar">
+            <div class="pTop"><div class="numBox">02</div><div class="tagPill">Visibility</div></div>
+            <b>Make tracking obvious</b>
+            <span>Define what to track monthly so outcomes stop feeling vague.</span>
+          </div>
+          <div class="pillar">
+            <div class="pTop"><div class="numBox">03</div><div class="tagPill">Process</div></div>
+            <b>Reduce bottlenecks</b>
+            <span>Fix the sequence and handoffs causing preventable delays and rework.</span>
+          </div>
+          <div class="pillar">
+            <div class="pTop"><div class="numBox">04</div><div class="tagPill">Monitor</div></div>
+            <b>Keep it consistent</b>
+            <span>Simple monthly check-ins that keep the system from drifting.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <b>You’ll leave with:</b> a short list of priorities + a sequence plan + what to track monthly.
+        </div>
+
+        <div class="centerRow" style="margin-top:16px">
+          <a class="btn primary" href="#book">Book the Revenue Call</a>
+          <a class="btn ghost" href="#scope">What the call covers</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave to soft -->
+    <div class="wave toSoft" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+      </svg>
+    </div>
+
+    <!-- SCOPE -->
+    <section id="scope" class="soft" aria-label="What the revenue call covers">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>What the Revenue Call covers</h2>
+            <p>
+              A fast, structured review that focuses on clarity and next actions — not overwhelm.
+            </p>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="card">
+            <h3>Agenda (what we’ll do)</h3>
+            <ul class="miniList" style="margin-top:12px">
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>Confirm your facility context and what “better outcomes” means for you.</div></li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>Identify the top leakage points likely impacting predictability.</div></li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>Map a short sequence plan (what to do first / next / later).</div></li>
+            </ul>
+
+            <div class="callout">
+              <b>No website guarantees.</b> The value is clarity + a plan you can execute.
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>What to bring (if available)</h3>
+            <p>You don’t need perfect paperwork. Even a quick overview helps.</p>
+            <ul class="miniList" style="margin-top:12px">
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>Facility type (RCFE/ARF), county, and where you are inside ALW today.</div></li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>What feels “off” (visibility, delays, denials, consistency, staffing impact).</div></li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>Your goal: improve predictability, improve outcomes, or confirm you’re already optimized.</div></li>
+            </ul>
+
+            <div class="centerRow" style="margin-top:14px">
+              <a class="btn primary" href="#book">Book now</a>
+              <a class="btn ghost" href="ALW_APP_LINK">ALW application</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOK -->
+    <section id="book" aria-label="Book revenue call">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>Book a Revenue Call</h2>
+            <p>We’ll evaluate what’s realistic for your situation and outline a clear next-step plan.</p>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="card">
+            <h3>Before you book</h3>
+            <p>
+              If you’re not in ALW yet (or you’re still in licensing), that’s fine — we’ll route you to the right next step.
+              This call is about clarity and sequencing.
+            </p>
+
+            <div class="callout">
+              Prefer email? <a href="mailto:{{custom_values.companyemail}}" style="color:var(--accent);font-weight:900">{{custom_values.companyemail}}</a>
+            </div>
+
+            <div class="centerRow" style="margin-top:14px">
+              <a class="btn primary" href="BOOKING_LINK_REV">Open Calendar</a>
+              <a class="btn link" href="tel:{{custom_values.companyphone_display}}">Call: {{custom_values.companyphone_display}}</a>
+            </div>
+          </div>
+
+          <div class="embed">
+            <div class="ratio">
+              <iframe src="BOOKING_IFRAME_REV" title="Billing Strategy / Revenue Call Calendar" loading="lazy"></iframe>
+            </div>
+            <div class="embedNote">
+              If the calendar doesn’t load, use this link:
+              <a href="BOOKING_LINK_REV" style="color:var(--accent);font-weight:900">Book a Revenue Call</a>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave to soft -->
+    <div class="wave toSoft" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+      </svg>
+    </div>
+
+    <!-- FAQ -->
+    <section id="faq" class="soft" aria-label="Funding / revenue FAQs">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>Frequently asked questions</h2>
+            <p>Clear answers — without overwhelming you.</p>
+          </div>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>Do you guarantee specific funding or revenue increases?</summary>
+            <p>No. We don’t publish guarantees. The call is designed to evaluate what’s realistic for your facility and outline usable next steps.</p>
+          </details>
+          <details>
+            <summary>Is this only for facilities already in ALW?</summary>
+            <p>No. If you’re not in ALW yet, we’ll route you to the right next step (licensing and/or ALW application guidance).</p>
+          </details>
+          <details>
+            <summary>What’s the best first step?</summary>
+            <p>Book the Revenue Call. We’ll assess your current setup, identify practical levers, and map a clear sequence plan.</p>
+          </details>
+          <details>
+            <summary>Will I need to share sensitive documents?</summary>
+            <p>Only if needed for your situation. The initial call stays focused on clarity and next steps, then we outline exactly what (if anything) is required afterward.</p>
+          </details>
+        </div>
+
+        <div class="centerRow" style="margin-top:18px">
+          <a class="btn primary" href="BOOKING_LINK_REV">Book a Revenue Call</a>
+          <a class="btn ghost" href="#top">Back to top</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- Mobile sticky CTA -->
+  <div class="stickyBook" aria-label="Sticky book bar">
+    <div class="inner">
+      <div class="miniTxt">Ready for clarity?</div>
+      <a class="btn primary" href="BOOKING_LINK_REV">Book revenue call</a>
+    </div>
+  </div>
+
+  <!-- SEO: schema (service + FAQ) -->
+  <script type="application/ld+json" id="fundingServiceSchema">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"{{custom_values.snapshot__business_name}}",
+    "serviceType":"Funding and Revenue Optimization for Residential Care Facilities (ALW / RCFE / ARF)",
+    "telephone":"{{custom_values.companyphone_display}}",
+    "email":"{{custom_values.companyemail}}",
+    "areaServed":"California",
+    "url":"FUNDING_PAGE_URL"
+  }
+  </script>
+
+  <script type="application/ld+json" id="fundingFaqSchema">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Do you guarantee specific funding or revenue increases?","acceptedAnswer":{"@type":"Answer","text":"No. We don’t publish guarantees. The call evaluates what’s realistic for your facility and outlines usable next steps."}},
+      {"@type":"Question","name":"Is this only for facilities already in ALW?","acceptedAnswer":{"@type":"Answer","text":"No. If you’re not in ALW yet, we’ll route you to the right next step such as licensing and/or ALW application guidance."}},
+      {"@type":"Question","name":"What’s the best first step?","acceptedAnswer":{"@type":"Answer","text":"Book the Revenue Call. We assess your current setup, identify practical levers, and map a clear sequence plan."}},
+      {"@type":"Question","name":"Will I need to share sensitive documents?","acceptedAnswer":{"@type":"Answer","text":"Only if needed for your situation. The initial call stays focused on clarity and next steps, then we outline what is required afterward."}}
+    ]
+  }
+  </script>
+
+</div>
+
+<script>
+  (function(){
+    const replacements = {
+      "BOOKING_LINK_REV": "https://api.leadconnectorhq.com/widget/bookings/billing-strategy-call",
+      "BOOKING_IFRAME_REV": "https://api.leadconnectorhq.com/widget/booking/GCyM1GS3QXkgVDFllYMu",
+
+      // optional nav links
+      "HOME_LINK": "./Home-page-html.html",
+      "RCFE_LIC_LINK": "./rcfe-licensing-html.html",
+      "ARF_LIC_LINK": "./arf-licensing-html.html",
+      "ALW_APP_LINK": "./alw-waiver-html.html",
+      "CONSULTING_LINK": "./Consulting-html.html",
+      "FUNDING_LINK": "./funding-html.html",
+
+      // schema URL swap (optional)
+      "FUNDING_PAGE_URL": "./funding-html.html"
+    };
+
+    const root = document.querySelector(".mbsFunding");
+    if(!root) return;
+
+    // Year
+    const yr = root.querySelector("#yr");
+    if(yr) yr.textContent = new Date().getFullYear();
+
+    // Replace href/src tokens
+    const setAttr = (sel, attr) => {
+      root.querySelectorAll(sel).forEach(el=>{
+        const v = el.getAttribute(attr);
+        if(!v) return;
+        Object.keys(replacements).forEach(k=>{
+          if(v.indexOf(k) !== -1) el.setAttribute(attr, v.split(k).join(replacements[k]));
+        });
+      });
+    };
+    setAttr("a[href]", "href");
+    setAttr("iframe[src]", "src");
+
+    // Schema URL swap
+    const serviceSchema = root.querySelector("#fundingServiceSchema");
+    if(serviceSchema){
+      serviceSchema.textContent = serviceSchema.textContent.split("FUNDING_PAGE_URL").join(replacements.FUNDING_PAGE_URL);
+    }
+
+    // Mobile menu
+    const toggle = root.querySelector(".mToggle");
+    const nav = root.querySelector("#primaryNav");
+    if(toggle && nav){
+      toggle.addEventListener("click", ()=>{
+        const open = nav.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    }
+
+    // Dropdown click support (mobile)
+    root.querySelectorAll(".dd .ddBtn").forEach(btn=>{
+      btn.addEventListener("click",(e)=>{
+        e.preventDefault();
+        const dd = btn.closest(".dd");
+        const isOpen = dd.classList.toggle("open");
+        btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+    });
+
+    // Smooth scroll
+    root.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener("click",(e)=>{
+        const id = a.getAttribute("href");
+        if(!id || id === "#") return;
+        const el = root.querySelector(id);
+        if(!el) return;
+        e.preventDefault();
+        el.scrollIntoView({behavior:"smooth", block:"start"});
+      });
+    });
+
+    // === SCROLL REVEAL ===
+    root.querySelectorAll(".card, .pillar, .pCard, .head h2, .proofChip, .heroStatCard").forEach(el=>{
+      if(!el.classList.contains("reveal")) el.classList.add("reveal");
+    });
+    (function(){
+      const obs = new IntersectionObserver((entries, ob)=>{
+        entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("visible"); ob.unobserve(e.target); }});
+      }, {threshold:0.10});
+      root.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+    })();
+  })();
+</script>
+</body>
+</html>
