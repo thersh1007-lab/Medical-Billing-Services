@@ -3,22 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Increase Funding | Medical Billing Services</title>
+<title>ARF Licensing | Medical Billing Services</title>
 </head>
 <body>
 <!--
-MEDBILLINGCO.COM — INCREASE FUNDING / REVENUE OPTIMIZATION (PREMIUM) — v2
+MEDBILLINGCO.COM — ARF LICENSING PAGE (SEO-DISTINCT PREMIUM STYLE) — v1
 Paste into ONE GoHighLevel Custom Code block.
 
-Booking assets (Billing Strategy Consult):
-- Booking link:  https://api.leadconnectorhq.com/widget/bookings/billing-strategy-call
-- Embed iframe:  https://api.leadconnectorhq.com/widget/booking/GCyM1GS3QXkgVDFllYMu
+This layout is intentionally different from the RCFE page for SEO:
+- Split hero (no full-bleed background hero)
+- Top notice bar (RCFE vs ARF self-check CTA)
+- ARF vs RCFE compare strip
+- "Where apps get stuck" timeline style
+- FAQ Schema (JSON-LD) + ProfessionalService schema
 
-Logo:
-https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-4897-994e-1ec4194e612d.png
-
-Optional nav tokens:
-HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_LINK
+Default booking uses your existing Licensing Consultation calendar:
+- Booking link:  https://api.leadconnectorhq.com/widget/bookings/alw-application-call05zqka
+- Embed iframe:  https://api.leadconnectorhq.com/widget/booking/H3K9LIzRf7zxAwtfyrdN
 -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,482 +27,402 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-  .mbsFunding{
+  .mbsArfLic{
     --bg:#ffffff; --ink:#0b1220; --muted:#4b5563; --soft:#f6f8fb;
-    --accent:#168a5b; --accent2:#0f6e48;
+    --accent:#0f6e48; --accent2:#0b5a3b;
     --line:rgba(15,23,42,.10);
-    --shadow:0 26px 64px rgba(2,6,23,.12);
-    --shadow2:0 14px 34px rgba(2,6,23,.10);
+    --shadow:0 20px 54px rgba(2,6,23,.10);
+    --shadow2:0 12px 28px rgba(2,6,23,.08);
     --max:1160px;
-    --heroImg:url("https://assets.cdn.filesafe.space/mxGAJ81pMGDwP9gcmCOZ/media/699a0cd420c0353099b2b4a6.jpg");
 
-    /* Swap guide portrait here (Kamil) */
+    /* Guide portrait (Kamil) */
     --guideImg:url("https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/a2244902-df92-4288-b09a-8fa156d5065c.png");
   }
-  .mbsFunding *{box-sizing:border-box}
-  .mbsFunding{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
-  .mbsFunding a{color:inherit;text-decoration:none}
-  .mbsFunding img{max-width:100%;display:block}
-  .mbsFunding .wrap{width:min(var(--max),calc(100% - 48px));margin:0 auto}
+
+  .mbsArfLic *{box-sizing:border-box}
+  .mbsArfLic{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+  .mbsArfLic a{color:inherit;text-decoration:none}
+  .mbsArfLic img{max-width:100%;display:block}
+  .mbsArfLic .wrap{width:min(var(--max),calc(100% - 48px));margin:0 auto}
 
   /* Buttons */
-  .mbsFunding .btn{
+  .mbsArfLic .btn{
     display:inline-flex;align-items:center;justify-content:center;
     padding:12px 16px;border-radius:999px;
     font-weight:900;font-size:14px;border:1px solid transparent;
     transition:.18s ease;white-space:nowrap;user-select:none;
   }
-  .mbsFunding .btn.primary{background:var(--accent);color:#fff;box-shadow:0 10px 22px rgba(22,138,91,.22)}
-  .mbsFunding .btn.primary:hover{background:var(--accent2);transform:translateY(-1px)}
-  .mbsFunding .btn.ghost{background:#fff;border-color:rgba(15,23,42,.14);color:rgba(2,6,23,.88)}
-  .mbsFunding .btn.ghost:hover{background:rgba(2,6,23,.04)}
-  .mbsFunding .btn.link{background:transparent;border-color:transparent;padding:10px 0;border-radius:12px;color:var(--accent);font-weight:900}
-  .mbsFunding .btn.link:hover{opacity:.9}
+  .mbsArfLic .btn.primary{background:var(--accent);color:#fff;box-shadow:0 10px 22px rgba(15,110,72,.20)}
+  .mbsArfLic .btn.primary:hover{background:var(--accent2);transform:translateY(-1px)}
+  .mbsArfLic .btn.ghost{background:#fff;border-color:rgba(15,23,42,.14);color:rgba(2,6,23,.88)}
+  .mbsArfLic .btn.ghost:hover{background:rgba(2,6,23,.04)}
+  .mbsArfLic .btn.link{background:transparent;border-color:transparent;padding:10px 0;border-radius:12px;color:var(--accent);font-weight:900}
+  .mbsArfLic .btn.link:hover{opacity:.9}
 
   /* Header */
-  .mbsFunding .hdr{
+  .mbsArfLic .hdr{
     position:sticky;top:0;z-index:50;
     background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
     border-bottom:1px solid rgba(15,23,42,.08);
   }
-  .mbsFunding .nav{
+  .mbsArfLic .nav{
     display:grid;grid-template-columns:220px 1fr auto;
     align-items:center;gap:16px;padding:14px 0;
   }
-  .mbsFunding .brand{display:flex;align-items:center;gap:10px;min-width:180px}
-  .mbsFunding .brand img{height:38px;width:auto}
+  .mbsArfLic .brand{display:flex;align-items:center;gap:10px;min-width:180px}
+  .mbsArfLic .brand img{height:38px;width:auto}
 
-  .mbsFunding .menu{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
-  .mbsFunding .menu>a,.mbsFunding .dd>button{
+  .mbsArfLic .menu{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+  .mbsArfLic .menu>a,.mbsArfLic .dd>button{
     padding:10px 10px;border-radius:12px;font-size:13px;
     color:rgba(2,6,23,.78);border:0;background:transparent;cursor:pointer;
     font-family:inherit;font-weight:900;
+    transition:background .15s ease,color .15s ease;
   }
-  .mbsFunding .menu>a:hover,.mbsFunding .dd>button:hover{background:rgba(2,6,23,.05)}
-  .mbsFunding .active{
-    background:rgba(22,138,91,.10);
-    border:1px solid rgba(22,138,91,.18);
+  .mbsArfLic .menu>a:hover,.mbsArfLic .dd>button:hover{background:rgba(2,6,23,.05)}
+  .mbsArfLic .active{
+    background:rgba(15,110,72,.10);
+    border:1px solid rgba(15,110,72,.18);
     color:rgba(2,6,23,.86);
   }
-  .mbsFunding .dd{position:relative}
-  .mbsFunding .dd>button{display:inline-flex;align-items:center;gap:8px}
-  .mbsFunding .panel{
+
+  .mbsArfLic .dd{position:relative}
+  .mbsArfLic .dd>button{display:inline-flex;align-items:center;gap:8px}
+  .mbsArfLic .panel{
     position:absolute;top:calc(100% + 10px);left:0;min-width:260px;
     background:#fff;border:1px solid rgba(15,23,42,.10);
     border-radius:16px;box-shadow:var(--shadow2);padding:8px;display:none;
   }
-  .mbsFunding .panel a{
+  .mbsArfLic .panel a{
     display:flex;gap:10px;align-items:flex-start;padding:10px 10px;
     border-radius:12px;font-size:13px;color:rgba(2,6,23,.82);font-weight:900;
   }
-  .mbsFunding .panel a:hover{background:rgba(2,6,23,.05)}
-  .mbsFunding .panel .mini{font-size:12px;color:var(--muted);font-weight:600;margin-top:2px}
-  .mbsFunding .dd:hover .panel{display:block}
-  .mbsFunding .dd.open .panel{display:block}
+  .mbsArfLic .panel a:hover{background:rgba(2,6,23,.05)}
+  .mbsArfLic .panel .mini{font-size:12px;color:var(--muted);font-weight:600;margin-top:2px}
+  .mbsArfLic .dd:hover .panel{display:block}
+  .mbsArfLic .dd.open .panel{display:block}
 
-  .mbsFunding .hdrCtas{display:flex;align-items:center;gap:10px;justify-content:flex-end}
-  .mbsFunding .phonePill{
-    display:inline-flex;align-items:center;gap:10px;
-    padding:10px 12px;border-radius:999px;
-    background:#fff;border:1px solid rgba(15,23,42,.12);
-    color:rgba(2,6,23,.82);font-weight:900;font-size:13px;
-  }
-  .mbsFunding .phonePill:hover{background:rgba(2,6,23,.03)}
-
-  .mbsFunding .mToggle{
+  .mbsArfLic .mToggle{
     display:none;justify-self:center;
     padding:10px 12px;border-radius:12px;border:1px solid rgba(15,23,42,.12);
     background:#fff;font-weight:900;cursor:pointer;
   }
 
-  /* Hero */
-  .mbsFunding .hero{padding:22px 0 26px}
-  .mbsFunding .heroShell{
-    position:relative;border-radius:clamp(22px,3vw,34px);
-    overflow:hidden;box-shadow:var(--shadow);background:#0b1220;
-  }
-  .mbsFunding .heroBg{
-    position:absolute;inset:0;background-image:var(--heroImg);
-    background-size:cover;background-position:center;transform:scale(1.02);
-    filter:saturate(1.02) contrast(1.02);
-  }
-  .mbsFunding .heroOverlay{
-    position:absolute;inset:0;
-    background:
-      radial-gradient(900px 520px at 16% 26%, rgba(255,255,255,.16), rgba(255,255,255,0) 62%),
-      linear-gradient(90deg, rgba(11,18,32,.74) 0%, rgba(11,18,32,.40) 58%, rgba(11,18,32,.64) 100%);
-  }
-  .mbsFunding .heroInner{
-    position:relative;padding:clamp(26px,4.2vw,56px);
-    min-height:clamp(460px,58vh,640px);
-    display:flex;align-items:stretch;
-  }
-  .mbsFunding .heroGrid{
-    width:100%;
-    display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:end;
-  }
-  .mbsFunding .pill{
-    display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;
-    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);
-    color:rgba(255,255,255,.92);font-weight:800;font-size:12.5px;width:fit-content;
-  }
-  .mbsFunding .dot{width:8px;height:8px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 4px rgba(22,138,91,.20)}
+  /* Sections */
+  .mbsArfLic section{padding:76px 0}
+  .mbsArfLic .soft{background:var(--soft);border-top:1px solid rgba(15,23,42,.06);border-bottom:1px solid rgba(15,23,42,.06)}
+  .mbsArfLic .head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:26px}
+  .mbsArfLic .head h2{margin:0;font-size:clamp(24px,2.8vw,34px);letter-spacing:-.03em}
+  .mbsArfLic .head p{margin:0;color:var(--muted);max-width:82ch;line-height:1.7;font-size:14.2px}
 
-  .mbsFunding .hero h1{
-    margin:14px 0 10px;font-size:clamp(30px,3.4vw,54px);
-    line-height:1.05;letter-spacing:-0.045em;color:#fff;text-shadow:0 10px 30px rgba(0,0,0,.25);
+  /* Split hero */
+  .mbsArfLic .hero{padding:28px 0 28px}
+  .mbsArfLic .heroGrid{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:stretch;
   }
-  .mbsFunding .hero p{
-    margin:0;color:rgba(255,255,255,.88);font-size:15.2px;line-height:1.72;max-width:84ch;
-  }
-  .mbsFunding .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-
-  .mbsFunding .proofBar{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap}
-  .mbsFunding .proofChip{
-    display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:16px;
-    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.92);
-    backdrop-filter:blur(10px);
-  }
-  .mbsFunding .check{
-    width:22px;height:22px;border-radius:10px;display:flex;align-items:center;justify-content:center;
-    background:rgba(22,138,91,.20);border:1px solid rgba(22,138,91,.28);flex:0 0 auto;
-  }
-  .mbsFunding .proofChip b{display:block;font-size:12.8px;letter-spacing:-.01em}
-  .mbsFunding .proofChip span{display:block;font-size:12px;opacity:.9;margin-top:2px}
-
-  /* Hero card (premium) */
-  .mbsFunding .auditCard{
-    background:rgba(255,255,255,.96);
-    border:1px solid rgba(15,23,42,.14);
-    border-radius:26px;
-    box-shadow:0 22px 52px rgba(2,6,23,.18);
-    overflow:hidden;
-  }
-  .mbsFunding .auditHead{
-    padding:16px 16px 12px;
-    border-bottom:1px solid rgba(15,23,42,.10);
-    background:
-      radial-gradient(520px 220px at 10% 0%, rgba(22,138,91,.16), rgba(22,138,91,0) 60%),
+  .mbsArfLic .heroLeft{
+    border:1px solid var(--line); border-radius:28px; padding:clamp(20px,3vw,30px);
+    box-shadow:var(--shadow); background:
+      radial-gradient(700px 240px at 10% 10%, rgba(15,110,72,.10), rgba(15,110,72,0) 60%),
       linear-gradient(180deg, rgba(2,6,23,.02), rgba(2,6,23,0));
   }
-  .mbsFunding .auditHead b{display:block;letter-spacing:-.02em}
-  .mbsFunding .auditHead span{display:block;margin-top:4px;color:rgba(2,6,23,.70);font-weight:700;font-size:13px;line-height:1.45}
-  .mbsFunding .auditBody{padding:14px 16px 16px}
-  .mbsFunding .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-  .mbsFunding .kpi{
-    border:1px solid rgba(15,23,42,.10);
-    border-radius:18px;padding:12px;background:#fff;
+  .mbsArfLic .pill{
+    display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;
+    background:rgba(15,110,72,.10);border:1px solid rgba(15,110,72,.16);
+    color:rgba(2,6,23,.86);font-weight:900;font-size:12.5px;width:fit-content;
   }
-  .mbsFunding .kpi b{display:block;font-size:12.5px;letter-spacing:-.01em;color:rgba(2,6,23,.84)}
-  .mbsFunding .kpi span{display:block;margin-top:6px;font-weight:900;letter-spacing:-.02em}
-  .mbsFunding .kpi em{display:block;margin-top:4px;font-style:normal;color:rgba(2,6,23,.62);font-size:12px}
+  .mbsArfLic .dot{width:8px;height:8px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 4px rgba(15,110,72,.18)}
+  .mbsArfLic .heroLeft h1{
+    margin:12px 0 10px;font-size:clamp(30px,3.4vw,50px);
+    line-height:1.06;letter-spacing:-0.045em;color:rgba(2,6,23,.94);
+  }
+  .mbsArfLic .heroLeft p{
+    margin:0;color:rgba(2,6,23,.78);font-size:15px;line-height:1.75;max-width:80ch;
+  }
+  .mbsArfLic .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
 
-  .mbsFunding .miniRule{height:1px;background:rgba(15,23,42,.10);margin:14px 0}
-  .mbsFunding .miniList{margin:0;padding:0;list-style:none;display:grid;gap:10px}
-  .mbsFunding .miniList li{display:flex;gap:10px;align-items:flex-start;color:rgba(2,6,23,.80);font-size:13.8px;line-height:1.55}
-  .mbsFunding .tick{
+  .mbsArfLic .heroRight{
+    border:1px solid var(--line); border-radius:28px; overflow:hidden;
+    box-shadow:var(--shadow2); background:#fff; display:flex; flex-direction:column;
+  }
+  .mbsArfLic .heroImg{
+    height:220px; background:#eaf2ef; border-bottom:1px solid rgba(15,23,42,.08);
+    background-image:url("HERO_IMAGE_URL");
+    background-size:cover;background-position:center;
+  }
+  .mbsArfLic .heroCard{
+    padding:18px; display:grid; gap:12px;
+  }
+  .mbsArfLic .heroCard h3{margin:0;letter-spacing:-.02em}
+  .mbsArfLic .mini{color:var(--muted);font-size:13.8px;line-height:1.6;margin:0}
+  .mbsArfLic .bullets{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .mbsArfLic .bullets li{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.55;color:rgba(2,6,23,.80)}
+  .mbsArfLic .tick{
     width:22px;height:22px;border-radius:10px;display:flex;align-items:center;justify-content:center;
-    background:rgba(22,138,91,.10);border:1px solid rgba(22,138,91,.18);color:var(--accent);flex:0 0 auto;
-    transform:translateY(1px);
+    background:rgba(15,110,72,.10);border:1px solid rgba(15,110,72,.18);color:var(--accent);
+    flex:0 0 auto; transform:translateY(1px);
   }
 
-  /* Sections + waves */
-  .mbsFunding section{padding:76px 0}
-  .mbsFunding .soft{background:var(--soft);border-top:1px solid rgba(15,23,42,.06);border-bottom:1px solid rgba(15,23,42,.06)}
-  .mbsFunding .head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:26px}
-  .mbsFunding .head h2{margin:0;font-size:clamp(24px,2.8vw,34px);letter-spacing:-.03em}
-  .mbsFunding .head p{margin:0;color:var(--muted);max-width:86ch;line-height:1.7;font-size:14.2px}
-  .mbsFunding .wave{height:44px;margin:-14px 0 -18px;pointer-events:none}
-  .mbsFunding .wave svg{width:100%;height:100%;display:block}
-  .mbsFunding .wave.toSoft path{fill:var(--soft)}
-  .mbsFunding .wave.toWhite path{fill:var(--bg)}
-
-  /* Cards + layout */
-  .mbsFunding .split{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:start}
-  .mbsFunding .card{
+  /* Cards / grids */
+  .mbsArfLic .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .mbsArfLic .card{
     background:#fff;border:1px solid var(--line);border-radius:24px;padding:18px;
     box-shadow:0 12px 24px rgba(2,6,23,.06);
   }
-  .mbsFunding .card h3{margin:0 0 8px;letter-spacing:-.02em}
-  .mbsFunding .card p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
-  .mbsFunding .centerRow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-
-  /* 3 cards */
-  .mbsFunding .tri{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-
-  /* Leak grid */
-  .mbsFunding .grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-  .mbsFunding .pCard{
-    background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;
-    box-shadow:0 12px 24px rgba(2,6,23,.06);
-  }
-  .mbsFunding .pCard b{display:block;letter-spacing:-.02em;font-size:15px}
-  .mbsFunding .pCard span{display:block;margin-top:6px;color:var(--muted);line-height:1.65;font-size:13.6px}
-
-  /* Pillars */
-  .mbsFunding .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-  .mbsFunding .pillar{
-    background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;
-    box-shadow:0 12px 24px rgba(2,6,23,.06);
-  }
-  .mbsFunding .pTop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
-  .mbsFunding .numBox{
-    width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;
-    background:rgba(22,138,91,.10);border:1px solid rgba(22,138,91,.20);color:var(--accent);
-    font-weight:900;letter-spacing:-.02em;font-size:18px;
-  }
-  .mbsFunding .tagPill{
-    padding:8px 12px;border-radius:999px;background:rgba(2,6,23,.04);border:1px solid rgba(2,6,23,.08);
-    color:rgba(2,6,23,.68);font-weight:900;font-size:12px;white-space:nowrap;
-  }
-  .mbsFunding .pillar b{display:block;letter-spacing:-.02em;font-size:15px}
-  .mbsFunding .pillar span{display:block;margin-top:6px;color:var(--muted);line-height:1.65;font-size:13.5px}
-
-  .mbsFunding .callout{
+  .mbsArfLic .card h3{margin:0 0 8px;letter-spacing:-.02em}
+  .mbsArfLic .card p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
+  .mbsArfLic .callout{
     margin-top:14px;padding:14px 14px;border-radius:18px;
-    background:rgba(22,138,91,.08);border:1px solid rgba(22,138,91,.16);
+    background:rgba(15,110,72,.08);border:1px solid rgba(15,110,72,.16);
     color:rgba(2,6,23,.80);line-height:1.65;font-size:13.8px;
   }
 
-  /* Guide section */
-  .mbsFunding .guide{
-    display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center;
+  /* Compare strip */
+  .mbsArfLic .compare{
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;
   }
-  .mbsFunding .avatar{
+  .mbsArfLic .cmp{
+    border:1px dashed rgba(15,23,42,.16); border-radius:20px; padding:14px;
+    background:rgba(2,6,23,.015);
+  }
+  .mbsArfLic .cmp b{display:block;letter-spacing:-.01em}
+  .mbsArfLic .cmp span{display:block;margin-top:6px;color:var(--muted);font-size:13.6px;line-height:1.6}
+
+  /* Timeline problems */
+  .mbsArfLic .timeline{display:grid;gap:10px}
+  .mbsArfLic .tItem{
+    background:#fff;border:1px solid var(--line);border-radius:20px;padding:14px;
+    box-shadow:0 10px 20px rgba(2,6,23,.05);
+    display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start;
+  }
+  .mbsArfLic .tNum{
+    width:40px;height:40px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    background:rgba(15,110,72,.10);border:1px solid rgba(15,110,72,.18);color:var(--accent);
+    font-weight:900;
+  }
+  .mbsArfLic .tItem b{display:block;letter-spacing:-.01em}
+  .mbsArfLic .tItem span{display:block;margin-top:6px;color:var(--muted);font-size:13.6px;line-height:1.65}
+
+  /* Roadmap steps (4) */
+  .mbsArfLic .steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .mbsArfLic .step{
+    background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;
+    box-shadow:0 12px 24px rgba(2,6,23,.06);
+  }
+  .mbsArfLic .stepTop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+  .mbsArfLic .tagPill{
+    padding:8px 12px;border-radius:999px;background:rgba(2,6,23,.04);border:1px solid rgba(2,6,23,.08);
+    color:rgba(2,6,23,.68);font-weight:900;font-size:12px;white-space:nowrap;
+  }
+  .mbsArfLic .step b{display:block;letter-spacing:-.02em;font-size:15px}
+  .mbsArfLic .step span{display:block;margin-top:6px;color:var(--muted);line-height:1.65;font-size:13.5px}
+
+  /* Booking embed */
+  .mbsArfLic .split{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:start}
+  .mbsArfLic .embed{
+    border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow2);background:#fff;
+  }
+  .mbsArfLic .ratio{position:relative;width:100%;padding-top:62%;background:rgba(2,6,23,.04)}
+  .mbsArfLic .ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .mbsArfLic .embedNote{padding:14px 16px;color:var(--muted);font-size:12.8px;line-height:1.55}
+
+  /* Guide */
+  .mbsArfLic .guide{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center}
+  .mbsArfLic .avatar{
     width:120px;height:120px;border-radius:26px;overflow:hidden;
     border:1px solid rgba(15,23,42,.10);box-shadow:0 12px 24px rgba(2,6,23,.08);
     background:rgba(2,6,23,.04);
   }
-  .mbsFunding .avatar .img{
+  .mbsArfLic .avatar .img{
     width:100%;height:100%;background-image:var(--guideImg);
     background-size:cover;background-position:center;
   }
-  .mbsFunding .guide h3{margin:0 0 6px;letter-spacing:-.02em}
-  .mbsFunding .guide p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
-
-  /* Booking embed */
-  .mbsFunding .embed{
-    border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow2);background:#fff;
-  }
-  .mbsFunding .ratio{position:relative;width:100%;padding-top:62%;background:rgba(2,6,23,.04)}
-  .mbsFunding .ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-  .mbsFunding .embedNote{padding:14px 16px;color:var(--muted);font-size:12.8px;line-height:1.55}
 
   /* FAQ */
-  .mbsFunding .faq{display:grid;gap:10px}
-  .mbsFunding details{
+  .mbsArfLic .faq{display:grid;gap:10px}
+  .mbsArfLic details{
     background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 14px;
     box-shadow:0 10px 20px rgba(2,6,23,.05);
   }
-  .mbsFunding summary{cursor:pointer;font-weight:900;letter-spacing:-.01em;list-style:none}
-  .mbsFunding summary::-webkit-details-marker{display:none}
-  .mbsFunding details p{margin:10px 0 0;color:var(--muted);line-height:1.7;font-size:14px}
+  .mbsArfLic summary{cursor:pointer;font-weight:900;letter-spacing:-.01em;list-style:none;position:relative;padding-right:28px}
+  .mbsArfLic summary::-webkit-details-marker{display:none}
+  .mbsArfLic summary::after{
+    content:'+';position:absolute;right:4px;top:0;
+    transition:transform .2s ease;font-weight:400;opacity:.65;font-size:18px;line-height:1.2;
+  }
+  .mbsArfLic details[open] summary::after{transform:rotate(45deg)}
+  .mbsArfLic details p{margin:10px 0 0;color:var(--muted);line-height:1.7;font-size:14px;animation:faqRevealArf .28s ease}
+  @keyframes faqRevealArf{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 
-  /* Footer */
-  .mbsFunding footer{padding:42px 0;border-top:1px solid rgba(15,23,42,.08);background:#fff}
-  .mbsFunding .foot{display:grid;grid-template-columns:1.1fr .9fr .9fr;gap:14px;align-items:start}
-  .mbsFunding .foot h4{margin:0 0 10px;font-size:13px;letter-spacing:-.01em}
-  .mbsFunding .foot a{display:block;padding:8px 0;color:var(--muted);font-size:13.5px}
-  .mbsFunding .foot a:hover{color:var(--ink)}
-  .mbsFunding .copy{margin-top:12px;color:var(--muted);font-size:12.5px;line-height:1.6}
+  /* Contact + footer */
+  .mbsArfLic .contactGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .mbsArfLic .cCard{
+    background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;
+    box-shadow:0 12px 24px rgba(2,6,23,.06);
+  }
+  .mbsArfLic .cCard b{display:block;letter-spacing:-.02em}
+  .mbsArfLic .cCard span{display:block;margin-top:6px;color:var(--muted);font-size:13.8px;line-height:1.55}
+
+  .mbsArfLic footer{padding:42px 0;border-top:1px solid rgba(15,23,42,.08);background:#fff}
+  .mbsArfLic .foot{display:grid;grid-template-columns:1.1fr .9fr .9fr;gap:14px;align-items:start}
+  .mbsArfLic .foot h4{margin:0 0 10px;font-size:13px;letter-spacing:-.01em}
+  .mbsArfLic .foot a{display:block;padding:8px 0;color:var(--muted);font-size:13.5px}
+  .mbsArfLic .foot a:hover{color:var(--ink)}
+  .mbsArfLic .copy{margin-top:12px;color:var(--muted);font-size:12.5px;line-height:1.6}
 
   /* Mobile sticky CTA */
-  .mbsFunding .stickyBook{
+  .mbsArfLic .stickyBook{
     display:none;position:fixed;left:0;right:0;bottom:0;z-index:90;
     padding:10px 12px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
     border-top:1px solid rgba(15,23,42,.10);
   }
-  .mbsFunding .stickyBook .inner{
+  .mbsArfLic .stickyBook .inner{
     width:min(var(--max),calc(100% - 24px));margin:0 auto;
     display:flex;gap:10px;align-items:center;justify-content:space-between;
   }
-  .mbsFunding .stickyBook .miniTxt{
+  .mbsArfLic .stickyBook .miniTxt{
     font-size:12.5px;color:rgba(2,6,23,.78);font-weight:900;letter-spacing:-.01em;
   }
 
   /* Responsive */
   @media (max-width:1120px){
-    .mbsFunding .heroGrid{grid-template-columns:1fr}
-    .mbsFunding .tri{grid-template-columns:1fr}
-    .mbsFunding .grid6{grid-template-columns:repeat(2,1fr)}
-    .mbsFunding .pillars{grid-template-columns:1fr}
-    .mbsFunding .split{grid-template-columns:1fr}
+    .mbsArfLic .heroGrid{grid-template-columns:1fr}
+    .mbsArfLic .grid3{grid-template-columns:1fr}
+    .mbsArfLic .compare{grid-template-columns:1fr}
+    .mbsArfLic .steps4{grid-template-columns:1fr}
+    .mbsArfLic .split{grid-template-columns:1fr}
+    .mbsArfLic .contactGrid{grid-template-columns:1fr}
   }
   @media (max-width:980px){
-    .mbsFunding .nav{grid-template-columns:1fr auto}
-    .mbsFunding .menu{display:none;justify-content:flex-start;grid-column:1/-1;padding-bottom:10px}
-    .mbsFunding .menu.open{display:flex}
-    .mbsFunding .mToggle{display:inline-flex}
-    .mbsFunding .hdrCtas{grid-column:1/-1;justify-content:flex-start}
+    .mbsArfLic .nav{grid-template-columns:1fr auto}
+    .mbsArfLic .menu{display:none;justify-content:flex-start;grid-column:1/-1;padding-bottom:10px}
+    .mbsArfLic .menu.open{display:flex}
+    .mbsArfLic .mToggle{display:inline-flex}
   }
   @media (max-width:640px){
-    .mbsFunding .wrap{width:min(var(--max),calc(100% - 32px))}
-    .mbsFunding .ratio{padding-top:86%}
-    .mbsFunding .grid6{grid-template-columns:1fr}
-    .mbsFunding .kpis{grid-template-columns:1fr}
-    .mbsFunding .guide{grid-template-columns:1fr}
-    .mbsFunding .avatar{width:96px;height:96px;border-radius:22px}
-    .mbsFunding .stickyBook{display:block}
-    .mbsFunding main{padding-bottom:74px}
+    .mbsArfLic .wrap{width:min(var(--max),calc(100% - 32px))}
+    .mbsArfLic .ratio{padding-top:86%}
+    .mbsArfLic .guide{grid-template-columns:1fr}
+    .mbsArfLic .avatar{width:96px;height:96px;border-radius:22px}
+    .mbsArfLic .stickyBook{display:block}
+    .mbsArfLic main{padding-bottom:74px}
+    .mbsArfLic .foot{grid-template-columns:1fr}
   }
-  @media (prefers-reduced-motion: reduce){ .mbsFunding .btn{transition:none} }
+  @media (prefers-reduced-motion: reduce){ .mbsArfLic .btn{transition:none} }
 
-  /* ========= POLISH PACK (ARF page) ========= */
+  /* Polish */
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
   .reveal.visible{opacity:1;transform:none}
-  .reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
 
-  /* Hero gradient */
-  .heroGradient{
-    background:linear-gradient(135deg,rgba(255,255,255,1) 40%,rgba(255,255,255,.70));
-    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  }
-
-  /* microProof pill row (was completely unstyled) */
-  .mbsFunding .microProof{
-    display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;
-  }
-  .mbsFunding .microProof span{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:8px 14px;border-radius:999px;
-    background:rgba(255,255,255,.14);border:1px solid rgba(22,138,91,.30);
-    color:rgba(255,255,255,.92);font-weight:800;font-size:12.5px;
-    backdrop-filter:blur(10px);
-  }
-  .mbsFunding .microProof span::before{
-    content:'✓';color:var(--accent);font-weight:900;font-size:13px;
-  }
-
-  /* Hero right column proof card */
-  .mbsFunding .heroStatCard{
-    background:rgba(255,255,255,.96);border:1px solid rgba(15,23,42,.14);
-    border-radius:24px;box-shadow:0 22px 52px rgba(2,6,23,.18);
-    padding:20px;align-self:end;
-  }
-  .mbsFunding .heroStatCard .hsTitle{
-    font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.6px;
-    color:rgba(2,6,23,.52);margin:0 0 14px;
-  }
-  .mbsFunding .heroStatKpis{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .mbsFunding .heroKpi{
-    padding:12px;border-radius:16px;background:rgba(22,138,91,.06);
-    border:1px solid rgba(22,138,91,.14);
-  }
-  .mbsFunding .heroKpi b{display:block;font-size:22px;font-weight:900;letter-spacing:-0.8px;color:var(--accent)}
-  .mbsFunding .heroKpi span{display:block;font-size:11.5px;color:rgba(2,6,23,.58);font-weight:700;margin-top:3px;line-height:1.3}
-
-  /* Card + pillar hover lift */
   @media(hover:hover){
-    .mbsFunding .card,.mbsFunding .pillar,.mbsFunding .pCard{transition:transform .18s ease,box-shadow .18s ease}
-    .mbsFunding .card:hover,.mbsFunding .pillar:hover,.mbsFunding .pCard:hover{
+    .mbsArfLic .card,.mbsArfLic .step,.mbsArfLic .tItem,.mbsArfLic .cCard{transition:transform .18s ease,box-shadow .18s ease}
+    .mbsArfLic .card:hover,.mbsArfLic .step:hover,.mbsArfLic .tItem:hover,.mbsArfLic .cCard:hover{
       transform:translateY(-3px);box-shadow:0 24px 60px rgba(2,6,23,.13);
     }
   }
-
-  /* Nav transition */
-  .mbsFunding .menu>a,.mbsFunding .dd>button{transition:background .15s ease,color .15s ease}
-
-  /* FAQ chevron + reveal */
-  .mbsFunding summary{position:relative;padding-right:28px}
-  .mbsFunding summary::after{
-    content:'+';position:absolute;right:4px;top:0;
-    transition:transform .2s ease;font-weight:400;opacity:.65;font-size:18px;line-height:1.2;
-  }
-  .mbsFunding details[open] summary::after{transform:rotate(45deg)}
-  .mbsFunding details p{animation:faqRevealARF .28s ease}
-  @keyframes faqRevealARF{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 </style>
 
-<div class="mbsFunding" id="top">
+<div class="mbsArfLic" id="top">
+
+  <!-- HEADER -->
+  <header class="hdr" role="banner">
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="HOME_LINK" aria-label="Medical Billing Services">
+          <img src="https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-4897-994e-1ec4194e612d.png" alt="Medical Billing Services Logo">
+        </a>
+
+        <button class="mToggle" type="button" aria-controls="primaryNav" aria-expanded="false">Menu</button>
+
+        <nav class="menu" id="primaryNav" aria-label="Primary Navigation">
+          <a href="HOME_LINK">Home</a>
+          <a href="BILLING_LINK">Billing</a>
+
+          <div class="dd" aria-label="Licensing dropdown">
+            <button class="ddBtn active" type="button" aria-haspopup="true" aria-expanded="false">
+              Licensing
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" style="opacity:.8;transform:translateY(1px)">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="panel" role="menu" aria-label="Licensing options">
+              <a href="LIC_RCFE_LINK">
+                <div>
+                  <div>RCFE</div>
+                  <div class="mini">Residential Care Facility for the Elderly</div>
+                </div>
+              </a>
+              <a href="LIC_ARF_LINK" class="active">
+                <div>
+                  <div>ARF</div>
+                  <div class="mini">Adult Residential Facility</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <a href="ALW_APP_LINK">ALW Application</a>
+          <a href="FUNDING_LINK">Increase Funding</a>
+          <a href="CONSULTING_LINK">RCFE Consulting</a>
+        </nav>
+
+        <!-- Primary CTA -->
+        <div style="justify-self:end;display:flex;align-items:center;gap:10px">
+          <a class="btn primary" href="#book">Book a Licensing Consultation</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
   <main>
-    <!-- HERO -->
-    <section class="hero" aria-label="Funding / revenue optimization hero">
+    <!-- HERO (split) -->
+    <section class="hero" aria-label="ARF licensing hero">
       <div class="wrap">
-        <div class="heroShell">
-          <div class="heroBg" role="img" aria-label="Facility and care image"></div>
-          <div class="heroOverlay" aria-hidden="true"></div>
+        <div class="heroGrid">
+          <div class="heroLeft">
+            <div class="pill"><span class="dot"></span> California ARF licensing support</div>
 
-          <div class="heroInner">
-            <div class="heroGrid">
-              <!-- LEFT -->
-              <div>
-                <div class="pill"><span class="dot"></span> Funding & revenue optimization (ALW • RCFE • ARF)</div>
+            <h1>Adult Residential Facility (ARF) licensing, made clear, organized, and executable.</h1>
 
-                <h1>Increase funding by fixing visibility and <span class="heroGradient">process</span>, not by guessing.</h1>
+            <p>
+              An <b>ARF license</b> is for facilities providing <b>24-hour, non-medical care and supervision</b>
+              for adults (commonly ages <b>18-59</b>, with certain 60+ exceptions under specific rules).
+              If you're opening, buying, or changing operations, we help you understand the path,
+              sequence the work correctly, and prepare clean materials to reduce preventable delays.
+            </p>
 
-                <p>
-                  “Increase funding” usually means <b>finding avoidable leakage</b> in your current workflow, missed steps, unclear tracking,
-                  documentation gaps, and preventable delays.
-                </p>
+            <div class="ctaRow">
+              <a class="btn primary" href="#book">Book an ARF Licensing Consultation</a>
+              <a class="btn ghost" href="#what">What ARF is (quick)</a>
+            </div>
 
-                <div class="ctaRow">
-                  <a class="btn primary" href="BOOKING_LINK_REV">Book a Revenue Call</a>
-                  <a class="btn ghost" href="#meaning">What “increase funding” means</a>
-                </div>
-
-               
-<div class="microProof" aria-label="Proof points">
-  <span>Facility-context review</span>
-  <span>Practical levers</span>
-  <span>Clear next actions</span>
-</div>
-              </div><!-- /left column -->
-
-              <!-- RIGHT: Revenue proof card -->
-              <div class="heroStatCard" aria-label="Revenue proof metrics">
-                <p class="hsTitle">Typical results after optimization</p>
-                <div class="heroStatKpis">
-                  <div class="heroKpi">
-                    <b>22</b>
-                    <span>avg. AR days<br>(down from 67)</span>
-                  </div>
-                  <div class="heroKpi">
-                    <b>$1.5M+</b>
-                    <span>billed monthly for providers</span>
-                  </div>
-                  <div class="heroKpi">
-                    <b>3–4×</b>
-                    <span>faster denial resolution</span>
-                  </div>
-                  <div class="heroKpi">
-                    <b>0</b>
-                    <span>hidden fees, pay-for-performance</span>
-                  </div>
-                </div>
-              </div><!-- /right column -->
-            </div><!-- /heroGrid -->
-          </div><!-- /heroInner -->
-        </div><!-- /heroShell -->
-      </div><!-- /wrap -->
-    </section>
-    <!-- Wave to white -->
-    <div class="wave toWhite" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
-
-    <!-- GUIDE -->
-    <section id="guide" aria-label="From Kamil">
-      <div class="wrap">
-        <div class="head">
-          <div>
-            <h2>Your guide through ARF licensing</h2>
-            <p>We keep this organized and clear so you know exactly what to do next.</p>
+            <div class="callout">
+              <b>Goal:</b> reduce rework + reduce delays by making the next step obvious and keeping your paperwork "review-ready."
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <div class="guide">
-            <div class="avatar" aria-hidden="true"><div class="img"></div></div>
-            <div>
-              <h3>From Kamil</h3>
-              <p>
-                If you're opening, buying, or expanding an ARF, the licensing process can feel overwhelming.
-                We help you understand the path, organize your documentation, and move through it step by step.
-              </p>
-              <div class="centerRow" style="margin-top:12px">
-                <a class="btn primary" href="BOOKING_LINK_ARF">Book a Licensing Consultation</a>
+
+          <div class="heroRight">
+            <div class="heroImg" role="img" aria-label="Adult residential facility licensing image"></div>
+            <div class="heroCard">
+              <h3>Quick eligibility check</h3>
+              <p class="mini">If these sound like you, you're in the right place:</p>
+              <ul class="bullets">
+                <li><div class="tick" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg>
+                </div><div>You're serving <b>adults</b> needing supervision and assistance in a residential setting.</div></li>
+
+                <li><div class="tick" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg>
+                </div><div>You want the <b>application sequence</b> to be correct (so you don't backtrack).</div></li>
+
+                <li><div class="tick" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg>
+                </div><div>You want to avoid <b>documentation gaps</b> that trigger follow-ups and resubmissions.</div></li>
+              </ul>
+
+              <div class="ctaRow" style="margin-top:6px">
+                <a class="btn primary" href="BOOKING_LINK_ARF">Open calendar</a>
+                <a class="btn link" href="tel:{{custom_values.companyphone_display}}">Call us</a>
               </div>
             </div>
           </div>
@@ -509,335 +430,419 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
       </div>
     </section>
 
-    <!-- MEANING -->
-    <section id="meaning" aria-label="What increase funding means">
+    <!-- WHAT -->
+    <section id="what" aria-label="What ARF licensing is">
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>What “increase funding” means (in real life)</h2>
+            <h2>What is an ARF license in California?</h2>
             <p>
-              Most facilities don’t need “magic.” They need clarity on what’s happening, and a tighter process where leakage is occurring.
-              Here are the three buckets we typically look at first.
+              ARFs are licensed through California's Community Care Licensing (CCLD/CDSS) and provide 24-hour, non-medical care and supervision
+              for adults who need support with daily living and safety.
             </p>
           </div>
         </div>
 
-        <div class="tri">
+        <div class="grid3">
           <div class="card">
-            <h3>ALW optimization</h3>
-            <p>Evaluate current workflow, visibility, and opportunities to reduce friction in your current approach.</p>
+            <h3>Population served</h3>
+            <p>
+              Generally adults 18-59 (with specific allowances for certain 60+ situations), often with mental, physical, or developmental disabilities.
+            </p>
           </div>
           <div class="card">
-            <h3>Billing workflow</h3>
-            <p>Make the process predictable: fewer surprises, clearer monthly tracking, cleaner handoffs.</p>
+            <h3>Type of care</h3>
+            <p>
+              24-hour non-medical care and supervision. Focus is on safety, assistance, and day-to-day support.
+            </p>
           </div>
           <div class="card">
-            <h3>Documentation readiness</h3>
-            <p>Reduce “avoidable setbacks” by ensuring documentation matches what reviewers expect to see.</p>
+            <h3>Oversight</h3>
+            <p>
+              Licensed and monitored under California's Community Care Licensing (CDSS/CCLD) system.
+            </p>
+          </div>
+        </div>
+
+        <div class="compare" aria-label="ARF vs RCFE comparison">
+          <div class="cmp">
+            <b>ARF (Adult Residential Facility)</b>
+            <span>Adult-focused residential care model (often ages 18-59) with 24-hour non-medical supervision and support.</span>
+          </div>
+          <div class="cmp">
+            <b>RCFE (Residential Care Facility for the Elderly)</b>
+            <span>Elder-focused residential care model (typically serving seniors). If you're primarily serving older adults, RCFE may be the right track.</span>
           </div>
         </div>
 
         <div class="callout">
-          <b>Important:</b> We don’t publish guarantees. The call is about evaluating what’s realistic for your situation and mapping usable next steps.
+          <b>Not sure which applies?</b> Book a licensing consult and we'll confirm your facility type and the cleanest path forward.
         </div>
 
-        <div class="centerRow" style="margin-top:14px">
-          <a class="btn primary" href="#leaks">See common revenue leaks</a>
-          <a class="btn ghost" href="#book">Book the call</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Wave to soft -->
-    <div class="wave toSoft" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
-
-    <!-- LEAKS -->
-    <section id="leaks" class="soft" aria-label="Where revenue leaks">
-      <div class="wrap">
-        <div class="head">
-          <div>
-            <h2>Where revenue leaks most often</h2>
-            <p>
-              Many issues are not “big failures.” They’re small mismatches that stack up over time.
-              We focus on pinpointing the few levers that matter most for your facility context.
-            </p>
-          </div>
-        </div>
-
-        <div class="grid6">
-          <div class="pCard"><b>Visibility gaps</b><span>No simple monthly view of what matters → surprises feel constant.</span></div>
-          <div class="pCard"><b>Process bottlenecks</b><span>Handoffs and timing issues cause preventable slowdowns.</span></div>
-          <div class="pCard"><b>Documentation mismatch</b><span>Small issues trigger rework loops and longer timelines.</span></div>
-          <div class="pCard"><b>Authorization / timing</b><span>Work gets done, but timing or sequence creates friction.</span></div>
-          <div class="pCard"><b>Denials and rework</b><span>Denials aren’t always avoidable, but repeat patterns often are.</span></div>
-          <div class="pCard"><b>Owner overwhelm</b><span>No clear “next best action,” so progress stalls.</span></div>
-        </div>
-
-        <div class="centerRow" style="margin-top:18px">
-          <a class="btn primary" href="#playbook">See the Funding Playbook</a>
-          <a class="btn ghost" href="#book">Book the Revenue Call</a>
+        <div class="ctaRow">
+          <a class="btn primary" href="#book">Book ARF consult</a>
+          <a class="btn ghost" href="RCFE_PAGE_LINK">Go to RCFE page</a>
         </div>
       </div>
     </section>
 
-    <!-- Wave to white -->
-    <div class="wave toWhite" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
-
-    <!-- PLAYBOOK -->
-    <section id="playbook" aria-label="Funding playbook">
+    <!-- PROBLEMS -->
+    <section id="stuck" class="soft" aria-label="Where ARF applications get stuck">
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>The Funding Playbook (simple, practical)</h2>
+            <h2>Where ARF applications get stuck</h2>
             <p>
-              No long reports you’ll never open. We keep it structured and actionable so you can move forward.
+              The most common delays come from sequencing mistakes and paperwork that isn't "review-ready."
+              Here's what we help you avoid.
             </p>
           </div>
         </div>
 
-        <div class="pillars">
-          <div class="pillar">
-            <div class="pTop"><div class="numBox">01</div><div class="tagPill">Assess</div></div>
-            <b>Understand your current reality</b>
-            <span>Facility type, where you are in ALW, and where friction is happening today.</span>
-          </div>
-          <div class="pillar">
-            <div class="pTop"><div class="numBox">02</div><div class="tagPill">Visibility</div></div>
-            <b>Make tracking obvious</b>
-            <span>Define what to track monthly so outcomes stop feeling vague.</span>
-          </div>
-          <div class="pillar">
-            <div class="pTop"><div class="numBox">03</div><div class="tagPill">Process</div></div>
-            <b>Reduce bottlenecks</b>
-            <span>Fix the sequence and handoffs causing preventable delays and rework.</span>
-          </div>
-          <div class="pillar">
-            <div class="pTop"><div class="numBox">04</div><div class="tagPill">Monitor</div></div>
-            <b>Keep it consistent</b>
-            <span>Simple monthly check-ins that keep the system from drifting.</span>
-          </div>
+        <div class="timeline">
+          <div class="tItem"><div class="tNum">1</div><div><b>Wrong order of operations</b><span>People work hard on the wrong tasks first, then have to redo steps when requirements come into focus.</span></div></div>
+          <div class="tItem"><div class="tNum">2</div><div><b>Documentation gaps</b><span>Missing items or misaligned policies trigger follow-ups, corrections, and resubmission cycles.</span></div></div>
+          <div class="tItem"><div class="tNum">3</div><div><b>Readiness mismatch</b><span>Operations and documentation don't match what reviewers expect to see, which slows approvals.</span></div></div>
+          <div class="tItem"><div class="tNum">4</div><div><b>Timeline pressure</b><span>Facility planning, staffing, and licensing tasks aren't coordinated, causing last-minute scrambles.</span></div></div>
         </div>
 
-        <div class="callout">
-          <b>You’ll leave with:</b> a short list of priorities + a sequence plan + what to track monthly.
-        </div>
-
-        <div class="centerRow" style="margin-top:16px">
-          <a class="btn primary" href="#book">Book the Revenue Call</a>
-          <a class="btn ghost" href="#scope">What the call covers</a>
+        <div class="ctaRow" style="margin-top:18px">
+          <a class="btn primary" href="#book">Book ARF consult (avoid rework)</a>
+          <a class="btn ghost" href="#roadmap">See the roadmap</a>
         </div>
       </div>
     </section>
 
-    <!-- Wave to soft -->
-    <div class="wave toSoft" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
-
-    <!-- SCOPE -->
-    <section id="scope" class="soft" aria-label="What the revenue call covers">
+    <!-- ROADMAP -->
+    <section id="roadmap" aria-label="ARF licensing roadmap">
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>What the Revenue Call covers</h2>
-            <p>
-              A fast, structured review that focuses on clarity and next actions, not overwhelm.
-            </p>
+            <h2>Our ARF licensing roadmap</h2>
+            <p>A clear path you can follow, with practical support and clean handoffs.</p>
+          </div>
+        </div>
+
+        <div class="steps4">
+          <div class="step">
+            <div class="stepTop"><div class="tNum" style="width:44px;height:44px">01</div><div class="tagPill">Assess</div></div>
+            <b>Confirm facility type + scenario</b>
+            <span>New license, change of ownership, change of location, or operational change. We clarify what applies.</span>
+          </div>
+          <div class="step">
+            <div class="stepTop"><div class="tNum" style="width:44px;height:44px">02</div><div class="tagPill">Checklist</div></div>
+            <b>Build your requirements list</b>
+            <span>What's required vs optional, what to do first, and what to stop doing.</span>
+          </div>
+          <div class="step">
+            <div class="stepTop"><div class="tNum" style="width:44px;height:44px">03</div><div class="tagPill">Organize</div></div>
+            <b>Make documentation "review-ready"</b>
+            <span>We help you reduce gaps, inconsistencies, and formatting issues that cause delays.</span>
+          </div>
+          <div class="step">
+            <div class="stepTop"><div class="tNum" style="width:44px;height:44px">04</div><div class="tagPill">Submit</div></div>
+            <b>Clean handoff + readiness prep</b>
+            <span>Submission support and realistic expectations so you don't get stuck in rework loops.</span>
+          </div>
+        </div>
+
+        <div class="ctaRow" style="margin-top:18px">
+          <a class="btn primary" href="#book">Book the ARF consult</a>
+          <a class="btn ghost" href="#included">What you get</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- INCLUDED -->
+    <section id="included" class="soft" aria-label="What you get for ARF licensing">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>What you get (ARF licensing support)</h2>
+            <p>Clear deliverables, so you leave the consult ready to execute.</p>
           </div>
         </div>
 
         <div class="split">
           <div class="card">
-            <h3>Agenda (what we’ll do)</h3>
-            <ul class="miniList" style="margin-top:12px">
+            <h3>Core support</h3>
+            <ul class="bullets" style="margin-top:10px">
               <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
-                <div>Confirm your facility context and what “better outcomes” means for you.</div></li>
+                <div><b>Clarity on requirements:</b> what applies to your scenario and what to prioritize</div></li>
               <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
-                <div>Identify the top leakage points likely impacting predictability.</div></li>
+                <div><b>Documentation readiness:</b> reduce gaps and rework before submission</div></li>
               <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
-                <div>Map a short sequence plan (what to do first / next / later).</div></li>
+                <div><b>Sequence planning:</b> do the right things in the right order</div></li>
             </ul>
 
             <div class="callout">
-              <b>No website guarantees.</b> The value is clarity + a plan you can execute.
+              <b>Note:</b> We provide operational/administrative guidance. For legal advice, we'll direct you to the appropriate professional.
+            </div>
+
+            <div class="ctaRow">
+              <a class="btn primary" href="#book">Book consult</a>
+              <a class="btn link" href="mailto:{{custom_values.companyemail}}">Email us</a>
             </div>
           </div>
 
+          <div class="card">
+            <h3>You'll leave with</h3>
+            <p class="mini">Tangible outputs, not just "more information."</p>
+            <ul class="bullets" style="margin-top:10px">
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>A prioritized checklist specific to your facility and timeline</div></li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>A sequence plan (what to do first / next / later)</div></li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>A list of common risk areas to address early</div></li>
+            </ul>
+
+            <div class="callout">
+              Some adult community care facilities also coordinate with Regional Centers and service levels depending on the population and program model.
+              If that's relevant to you, we'll route the conversation accordingly.
+            </div>
+
+            <div class="ctaRow">
+              <a class="btn ghost" href="ALW_APP_LINK">ALW application</a>
+              <a class="btn ghost" href="CONSULTING_LINK">RCFE consulting</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GUIDE -->
+    <section id="guide" aria-label="Your guide">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>Your guide through ARF licensing</h2>
+            <p>Practical. Organized. Built around momentum, not overwhelm.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="guide">
+            <div class="avatar" aria-hidden="true"><div class="img"></div></div>
+            <div>
+              <h3>From Kamil</h3>
+              <p class="mini">
+                ARF licensing can feel like a moving target when you're building, staffing, and trying to keep timelines realistic.
+                Our role is to make the next step clear and help you avoid preventable delays from sequencing mistakes and documentation rework.
+              </p>
+              <div class="ctaRow" style="margin-top:12px">
+                <a class="btn primary" href="#book">Book ARF consult</a>
+                <a class="btn link" href="tel:{{custom_values.companyphone_display}}">Call: {{custom_values.companyphone_display}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section id="book" class="soft" aria-label="Book ARF consult">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>Book an ARF Licensing Consultation</h2>
+            <p>We'll confirm what applies to your scenario and map the cleanest next steps.</p>
+          </div>
+        </div>
+
+        <div class="split">
           <div class="card">
             <h3>What to bring (if available)</h3>
-            <p>You don’t need perfect paperwork. Even a quick overview helps.</p>
-            <ul class="miniList" style="margin-top:12px">
+            <p class="mini">Even a quick overview is fine. We'll keep this practical.</p>
+            <ul class="bullets" style="margin-top:10px">
               <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
-                <div>Facility type (RCFE/ARF), county, and where you are inside ALW today.</div></li>
+                <div>Facility address/county + target timeline</div></li>
               <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
-                <div>What feels “off” (visibility, delays, denials, consistency, staffing impact).</div></li>
+                <div>Scenario: new license vs change of ownership vs changes in operations</div></li>
               <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
-                <div>Your goal: improve predictability, improve outcomes, or confirm you’re already optimized.</div></li>
+                <div>Known blockers (permits, staffing plan, documentation questions)</div></li>
             </ul>
 
-            <div class="centerRow" style="margin-top:14px">
-              <a class="btn primary" href="#book">Book now</a>
-              <a class="btn ghost" href="ALW_APP_LINK">ALW application</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- BOOK -->
-    <section id="book" aria-label="Book revenue call">
-      <div class="wrap">
-        <div class="head">
-          <div>
-            <h2>Book a Revenue Call</h2>
-            <p>We’ll evaluate what’s realistic for your situation and outline a clear next-step plan.</p>
-          </div>
-        </div>
-
-        <div class="split">
-          <div class="card">
-            <h3>Before you book</h3>
-            <p>
-              If you’re not in ALW yet (or you’re still in licensing), that’s fine, we’ll route you to the right next step.
-              This call is about clarity and sequencing.
-            </p>
-
             <div class="callout">
-              Prefer email? <a href="mailto:{{custom_values.companyemail}}" style="color:var(--accent);font-weight:900">{{custom_values.companyemail}}</a>
+              Every facility is different. The consult is about clarity, sequencing, and readiness.
             </div>
 
-            <div class="centerRow" style="margin-top:14px">
-              <a class="btn primary" href="BOOKING_LINK_REV">Open Calendar</a>
-              <a class="btn link" href="tel:{{custom_values.companyphone_display}}">Call: {{custom_values.companyphone_display}}</a>
+            <div class="ctaRow">
+              <a class="btn primary" href="BOOKING_LINK_ARF">Open calendar</a>
+              <a class="btn link" href="mailto:{{custom_values.companyemail}}">Email: {{custom_values.companyemail}}</a>
             </div>
           </div>
 
           <div class="embed">
             <div class="ratio">
-              <iframe src="BOOKING_IFRAME_REV" title="Billing Strategy / Revenue Call Calendar" loading="lazy"></iframe>
+              <iframe src="BOOKING_IFRAME_ARF" title="ARF Licensing Consultation Calendar" loading="lazy"></iframe>
             </div>
             <div class="embedNote">
-              If the calendar doesn’t load, use this link:
-              <a href="BOOKING_LINK_REV" style="color:var(--accent);font-weight:900">Book a Revenue Call</a>.
+              If the calendar doesn't load, use this link:
+              <a href="BOOKING_LINK_ARF" style="color:var(--accent);font-weight:900">Book an ARF Licensing Consultation</a>.
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Wave to soft -->
-    <div class="wave toSoft" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
-
     <!-- FAQ -->
-    <section id="faq" class="soft" aria-label="Funding / revenue FAQs">
+    <section id="faq" aria-label="ARF licensing FAQs">
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>Frequently asked questions</h2>
-            <p>Clear answers, without overwhelming you.</p>
+            <h2>ARF Licensing FAQs</h2>
+            <p>Short answers to the most common questions.</p>
           </div>
         </div>
 
         <div class="faq">
           <details>
-            <summary>Do you guarantee specific funding or revenue increases?</summary>
-            <p>No. We don’t publish guarantees. The call is designed to evaluate what’s realistic for your facility and outline usable next steps.</p>
+            <summary>What does ARF stand for?</summary>
+            <p>ARF stands for Adult Residential Facility, a licensed facility providing 24-hour non-medical care and supervision for adults.</p>
           </details>
           <details>
-            <summary>Is this only for facilities already in ALW?</summary>
-            <p>No. If you’re not in ALW yet, we’ll route you to the right next step (licensing and/or ALW application guidance).</p>
+            <summary>Is ARF the same as RCFE?</summary>
+            <p>No. ARF typically focuses on adults (often 18-59), while RCFE focuses on elder care. If you're unsure, book a consult and we'll confirm the right facility type.</p>
           </details>
           <details>
-            <summary>What’s the best first step?</summary>
-            <p>Book the Revenue Call. We’ll assess your current setup, identify practical levers, and map a clear sequence plan.</p>
+            <summary>Is this legal advice?</summary>
+            <p>No. We provide operational and administrative guidance to help you prepare clean materials and avoid preventable delays. For legal questions, we'll point you to the appropriate professional.</p>
           </details>
           <details>
-            <summary>Will I need to share sensitive documents?</summary>
-            <p>Only if needed for your situation. The initial call stays focused on clarity and next steps, then we outline exactly what (if anything) is required afterward.</p>
+            <summary>What's the best first step?</summary>
+            <p>Book an ARF licensing consult. We'll clarify your scenario and give you a clean sequence plan for next steps.</p>
           </details>
         </div>
 
-        <div class="centerRow" style="margin-top:18px">
-          <a class="btn primary" href="BOOKING_LINK_REV">Book a Revenue Call</a>
-          <a class="btn ghost" href="#top">Back to top</a>
+        <div class="ctaRow" style="margin-top:18px">
+          <a class="btn primary" href="#book">Book ARF consult</a>
+          <a class="btn ghost" href="RCFE_PAGE_LINK">RCFE page</a>
         </div>
       </div>
     </section>
 
+    <!-- CONTACT -->
+    <section id="contact" class="soft" aria-label="Contact">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>Talk to us</h2>
+            <p>Tell us what you're trying to solve. We'll keep it simple and route you correctly.</p>
+          </div>
+        </div>
+
+        <div class="contactGrid">
+          <div class="cCard">
+            <b>Call</b>
+            <span><a href="tel:{{custom_values.companyphone_display}}">{{custom_values.companyphone_display}}</a></span>
+          </div>
+
+          <div class="cCard">
+            <b>Email</b>
+            <span><a href="mailto:{{custom_values.companyemail}}">{{custom_values.companyemail}}</a></span>
+          </div>
+
+          <div class="cCard">
+            <b>Book</b>
+            <span>Use the calendar to schedule an ARF licensing consult.</span>
+            <div class="ctaRow" style="margin-top:12px">
+              <a class="btn primary" href="BOOKING_LINK_ARF">Open Calendar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <div class="brand" style="gap:10px">
+            <img src="https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-4897-994e-1ec4194e612d.png" alt="Medical Billing Services Logo" style="height:34px">
+          </div>
+          <div class="copy">
+            &copy; <span id="yr"></span> Medical Billing Services. All rights reserved.
+            <br>RCFE / ARF &bull; Assisted Living Waiver (ALW)
+          </div>
+        </div>
+
+        <div>
+          <h4>ARF Licensing</h4>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#included">What you get</a>
+          <a href="#book">Book</a>
+        </div>
+
+        <div>
+          <h4>Support</h4>
+          <a href="#faq">FAQs</a>
+          <a href="#contact">Contact</a>
+          <a href="BOOKING_LINK_ARF">Calendar</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <!-- Mobile sticky CTA -->
   <div class="stickyBook" aria-label="Sticky book bar">
     <div class="inner">
-      <div class="miniTxt">Ready for clarity?</div>
-      <a class="btn primary" href="BOOKING_LINK_REV">Book revenue call</a>
+      <div class="miniTxt">Ready to move forward?</div>
+      <a class="btn primary" href="BOOKING_LINK_ARF">Book ARF consult</a>
     </div>
   </div>
 
-  <!-- SEO: schema (service + FAQ) -->
-  <script type="application/ld+json" id="fundingServiceSchema">
+  <!-- SEO: Schema (FAQ + Service) -->
+  <script type="application/ld+json" id="arfServiceSchema">
   {
     "@context":"https://schema.org",
     "@type":"ProfessionalService",
-    "name":"{{custom_values.snapshot__business_name}}",
-    "serviceType":"Funding and Revenue Optimization for Residential Care Facilities (ALW / RCFE / ARF)",
-    "telephone":"{{custom_values.companyphone_display}}",
-    "email":"{{custom_values.companyemail}}",
+    "name":"Medical Billing Services",
+    "serviceType":"Adult Residential Facility (ARF) Licensing Support",
     "areaServed":"California",
-    "url":"FUNDING_PAGE_URL"
+    "url":"ARF_PAGE_URL"
   }
   </script>
 
-  <script type="application/ld+json" id="fundingFaqSchema">
+  <script type="application/ld+json" id="arfFaqSchema">
   {
     "@context":"https://schema.org",
     "@type":"FAQPage",
     "mainEntity":[
-      {"@type":"Question","name":"Do you guarantee specific funding or revenue increases?","acceptedAnswer":{"@type":"Answer","text":"No. We don’t publish guarantees. The call evaluates what’s realistic for your facility and outlines usable next steps."}},
-      {"@type":"Question","name":"Is this only for facilities already in ALW?","acceptedAnswer":{"@type":"Answer","text":"No. If you’re not in ALW yet, we’ll route you to the right next step such as licensing and/or ALW application guidance."}},
-      {"@type":"Question","name":"What’s the best first step?","acceptedAnswer":{"@type":"Answer","text":"Book the Revenue Call. We assess your current setup, identify practical levers, and map a clear sequence plan."}},
-      {"@type":"Question","name":"Will I need to share sensitive documents?","acceptedAnswer":{"@type":"Answer","text":"Only if needed for your situation. The initial call stays focused on clarity and next steps, then we outline what is required afterward."}}
+      {"@type":"Question","name":"What does ARF stand for?","acceptedAnswer":{"@type":"Answer","text":"ARF stands for Adult Residential Facility, a licensed facility providing 24-hour non-medical care and supervision for adults."}},
+      {"@type":"Question","name":"Is ARF the same as RCFE?","acceptedAnswer":{"@type":"Answer","text":"No. ARF typically focuses on adults (often 18-59), while RCFE focuses on elder care. If you're unsure, book a consult to confirm the right facility type."}},
+      {"@type":"Question","name":"Is this legal advice?","acceptedAnswer":{"@type":"Answer","text":"No. This is operational and administrative guidance. For legal advice, consult a qualified professional."}},
+      {"@type":"Question","name":"What's the best first step?","acceptedAnswer":{"@type":"Answer","text":"Book an ARF licensing consult to clarify your scenario and get a clean sequence plan for next steps."}}
     ]
   }
   </script>
-
 </div>
 
 <script>
   (function(){
     const replacements = {
-      "BOOKING_LINK_ARF": "https://api.leadconnectorhq.com/widget/bookings/billing-strategy-call",
-      "BOOKING_LINK_REV": "https://api.leadconnectorhq.com/widget/bookings/billing-strategy-call",
-      "BOOKING_IFRAME_REV": "https://api.leadconnectorhq.com/widget/booking/GCyM1GS3QXkgVDFllYMu",
+      // booking (defaulting to your existing licensing calendar)
+      "BOOKING_LINK_ARF": "https://api.leadconnectorhq.com/widget/bookings/alw-application-call05zqka",
+      "BOOKING_IFRAME_ARF": "https://api.leadconnectorhq.com/widget/booking/H3K9LIzRf7zxAwtfyrdN",
 
-      // optional nav links
-      "HOME_LINK": "./Home-page-html.html",
-      "RCFE_LIC_LINK": "./rcfe-licensing-html.html",
-      "ARF_LIC_LINK": "./arf-licensing-html.html",
-      "ALW_APP_LINK": "./alw-waiver-html.html",
-      "CONSULTING_LINK": "./Consulting-html.html",
-      "FUNDING_LINK": "./funding-html.html",
+      // nav links
+      "HOME_LINK": "./home.html",
+      "BILLING_LINK": "./alw-billing.html",
+      "LIC_RCFE_LINK": "./rcfe-licensing.html",
+      "LIC_ARF_LINK": "./arf-licensing.html",
+      "RCFE_PAGE_LINK": "./rcfe-licensing.html",
+      "ALW_APP_LINK": "./alw-waiver.html",
+      "FUNDING_LINK": "./funding.html",
+      "CONSULTING_LINK": "./consulting.html",
+      "ARF_PAGE_URL": "./arf-licensing.html",
 
-      // schema URL swap (optional)
-      "FUNDING_PAGE_URL": "./arf-licensing-html.html"
+      // hero image token
+      "HERO_IMAGE_URL": "https://assets.cdn.filesafe.space/mxGAJ81pMGDwP9gcmCOZ/media/699a089e20c0358e5bafb30c.jpg"
     };
 
-    const root = document.querySelector(".mbsFunding");
+    const root = document.querySelector(".mbsArfLic");
     if(!root) return;
 
     // Year
@@ -857,10 +862,16 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
     setAttr("a[href]", "href");
     setAttr("iframe[src]", "src");
 
+    // Replace HERO_IMAGE_URL in hero image background
+    const heroImg = root.querySelector(".heroImg");
+    if(heroImg){
+      heroImg.style.backgroundImage = `url("${replacements.HERO_IMAGE_URL}")`;
+    }
+
     // Schema URL swap
-    const serviceSchema = root.querySelector("#fundingServiceSchema");
+    const serviceSchema = root.querySelector("#arfServiceSchema");
     if(serviceSchema){
-      serviceSchema.textContent = serviceSchema.textContent.split("FUNDING_PAGE_URL").join(replacements.FUNDING_PAGE_URL);
+      serviceSchema.textContent = serviceSchema.textContent.split("ARF_PAGE_URL").join(replacements.ARF_PAGE_URL);
     }
 
     // Mobile menu
@@ -895,8 +906,8 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
       });
     });
 
-    // === SCROLL REVEAL ===
-    root.querySelectorAll(".card, .pillar, .pCard, .head h2, .heroStatCard").forEach(el=>{
+    // Scroll reveal
+    root.querySelectorAll(".card, .step, .tItem, .cCard, .head h2").forEach(el=>{
       if(!el.classList.contains("reveal")) el.classList.add("reveal");
     });
     (function(){
