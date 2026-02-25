@@ -52,6 +52,9 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
     --max:1160px;
 
     --heroImg: url("https://images.pexels.com/photos/7651555/pexels-photo-7651555.jpeg");
+
+    /* Swap guide portrait here (Kamil) */
+    --guideImg:url("https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/a2244902-df92-4288-b09a-8fa156d5065c.png");
   }
 
   .mbsBilling *{box-sizing:border-box}
@@ -316,6 +319,22 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
     font-size: 13.8px;
   }
 
+  /* Guide (Kamil) */
+  .mbsBilling .guide{
+    display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center;
+  }
+  .mbsBilling .avatar{
+    width:120px;height:120px;border-radius:26px;overflow:hidden;
+    border:1px solid rgba(15,23,42,.10);box-shadow:0 12px 24px rgba(2,6,23,.08);
+    background:rgba(2,6,23,.04);
+  }
+  .mbsBilling .avatar .img{
+    width:100%;height:100%;background-image:var(--guideImg);
+    background-size:cover;background-position:center;
+  }
+  .mbsBilling .guide h3{margin:0 0 6px;letter-spacing:-.02em}
+  .mbsBilling .guide p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
+
   /* Steps */
   .mbsBilling .steps{
     display:grid;
@@ -437,6 +456,8 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
     .mbsBilling .wrap{width:min(var(--max),calc(100% - 32px))}
     .mbsBilling .proofChip{min-width: 100%}
     .mbsBilling .ratio{padding-top: 86%;}
+    .mbsBilling .guide{grid-template-columns:1fr}
+    .mbsBilling .avatar{width:96px;height:96px;border-radius:22px}
   }
   @media (prefers-reduced-motion: reduce){
     .mbsBilling .btn{transition:none}
@@ -537,7 +558,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
             <div class="heroContent">
               <div class="pill"><span class="dot"></span> ALW billing end-to-end for California RCFE &amp; ARF providers</div>
 
-              <h1>ALW Billing That Feels Clear — Not <span class="heroGradient">Vague</span>.</h1>
+              <h1>ALW Billing That Feels Clear, Not <span class="heroGradient">Vague</span>.</h1>
 
               <div class="scale">
                 <span class="bar"></span>
@@ -545,8 +566,8 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
               </div>
 
               <p>
-                If you’re tired of guessing what’s pending, what’s denied, and what’s next, we bring structure,
-                proactive follow-through, and operator-level guidance — built specifically for the Assisted Living Waiver (ALW) space.
+                We bring structure, proactive follow-through, and operator-level guidance to your billing,
+                built specifically for the Assisted Living Waiver (ALW) space.
               </p>
 
               <div class="ctaRow">
@@ -600,15 +621,49 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
       </svg>
     </div>
 
+    <!-- GUIDE -->
+    <section id="guide" class="soft" aria-label="From Kamil">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>Your guide through ALW billing</h2>
+            <p>We keep this practical and organized so you're not stuck guessing what's next.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="guide">
+            <div class="avatar" aria-hidden="true"><div class="img"></div></div>
+            <div>
+              <h3>From Kamil</h3>
+              <p>
+                I've been on both sides of the ALW billing process, as an operator and as the person managing claims for other facilities.
+                If your billing feels unclear or you're not sure what's pending, denied, or next, that's exactly what we fix.
+              </p>
+              <div class="centerRow" style="margin-top:12px">
+                <a class="btn primary" href="BOOKING_LINK_BILLING">Book a Billing Consultation</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave to white -->
+    <div class="wave toWhite" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+      </svg>
+    </div>
+
     <!-- WHAT YOU GET -->
-    <section id="how" class="soft" aria-label="What you get">
+    <section id="how" aria-label="What you get">
       <div class="wrap">
         <div class="head">
           <div>
             <h2>What you get when we handle your billing</h2>
             <p>
-              We handle ALW billing end-to-end so your team isn’t chasing claims, denials, and Medi-Cal rules —
-              and you get clearer visibility into what’s happening.
+              We handle ALW billing end-to-end so your team can focus on operations,
+              while you get clearer visibility into what’s happening with every claim.
             </p>
           </div>
         </div>
@@ -638,7 +693,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
             </ul>
 
             <div class="callout">
-              <b>No upfront costs. No hidden fees.</b> Our model is pay-for-performance — you only pay when you get paid.
+              <b>No upfront costs. No hidden fees.</b> Our model is pay-for-performance. You only pay when you get paid.
             </div>
 
             <div class="centerRow" style="margin-top:14px">
@@ -650,41 +705,41 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
           <div class="card">
             <h3 style="margin:0 0 8px">More than billing conversations</h3>
             <p>
-              Many clients call with operational questions that directly impact outcomes — not just billing.
+              Many clients call with operational questions that directly impact outcomes, not just billing.
               Program changes, documentation readiness, best practices, and decision support.
             </p>
 
             <div class="miniRule"></div>
 
             <p>
-              The goal isn’t to overwhelm you with details on a website — it’s to give you a clear path and get you into the right consult.
-              We’ll keep it practical: what’s happening now, what’s blocking results, and the cleanest next step.
+              The goal isn’t to overwhelm you with details on a website. It’s to give you a clear path and get you into the right consult.
+              We’ll keep it practical: what’s happening now, what to prioritize, and the cleanest next step.
             </p>
 
             <div class="callout">
-              If you’re comparing billing providers: we don’t lead with scare tactics.
-              We lead with clarity, structure, and a plan that can improve results over time.
+              If you’re comparing billing providers, here’s what sets us apart:
+              clarity, structure, and a plan that improves results over time.
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Wave to white -->
-    <div class="wave toWhite" aria-hidden="true">
+    <!-- Wave to soft -->
+    <div class="wave toSoft" aria-hidden="true">
       <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
         <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
       </svg>
     </div>
 
     <!-- PROCESS -->
-    <section id="process" aria-label="Our process">
+    <section id="process" class="soft" aria-label="Our process">
       <div class="wrap">
         <div class="head">
           <div>
-            <h2>How we bring structure (without chaos)</h2>
+            <h2>How we bring structure to your billing</h2>
             <p>
-              A simple, repeatable process that creates visibility and momentum — while keeping your day-to-day operations steady.
+              A simple, repeatable process that creates visibility and momentum, while keeping your day-to-day operations steady.
             </p>
           </div>
         </div>
@@ -725,21 +780,21 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
       </div>
     </section>
 
-    <!-- Wave to soft -->
-    <div class="wave toSoft" aria-hidden="true">
+    <!-- Wave to white -->
+    <div class="wave toWhite" aria-hidden="true">
       <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
         <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
       </svg>
     </div>
 
     <!-- BOOKING (Embed) -->
-    <section id="book" class="soft" aria-label="Book a billing consultation">
+    <section id="book" aria-label="Book a billing consultation">
       <div class="wrap">
         <div class="head">
           <div>
             <h2>Book a Billing Consultation</h2>
             <p>
-              Tell us what you’re trying to solve — we’ll keep it simple and route you to the right next step.
+              Tell us what you’re trying to solve. We’ll keep it simple and route you to the right next step.
             </p>
           </div>
         </div>
@@ -790,37 +845,37 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
       </div>
     </section>
 
-    <!-- Wave to white -->
-    <div class="wave toWhite" aria-hidden="true">
+    <!-- Wave to soft -->
+    <div class="wave toSoft" aria-hidden="true">
       <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
         <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
       </svg>
     </div>
 
     <!-- FAQ -->
-    <section id="faq" aria-label="Billing FAQs">
+    <section id="faq" class="soft" aria-label="Billing FAQs">
       <div class="wrap">
         <div class="head">
           <div>
             <h2>Billing FAQs</h2>
-            <p>Clear answers — without overwhelming you.</p>
+            <p>Clear answers, without overwhelming you.</p>
           </div>
         </div>
 
         <div class="faq">
           <details>
             <summary>Do you work with both RCFE and ARF providers?</summary>
-            <p>Yes — we focus on California RCFE and ARF providers operating inside the ALW ecosystem.</p>
+            <p>Yes. We focus on California RCFE and ARF providers operating inside the ALW ecosystem.</p>
           </details>
 
           <details>
             <summary>What does “pay-for-performance” mean?</summary>
-            <p>In simple terms, the model is aligned with results — you only pay when you get paid. We’ll explain specifics and what’s realistic for your facility during the consult.</p>
+            <p>In simple terms, the model is aligned with results. You only pay when you get paid. We’ll explain specifics and what’s realistic for your facility during the consult.</p>
           </details>
 
           <details>
             <summary>We already have a biller. Should we still talk?</summary>
-            <p>If you’re seeing delays, denials, unclear status, or inconsistent follow-through, a short consult can clarify what’s happening and what to fix first.</p>
+            <p>A short consult can help clarify where things stand and what to improve first, whether it’s follow-through, visibility, or overall process.</p>
           </details>
 
           <details>
@@ -841,8 +896,15 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
       </div>
     </section>
 
+    <!-- Wave to white -->
+    <div class="wave toWhite" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+      </svg>
+    </div>
+
     <!-- CONTACT -->
-    <section id="contact" class="soft" aria-label="Contact">
+    <section id="contact" aria-label="Contact">
       <div class="wrap">
         <div class="head">
           <div>
@@ -914,12 +976,12 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
       "BOOKING_IFRAME_BILLING": "https://api.leadconnectorhq.com/widget/booking/GCyM1GS3QXkgVDFllYMu",
 
       // Optional nav links (set these if you want real nav)
-      "HOME_LINK": "./Home-page-html.html",
-      "LIC_RCFE_LINK": "./rcfe-licensing-html.html",
-      "LIC_ARF_LINK": "./arf-licensing-html.html",
-      "ALW_APP_LINK": "./alw-waiver-html.html",
-      "FUNDING_LINK": "./funding-html.html",
-      "CONSULTING_LINK": "./Consulting-html.html"
+      "HOME_LINK": "./home.html",
+      "LIC_RCFE_LINK": "./rcfe-licensing.html",
+      "LIC_ARF_LINK": "./arf-licensing.html",
+      "ALW_APP_LINK": "./alw-waiver.html",
+      "FUNDING_LINK": "./funding.html",
+      "CONSULTING_LINK": "./consulting.html"
     };
 
     const root = document.querySelector(".mbsBilling");

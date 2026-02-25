@@ -34,6 +34,9 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
     --shadow2:0 14px 34px rgba(2,6,23,.10);
     --max:1160px;
     --heroImg:url("https://assets.cdn.filesafe.space/mxGAJ81pMGDwP9gcmCOZ/media/699a0cd420c0353099b2b4a6.jpg");
+
+    /* Swap guide portrait here (Kamil) */
+    --guideImg:url("https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/a2244902-df92-4288-b09a-8fa156d5065c.png");
   }
   .mbsFunding *{box-sizing:border-box}
   .mbsFunding{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
@@ -260,6 +263,22 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
     color:rgba(2,6,23,.80);line-height:1.65;font-size:13.8px;
   }
 
+  /* Guide section */
+  .mbsFunding .guide{
+    display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center;
+  }
+  .mbsFunding .avatar{
+    width:120px;height:120px;border-radius:26px;overflow:hidden;
+    border:1px solid rgba(15,23,42,.10);box-shadow:0 12px 24px rgba(2,6,23,.08);
+    background:rgba(2,6,23,.04);
+  }
+  .mbsFunding .avatar .img{
+    width:100%;height:100%;background-image:var(--guideImg);
+    background-size:cover;background-position:center;
+  }
+  .mbsFunding .guide h3{margin:0 0 6px;letter-spacing:-.02em}
+  .mbsFunding .guide p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
+
   /* Booking embed */
   .mbsFunding .embed{
     border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow2);background:#fff;
@@ -320,6 +339,8 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
     .mbsFunding .ratio{padding-top:86%}
     .mbsFunding .grid6{grid-template-columns:1fr}
     .mbsFunding .kpis{grid-template-columns:1fr}
+    .mbsFunding .guide{grid-template-columns:1fr}
+    .mbsFunding .avatar{width:96px;height:96px;border-radius:22px}
     .mbsFunding .stickyBook{display:block}
     .mbsFunding main{padding-bottom:74px}
   }
@@ -407,10 +428,10 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
               <div>
                 <div class="pill"><span class="dot"></span> Funding & revenue optimization (ALW • RCFE • ARF)</div>
 
-                <h1>Increase funding by fixing visibility and <span class="heroGradient">process</span> — not by guessing.</h1>
+                <h1>Increase funding by fixing visibility and <span class="heroGradient">process</span>, not by guessing.</h1>
 
                 <p>
-                  “Increase funding” usually means <b>finding avoidable leakage</b> in your current workflow — missed steps, unclear tracking,
+                  “Increase funding” usually means <b>finding avoidable leakage</b> in your current workflow, missed steps, unclear tracking,
                   documentation gaps, and preventable delays.
                 </p>
 
@@ -445,7 +466,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
                   </div>
                   <div class="heroKpi">
                     <b>0</b>
-                    <span>hidden fees — pay-for-performance</span>
+                    <span>hidden fees, pay-for-performance</span>
                   </div>
                 </div>
               </div><!-- /right column -->
@@ -461,6 +482,33 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
       </svg>
     </div>
 
+    <!-- GUIDE -->
+    <section id="guide" aria-label="From Kamil">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>Your guide through ARF licensing</h2>
+            <p>We keep this organized and clear so you know exactly what to do next.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="guide">
+            <div class="avatar" aria-hidden="true"><div class="img"></div></div>
+            <div>
+              <h3>From Kamil</h3>
+              <p>
+                If you're opening, buying, or expanding an ARF, the licensing process can feel overwhelming.
+                We help you understand the path, organize your documentation, and move through it step by step.
+              </p>
+              <div class="centerRow" style="margin-top:12px">
+                <a class="btn primary" href="BOOKING_LINK_ARF">Book a Licensing Consultation</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- MEANING -->
     <section id="meaning" aria-label="What increase funding means">
       <div class="wrap">
@@ -468,7 +516,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
           <div>
             <h2>What “increase funding” means (in real life)</h2>
             <p>
-              Most facilities don’t need “magic.” They need clarity on what’s happening — and a tighter process where leakage is occurring.
+              Most facilities don’t need “magic.” They need clarity on what’s happening, and a tighter process where leakage is occurring.
               Here are the three buckets we typically look at first.
             </p>
           </div>
@@ -514,7 +562,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
           <div>
             <h2>Where revenue leaks most often</h2>
             <p>
-              Many issues are not “big failures” — they’re small mismatches that stack up over time.
+              Many issues are not “big failures.” They’re small mismatches that stack up over time.
               We focus on pinpointing the few levers that matter most for your facility context.
             </p>
           </div>
@@ -525,7 +573,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
           <div class="pCard"><b>Process bottlenecks</b><span>Handoffs and timing issues cause preventable slowdowns.</span></div>
           <div class="pCard"><b>Documentation mismatch</b><span>Small issues trigger rework loops and longer timelines.</span></div>
           <div class="pCard"><b>Authorization / timing</b><span>Work gets done, but timing or sequence creates friction.</span></div>
-          <div class="pCard"><b>Denials and rework</b><span>Denials aren’t always avoidable — but repeat patterns often are.</span></div>
+          <div class="pCard"><b>Denials and rework</b><span>Denials aren’t always avoidable, but repeat patterns often are.</span></div>
           <div class="pCard"><b>Owner overwhelm</b><span>No clear “next best action,” so progress stalls.</span></div>
         </div>
 
@@ -603,7 +651,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
           <div>
             <h2>What the Revenue Call covers</h2>
             <p>
-              A fast, structured review that focuses on clarity and next actions — not overwhelm.
+              A fast, structured review that focuses on clarity and next actions, not overwhelm.
             </p>
           </div>
         </div>
@@ -660,7 +708,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
           <div class="card">
             <h3>Before you book</h3>
             <p>
-              If you’re not in ALW yet (or you’re still in licensing), that’s fine — we’ll route you to the right next step.
+              If you’re not in ALW yet (or you’re still in licensing), that’s fine, we’ll route you to the right next step.
               This call is about clarity and sequencing.
             </p>
 
@@ -700,7 +748,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
         <div class="head">
           <div>
             <h2>Frequently asked questions</h2>
-            <p>Clear answers — without overwhelming you.</p>
+            <p>Clear answers, without overwhelming you.</p>
           </div>
         </div>
 
@@ -773,6 +821,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
 <script>
   (function(){
     const replacements = {
+      "BOOKING_LINK_ARF": "https://api.leadconnectorhq.com/widget/bookings/billing-strategy-call",
       "BOOKING_LINK_REV": "https://api.leadconnectorhq.com/widget/bookings/billing-strategy-call",
       "BOOKING_IFRAME_REV": "https://api.leadconnectorhq.com/widget/booking/GCyM1GS3QXkgVDFllYMu",
 

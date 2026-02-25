@@ -320,6 +320,25 @@ CONSULTING_LINK
     color:rgba(2,6,23,.80);line-height:1.65;font-size:13.8px;
   }
 
+  /* Center row */
+  .mbsConsultV2 .centerRow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+
+  /* Guide section */
+  .mbsConsultV2 .guide{
+    display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center;
+  }
+  .mbsConsultV2 .avatar{
+    width:120px;height:120px;border-radius:26px;overflow:hidden;
+    border:1px solid rgba(15,23,42,.10);box-shadow:0 12px 24px rgba(2,6,23,.08);
+    background:rgba(2,6,23,.04);
+  }
+  .mbsConsultV2 .avatar .img{
+    width:100%;height:100%;background-image:var(--guideImg);
+    background-size:cover;background-position:center;
+  }
+  .mbsConsultV2 .guide h3{margin:0 0 6px;letter-spacing:-.02em}
+  .mbsConsultV2 .guide p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
+
   /* Phases */
   .mbsConsultV2 .phases{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .mbsConsultV2 .phase{
@@ -405,6 +424,8 @@ CONSULTING_LINK
   @media (max-width:640px){
     .mbsConsultV2 .wrap{width:min(var(--max),calc(100% - 32px))}
     .mbsConsultV2 .ratio{padding-top:86%}
+    .mbsConsultV2 .guide{grid-template-columns:1fr}
+    .mbsConsultV2 .avatar{width:96px;height:96px;border-radius:22px}
     .mbsConsultV2 .stickyBook{display:block}
     .mbsConsultV2 main{padding-bottom:74px}
   }
@@ -511,8 +532,7 @@ CONSULTING_LINK
               <h1>RCFE consulting: build the roadmap, then <span class="heroGradient">execute it</span>.</h1>
 
               <p>
-                This is not a one-call “quick fix.”
-                We help you plan and build a real RCFE business with <b>clear phases</b> — from the licensing path,
+                We help you plan and build a real RCFE business with <b>clear phases</b>, from the licensing path,
                 to operations, to sustaining the facility long-term.
                 You’ll leave with a <b>clear roadmap</b> and a <b>consulting deck (PowerPoint)</b> that explains the plan in a simple way.
               </p>
@@ -556,6 +576,41 @@ CONSULTING_LINK
       </svg>
     </div>
 
+    <!-- GUIDE -->
+    <section id="guide" aria-label="From Kamil">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>Your guide through RCFE consulting</h2>
+            <p>Structured guidance from someone who operates facilities, not just advises on them.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="guide">
+            <div class="avatar" aria-hidden="true"><div class="img"></div></div>
+            <div>
+              <h3>From Kamil</h3>
+              <p>
+                I own and operate my own facilities. When I consult, it comes from direct experience
+                with the same challenges you're facing. The goal is a clear, actionable plan you can
+                actually execute.
+              </p>
+              <div class="centerRow" style="margin-top:12px">
+                <a class="btn primary" href="BOOKING_LINK_CONSULT">Book an RCFE Consulting Call</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave -->
+    <div class="wave toWhite" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+      </svg>
+    </div>
+
     <!-- WHAT THIS IS -->
     <section id="what" aria-label="What RCFE consulting is">
       <div class="wrap">
@@ -579,7 +634,7 @@ CONSULTING_LINK
           <div class="card">
             <h3>Guided execution</h3>
             <p>
-              We help you move step-by-step so you don’t waste time doing the wrong tasks first.
+              We help you move step-by-step so you’re always working on what matters most.
             </p>
           </div>
           <div class="card">
@@ -615,7 +670,7 @@ CONSULTING_LINK
           <div>
             <h2>The consulting phases</h2>
             <p>
-              This is the structure Cam described: a phased approach. We keep the website simple — the details are covered in the consulting deck and during your consult.
+              This is the structure Cam described: a phased approach. We keep the website simple. The details are covered in the consulting deck and during your consult.
             </p>
           </div>
         </div>
@@ -624,7 +679,7 @@ CONSULTING_LINK
           <div class="phase">
             <div class="phaseTop"><div class="numBox">01</div><div class="tagPill">Start</div></div>
             <b>Facility plan + licensing path</b>
-            <span>Clarify the facility direction and map the licensing path (what to do first, what to avoid, what timing looks like).</span>
+            <span>Clarify the facility direction and map the licensing path (what to do first, what to prioritize, and what timing looks like).</span>
           </div>
           <div class="phase">
             <div class="phaseTop"><div class="numBox">02</div><div class="tagPill">Operate</div></div>
@@ -643,19 +698,19 @@ CONSULTING_LINK
           <details>
             <summary>What happens in Phase 1 (Start)?</summary>
             <p>
-              We confirm your scenario and timeline, then build a clear sequence plan so you don’t lose weeks doing the wrong tasks first.
+              We confirm your scenario and timeline, then build a clear sequence plan so you can focus on the right priorities from day one.
             </p>
           </details>
           <details>
             <summary>What happens in Phase 2 (Operate)?</summary>
             <p>
-              We focus on practical systems: repeatable routines, team clarity, documentation alignment, and making the facility “ready” without scrambling.
+              We focus on practical systems: repeatable routines, team clarity, documentation alignment, and getting the facility confidently ready.
             </p>
           </details>
           <details>
             <summary>What happens in Phase 3 (Sustain)?</summary>
             <p>
-              We focus on consistency and improvement over time — simple monitoring and guidance so the facility doesn’t drift.
+              We focus on consistency and improvement over time, with simple monitoring and guidance so the facility stays on track.
             </p>
           </details>
         </div>
@@ -681,7 +736,7 @@ CONSULTING_LINK
           <div>
             <h2>What you’ll get</h2>
             <p>
-              Tangible outputs — so you’re not leaving with “more information,” you’re leaving with a plan you can follow.
+              Tangible outputs, so you leave with a plan you can follow, not just more information.
             </p>
           </div>
         </div>
@@ -702,7 +757,7 @@ CONSULTING_LINK
         </div>
 
         <div class="callout">
-          If ALW is part of your plan, we’ll make sure the consulting roadmap accounts for that — without confusing your website visitors.
+          If ALW is part of your plan, we’ll make sure the consulting roadmap accounts for that, keeping things clear for your website visitors.
         </div>
 
         <div class="centerRow" style="margin-top:14px">
@@ -726,7 +781,7 @@ CONSULTING_LINK
           <div>
             <h2>Who this is for</h2>
             <p>
-              RCFE consulting is best for operators who want a real plan and guidance — not just a quick opinion.
+              RCFE consulting is designed for operators who want a real plan and structured guidance.
             </p>
           </div>
         </div>
@@ -734,14 +789,14 @@ CONSULTING_LINK
         <div class="tri">
           <div class="card">
             <h3>New to the business</h3>
-            <p>You want to understand the path clearly and avoid preventable missteps early.</p>
+            <p>You want to understand the path clearly and start with confidence from the beginning.</p>
           </div>
           <div class="card">
             <h3>Starting up or expanding</h3>
             <p>You want the licensing path and operations aligned, with a clear step-by-step plan.</p>
           </div>
           <div class="card">
-            <h3>Already operating, but stuck</h3>
+            <h3>Already operating, ready to improve</h3>
             <p>You want clarity and structure so your facility runs consistently and predictably.</p>
           </div>
         </div>
@@ -819,7 +874,7 @@ CONSULTING_LINK
           </details>
           <details>
             <summary>Do you provide a roadmap?</summary>
-            <p>Yes — the roadmap is the first priority. You’ll also get a consulting deck (PowerPoint) that explains the plan clearly.</p>
+            <p>Yes. The roadmap is the first priority. You’ll also get a consulting deck (PowerPoint) that explains the plan clearly.</p>
           </details>
           <details>
             <summary>Do you help with licensing too?</summary>
@@ -847,7 +902,35 @@ CONSULTING_LINK
     </section>
   </main>
 
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <div class="brand" style="gap:10px">
+            <img src="https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-4897-994e-1ec4194e612d.png" alt="Medical Billing Services Logo" style="height:34px">
+          </div>
+          <div class="copy">
+            &copy; <span id="yr"></span> Medical Billing Services. All rights reserved.
+            <br>RCFE / ARF &bull; Assisted Living Waiver (ALW)
+          </div>
+        </div>
 
+        <div>
+          <h4>Consulting</h4>
+          <a href="#what">What it is</a>
+          <a href="#phases">Phases</a>
+          <a href="#book">Book</a>
+        </div>
+
+        <div>
+          <h4>Support</h4>
+          <a href="#faq">FAQs</a>
+          <a href="BOOKING_LINK_CONSULT">Calendar</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <!-- Mobile sticky CTA -->
   <div class="stickyBook" aria-label="Sticky book bar">
@@ -892,16 +975,16 @@ CONSULTING_LINK
       "BOOKING_IFRAME_CONSULT": "https://api.leadconnectorhq.com/widget/booking/X33A2JTTT3wOSCed356R",
 
       // nav links (update to your real slugs)
-      "HOME_LINK": "./Home-page-html.html",
-      "STATE_LIC_RCFE_LINK": "./rcfe-licensing-html.html",
-      "STATE_LIC_ARF_LINK": "./arf-licensing-html.html",
-      "ALW_APP_LINK": "./alw-waiver-html.html",
-      "ALW_BILLING_LINK": "./alw-billing-100html.html",
-      "ALW_FUNDING_LINK": "./funding-html.html",
-      "CONSULTING_LINK": "./Consulting-html.html",
+      "HOME_LINK": "./home.html",
+      "STATE_LIC_RCFE_LINK": "./rcfe-licensing.html",
+      "STATE_LIC_ARF_LINK": "./arf-licensing.html",
+      "ALW_APP_LINK": "./alw-waiver.html",
+      "ALW_BILLING_LINK": "./alw-billing.html",
+      "ALW_FUNDING_LINK": "./funding.html",
+      "CONSULTING_LINK": "./consulting.html",
 
       // schema URL (optional)
-      "CONSULTING_PAGE_URL": "./Consulting-html.html"
+      "CONSULTING_PAGE_URL": "./consulting.html"
     };
 
     const root = document.querySelector(".mbsConsultV2");
