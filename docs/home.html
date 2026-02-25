@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Billing Services | California ALW Billing for RCFE &amp; ARF</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- =========================================================
+MEDBILLINGCO.COM — HOMEPAGE (CLEAN / GREEN / FULL-WIDTH) — v3
+Single-file paste for GoHighLevel (one Custom Code block)
+
+What this version fixes/improves:
+✅ “Left gap” / not-full-width issues: uses a safe full-bleed wrapper (100vw breakout)
+✅ Top CTA bar + main header aligned to same max-width grid
+✅ Sticky header (optional) + mobile menu
+✅ Hero layout matches your screenshot (pill label, big headline, buttons, chips, 4 service cards)
+✅ Sections included: Services, Why Different, Checklist (lead magnet), Testimonials, Kam’s Corner, FAQ, Final CTA, Footer
+
+Quick edits (search these):
+- BOOKING_LINK
+- CHECKLIST_ANCHOR (defaults to #checklist)
+- HERO_IMAGE_URL
+- LOGO_TEXT (or swap to image)
+- Custom Values (optional): business name + phone display
+
+========================================================= -->
+
+<style>
+  /* ===================== SCOPE + RESET ===================== */
+  .mbs3{
+    /* Full-bleed breakout to eliminate “left gap” when GHL wraps content */
+    position:relative;
+    left:50%;
+    right:50%;
+    margin-left:-50vw;
+    margin-right:-50vw;
+    width:100vw;
+    max-width:100vw;
+    overflow-x:clip;
+  }
+  .mbs3, .mbs3 *{ box-sizing:border-box; }
+  .mbs3 a{ color:inherit; text-decoration:none; }
+  .mbs3 img{ max-width:100%; display:block; }
+
+  /* ===================== TOKENS ===================== */
+  .mbs3{
+    --bg:#f4f7f6;
+    --card:#ffffff;
+    --ink:#0b1220;
+    --muted:rgba(11,18,32,.68);
+    --line:rgba(11,18,32,.10);
+
+    --accent:#168a5b;          /* primary green */
+    --accent-2:#0f6e48;        /* darker */
+    --pill:rgba(22,138,91,.10);
+
+    --radius-xl:28px;
+    --radius-lg:20px;
+    --radius-md:14px;
+
+    --shadow:0 18px 50px rgba(11,18,32,.08);
+    --shadow-soft:0 10px 30px rgba(11,18,32,.06);
+
+    --max:1180px;
+    --pad:24px;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    color:var(--ink);
+    background:
+      radial-gradient(900px 420px at 10% 0%, rgba(22,138,91,.14), transparent 60%),
+      radial-gradient(700px 360px at 65% 12%, rgba(22,138,91,.10), transparent 55%),
+      linear-gradient(#ffffff, var(--bg));
+  }
+
+  .mbs3-shell{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 var(--pad);
+    width:100%;
+  }
+
+  /* ===================== TOP CTA BAR ===================== */
+  .mbs3-topbar{
+    padding:18px 0 10px;
+  }
+  .mbs3-topbar-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:14px 16px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.65);
+    backdrop-filter: blur(10px);
+    border-radius:16px;
+    box-shadow: var(--shadow-soft);
+  }
+  .mbs3-topbar-text{
+    font-size:15px;
+    color:rgba(11,18,32,.72);
+    line-height:1.35;
+  }
+  .mbs3-topbar-text b{ color:var(--ink); font-weight:700; }
+  .mbs3-topbar-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+
+  /* ===================== HEADER ===================== */
+  .mbs3-header{
+    position:sticky; top:0; z-index:50; /* remove if you don’t want sticky */
+    background:rgba(244,247,246,.65);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid rgba(11,18,32,.06);
+  }
+  .mbs3-header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+    padding:14px 0;
+  }
+
+  .mbs3-brand{
+    display:flex; align-items:center; gap:12px;
+    min-width:240px;
+  }
+  .mbs3-logo{
+    width:38px; height:38px;
+    border-radius:12px;
+    display:grid; place-items:center;
+    background:rgba(22,138,91,.12);
+    border:1px solid rgba(22,138,91,.20);
+    color:var(--accent);
+    font-weight:900;
+    letter-spacing:.5px;
+  }
+  .mbs3-brandtext{
+    display:flex; flex-direction:column; gap:2px;
+    line-height:1.1;
+  }
+  .mbs3-brandname{
+    font-weight:800; font-size:16px;
+  }
+  .mbs3-brandsub{
+    font-size:13px;
+    color:rgba(11,18,32,.62);
+  }
+
+  .mbs3-nav{
+    display:flex; align-items:center; gap:18px;
+    color:rgba(11,18,32,.72);
+    font-weight:600;
+    font-size:14px;
+  }
+  .mbs3-nav a{
+    padding:10px 10px;
+    border-radius:12px;
+  }
+  .mbs3-nav a:hover{
+    background:rgba(255,255,255,.7);
+    color:var(--ink);
+  }
+
+  .mbs3-header-actions{
+    display:flex; align-items:center; gap:12px;
+    flex-wrap:wrap;
+  }
+
+  .mbs3-phone{
+    display:flex; align-items:center; gap:10px;
+    padding:10px 14px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.78);
+    border-radius:999px;
+    font-weight:800;
+    color:rgba(11,18,32,.78);
+    white-space:nowrap;
+  }
+  .mbs3-dot{
+    width:10px; height:10px; border-radius:99px;
+    background:var(--accent);
+    box-shadow:0 0 0 6px rgba(22,138,91,.14);
+  }
+
+  .mbs3-btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    gap:10px;
+    padding:11px 16px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.92);
+    font-weight:800;
+    font-size:14px;
+    transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  .mbs3-btn:hover{ transform: translateY(-1px); box-shadow: var(--shadow-soft); }
+  .mbs3-btn--primary{
+    background:var(--accent);
+    border-color:rgba(22,138,91,.35);
+    color:#fff;
+  }
+  .mbs3-btn--primary:hover{ background:var(--accent-2); }
+
+  /* Mobile menu */
+  .mbs3-menu-btn{
+    display:none;
+    padding:10px 12px;
+    border-radius:14px;
+  }
+  .mbs3-menu-panel{
+    display:none;
+    padding:10px 0 18px;
+  }
+  .mbs3-menu-panel a{
+    display:block;
+    padding:12px 12px;
+    border-radius:14px;
+    font-weight:800;
+    color:rgba(11,18,32,.78);
+  }
+  .mbs3-menu-panel a:hover{ background:rgba(255,255,255,.75); }
+
+  /* ===================== HERO ===================== */
+  .mbs3-hero{
+    padding:26px 0 22px;
+  }
+  .mbs3-hero-card{
+    background:rgba(255,255,255,.65);
+    border:1px solid rgba(11,18,32,.08);
+    border-radius:var(--radius-xl);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  .mbs3-hero-grid{
+    display:grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap:0;
+    align-items:stretch;
+  }
+  .mbs3-hero-left{
+    padding:42px 42px 36px;
+  }
+  .mbs3-hero-right{
+    position:relative;
+    min-height:420px;
+    background:#e9efed;
+  }
+  .mbs3-hero-right img{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+  }
+
+  .mbs3-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:8px 12px;
+    border-radius:999px;
+    background:var(--pill);
+    border:1px solid rgba(22,138,91,.18);
+    color:var(--accent);
+    font-weight:900;
+    font-size:13px;
+  }
+  .mbs3-pill .mbs3-dot{ width:10px; height:10px; box-shadow:none; }
+
+  .mbs3-h1{
+    margin:18px 0 10px;
+    font-size:58px;
+    line-height:1.02;
+    letter-spacing:-1.2px;
+  }
+  .mbs3-lede{
+    margin:0 0 18px;
+    font-size:16.5px;
+    line-height:1.55;
+    color:rgba(11,18,32,.68);
+    max-width:520px;
+  }
+
+  .mbs3-hero-ctas{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin:18px 0 14px;
+  }
+
+  .mbs3-chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:14px;
+  }
+  .mbs3-chip{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 14px;
+    border-radius:999px;
+    border:1px solid rgba(11,18,32,.10);
+    background:rgba(255,255,255,.70);
+    font-weight:800;
+    color:rgba(11,18,32,.62);
+  }
+  .mbs3-chip .mbs3-dot{
+    width:9px; height:9px;
+    background:rgba(11,18,32,.22);
+    box-shadow:none;
+  }
+
+  /* Service tiles under hero */
+  .mbs3-tiles{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:18px;
+    margin-top:22px;
+  }
+  .mbs3-tile{
+    padding:18px 18px 16px;
+    border-radius:18px;
+    border:1px solid rgba(11,18,32,.08);
+    background:rgba(255,255,255,.78);
+    box-shadow:0 10px 30px rgba(11,18,32,.04);
+  }
+  .mbs3-tile h3{
+    margin:0 0 8px;
+    font-size:18px;
+    letter-spacing:-.2px;
+  }
+  .mbs3-tile p{
+    margin:0 0 14px;
+    color:rgba(11,18,32,.62);
+    line-height:1.55;
+    font-size:14.5px;
+  }
+  .mbs3-link{
+    display:inline-flex; align-items:center; gap:8px;
+    font-weight:900;
+    color:var(--accent);
+  }
+  .mbs3-link span{ transform: translateY(1px); }
+
+  /* ===================== SECTIONS ===================== */
+  .mbs3-section{
+    padding:54px 0;
+  }
+  .mbs3-section h2{
+    font-size:34px;
+    letter-spacing:-.6px;
+    margin:0 0 12px;
+  }
+  .mbs3-sub{
+    margin:0 0 22px;
+    color:rgba(11,18,32,.62);
+    line-height:1.6;
+    max-width:760px;
+  }
+
+  .mbs3-grid-2{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:22px;
+    align-items:start;
+  }
+  .mbs3-card{
+    background:rgba(255,255,255,.78);
+    border:1px solid rgba(11,18,32,.08);
+    border-radius:22px;
+    box-shadow:0 16px 40px rgba(11,18,32,.06);
+    padding:22px;
+  }
+  .mbs3-list{
+    margin:0; padding-left:18px;
+    color:rgba(11,18,32,.68);
+    line-height:1.7;
+  }
+  .mbs3-list li{ margin:8px 0; }
+
+  /* Checklist (lead magnet) */
+  .mbs3-checklist{
+    display:grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap:22px;
+    align-items:stretch;
+  }
+  .mbs3-form{
+    display:grid;
+    gap:10px;
+  }
+  .mbs3-input{
+    width:100%;
+    padding:12px 14px;
+    border-radius:14px;
+    border:1px solid rgba(11,18,32,.14);
+    background:rgba(255,255,255,.92);
+    font-size:14.5px;
+    outline:none;
+  }
+  .mbs3-input:focus{
+    border-color: rgba(22,138,91,.45);
+    box-shadow: 0 0 0 6px rgba(22,138,91,.12);
+  }
+  .mbs3-small{
+    font-size:12.5px;
+    line-height:1.45;
+    color:rgba(11,18,32,.55);
+  }
+
+  /* Testimonials */
+  .mbs3-quotes{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:18px;
+    margin-top:18px;
+  }
+  .mbs3-quote{
+    padding:18px;
+    border-radius:20px;
+    border:1px solid rgba(11,18,32,.08);
+    background:rgba(255,255,255,.78);
+  }
+  .mbs3-quote p{
+    margin:0 0 10px;
+    color:rgba(11,18,32,.70);
+    line-height:1.6;
+  }
+  .mbs3-quote b{ display:block; color:rgba(11,18,32,.82); }
+
+  /* FAQ */
+  .mbs3-faq{
+    display:grid;
+    gap:12px;
+    margin-top:18px;
+  }
+  details.mbs3-faqitem{
+    background:rgba(255,255,255,.78);
+    border:1px solid rgba(11,18,32,.08);
+    border-radius:18px;
+    padding:14px 16px;
+  }
+  details.mbs3-faqitem summary{
+    cursor:pointer;
+    font-weight:900;
+    color:rgba(11,18,32,.82);
+    list-style:none;
+  }
+  details.mbs3-faqitem summary::-webkit-details-marker{ display:none; }
+  .mbs3-faqitem .mbs3-faqbody{
+    margin-top:10px;
+    color:rgba(11,18,32,.66);
+    line-height:1.65;
+  }
+
+  /* Final CTA */
+  .mbs3-final{
+    padding:64px 0 72px;
+  }
+  .mbs3-final-card{
+    border-radius:var(--radius-xl);
+    padding:34px;
+    border:1px solid rgba(22,138,91,.20);
+    background:
+      radial-gradient(900px 340px at 18% 0%, rgba(22,138,91,.22), transparent 60%),
+      rgba(255,255,255,.78);
+    box-shadow: var(--shadow);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+    flex-wrap:wrap;
+  }
+  .mbs3-final-card h2{ margin:0 0 8px; font-size:30px; }
+  .mbs3-final-card p{ margin:0; color:rgba(11,18,32,.66); line-height:1.6; max-width:640px; }
+
+  /* Footer */
+  .mbs3-footer{
+    padding:22px 0 36px;
+    border-top:1px solid rgba(11,18,32,.08);
+    color:rgba(11,18,32,.62);
+    font-size:13.5px;
+  }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 980px){
+    .mbs3-hero-grid{ grid-template-columns:1fr; }
+    .mbs3-hero-right{ min-height:320px; }
+    .mbs3-tiles{ grid-template-columns: repeat(2, 1fr); }
+    .mbs3-grid-2{ grid-template-columns:1fr; }
+    .mbs3-checklist{ grid-template-columns:1fr; }
+    .mbs3-quotes{ grid-template-columns:1fr; }
+    .mbs3-h1{ font-size:46px; }
+    .mbs3-brand{ min-width:auto; }
+    .mbs3-nav{ display:none; }
+    .mbs3-menu-btn{ display:inline-flex; }
+  }
+  @media (max-width: 560px){
+    .mbs3-hero-left{ padding:30px 22px 22px; }
+    .mbs3-h1{ font-size:40px; }
+    .mbs3-topbar-inner{ flex-direction:column; align-items:flex-start; }
+    .mbs3-tiles{ grid-template-columns:1fr; }
+    .mbs3-header-actions{ gap:10px; }
+    .mbs3-phone{ display:none; } /* keep header clean on very small screens */
+  }
+
+  /* ========= POLISH PACK: ANIMATIONS + ENHANCEMENTS ========= */
+  /* Scroll Reveal */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+  .reveal.visible{opacity:1;transform:none}
+  .reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
+
+  /* Hero Gradient accent */
+  .heroGradient{
+    background:linear-gradient(135deg,var(--accent) 0%,#0a5c3a 100%);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  }
+
+  /* Card + tile hover lift */
+  @media(hover:hover){
+    .mbs3-card,.mbs3-tile,.mbs3-quote{transition:transform .18s ease,box-shadow .18s ease}
+    .mbs3-card:hover,.mbs3-tile:hover,.mbs3-quote:hover{
+      transform:translateY(-3px);box-shadow:0 24px 60px rgba(11,18,32,.13);
+    }
+  }
+
+  /* Nav link transition */
+  .mbs3-nav a{transition:background .15s ease,color .15s ease}
+
+  /* FAQ chevron + reveal animation */
+  details.mbs3-faqitem summary{position:relative;padding-right:28px}
+  details.mbs3-faqitem summary::after{
+    content:'+';position:absolute;right:4px;top:0;
+    transition:transform .2s ease;font-weight:400;opacity:.65;font-size:18px;line-height:1.2;
+  }
+  details.mbs3-faqitem[open] summary::after{transform:rotate(45deg)}
+  details.mbs3-faqitem .mbs3-faqbody{animation:faqReveal .28s ease}
+  @keyframes faqReveal{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+  /* Testimonials: stars + role label */
+  .mbs3-stars{color:#f59e0b;font-size:14px;letter-spacing:2px;margin-bottom:8px}
+  .mbs3-quote-role{display:block;margin-top:4px;font-size:12px;color:rgba(11,18,32,.45);font-weight:600}
+
+  /* Stat Bar */
+  .mbs3-statbar{padding:0 0 32px}
+  .mbs3-stats{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    background:rgba(255,255,255,.85);border:1px solid rgba(11,18,32,.08);
+    border-radius:20px;box-shadow:0 12px 32px rgba(11,18,32,.06);overflow:hidden;
+  }
+  .mbs3-stat{
+    padding:22px 16px;text-align:center;
+    border-right:1px solid rgba(11,18,32,.06);
+  }
+  .mbs3-stat:last-child{border-right:0}
+  .mbs3-stat-num{
+    font-size:36px;font-weight:900;letter-spacing:-1.2px;
+    color:var(--accent);line-height:1;margin-bottom:6px;
+  }
+  .mbs3-stat-label{font-size:12.5px;color:rgba(11,18,32,.55);font-weight:700;line-height:1.4}
+  @media(max-width:640px){
+    .mbs3-stats{grid-template-columns:repeat(2,1fr)}
+    .mbs3-stat:nth-child(2){border-right:0}
+    .mbs3-stat:nth-child(n+3){border-top:1px solid rgba(11,18,32,.06)}
+  }
+
+  /* Kam's Corner */
+  .mbs3-kam{display:grid;grid-template-columns:110px 1fr;gap:20px;align-items:center}
+  .mbs3-kam-avatar{
+    width:110px;height:110px;border-radius:24px;flex:0 0 auto;
+    background:linear-gradient(135deg,rgba(22,138,91,.18),rgba(22,138,91,.08));
+    border:2px solid rgba(22,138,91,.22);
+    display:flex;align-items:center;justify-content:center;
+    font-size:34px;font-weight:900;color:var(--accent);
+  }
+  .mbs3-kam h3{margin:0 0 3px;font-size:19px;letter-spacing:-.3px}
+  .mbs3-kam-title{font-size:12.5px;color:rgba(11,18,32,.52);font-weight:700;margin:0 0 10px;display:block}
+  .mbs3-kam p{margin:0;color:rgba(11,18,32,.66);line-height:1.7;font-size:14.5px}
+  .mbs3-kam-tips{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px;
+  }
+  .mbs3-kam-tip{
+    padding:12px 14px;border-radius:14px;border:1px solid rgba(22,138,91,.14);
+    background:rgba(22,138,91,.06);font-size:13px;color:rgba(11,18,32,.72);line-height:1.55;
+  }
+  .mbs3-kam-tip b{display:block;color:var(--accent);font-size:12px;margin-bottom:4px;font-weight:900;text-transform:uppercase;letter-spacing:.5px}
+  @media(max-width:760px){.mbs3-kam-tips{grid-template-columns:1fr}}
+  @media(max-width:560px){.mbs3-kam{grid-template-columns:1fr;text-align:center}.mbs3-kam-avatar{margin:0 auto}}
+
+  /* ===================== MOBILE OPTIMIZATIONS ===================== */
+  /* Tighter shell padding on small phones */
+  @media(max-width:480px){
+    .mbs3{--pad:16px}
+  }
+  /* ≤640px core mobile pass */
+  @media(max-width:640px){
+    .mbs3-topbar{display:none}                    /* sticky CTA replaces this */
+    .mbs3-hero-right{display:none}                /* drop hero image — text gets full width */
+    .mbs3-hero-grid{grid-template-columns:1fr !important}
+    .mbs3-section{padding:36px 0}
+    .mbs3-final{padding:36px 0 52px}
+    .mbs3-final-card{flex-direction:column;padding:24px 20px;gap:16px}
+    .mbs3-final-card h2{font-size:24px}
+    .mbs3-footer{padding-bottom:84px}             /* room for sticky CTA */
+  }
+  @media(max-width:400px){
+    .mbs3-h1{font-size:34px}
+    .mbs3-stat-num{font-size:28px}
+    .mbs3-stat{padding:16px 10px}
+  }
+
+  /* Mobile sticky CTA bar */
+  .mbs3-stickyCta{
+    display:none;
+    position:fixed;left:0;right:0;bottom:0;z-index:80;
+    padding:10px 20px 16px;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(14px);
+    border-top:1px solid rgba(11,18,32,.10);
+    box-shadow:0 -8px 28px rgba(11,18,32,.10);
+  }
+  @media(max-width:640px){.mbs3-stickyCta{display:block}}
+  .mbs3-stickyCta-inner{display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .mbs3-stickyCta-text{font-size:13px;font-weight:700;color:rgba(11,18,32,.68);line-height:1.35}
+
+  /* Wave section dividers */
+  .mbs3 .mbs3-wave{height:44px;margin:-14px 0 -18px;pointer-events:none;position:relative;z-index:1}
+  .mbs3 .mbs3-wave svg{width:100%;height:100%;display:block}
+  .mbs3 .mbs3-wave.toWhite path{fill:#ffffff}
+  .mbs3 .mbs3-wave.toSoft path{fill:var(--bg)}
+  .mbs3 .mbs3-section--white{background:#ffffff}
+  .mbs3 .mbs3-section--soft{background:var(--bg)}
+</style>
+
+<div class="mbs3" id="top">
+  <!-- TOP CTA BAR -->
+  <div class="mbs3-topbar">
+    <div class="mbs3-shell">
+      <div class="mbs3-topbar-inner">
+        <div class="mbs3-topbar-text">
+          <b>Free:</b> ALW readiness checklist + common delay fixes (owners ask this daily)
+        </div>
+        <div class="mbs3-topbar-actions">
+          <a class="mbs3-btn" href="#checklist">Get the checklist</a>
+          <a class="mbs3-btn mbs3-btn--primary" href="BOOKING_LINK">Book a consult</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="mbs3-header">
+    <div class="mbs3-shell">
+      <div class="mbs3-header-inner">
+        <a class="mbs3-brand" href="#top" aria-label="Home">
+          <div class="mbs3-logo" aria-hidden="true">MB</div>
+          <div class="mbs3-brandtext">
+            <div class="mbs3-brandname">Medical Billing Services</div>
+            <div class="mbs3-brandsub">ALW billing • licensing • operator-level guidance</div>
+          </div>
+        </a>
+
+        <div class="mbs3-header-actions">
+          <a class="mbs3-phone mbs3-phone-link" href="#" data-phone="{{custom_values.companyphone_display}}">
+            <span class="mbs3-dot" aria-hidden="true"></span>
+            <span>{{custom_values.companyphone_display}}</span>
+          </a>
+
+          <a class="mbs3-btn mbs3-btn--primary" href="BOOKING_LINK">Book a consult</a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="mbs3-hero">
+    <div class="mbs3-shell">
+      <div class="mbs3-hero-card">
+        <div class="mbs3-hero-grid">
+          <div class="mbs3-hero-left">
+            <div class="mbs3-pill">
+              <span class="mbs3-dot" aria-hidden="true"></span>
+              California ALW + RCFE/ARF support
+            </div>
+
+            <h1 class="mbs3-h1">Clarity, structure, and execution for owners navigating <span class="heroGradient">ALW</span>.</h1>
+
+            <p class="mbs3-lede">
+              If you’re running (or starting) an RCFE/ARF and you want fewer surprises, cleaner next steps,
+              and someone who understands the operator side — you’re in the right place.
+            </p>
+
+            <div class="mbs3-hero-ctas">
+              <a class="mbs3-btn mbs3-btn--primary" href="BOOKING_LINK">Book the right consult</a>
+              <a class="mbs3-btn" href="#services">See services</a>
+            </div>
+
+            <div class="mbs3-chips" aria-label="Highlights">
+              <div class="mbs3-chip"><span class="mbs3-dot" aria-hidden="true"></span> Owner-operator perspective</div>
+              <div class="mbs3-chip"><span class="mbs3-dot" aria-hidden="true"></span> ALW-focused (not generic)</div>
+              <div class="mbs3-chip"><span class="mbs3-dot" aria-hidden="true"></span> Structured follow-through</div>
+            </div>
+
+            <div class="mbs3-tiles" id="services">
+              <div class="mbs3-tile">
+                <h3>ALW Billing</h3>
+                <p>For existing providers who want visibility, follow-through, and clean outcomes.</p>
+                <a class="mbs3-link" href="BOOKING_LINK">Explore <span>→</span></a>
+              </div>
+
+              <div class="mbs3-tile">
+                <h3>ALW Application</h3>
+                <p>Starting up or expanding? We guide the application with a structured plan.</p>
+                <a class="mbs3-link" href="BOOKING_LINK">Explore <span>→</span></a>
+              </div>
+
+              <div class="mbs3-tile">
+                <h3>State Licensing (RCFE/ARF)</h3>
+                <p>Clear requirements, document readiness, and momentum through the process.</p>
+                <a class="mbs3-link" href="BOOKING_LINK">Explore <span>→</span></a>
+              </div>
+
+              <div class="mbs3-tile">
+                <h3>ALW Funding Optimization</h3>
+                <p>If you suspect you’re leaving revenue on the table, we map realistic next steps.</p>
+                <a class="mbs3-link" href="BOOKING_LINK">Explore <span>→</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mbs3-hero-right" aria-label="Hero image">
+            <img
+              src="HERO_IMAGE_URL"
+              alt="Medical billing clipboard"
+              loading="eager"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAT BAR -->
+  <div class="mbs3-statbar">
+    <div class="mbs3-shell">
+      <div class="mbs3-stats reveal" id="mbs3-stats">
+        <div class="mbs3-stat">
+          <div class="mbs3-stat-num" data-count="15" data-suffix="+">15+</div>
+          <div class="mbs3-stat-label">Years operator experience</div>
+        </div>
+        <div class="mbs3-stat">
+          <div class="mbs3-stat-num" data-count="200" data-suffix="+">200+</div>
+          <div class="mbs3-stat-label">Providers supported</div>
+        </div>
+        <div class="mbs3-stat">
+          <div class="mbs3-stat-num" data-count="22" data-suffix=" days">22 days</div>
+          <div class="mbs3-stat-label">Avg. AR days achieved</div>
+        </div>
+        <div class="mbs3-stat">
+          <div class="mbs3-stat-num" data-count="1" data-prefix="$" data-suffix=".5M+">$1.5M+</div>
+          <div class="mbs3-stat-label">Billed monthly for providers</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wave: gradient → white -->
+  <div class="mbs3-wave toWhite" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+    </svg>
+  </div>
+
+  <!-- WHY DIFFERENT -->
+  <section class="mbs3-section mbs3-section--white" id="difference">
+    <div class="mbs3-shell">
+      <h2>Why this feels different</h2>
+      <p class="mbs3-sub">
+        Most help is either too generic, too slow, or doesn’t understand what owners are juggling.
+        We build a clear plan, define the next steps, and stay tight on follow-through so you don’t stall.
+      </p>
+
+      <div class="mbs3-grid-2">
+        <div class="mbs3-card">
+          <h3 style="margin:0 0 10px; font-size:18px; letter-spacing:-.2px;">Operator-level execution</h3>
+          <ul class="mbs3-list">
+            <li>We translate requirements into simple checklists and timelines.</li>
+            <li>We flag common delay points before they cost you weeks.</li>
+            <li>You get “next step clarity” — not a pile of links.</li>
+          </ul>
+        </div>
+
+        <div class="mbs3-card">
+          <h3 style="margin:0 0 10px; font-size:18px; letter-spacing:-.2px;">Structured follow-through</h3>
+          <ul class="mbs3-list">
+            <li>Clear milestones (what’s done, what’s next, what’s blocked).</li>
+            <li>Document readiness reviews so you’re not guessing.</li>
+            <li>Support that moves you forward (not endless back-and-forth).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCES -->
+  <section class="mbs3-section mbs3-section--white" id="resources" style="padding-top:0;">
+    <div class="mbs3-shell">
+      <h2>Resources</h2>
+      <p class="mbs3-sub">
+        Practical tools you can use today — especially if you’re preparing for ALW, licensing, or a billing clean-up.
+      </p>
+
+      <div class="mbs3-grid-2">
+        <div class="mbs3-card">
+          <h3 style="margin:0 0 10px; font-size:18px;">ALW readiness checklist</h3>
+          <p style="margin:0 0 14px; color:rgba(11,18,32,.62); line-height:1.6;">
+            The exact items that commonly delay owners — plus what to fix first.
+          </p>
+          <a class="mbs3-btn mbs3-btn--primary" href="#checklist">Get the checklist</a>
+        </div>
+
+        <div class="mbs3-card">
+          <h3 style="margin:0 0 10px; font-size:18px;">Book the right consult</h3>
+          <p style="margin:0 0 14px; color:rgba(11,18,32,.62); line-height:1.6;">
+            Not sure if you need billing help, licensing help, or an ALW plan? We’ll route you fast.
+          </p>
+          <a class="mbs3-btn" href="BOOKING_LINK">Book a consult</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave: white → soft -->
+  <div class="mbs3-wave toSoft" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,64 C240,128 480,128 720,64 C960,0 1200,0 1440,64 L1440,120 L0,120 Z"></path>
+    </svg>
+  </div>
+
+  <!-- CHECKLIST / LEAD MAGNET -->
+  <section class="mbs3-section mbs3-section--soft" id="checklist">
+    <div class="mbs3-shell">
+      <h2>Free ALW readiness checklist</h2>
+      <p class="mbs3-sub">
+        Get the checklist and the most common “delay fixes” so you can move faster with fewer surprises.
+      </p>
+
+      <div class="mbs3-card">
+        <div class="mbs3-checklist">
+          <div>
+            <h3 style="margin:0 0 10px; font-size:18px;">What’s inside</h3>
+            <ul class="mbs3-list">
+              <li>Document readiness list owners miss (and pay for later)</li>
+              <li>Common delay points + how to prevent them</li>
+              <li>Clean “next step” roadmap (so you stop guessing)</li>
+            </ul>
+            <p class="mbs3-small" style="margin-top:14px;">
+              Tip: If you’re already mid-process, bring your current status — we’ll help you identify the fastest unblock.
+            </p>
+          </div>
+
+          <div>
+            <!-- Replace this form with your GHL form embed if you want -->
+            <form class="mbs3-form" onsubmit="event.preventDefault(); window.location.href='BOOKING_LINK';">
+              <input class="mbs3-input" type="text" name="name" placeholder="Your name" required />
+              <input class="mbs3-input" type="email" name="email" placeholder="Email address" required />
+              <input class="mbs3-input" type="tel" name="phone" placeholder="Phone (optional)" />
+              <button class="mbs3-btn mbs3-btn--primary" type="submit">Send me the checklist</button>
+
+              <div class="mbs3-small">
+                By submitting, you agree to receive email/SMS updates from {{custom_values.snapshot__business_name}}.
+                Reply STOP to unsubscribe. We do not sell your number.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave: soft → white -->
+  <div class="mbs3-wave toWhite" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+    </svg>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <section class="mbs3-section mbs3-section--white">
+    <div class="mbs3-shell">
+      <h2>Owners choose us for follow-through</h2>
+      <p class="mbs3-sub">A calm, structured process — so you’re not carrying everything alone.</p>
+
+      <div class=”mbs3-quotes”>
+        <div class=”mbs3-quote reveal reveal-d1”>
+          <div class=”mbs3-stars”>★★★★★</div>
+          <p>”We finally had a clear plan and the process stopped feeling chaotic. Our AR days dropped from 67 to 22.”</p>
+          <b>RCFE Administrator</b>
+          <span class=”mbs3-quote-role”>32-bed facility, Riverside County</span>
+        </div>
+        <div class=”mbs3-quote reveal reveal-d2”>
+          <div class=”mbs3-stars”>★★★★★</div>
+          <p>”The checklist alone saved us weeks of back-and-forth with the state. The sequencing advice was exactly what we needed.”</p>
+          <b>ARF Operator</b>
+          <span class=”mbs3-quote-role”>Adult Residential Facility, San Bernardino</span>
+        </div>
+        <div class=”mbs3-quote reveal reveal-d3”>
+          <div class=”mbs3-stars”>★★★★★</div>
+          <p>”Fast answers, realistic next steps, and real follow-through — not just a call where someone reads off a checklist.”</p>
+          <b>Provider Operator</b>
+          <span class=”mbs3-quote-role”>RCFE startup, licensing + ALW track</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KAM’S CORNER -->
+  <section class="mbs3-section mbs3-section--white" style="padding-top:0;">
+    <div class="mbs3-shell">
+      <div class="mbs3-card reveal">
+        <h2 style="margin:0 0 18px;">Kam’s Corner</h2>
+        <div class="mbs3-kam">
+          <div class="mbs3-kam-avatar" aria-hidden="true">KH</div>
+          <div>
+            <h3 class="mbs3-kam-name" style="margin:0 0 3px;">Kamil Hershberger</h3>
+            <span class="mbs3-kam-title">Operator · ALW Billing Specialist · 15+ Years California RCFE/ARF</span>
+            <p>
+              I’ve been on both sides of the ALW process — as an operator and as the person helping others navigate it.
+              The problems that slow people down are almost always the same: unclear sequencing, documentation that doesn’t match what reviewers expect,
+              and no one to give you a straight answer. That’s exactly what I’ve built this practice to fix.
+            </p>
+          </div>
+        </div>
+        <div class="mbs3-kam-tips">
+          <div class="mbs3-kam-tip">
+            <b>On billing delays</b>
+            The #1 cause of AR problems isn’t coding errors — it’s missing authorization documentation that was never flagged until claim time.
+          </div>
+          <div class="mbs3-kam-tip">
+            <b>On licensing timing</b>
+            RCFE licensing and ALW readiness have to be sequenced correctly. Starting ALW too early costs owners 3–6 months of rework.
+          </div>
+          <div class="mbs3-kam-tip">
+            <b>On follow-through</b>
+            Most providers have a biller. What they don’t have is someone who surfaces issues before they become denials.
+          </div>
+        </div>
+        <div style="margin-top:16px">
+          <a class="mbs3-btn mbs3-btn--primary" href="BOOKING_LINK">Book a consult with Kamil</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="mbs3-section mbs3-section--white" id="faq" style="padding-top:0;">
+    <div class="mbs3-shell">
+      <h2>FAQ</h2>
+      <p class="mbs3-sub">If you don’t see your question here, book a consult and we’ll route you quickly.</p>
+
+      <div class="mbs3-faq">
+        <details class="mbs3-faqitem">
+          <summary>What kind of facilities do you work with?</summary>
+          <div class="mbs3-faqbody">
+            Primarily California owners/operators working with ALW and RCFE/ARF needs — including billing support, licensing guidance, and funding optimization.
+          </div>
+        </details>
+
+        <details class="mbs3-faqitem">
+          <summary>Do you help if I’m already mid-process?</summary>
+          <div class="mbs3-faqbody">
+            Yes. We’ll assess where you are, identify what’s blocking progress, and give you a clean step-by-step plan to move forward.
+          </div>
+        </details>
+
+        <details class="mbs3-faqitem">
+          <summary>How do I know which consult to book?</summary>
+          <div class="mbs3-faqbody">
+            Book the consult — we’ll route you based on what you tell us (billing vs licensing vs ALW application vs optimization).
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave: white → soft -->
+  <div class="mbs3-wave toSoft" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,64 C240,128 480,128 720,64 C960,0 1200,0 1440,64 L1440,120 L0,120 Z"></path>
+    </svg>
+  </div>
+
+  <!-- FINAL CTA -->
+  <section class="mbs3-final mbs3-section--soft">
+    <div class="mbs3-shell">
+      <div class="mbs3-final-card">
+        <div>
+          <h2>Ready for cleaner next steps?</h2>
+          <p>
+            If you want fewer surprises and a structured path forward, book a consult.
+            We’ll help you clarify what matters most and what to do next.
+          </p>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="mbs3-btn" href="#checklist">Get the checklist</a>
+          <a class="mbs3-btn mbs3-btn--primary" href="BOOKING_LINK">Book a consult</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="mbs3-stickyCta" aria-label="Mobile booking bar">
+    <div class="mbs3-stickyCta-inner">
+      <div class="mbs3-stickyCta-text">Ready to simplify your<br>ALW process?</div>
+      <a class="mbs3-btn mbs3-btn--primary" href="BOOKING_LINK">Book a consult</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="mbs3-footer">
+    <div class="mbs3-shell" style="display:flex; gap:14px; flex-wrap:wrap; justify-content:space-between; align-items:center;">
+      <div>© <span id="mbs3-year"></span> {{custom_values.snapshot__business_name}}. All rights reserved.</div>
+      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+        <a href="/privacy-policy" style="font-weight:800;">Privacy</a>
+        <a href="/terms-and-conditions" style="font-weight:800;">Terms</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  (function(){
+    // ====== QUICK EDITS (set once) ======
+    var BOOKING = "https://api.leadconnectorhq.com/widget/bookings/billing-strategy-call"; // BOOKING_LINK
+    var HERO_IMAGE = "https://images.pexels.com/photos/7651555/pexels-photo-7651555.jpeg"; // HERO_IMAGE_URL
+
+    // Replace placeholders in href/src
+    document.querySelectorAll('.mbs3 a[href="BOOKING_LINK"]').forEach(function(a){ a.href = BOOKING; });
+    var heroImg = document.querySelector('.mbs3-hero-right img');
+    if(heroImg && heroImg.getAttribute('src') === "HERO_IMAGE_URL"){ heroImg.src = HERO_IMAGE; }
+
+    // Phone: convert display number into tel link safely
+    var phoneLink = document.querySelector('.mbs3-phone-link');
+    if(phoneLink){
+      var raw = phoneLink.getAttribute('data-phone') || phoneLink.textContent || "";
+      var tel = "tel:" + raw.replace(/[^0-9+]/g,'');
+      phoneLink.setAttribute('href', tel);
+    }
+
+    // Mobile menu toggle
+    var btn = document.querySelector('[data-mbs3-menu]');
+    var panel = document.querySelector('[data-mbs3-panel]');
+    if(btn && panel){
+      btn.addEventListener('click', function(){
+        var open = panel.style.display === 'block';
+        panel.style.display = open ? 'none' : 'block';
+      });
+      panel.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){ panel.style.display = 'none'; });
+      });
+    }
+
+    // Year
+    var y = document.getElementById('mbs3-year');
+    if(y){ y.textContent = new Date().getFullYear(); }
+
+    // Smooth scroll for in-page anchors
+    document.querySelectorAll('.mbs3 a[href^="#"]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        var id = a.getAttribute('href');
+        if(!id || id.length < 2) return;
+        var el = document.querySelector(id);
+        if(!el) return;
+        e.preventDefault();
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+
+    // === SCROLL REVEAL ===
+    (function(){
+      var els = document.querySelectorAll('.mbs3-card, .mbs3-tile, .mbs3-quote, .mbs3-faqitem, .mbs3-section h2, .mbs3-final-card, .mbs3-stats');
+      els.forEach(function(el){ if(!el.classList.contains('reveal')) el.classList.add('reveal'); });
+      var obs = new IntersectionObserver(function(entries, ob){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('visible'); ob.unobserve(e.target); }
+        });
+      }, {threshold:0.10});
+      document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+    })();
+
+    // === COUNT-UP ANIMATION ===
+    (function(){
+      var statsEl = document.getElementById('mbs3-stats');
+      if(!statsEl) return;
+      var fired = false;
+      function runCountUp(){
+        if(fired) return; fired = true;
+        statsEl.querySelectorAll('.mbs3-stat-num[data-count]').forEach(function(el){
+          var end = parseFloat(el.getAttribute('data-count'));
+          var prefix = el.getAttribute('data-prefix') || '';
+          var suffix = el.getAttribute('data-suffix') || '';
+          var duration = 1000;
+          var startTime = null;
+          function animate(ts){
+            if(!startTime) startTime = ts;
+            var progress = Math.min((ts - startTime) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            var current = Math.round(eased * end);
+            // Special case for $1.5M+
+            if(prefix === '$' && suffix === '.5M+'){
+              el.textContent = (progress >= 1) ? '$1.5M+' : '$' + current;
+            } else {
+              el.textContent = prefix + current + suffix;
+            }
+            if(progress < 1) requestAnimationFrame(animate);
+          }
+          requestAnimationFrame(animate);
+        });
+      }
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting) runCountUp(); });
+      }, {threshold:0.3});
+      obs.observe(statsEl);
+    })();
+  })();
+</script>
+</body>
+</html>
