@@ -1,0 +1,807 @@
+<!--
+MEDBILLINGCO.COM — ARF LICENSING PAGE (SEO-DISTINCT PREMIUM STYLE) — v1
+Paste into ONE GoHighLevel Custom Code block.
+
+This layout is intentionally different from the RCFE page for SEO:
+✅ Split hero (no full-bleed background hero)
+✅ Top notice bar (RCFE vs ARF self-check CTA)
+✅ ARF vs RCFE compare strip
+✅ "Where apps get stuck" timeline style
+✅ FAQ Schema (JSON-LD) + ProfessionalService schema
+
+Default booking uses your existing Licensing Consultation calendar:
+- Booking link:  https://api.leadconnectorhq.com/widget/bookings/alw-application-call05zqka
+- Embed iframe:  https://api.leadconnectorhq.com/widget/booking/H3K9LIzRf7zxAwtfyrdN
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+  .mbsArfLic{
+    --bg:#ffffff; --ink:#0b1220; --muted:#4b5563; --soft:#f6f8fb;
+    --accent:#0f6e48; --accent2:#0b5a3b;
+    --line:rgba(15,23,42,.10);
+    --shadow:0 20px 54px rgba(2,6,23,.10);
+    --shadow2:0 12px 28px rgba(2,6,23,.08);
+    --max:1160px;
+
+    /* Guide portrait (Kamil) */
+    --guideImg:url("https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/a2244902-df92-4288-b09a-8fa156d5065c.png");
+  }
+
+  .mbsArfLic *{box-sizing:border-box}
+  .mbsArfLic{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+  .mbsArfLic a{color:inherit;text-decoration:none}
+  .mbsArfLic img{max-width:100%;display:block}
+  .mbsArfLic .wrap{width:min(var(--max),calc(100% - 48px));margin:0 auto}
+
+  /* Buttons */
+  .mbsArfLic .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:12px 16px;border-radius:999px;
+    font-weight:900;font-size:14px;border:1px solid transparent;
+    transition:.18s ease;white-space:nowrap;user-select:none;
+  }
+  .mbsArfLic .btn.primary{background:var(--accent);color:#fff;box-shadow:0 10px 22px rgba(15,110,72,.20)}
+  .mbsArfLic .btn.primary:hover{background:var(--accent2);transform:translateY(-1px)}
+  .mbsArfLic .btn.ghost{background:#fff;border-color:rgba(15,23,42,.14);color:rgba(2,6,23,.88)}
+  .mbsArfLic .btn.ghost:hover{background:rgba(2,6,23,.04)}
+  .mbsArfLic .btn.link{background:transparent;border-color:transparent;padding:10px 0;border-radius:12px;color:var(--accent);font-weight:900}
+  .mbsArfLic .btn.link:hover{opacity:.9}
+
+  /* Top notice bar */
+  .mbsArfLic .topbar{
+    background:linear-gradient(90deg, rgba(15,110,72,.10), rgba(15,110,72,.04));
+    border-bottom:1px solid rgba(15,23,42,.08);
+  }
+  .mbsArfLic .topbarInner{
+    padding:10px 0; display:flex; align-items:center; justify-content:space-between; gap:12px;
+    font-size:13px; color:rgba(2,6,23,.78); font-weight:800;
+  }
+  .mbsArfLic .topbarInner b{color:rgba(2,6,23,.88)}
+  .mbsArfLic .topbarCtas{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+
+  /* Header */
+  .mbsArfLic .hdr{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(15,23,42,.08);
+  }
+  .mbsArfLic .nav{
+    display:grid;grid-template-columns:220px 1fr auto;
+    align-items:center;gap:16px;padding:14px 0;
+  }
+  .mbsArfLic .brand{display:flex;align-items:center;gap:10px;min-width:180px}
+  .mbsArfLic .brand img{height:38px;width:auto}
+
+  .mbsArfLic .menu{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+  .mbsArfLic .menu>a,.mbsArfLic .dd>button{
+    padding:10px 10px;border-radius:12px;font-size:13px;
+    color:rgba(2,6,23,.78);border:0;background:transparent;cursor:pointer;
+    font-family:inherit;font-weight:900;
+  }
+  .mbsArfLic .menu>a:hover,.mbsArfLic .dd>button:hover{background:rgba(2,6,23,.05)}
+  .mbsArfLic .active{
+    background:rgba(15,110,72,.10);
+    border:1px solid rgba(15,110,72,.18);
+    color:rgba(2,6,23,.86);
+  }
+
+  .mbsArfLic .dd{position:relative}
+  .mbsArfLic .dd>button{display:inline-flex;align-items:center;gap:8px}
+  .mbsArfLic .panel{
+    position:absolute;top:calc(100% + 10px);left:0;min-width:260px;
+    background:#fff;border:1px solid rgba(15,23,42,.10);
+    border-radius:16px;box-shadow:var(--shadow2);padding:8px;display:none;
+  }
+  .mbsArfLic .panel a{
+    display:flex;gap:10px;align-items:flex-start;padding:10px 10px;
+    border-radius:12px;font-size:13px;color:rgba(2,6,23,.82);font-weight:900;
+  }
+  .mbsArfLic .panel a:hover{background:rgba(2,6,23,.05)}
+  .mbsArfLic .panel .mini{font-size:12px;color:var(--muted);font-weight:600;margin-top:2px}
+  .mbsArfLic .dd:hover .panel{display:block}
+  .mbsArfLic .dd.open .panel{display:block}
+
+  .mbsArfLic .hdrCtas{display:flex;align-items:center;gap:10px;justify-content:flex-end}
+  .mbsArfLic .phonePill{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:10px 12px;border-radius:999px;
+    background:#fff;border:1px solid rgba(15,23,42,.12);
+    color:rgba(2,6,23,.82);font-weight:900;font-size:13px;
+  }
+  .mbsArfLic .phonePill:hover{background:rgba(2,6,23,.03)}
+  .mbsArfLic .mToggle{
+    display:none;justify-self:center;
+    padding:10px 12px;border-radius:12px;border:1px solid rgba(15,23,42,.12);
+    background:#fff;font-weight:900;cursor:pointer;
+  }
+
+  /* Sections */
+  .mbsArfLic section{padding:76px 0}
+  .mbsArfLic .soft{background:var(--soft);border-top:1px solid rgba(15,23,42,.06);border-bottom:1px solid rgba(15,23,42,.06)}
+  .mbsArfLic .head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:26px}
+  .mbsArfLic .head h2{margin:0;font-size:clamp(24px,2.8vw,34px);letter-spacing:-.03em}
+  .mbsArfLic .head p{margin:0;color:var(--muted);max-width:82ch;line-height:1.7;font-size:14.2px}
+
+  /* Split hero */
+  .mbsArfLic .hero{padding:28px 0 28px}
+  .mbsArfLic .heroGrid{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:stretch;
+  }
+  .mbsArfLic .heroLeft{
+    border:1px solid var(--line); border-radius:28px; padding:clamp(20px,3vw,30px);
+    box-shadow:var(--shadow); background:
+      radial-gradient(700px 240px at 10% 10%, rgba(15,110,72,.10), rgba(15,110,72,0) 60%),
+      linear-gradient(180deg, rgba(2,6,23,.02), rgba(2,6,23,0));
+  }
+  .mbsArfLic .pill{
+    display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;
+    background:rgba(15,110,72,.10);border:1px solid rgba(15,110,72,.16);
+    color:rgba(2,6,23,.86);font-weight:900;font-size:12.5px;width:fit-content;
+  }
+  .mbsArfLic .dot{width:8px;height:8px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 4px rgba(15,110,72,.18)}
+  .mbsArfLic .heroLeft h1{
+    margin:12px 0 10px;font-size:clamp(30px,3.4vw,50px);
+    line-height:1.06;letter-spacing:-0.045em;color:rgba(2,6,23,.94);
+  }
+  .mbsArfLic .heroLeft p{
+    margin:0;color:rgba(2,6,23,.78);font-size:15px;line-height:1.75;max-width:80ch;
+  }
+  .mbsArfLic .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+
+  .mbsArfLic .heroRight{
+    border:1px solid var(--line); border-radius:28px; overflow:hidden;
+    box-shadow:var(--shadow2); background:#fff; display:flex; flex-direction:column;
+  }
+  .mbsArfLic .heroImg{
+    height:220px; background:#eaf2ef; border-bottom:1px solid rgba(15,23,42,.08);
+    background-image:url("HERO_IMAGE_URL");
+    background-size:cover;background-position:center;
+  }
+  .mbsArfLic .heroCard{
+    padding:18px; display:grid; gap:12px;
+  }
+  .mbsArfLic .heroCard h3{margin:0;letter-spacing:-.02em}
+  .mbsArfLic .mini{color:var(--muted);font-size:13.8px;line-height:1.6;margin:0}
+  .mbsArfLic .bullets{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .mbsArfLic .bullets li{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.55;color:rgba(2,6,23,.80)}
+  .mbsArfLic .tick{
+    width:22px;height:22px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    background:rgba(15,110,72,.10);border:1px solid rgba(15,110,72,.18);color:var(--accent);
+    flex:0 0 auto; transform:translateY(1px);
+  }
+
+  /* Cards / grids */
+  .mbsArfLic .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .mbsArfLic .card{
+    background:#fff;border:1px solid var(--line);border-radius:24px;padding:18px;
+    box-shadow:0 12px 24px rgba(2,6,23,.06);
+  }
+  .mbsArfLic .card h3{margin:0 0 8px;letter-spacing:-.02em}
+  .mbsArfLic .card p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
+  .mbsArfLic .callout{
+    margin-top:14px;padding:14px 14px;border-radius:18px;
+    background:rgba(15,110,72,.08);border:1px solid rgba(15,110,72,.16);
+    color:rgba(2,6,23,.80);line-height:1.65;font-size:13.8px;
+  }
+
+  /* Compare strip */
+  .mbsArfLic .compare{
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;
+  }
+  .mbsArfLic .cmp{
+    border:1px dashed rgba(15,23,42,.16); border-radius:20px; padding:14px;
+    background:rgba(2,6,23,.015);
+  }
+  .mbsArfLic .cmp b{display:block;letter-spacing:-.01em}
+  .mbsArfLic .cmp span{display:block;margin-top:6px;color:var(--muted);font-size:13.6px;line-height:1.6}
+
+  /* Timeline problems */
+  .mbsArfLic .timeline{display:grid;gap:10px}
+  .mbsArfLic .tItem{
+    background:#fff;border:1px solid var(--line);border-radius:20px;padding:14px;
+    box-shadow:0 10px 20px rgba(2,6,23,.05);
+    display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start;
+  }
+  .mbsArfLic .tNum{
+    width:40px;height:40px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    background:rgba(15,110,72,.10);border:1px solid rgba(15,110,72,.18);color:var(--accent);
+    font-weight:900;
+  }
+  .mbsArfLic .tItem b{display:block;letter-spacing:-.01em}
+  .mbsArfLic .tItem span{display:block;margin-top:6px;color:var(--muted);font-size:13.6px;line-height:1.65}
+
+  /* Roadmap steps (4) */
+  .mbsArfLic .steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .mbsArfLic .step{
+    background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;
+    box-shadow:0 12px 24px rgba(2,6,23,.06);
+  }
+  .mbsArfLic .stepTop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+  .mbsArfLic .tagPill{
+    padding:8px 12px;border-radius:999px;background:rgba(2,6,23,.04);border:1px solid rgba(2,6,23,.08);
+    color:rgba(2,6,23,.68);font-weight:900;font-size:12px;white-space:nowrap;
+  }
+  .mbsArfLic .step b{display:block;letter-spacing:-.02em;font-size:15px}
+  .mbsArfLic .step span{display:block;margin-top:6px;color:var(--muted);line-height:1.65;font-size:13.5px}
+
+  /* Booking embed */
+  .mbsArfLic .split{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:start}
+  .mbsArfLic .embed{
+    border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow2);background:#fff;
+  }
+  .mbsArfLic .ratio{position:relative;width:100%;padding-top:62%;background:rgba(2,6,23,.04)}
+  .mbsArfLic .ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .mbsArfLic .embedNote{padding:14px 16px;color:var(--muted);font-size:12.8px;line-height:1.55}
+
+  /* Guide */
+  .mbsArfLic .guide{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center}
+  .mbsArfLic .avatar{
+    width:120px;height:120px;border-radius:26px;overflow:hidden;
+    border:1px solid rgba(15,23,42,.10);box-shadow:0 12px 24px rgba(2,6,23,.08);
+    background:rgba(2,6,23,.04);
+  }
+  .mbsArfLic .avatar .img{
+    width:100%;height:100%;background-image:var(--guideImg);
+    background-size:cover;background-position:center;
+  }
+
+  /* FAQ */
+  .mbsArfLic .faq{display:grid;gap:10px}
+  .mbsArfLic details{
+    background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 14px;
+    box-shadow:0 10px 20px rgba(2,6,23,.05);
+  }
+  .mbsArfLic summary{cursor:pointer;font-weight:900;letter-spacing:-.01em;list-style:none}
+  .mbsArfLic summary::-webkit-details-marker{display:none}
+  .mbsArfLic details p{margin:10px 0 0;color:var(--muted);line-height:1.7;font-size:14px}
+
+  /* Contact + footer */
+  .mbsArfLic .contactGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .mbsArfLic .cCard{
+    background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;
+    box-shadow:0 12px 24px rgba(2,6,23,.06);
+  }
+  .mbsArfLic .cCard b{display:block;letter-spacing:-.02em}
+  .mbsArfLic .cCard span{display:block;margin-top:6px;color:var(--muted);font-size:13.8px;line-height:1.55}
+
+  .mbsArfLic footer{padding:42px 0;border-top:1px solid rgba(15,23,42,.08);background:#fff}
+  .mbsArfLic .foot{display:grid;grid-template-columns:1.1fr .9fr .9fr;gap:14px;align-items:start}
+  .mbsArfLic .foot h4{margin:0 0 10px;font-size:13px;letter-spacing:-.01em}
+  .mbsArfLic .foot a{display:block;padding:8px 0;color:var(--muted);font-size:13.5px}
+  .mbsArfLic .foot a:hover{color:var(--ink)}
+  .mbsArfLic .copy{margin-top:12px;color:var(--muted);font-size:12.5px;line-height:1.6}
+
+  /* Mobile sticky CTA */
+  .mbsArfLic .stickyBook{
+    display:none;position:fixed;left:0;right:0;bottom:0;z-index:90;
+    padding:10px 12px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+    border-top:1px solid rgba(15,23,42,.10);
+  }
+  .mbsArfLic .stickyBook .inner{
+    width:min(var(--max),calc(100% - 24px));margin:0 auto;
+    display:flex;gap:10px;align-items:center;justify-content:space-between;
+  }
+  .mbsArfLic .stickyBook .miniTxt{
+    font-size:12.5px;color:rgba(2,6,23,.78);font-weight:900;letter-spacing:-.01em;
+  }
+
+  /* Responsive */
+  @media (max-width:1120px){
+    .mbsArfLic .heroGrid{grid-template-columns:1fr}
+    .mbsArfLic .grid3{grid-template-columns:1fr}
+    .mbsArfLic .compare{grid-template-columns:1fr}
+    .mbsArfLic .steps4{grid-template-columns:1fr}
+    .mbsArfLic .split{grid-template-columns:1fr}
+    .mbsArfLic .contactGrid{grid-template-columns:1fr}
+  }
+  @media (max-width:980px){
+    .mbsArfLic .nav{grid-template-columns:1fr auto}
+    .mbsArfLic .menu{display:none;justify-content:flex-start;grid-column:1/-1;padding-bottom:10px}
+    .mbsArfLic .menu.open{display:flex}
+    .mbsArfLic .mToggle{display:inline-flex}
+    .mbsArfLic .hdrCtas{grid-column:1/-1;justify-content:flex-start}
+  }
+  @media (max-width:640px){
+    .mbsArfLic .wrap{width:min(var(--max),calc(100% - 32px))}
+    .mbsArfLic .ratio{padding-top:86%}
+    .mbsArfLic .guide{grid-template-columns:1fr}
+    .mbsArfLic .avatar{width:96px;height:96px;border-radius:22px}
+    .mbsArfLic .stickyBook{display:block}
+    .mbsArfLic main{padding-bottom:74px}
+  }
+  @media (prefers-reduced-motion: reduce){ .mbsArfLic .btn{transition:none} }
+</style>
+
+<div class="mbsArfLic" id="top">
+  <!-- TOP NOTICE BAR -->
+
+
+  <!-- HEADER -->
+  <main>
+    <!-- HERO (split) -->
+    <section class="hero" aria-label="ARF licensing hero">
+      <div class="wrap">
+        <div class="heroGrid">
+          <div class="heroLeft">
+            <div class="pill"><span class="dot"></span> California ARF licensing support</div>
+
+            <h1>Adult Residential Facility (ARF) licensing — made clear, organized, and executable.</h1>
+
+            <p>
+              An <b>ARF license</b> is for facilities providing <b>24-hour, non-medical care and supervision</b>
+              for adults (commonly ages <b>18–59</b>, with certain 60+ exceptions under specific rules).
+              If you’re opening, buying, or changing operations, we help you understand the path,
+              sequence the work correctly, and prepare clean materials to reduce preventable delays.
+            </p>
+
+            <div class="ctaRow">
+              <a class="btn primary" href="#book">Book an ARF Licensing Consultation</a>
+              <a class="btn ghost" href="#what">What ARF is (quick)</a>
+            </div>
+
+            <div class="callout">
+              <b>Goal:</b> reduce rework + reduce delays by making the next step obvious — and keeping your paperwork “review-ready.”
+            </div>
+          </div>
+
+          <div class="heroRight">
+            <div class="heroImg" role="img" aria-label="Adult residential facility licensing image"></div>
+            <div class="heroCard">
+              <h3>Quick eligibility check</h3>
+              <p class="mini">If these sound like you, you’re in the right place:</p>
+              <ul class="bullets">
+                <li><div class="tick" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg>
+                </div><div>You’re serving <b>adults</b> needing supervision and assistance in a residential setting.</div></li>
+
+                <li><div class="tick" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg>
+                </div><div>You want the <b>application sequence</b> to be correct (so you don’t backtrack).</div></li>
+
+                <li><div class="tick" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg>
+                </div><div>You want to avoid <b>documentation gaps</b> that trigger follow-ups and resubmissions.</div></li>
+              </ul>
+
+              <div class="ctaRow" style="margin-top:6px">
+                <a class="btn primary" href="BOOKING_LINK_ARF">Open calendar</a>
+                <a class="btn link" href="tel:{{custom_values.companyphone_display}}">Call us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT -->
+    <section id="what" aria-label="What ARF licensing is">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>What is an ARF license in California?</h2>
+            <p>
+              ARFs are licensed through California’s Community Care Licensing (CCLD/CDSS) and provide 24-hour, non-medical care and supervision
+              for adults who need support with daily living and safety.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid3">
+          <div class="card">
+            <h3>Population served</h3>
+            <p>
+              Generally adults 18–59 (with specific allowances for certain 60+ situations), often with mental, physical, or developmental disabilities.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Type of care</h3>
+            <p>
+              24-hour non-medical care and supervision — focus is on safety, assistance, and day-to-day support.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Oversight</h3>
+            <p>
+              Licensed and monitored under California’s Community Care Licensing (CDSS/CCLD) system.
+            </p>
+          </div>
+        </div>
+
+        <div class="compare" aria-label="ARF vs RCFE comparison">
+          <div class="cmp">
+            <b>ARF (Adult Residential Facility)</b>
+            <span>Adult-focused residential care model (often ages 18–59) with 24-hour non-medical supervision and support.</span>
+          </div>
+          <div class="cmp">
+            <b>RCFE (Residential Care Facility for the Elderly)</b>
+            <span>Elder-focused residential care model (typically serving seniors). If you’re primarily serving older adults, RCFE may be the right track.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <b>Not sure which applies?</b> Book a licensing consult — we’ll confirm your facility type and the cleanest path forward.
+        </div>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="#book">Book ARF consult</a>
+          <a class="btn ghost" href="RCFE_PAGE_LINK">Go to RCFE page</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMS -->
+    <section id="stuck" class="soft" aria-label="Where ARF applications get stuck">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>Where ARF applications get stuck</h2>
+            <p>
+              The most common delays come from sequencing mistakes and paperwork that isn’t “review-ready.”
+              Here’s what we help you avoid.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="tItem"><div class="tNum">1</div><div><b>Wrong order of operations</b><span>People work hard on the wrong tasks first, then have to redo steps when requirements come into focus.</span></div></div>
+          <div class="tItem"><div class="tNum">2</div><div><b>Documentation gaps</b><span>Missing items or misaligned policies trigger follow-ups, corrections, and resubmission cycles.</span></div></div>
+          <div class="tItem"><div class="tNum">3</div><div><b>Readiness mismatch</b><span>Operations and documentation don’t match what reviewers expect to see, which slows approvals.</span></div></div>
+          <div class="tItem"><div class="tNum">4</div><div><b>Timeline pressure</b><span>Facility planning, staffing, and licensing tasks aren’t coordinated — causing last-minute scrambles.</span></div></div>
+        </div>
+
+        <div class="ctaRow" style="margin-top:18px">
+          <a class="btn primary" href="#book">Book ARF consult (avoid rework)</a>
+          <a class="btn ghost" href="#roadmap">See the roadmap</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section id="roadmap" aria-label="ARF licensing roadmap">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>Our ARF licensing roadmap</h2>
+            <p>A clear path you can follow — with practical support and clean handoffs.</p>
+          </div>
+        </div>
+
+        <div class="steps4">
+          <div class="step">
+            <div class="stepTop"><div class="tNum" style="width:44px;height:44px">01</div><div class="tagPill">Assess</div></div>
+            <b>Confirm facility type + scenario</b>
+            <span>New license, change of ownership, change of location, or operational change — we clarify what applies.</span>
+          </div>
+          <div class="step">
+            <div class="stepTop"><div class="tNum" style="width:44px;height:44px">02</div><div class="tagPill">Checklist</div></div>
+            <b>Build your requirements list</b>
+            <span>What’s required vs optional, what to do first, and what to stop doing.</span>
+          </div>
+          <div class="step">
+            <div class="stepTop"><div class="tNum" style="width:44px;height:44px">03</div><div class="tagPill">Organize</div></div>
+            <b>Make documentation “review-ready”</b>
+            <span>We help you reduce gaps, inconsistencies, and formatting issues that cause delays.</span>
+          </div>
+          <div class="step">
+            <div class="stepTop"><div class="tNum" style="width:44px;height:44px">04</div><div class="tagPill">Submit</div></div>
+            <b>Clean handoff + readiness prep</b>
+            <span>Submission support and realistic expectations so you don’t get stuck in rework loops.</span>
+          </div>
+        </div>
+
+        <div class="ctaRow" style="margin-top:18px">
+          <a class="btn primary" href="#book">Book the ARF consult</a>
+          <a class="btn ghost" href="#included">What you get</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- INCLUDED -->
+    <section id="included" class="soft" aria-label="What you get for ARF licensing">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>What you get (ARF licensing support)</h2>
+            <p>Clear deliverables — so you leave the consult ready to execute.</p>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="card">
+            <h3>Core support</h3>
+            <ul class="bullets" style="margin-top:10px">
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div><b>Clarity on requirements:</b> what applies to your scenario and what to prioritize</div></li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div><b>Documentation readiness:</b> reduce gaps and rework before submission</div></li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div><b>Sequence planning:</b> do the right things in the right order</div></li>
+            </ul>
+
+            <div class="callout">
+              <b>Note:</b> We provide operational/administrative guidance. For legal advice, we’ll direct you to the appropriate professional.
+            </div>
+
+            <div class="ctaRow">
+              <a class="btn primary" href="#book">Book consult</a>
+              <a class="btn link" href="mailto:{{custom_values.companyemail}}">Email us</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>You’ll leave with</h3>
+            <p class="mini">Tangible outputs — not just “more information.”</p>
+            <ul class="bullets" style="margin-top:10px">
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>A prioritized checklist specific to your facility and timeline</div></li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>A sequence plan (what to do first / next / later)</div></li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>A list of common risk areas to address early</div></li>
+            </ul>
+
+            <div class="callout">
+              Some adult community care facilities also coordinate with Regional Centers and service levels depending on the population and program model.
+              If that’s relevant to you, we’ll route the conversation accordingly.
+            </div>
+
+            <div class="ctaRow">
+              <a class="btn ghost" href="ALW_APP_LINK">ALW application</a>
+              <a class="btn ghost" href="CONSULTING_LINK">RCFE consulting</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GUIDE -->
+    <section id="guide" aria-label="Your guide">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>Your guide through ARF licensing</h2>
+            <p>Practical. Organized. Built around momentum — not overwhelm.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="guide">
+            <div class="avatar" aria-hidden="true"><div class="img"></div></div>
+            <div>
+              <h3>From Kamil</h3>
+              <p class="mini">
+                ARF licensing can feel like a moving target when you’re building, staffing, and trying to keep timelines realistic.
+                Our role is to make the next step clear and help you avoid preventable delays from sequencing mistakes and documentation rework.
+              </p>
+              <div class="ctaRow" style="margin-top:12px">
+                <a class="btn primary" href="#book">Book ARF consult</a>
+                <a class="btn link" href="tel:{{custom_values.companyphone_display}}">Call: {{custom_values.companyphone_display}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section id="book" class="soft" aria-label="Book ARF consult">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>Book an ARF Licensing Consultation</h2>
+            <p>We’ll confirm what applies to your scenario and map the cleanest next steps.</p>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="card">
+            <h3>What to bring (if available)</h3>
+            <p class="mini">Even a quick overview is fine — we’ll keep this practical.</p>
+            <ul class="bullets" style="margin-top:10px">
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>Facility address/county + target timeline</div></li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>Scenario: new license vs change of ownership vs changes in operations</div></li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>Known blockers (permits, staffing plan, documentation questions)</div></li>
+            </ul>
+
+            <div class="callout">
+              Every facility is different — the consult is about clarity, sequencing, and readiness.
+            </div>
+
+            <div class="ctaRow">
+              <a class="btn primary" href="BOOKING_LINK_ARF">Open calendar</a>
+              <a class="btn link" href="mailto:{{custom_values.companyemail}}">Email: {{custom_values.companyemail}}</a>
+            </div>
+          </div>
+
+          <div class="embed">
+            <div class="ratio">
+              <iframe src="BOOKING_IFRAME_ARF" title="ARF Licensing Consultation Calendar" loading="lazy"></iframe>
+            </div>
+            <div class="embedNote">
+              If the calendar doesn’t load, use this link:
+              <a href="BOOKING_LINK_ARF" style="color:var(--accent);font-weight:900">Book an ARF Licensing Consultation</a>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" aria-label="ARF licensing FAQs">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>ARF Licensing FAQs</h2>
+            <p>Short answers to the most common questions.</p>
+          </div>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>What does ARF stand for?</summary>
+            <p>ARF stands for Adult Residential Facility — a licensed facility providing 24-hour non-medical care and supervision for adults.</p>
+          </details>
+          <details>
+            <summary>Is ARF the same as RCFE?</summary>
+            <p>No. ARF typically focuses on adults (often 18–59), while RCFE focuses on elder care. If you’re unsure, book a consult and we’ll confirm the right facility type.</p>
+          </details>
+          <details>
+            <summary>Is this legal advice?</summary>
+            <p>No — we provide operational and administrative guidance to help you prepare clean materials and avoid preventable delays. For legal questions, we’ll point you to the appropriate professional.</p>
+          </details>
+          <details>
+            <summary>What’s the best first step?</summary>
+            <p>Book an ARF licensing consult. We’ll clarify your scenario and give you a clean sequence plan for next steps.</p>
+          </details>
+        </div>
+
+        <div class="ctaRow" style="margin-top:18px">
+          <a class="btn primary" href="#book">Book ARF consult</a>
+          <a class="btn ghost" href="RCFE_PAGE_LINK">RCFE page</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="soft" aria-label="Contact">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>Talk to us</h2>
+            <p>Tell us what you’re trying to solve. We’ll keep it simple and route you correctly.</p>
+          </div>
+        </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- Mobile sticky CTA -->
+  <div class="stickyBook" aria-label="Sticky book bar">
+    <div class="inner">
+      <div class="miniTxt">Ready to move forward?</div>
+      <a class="btn primary" href="BOOKING_LINK_ARF">Book ARF consult</a>
+    </div>
+  </div>
+
+  <!-- SEO: Schema (FAQ + Service) -->
+  <script type="application/ld+json" id="arfServiceSchema">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"{{custom_values.snapshot__business_name}}",
+    "serviceType":"Adult Residential Facility (ARF) Licensing Support",
+    "telephone":"{{custom_values.companyphone_display}}",
+    "email":"{{custom_values.companyemail}}",
+    "areaServed":"California",
+    "url":"ARF_PAGE_URL"
+  }
+  </script>
+
+  <script type="application/ld+json" id="arfFaqSchema">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"What does ARF stand for?","acceptedAnswer":{"@type":"Answer","text":"ARF stands for Adult Residential Facility — a licensed facility providing 24-hour non-medical care and supervision for adults."}},
+      {"@type":"Question","name":"Is ARF the same as RCFE?","acceptedAnswer":{"@type":"Answer","text":"No. ARF typically focuses on adults (often 18–59), while RCFE focuses on elder care. If you’re unsure, book a consult to confirm the right facility type."}},
+      {"@type":"Question","name":"Is this legal advice?","acceptedAnswer":{"@type":"Answer","text":"No — this is operational and administrative guidance. For legal advice, consult a qualified professional."}},
+      {"@type":"Question","name":"What’s the best first step?","acceptedAnswer":{"@type":"Answer","text":"Book an ARF licensing consult to clarify your scenario and get a clean sequence plan for next steps."}}
+    ]
+  }
+  </script>
+</div>
+
+<script>
+  (function(){
+    const replacements = {
+      // booking (defaulting to your existing licensing calendar)
+      "BOOKING_LINK_ARF": "https://api.leadconnectorhq.com/widget/bookings/alw-application-call05zqka",
+      "BOOKING_IFRAME_ARF": "https://api.leadconnectorhq.com/widget/booking/H3K9LIzRf7zxAwtfyrdN",
+
+      // swap these to your real URLs/slugs
+      "HOME_LINK": "#",
+      "RCFE_PAGE_LINK": "#",
+      "ALW_APP_LINK": "#",
+      "FUNDING_LINK": "#",
+      "CONSULTING_LINK": "#",
+      "ARF_PAGE_URL": "#",
+
+      // hero image token (swap anytime)
+      "HERO_IMAGE_URL": "https://assets.cdn.filesafe.space/mxGAJ81pMGDwP9gcmCOZ/media/699a089e20c0358e5bafb30c.jpg"
+    };
+
+    const root = document.querySelector(".mbsArfLic");
+    if(!root) return;
+
+    // Year
+    const yr = root.querySelector("#yr");
+    if(yr) yr.textContent = new Date().getFullYear();
+
+    // Replace href/src + background-image token in CSS block via style text
+    const setAttr = (sel, attr) => {
+      root.querySelectorAll(sel).forEach(el=>{
+        const v = el.getAttribute(attr);
+        if(!v) return;
+        Object.keys(replacements).forEach(k=>{
+          if(v.indexOf(k) !== -1) el.setAttribute(attr, v.split(k).join(replacements[k]));
+        });
+      });
+    };
+    setAttr("a[href]", "href");
+    setAttr("iframe[src]", "src");
+
+    // Replace HERO_IMAGE_URL inside the hero image inline CSS (it’s in the stylesheet, so we swap by setting style)
+    const heroImg = root.querySelector(".heroImg");
+    if(heroImg){
+      heroImg.style.backgroundImage = `url("${replacements.HERO_IMAGE_URL}")`;
+    }
+
+    // Schema URL swap
+    const serviceSchema = root.querySelector("#arfServiceSchema");
+    if(serviceSchema){
+      serviceSchema.textContent = serviceSchema.textContent.split("ARF_PAGE_URL").join(replacements.ARF_PAGE_URL);
+    }
+
+    // Mobile menu
+    const toggle = root.querySelector(".mToggle");
+    const nav = root.querySelector("#primaryNav");
+    if(toggle && nav){
+      toggle.addEventListener("click", ()=>{
+        const open = nav.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    }
+
+    // Dropdown click support (mobile)
+    root.querySelectorAll(".dd .ddBtn").forEach(btn=>{
+      btn.addEventListener("click",(e)=>{
+        e.preventDefault();
+        const dd = btn.closest(".dd");
+        const isOpen = dd.classList.toggle("open");
+        btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+    });
+
+    // Smooth scroll
+    root.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener("click",(e)=>{
+        const id = a.getAttribute("href");
+        if(!id || id === "#") return;
+        const el = root.querySelector(id);
+        if(!el) return;
+        e.preventDefault();
+        el.scrollIntoView({behavior:"smooth", block:"start"});
+      });
+    });
+  })();
+</script>
