@@ -527,6 +527,15 @@ Quick edits (search these):
     .mbs3-header-actions{ gap:10px; }
     .mbs3-phone{ display:none; } /* keep header clean on very small screens */
   }
+
+  /* ---- Consultation Modal (standalone demo — GHL uses its own modal in production) ---- */
+  #mbsModal{display:none;position:fixed;inset:0;z-index:10000;align-items:center;justify-content:center;padding:16px;}
+  #mbsModal.is-open{display:flex;}
+  #mbsModalBackdrop{position:absolute;inset:0;background:rgba(11,18,32,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);}
+  #mbsModalDialog{position:relative;z-index:1;width:min(820px,100%);background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 48px 120px rgba(11,18,32,.32);}
+  #mbsModalClose{position:absolute;top:12px;right:14px;z-index:2;width:34px;height:34px;border-radius:50%;border:none;background:rgba(11,18,32,.10);cursor:pointer;font-size:17px;line-height:34px;color:rgba(11,18,32,.65);transition:.15s ease;}
+  #mbsModalClose:hover{background:rgba(11,18,32,.18);color:#0b1220;}
+  #mbsModalIframe{width:100%;height:min(82vh,720px);border:none;display:block;}
 </style>
 
 <div class="mbs3" id="top">
@@ -875,6 +884,16 @@ Quick edits (search these):
       </div>
     </div>
   </footer>
+
+  <!-- CONSULTATION MODAL (standalone demo — GHL uses its own modal system in production) -->
+  <div id="mbsModal" role="dialog" aria-modal="true" aria-label="Book a Consultation">
+    <div id="mbsModalBackdrop"></div>
+    <div id="mbsModalDialog">
+      <button id="mbsModalClose" aria-label="Close">✕</button>
+      <iframe id="mbsModalIframe" src="" allow="camera; microphone; fullscreen; payment" title="Book a Consultation"></iframe>
+    </div>
+  </div>
+
 </div>
 
 <script>
@@ -937,4 +956,43 @@ Quick edits (search these):
       });
     });
   })();
+</script>
+
+<script>
+/* Consultation modal interceptor — catches clicks on booking links and opens inline iframe */
+(function(){
+  var EMBED = "https://api.leadconnectorhq.com/widget/booking/GCyM1GS3QXkgVDFllYMu";
+  var modal    = document.getElementById('mbsModal');
+  var iframe   = document.getElementById('mbsModalIframe');
+  var closeBtn = document.getElementById('mbsModalClose');
+  var backdrop = document.getElementById('mbsModalBackdrop');
+  if(!modal || !iframe) return;
+
+  function openModal(){
+    iframe.src = EMBED;
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    modal.classList.remove('is-open');
+    iframe.src = '';
+    document.body.style.overflow = '';
+  }
+
+  // Intercept any click whose href points to the booking URL (or is still a placeholder)
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a');
+    if(!a) return;
+    var h = a.getAttribute('href') || '';
+    if(h.indexOf('leadconnectorhq.com/widget/book') !== -1 ||
+       h === 'BOOKING_LINK' || h === 'BOOKING_LINK_BILLING'){
+      e.preventDefault();
+      openModal();
+    }
+  });
+
+  if(closeBtn)  closeBtn.addEventListener('click', closeModal);
+  if(backdrop)  backdrop.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+})();
 </script>
