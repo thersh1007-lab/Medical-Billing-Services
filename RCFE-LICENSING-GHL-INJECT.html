@@ -1,0 +1,888 @@
+<!-- GHL INJECT: rcfe-licensing-html — paste entire block into one Custom Code element -->
+<!--
+MEDBILLINGCO.COM — RCFE LICENSING PAGE (PREMIUM STYLE + STORYBRAND ORDER) — v2
+Paste into ONE GoHighLevel Custom Code block.
+
+What changed vs v1:
+✅ Hero now defines RCFE immediately ("what it is" + "why it matters")
+✅ Added StoryBrand "problems" section (issue cards)
+✅ Added 3-step "plan" section (less overwhelm)
+✅ Added header right-side CTAs (phone + book)
+✅ Added “From Kamil” guide section
+✅ Added mobile sticky “Book consult” bar
+✅ Fixed hero CTA nesting + improved responsive grids
+
+Booking links (Licensing Consultation Calendar):
+- Booking link: https://api.leadconnectorhq.com/widget/bookings/alw-application-call05zqka
+- Embed iframe: https://api.leadconnectorhq.com/widget/booking/H3K9LIzRf7zxAwtfyrdN
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+  .mbsRcfeLic{
+    --bg:#ffffff; --ink:#0b1220; --muted:#4b5563; --soft:#f6f8fb;
+    --accent:#168a5b; --accent2:#0f6e48;
+    --shadow:0 26px 64px rgba(2,6,23,.12);
+    --shadow2:0 14px 34px rgba(2,6,23,.10);
+    --max:1160px;
+
+    /* Swap hero image here */
+    --heroImg:url("https://images.pexels.com/photos/18459702/pexels-photo-18459702.jpeg");
+
+    /* Swap guide portrait here (Kamil) */
+    --guideImg:url("https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/a2244902-df92-4288-b09a-8fa156d5065c.png");
+  }
+
+  .mbsRcfeLic *{box-sizing:border-box}
+  .mbsRcfeLic{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+  .mbsRcfeLic a{color:inherit;text-decoration:none}
+  .mbsRcfeLic img{max-width:100%;display:block}
+  .mbsRcfeLic .wrap{width:min(var(--max),calc(100% - 48px));margin:0 auto}
+
+  /* Buttons */
+  .mbsRcfeLic .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:12px 16px;border-radius:999px;
+    font-weight:900;font-size:14px;border:1px solid transparent;
+    transition:.18s ease;white-space:nowrap;user-select:none;
+  }
+  .mbsRcfeLic .btn.primary{background:var(--accent);color:#fff;box-shadow:0 10px 22px rgba(22,138,91,.22)}
+  .mbsRcfeLic .btn.primary:hover{background:var(--accent2);transform:translateY(-1px)}
+  .mbsRcfeLic .btn.ghost{background:#fff;border-color:rgba(15,23,42,.14);color:rgba(2,6,23,.88)}
+  .mbsRcfeLic .btn.ghost:hover{background:rgba(2,6,23,.04)}
+  .mbsRcfeLic .btn.link{background:transparent;border-color:transparent;padding:10px 0;border-radius:12px;color:var(--accent);font-weight:900}
+  .mbsRcfeLic .btn.link:hover{opacity:.9}
+
+  /* Header */
+  .mbsRcfeLic .hdr{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(15,23,42,.08);
+  }
+  .mbsRcfeLic .nav{
+    display:grid;grid-template-columns:220px 1fr auto;
+    align-items:center;gap:16px;padding:14px 0;
+  }
+  .mbsRcfeLic .brand{display:flex;align-items:center;gap:10px;min-width:180px}
+  .mbsRcfeLic .brand img{height:38px;width:auto}
+
+  .mbsRcfeLic .menu{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+  .mbsRcfeLic .menu>a,.mbsRcfeLic .dd>button{
+    padding:10px 10px;border-radius:12px;font-size:13px;
+    color:rgba(2,6,23,.78);border:0;background:transparent;cursor:pointer;
+    font-family:inherit;font-weight:900;
+  }
+  .mbsRcfeLic .menu>a:hover,.mbsRcfeLic .dd>button:hover{background:rgba(2,6,23,.05)}
+  .mbsRcfeLic .active{
+    background:rgba(22,138,91,.10);
+    border:1px solid rgba(22,138,91,.18);
+    color:rgba(2,6,23,.86);
+  }
+
+  .mbsRcfeLic .dd{position:relative}
+  .mbsRcfeLic .dd>button{display:inline-flex;align-items:center;gap:8px}
+  .mbsRcfeLic .panel{
+    position:absolute;top:calc(100% + 10px);left:0;min-width:260px;
+    background:#fff;border:1px solid rgba(15,23,42,.10);
+    border-radius:16px;box-shadow:var(--shadow2);padding:8px;display:none;
+  }
+  .mbsRcfeLic .panel a{
+    display:flex;gap:10px;align-items:flex-start;padding:10px 10px;
+    border-radius:12px;font-size:13px;color:rgba(2,6,23,.82);font-weight:900;
+  }
+  .mbsRcfeLic .panel a:hover{background:rgba(2,6,23,.05)}
+  .mbsRcfeLic .panel .mini{font-size:12px;color:var(--muted);font-weight:600;margin-top:2px}
+  .mbsRcfeLic .dd:hover .panel{display:block}
+  .mbsRcfeLic .dd.open .panel{display:block}
+
+  .mbsRcfeLic .hdrCtas{display:flex;align-items:center;gap:10px;justify-content:flex-end}
+  .mbsRcfeLic .phonePill{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:10px 12px;border-radius:999px;
+    background:#fff;border:1px solid rgba(15,23,42,.12);
+    color:rgba(2,6,23,.82);font-weight:900;font-size:13px;
+  }
+  .mbsRcfeLic .phonePill:hover{background:rgba(2,6,23,.03)}
+  .mbsRcfeLic .mToggle{
+    display:none;justify-self:center;
+    padding:10px 12px;border-radius:12px;border:1px solid rgba(15,23,42,.12);
+    background:#fff;font-weight:900;cursor:pointer;
+  }
+
+  /* Hero */
+  .mbsRcfeLic .hero{padding:22px 0 26px}
+  .mbsRcfeLic .heroShell{
+    position:relative;border-radius:clamp(22px,3vw,34px);
+    overflow:hidden;box-shadow:var(--shadow);background:#0b1220;
+  }
+  .mbsRcfeLic .heroBg{
+    position:absolute;inset:0;background-image:var(--heroImg);
+    background-size:cover;background-position:center;transform:scale(1.02);
+    filter:saturate(1.02) contrast(1.02);
+  }
+  .mbsRcfeLic .heroOverlay{
+    position:absolute;inset:0;
+    background:
+      radial-gradient(900px 520px at 16% 26%, rgba(255,255,255,.18), rgba(255,255,255,0) 62%),
+      linear-gradient(90deg, rgba(11,18,32,.74) 0%, rgba(11,18,32,.36) 58%, rgba(11,18,32,.62) 100%);
+  }
+  .mbsRcfeLic .heroInner{
+    position:relative;padding:clamp(28px,4.2vw,58px);
+    min-height:clamp(440px,58vh,620px);
+    display:flex;align-items:flex-end;
+  }
+  .mbsRcfeLic .pill{
+    display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;
+    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);
+    color:rgba(255,255,255,.92);font-weight:800;font-size:12.5px;width:fit-content;
+  }
+  .mbsRcfeLic .dot{width:8px;height:8px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 4px rgba(22,138,91,.20)}
+  .mbsRcfeLic .hero h1{
+    margin:14px 0 10px;font-size:clamp(30px,3.4vw,54px);
+    line-height:1.05;letter-spacing:-0.045em;color:#fff;text-shadow:0 10px 30px rgba(0,0,0,.25);
+  }
+  .mbsRcfeLic .hero p{
+    margin:0;color:rgba(255,255,255,.88);font-size:15.2px;line-height:1.72;max-width:78ch;
+  }
+  .mbsRcfeLic .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+
+  /* Proof chips */
+  .mbsRcfeLic .proofBar{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+  .mbsRcfeLic .proofChip{
+    display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:16px;
+    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);
+  }
+  .mbsRcfeLic .check{
+    width:22px;height:22px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    background:rgba(22,138,91,.20);border:1px solid rgba(22,138,91,.28);flex:0 0 auto;
+  }
+  .mbsRcfeLic .proofChip b{display:block;font-size:12.8px;letter-spacing:-.01em}
+  .mbsRcfeLic .proofChip span{display:block;font-size:12px;opacity:.9;margin-top:2px}
+
+  /* Sections + waves */
+  .mbsRcfeLic section{padding:76px 0}
+  .mbsRcfeLic .soft{background:var(--soft);border-top:1px solid rgba(15,23,42,.06);border-bottom:1px solid rgba(15,23,42,.06)}
+  .mbsRcfeLic .head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:26px}
+  .mbsRcfeLic .head h2{margin:0;font-size:clamp(24px,2.8vw,34px);letter-spacing:-.03em}
+  .mbsRcfeLic .head p{margin:0;color:var(--muted);max-width:78ch;line-height:1.7;font-size:14.2px}
+  .mbsRcfeLic .wave{height:44px;margin:-14px 0 -18px;pointer-events:none;position:relative}
+  .mbsRcfeLic .wave svg{width:100%;height:100%;display:block}
+  .mbsRcfeLic .wave.toSoft path{fill:var(--soft)}
+  .mbsRcfeLic .wave.toWhite path{fill:var(--bg)}
+
+  /* Cards + layout */
+  .mbsRcfeLic .split{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:start}
+  .mbsRcfeLic .card{
+    background:#fff;border:1px solid rgba(15,23,42,.10);border-radius:24px;padding:18px;
+    box-shadow:0 12px 24px rgba(2,6,23,.06);
+  }
+  .mbsRcfeLic .card h3{margin:0 0 8px;letter-spacing:-.02em}
+  .mbsRcfeLic .card p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
+  .mbsRcfeLic .miniRule{height:1px;background:rgba(15,23,42,.08);margin:14px 0}
+  .mbsRcfeLic .centerRow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+
+  .mbsRcfeLic .list{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+  .mbsRcfeLic .list li{display:flex;gap:10px;align-items:flex-start;color:rgba(2,6,23,.82);font-size:14px;line-height:1.6}
+  .mbsRcfeLic .tick{
+    width:22px;height:22px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    background:rgba(22,138,91,.10);border:1px solid rgba(22,138,91,.18);color:var(--accent);flex:0 0 auto;
+    transform:translateY(1px);
+  }
+  .mbsRcfeLic .callout{
+    margin-top:14px;padding:14px 14px;border-radius:18px;
+    background:rgba(22,138,91,.08);border:1px solid rgba(22,138,91,.16);
+    color:rgba(2,6,23,.80);line-height:1.65;font-size:13.8px;
+  }
+
+  /* Problem cards grid */
+  .mbsRcfeLic .grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .mbsRcfeLic .pCard{
+    background:#fff;border:1px solid rgba(15,23,42,.10);border-radius:22px;padding:16px;
+    box-shadow:0 12px 24px rgba(2,6,23,.06);
+  }
+  .mbsRcfeLic .pCard b{display:block;letter-spacing:-.02em;font-size:15px}
+  .mbsRcfeLic .pCard span{display:block;margin-top:6px;color:var(--muted);line-height:1.65;font-size:13.6px}
+
+  /* Plan (3 steps) */
+  .mbsRcfeLic .plan3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .mbsRcfeLic .step{
+    background:#fff;border:1px solid rgba(15,23,42,.10);border-radius:22px;padding:16px;
+    box-shadow:0 12px 24px rgba(2,6,23,.06);
+  }
+  .mbsRcfeLic .stepTop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+  .mbsRcfeLic .numBox{
+    width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    background:rgba(22,138,91,.10);border:1px solid rgba(22,138,91,.20);color:var(--accent);
+    font-weight:900;letter-spacing:-.02em;font-size:18px;
+  }
+  .mbsRcfeLic .tagPill{
+    padding:8px 12px;border-radius:999px;background:rgba(2,6,23,.04);border:1px solid rgba(2,6,23,.08);
+    color:rgba(2,6,23,.68);font-weight:900;font-size:12px;white-space:nowrap;
+  }
+  .mbsRcfeLic .step b{display:block;letter-spacing:-.02em;font-size:15px}
+  .mbsRcfeLic .step span{display:block;margin-top:6px;color:var(--muted);line-height:1.65;font-size:13.5px}
+
+  /* Guide section */
+  .mbsRcfeLic .guide{
+    display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center;
+  }
+  .mbsRcfeLic .avatar{
+    width:120px;height:120px;border-radius:26px;overflow:hidden;
+    border:1px solid rgba(15,23,42,.10);box-shadow:0 12px 24px rgba(2,6,23,.08);
+    background:rgba(2,6,23,.04);
+  }
+  .mbsRcfeLic .avatar .img{
+    width:100%;height:100%;background-image:var(--guideImg);
+    background-size:cover;background-position:center;
+  }
+  .mbsRcfeLic .guide h3{margin:0 0 6px;letter-spacing:-.02em}
+  .mbsRcfeLic .guide p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
+
+  /* Booking embed */
+  .mbsRcfeLic .embed{
+    border-radius:28px;overflow:hidden;border:1px solid rgba(15,23,42,.10);box-shadow:var(--shadow2);background:#fff;
+  }
+  .mbsRcfeLic .ratio{position:relative;width:100%;padding-top:62%;background:rgba(2,6,23,.04)}
+  .mbsRcfeLic .ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .mbsRcfeLic .embedNote{padding:14px 16px;color:var(--muted);font-size:12.8px;line-height:1.55}
+
+  /* FAQ */
+  .mbsRcfeLic .faq{display:grid;gap:10px}
+  .mbsRcfeLic details{
+    background:#fff;border:1px solid rgba(15,23,42,.10);border-radius:18px;padding:14px 14px;
+    box-shadow:0 10px 20px rgba(2,6,23,.05);
+  }
+  .mbsRcfeLic summary{cursor:pointer;font-weight:900;letter-spacing:-.01em;list-style:none}
+  .mbsRcfeLic summary::-webkit-details-marker{display:none}
+  .mbsRcfeLic details p{margin:10px 0 0;color:var(--muted);line-height:1.7;font-size:14px}
+
+  /* Contact + footer */
+  .mbsRcfeLic .contactGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .mbsRcfeLic .cCard{
+    background:#fff;border:1px solid rgba(15,23,42,.10);border-radius:22px;padding:18px;
+    box-shadow:0 12px 24px rgba(2,6,23,.06);
+  }
+  .mbsRcfeLic .cCard b{display:block;letter-spacing:-.02em}
+  .mbsRcfeLic .cCard span{display:block;margin-top:6px;color:var(--muted);font-size:13.8px;line-height:1.55}
+
+  .mbsRcfeLic footer{padding:42px 0;border-top:1px solid rgba(15,23,42,.08);background:#fff}
+  .mbsRcfeLic .foot{display:grid;grid-template-columns:1.1fr .9fr .9fr;gap:14px;align-items:start}
+  .mbsRcfeLic .foot h4{margin:0 0 10px;font-size:13px;letter-spacing:-.01em}
+  .mbsRcfeLic .foot a{display:block;padding:8px 0;color:var(--muted);font-size:13.5px}
+  .mbsRcfeLic .foot a:hover{color:var(--ink)}
+  .mbsRcfeLic .copy{margin-top:12px;color:var(--muted);font-size:12.5px;line-height:1.6}
+
+  /* Mobile sticky CTA */
+  .mbsRcfeLic .stickyBook{
+    display:none;position:fixed;left:0;right:0;bottom:0;z-index:90;
+    padding:10px 12px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+    border-top:1px solid rgba(15,23,42,.10);
+  }
+  .mbsRcfeLic .stickyBook .inner{
+    width:min(var(--max),calc(100% - 24px));margin:0 auto;
+    display:flex;gap:10px;align-items:center;justify-content:space-between;
+  }
+  .mbsRcfeLic .stickyBook .mini{
+    font-size:12.5px;color:rgba(2,6,23,.78);font-weight:800;letter-spacing:-.01em;
+  }
+
+  /* Responsive */
+  @media (max-width:1120px){
+    .mbsRcfeLic .split{grid-template-columns:1fr}
+    .mbsRcfeLic .grid6{grid-template-columns:repeat(2,1fr)}
+    .mbsRcfeLic .plan3{grid-template-columns:1fr}
+    .mbsRcfeLic .contactGrid{grid-template-columns:1fr}
+  }
+  @media (max-width:980px){
+    .mbsRcfeLic .nav{grid-template-columns:1fr auto}
+    .mbsRcfeLic .menu{display:none;justify-content:flex-start;grid-column:1/-1;padding-bottom:10px}
+    .mbsRcfeLic .menu.open{display:flex}
+    .mbsRcfeLic .mToggle{display:inline-flex}
+    .mbsRcfeLic .hdrCtas{grid-column:1/-1;justify-content:flex-start}
+  }
+  @media (max-width:640px){
+    .mbsRcfeLic .wrap{width:min(var(--max),calc(100% - 32px))}
+    .mbsRcfeLic .ratio{padding-top:86%}
+    .mbsRcfeLic .grid6{grid-template-columns:1fr}
+    .mbsRcfeLic .guide{grid-template-columns:1fr}
+    .mbsRcfeLic .avatar{width:96px;height:96px;border-radius:22px}
+    .mbsRcfeLic .stickyBook{display:block}
+    .mbsRcfeLic main{padding-bottom:74px} /* room for sticky CTA */
+  }
+  @media (prefers-reduced-motion: reduce){ .mbsRcfeLic .btn{transition:none} }
+
+  /* ========= POLISH PACK ========= */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+  .reveal.visible{opacity:1;transform:none}
+  .reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
+
+  /* Hero gradient */
+  .heroGradient{
+    background:linear-gradient(135deg,rgba(255,255,255,1) 40%,rgba(255,255,255,.70));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  }
+
+  /* Card + step hover lift */
+  @media(hover:hover){
+    .mbsRcfeLic .card,.mbsRcfeLic .step,.mbsRcfeLic .pCard,.mbsRcfeLic .cCard{transition:transform .18s ease,box-shadow .18s ease}
+    .mbsRcfeLic .card:hover,.mbsRcfeLic .step:hover,.mbsRcfeLic .pCard:hover,.mbsRcfeLic .cCard:hover{
+      transform:translateY(-3px);box-shadow:0 24px 60px rgba(2,6,23,.13);
+    }
+  }
+
+  /* Nav transition */
+  .mbsRcfeLic .menu>a,.mbsRcfeLic .dd>button{transition:background .15s ease,color .15s ease}
+
+  /* FAQ chevron + reveal */
+  .mbsRcfeLic summary{position:relative;padding-right:28px}
+  .mbsRcfeLic summary::after{
+    content:'+';position:absolute;right:4px;top:0;
+    transition:transform .2s ease;font-weight:400;opacity:.65;font-size:18px;line-height:1.2;
+  }
+  .mbsRcfeLic details[open] summary::after{transform:rotate(45deg)}
+  .mbsRcfeLic details p{animation:faqRevealR .28s ease}
+  @keyframes faqRevealR{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+</style>
+
+<div class="mbsRcfeLic" id="top">
+  <!-- HEADER -->
+  <header class="hdr" role="banner">
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="HOME_LINK" aria-label="Medical Billing Services home">
+          <img src="https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-4897-994e-1ec4194e612d.png" alt="Medical Billing Services logo">
+        </a>
+
+        <button class="mToggle" type="button" aria-controls="primaryNav" aria-expanded="false">Menu</button>
+
+        <nav class="menu" id="primaryNav" aria-label="Primary navigation">
+          <a href="BILLING_LINK">ALW Billing</a>
+
+          <div class="dd" aria-label="Licensing dropdown">
+            <button class="ddBtn" type="button" aria-haspopup="true" aria-expanded="false">
+              Licensing
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" style="opacity:.8;transform:translateY(1px)">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="panel" role="menu" aria-label="Licensing options">
+              <a class="active" href="LIC_RCFE_LINK">
+                <div>
+                  <div>RCFE</div>
+                  <div class="mini">Residential Care Facility for the Elderly</div>
+                </div>
+              </a>
+              <a href="ARF_LIC_LINK">
+                <div>
+                  <div>ARF</div>
+                  <div class="mini">Adult Residential Facility</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <a href="ALW_APP_LINK">ALW Application</a>
+          <a href="FUNDING_LINK">Increase Funding</a>
+          <a href="CONSULTING_LINK">RCFE Consulting</a>
+        </nav>
+
+        <div class="hdrCtas">
+          <a class="phonePill" href="tel:{{custom_values.companyphone_display}}">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 13 19.79 19.79 0 0 1 1 4.18 2 2 0 0 1 2.98 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 17l.92-.08z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            {{custom_values.companyphone_display}}
+          </a>
+          <a class="btn primary" href="BOOKING_LINK_LIC">Book a Licensing Consultation</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-label="RCFE licensing hero">
+      <div class="wrap">
+        <div class="heroShell">
+          <div class="heroBg" role="img" aria-label="RCFE licensing image"></div>
+          <div class="heroOverlay" aria-hidden="true"></div>
+
+          <div class="heroInner">
+            <div style="max-width:900px">
+              <div class="pill"><span class="dot"></span> California RCFE licensing support (startup + expansion)</div>
+
+              <h1>Get RCFE-Licensed in California — without <span class="heroGradient">guesswork or rework</span>.</h1>
+
+              <p>
+                An <b>RCFE license</b> is required to legally operate a residential care facility for older adults in California.
+                If you’re opening, buying, or expanding a facility, we help you understand requirements, prepare clean documentation,
+                and stay ready for licensing steps so momentum doesn’t stall.
+              </p>
+
+              <div class="ctaRow">
+                <a class="btn primary" href="BOOKING_LINK_LIC">Book a Licensing Consultation</a>
+                <a class="btn ghost" href="#what">What RCFE is (quick)</a>
+              </div>
+
+              <div class="proofBar" aria-label="Proof points">
+                <div class="proofChip">
+                  <div class="check" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div><b>Clear requirements</b><span>what you need • when</span></div>
+                </div>
+                <div class="proofChip">
+                  <div class="check" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div><b>Documentation readiness</b><span>avoid avoidable delays</span></div>
+                </div>
+                <div class="proofChip">
+                  <div class="check" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div><b>Operator-minded support</b><span>practical, not theoretical</span></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave to white -->
+    <div class="wave toWhite" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+      </svg>
+    </div>
+
+    <!-- WHAT IT IS -->
+    <section id="what" aria-label="What RCFE licensing is">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>What RCFE licensing is (and why it matters)</h2>
+            <p>
+              RCFE licensing is the gate that allows you to operate — and it’s where many owners lose time due to unclear steps,
+              missing documents, and rework. We help you make the next step obvious.
+            </p>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="card">
+            <h3>In plain English</h3>
+            <p>
+              If your plan is to provide care and housing for older adults in a residential setting, RCFE licensing is the structured path
+              the state uses to verify your facility is prepared — operations, documentation, and readiness.
+            </p>
+            <div class="miniRule"></div>
+            <ul class="list">
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div><b>Who it’s for:</b> owners opening, buying, or expanding an elder care home</div>
+              </li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div><b>Why it matters:</b> delays often come from small mistakes that snowball into rework</div>
+              </li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div><b>Where we help:</b> clarity + clean documentation + practical readiness</div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Quick self-check</h3>
+            <p>If any of these are true, you’ll benefit from a consult:</p>
+            <ul class="list">
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>You’re not 100% sure what’s required vs. “nice-to-have”</div></li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>You want to avoid delays from missing / misaligned documentation</div></li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>You’re trying to align licensing with build-out, staffing, or timeline pressure</div></li>
+            </ul>
+
+            <div class="callout">
+              <b>Planning ALW?</b> RCFE licensing is commonly a prerequisite step. We can route licensing + ALW in the right order.
+            </div>
+
+            <div class="centerRow" style="margin-top:14px">
+              <a class="btn primary" href="BOOKING_LINK_LIC">Book a Licensing Consultation</a>
+              <a class="btn ghost" href="ALW_APP_LINK">ALW Application</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave to soft -->
+    <div class="wave toSoft" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+      </svg>
+    </div>
+
+    <!-- PROBLEMS -->
+    <section id="problems" class="soft" aria-label="Common RCFE licensing problems">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>What usually goes wrong (and costs you time)</h2>
+            <p>
+              Most delays don’t come from “big” issues — they come from small mismatches that trigger follow-ups,
+              resubmissions, or readiness gaps. Here are the most common ones we see.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid6">
+          <div class="pCard"><b>Unclear requirements</b><span>Owners chase the wrong tasks first, then scramble later.</span></div>
+          <div class="pCard"><b>Documentation rework</b><span>Small formatting/structure issues create big resubmission loops.</span></div>
+          <div class="pCard"><b>Fire clearance timing</b><span>Steps get out of order and stall the rest of the process.</span></div>
+          <div class="pCard"><b>Policies & procedures gaps</b><span>Documents don’t match what licensing reviewers expect to see.</span></div>
+          <div class="pCard"><b>Readiness for visits/inspection</b><span>Facility ops aren’t aligned to “show-ready” expectations.</span></div>
+          <div class="pCard"><b>Timeline pressure</b><span>Build-out, staffing, and licensing aren’t coordinated.</span></div>
+        </div>
+
+        <div class="centerRow" style="margin-top:18px">
+          <a class="btn primary" href="BOOKING_LINK_LIC">If this sounds familiar, book a consult</a>
+          <a class="btn ghost" href="#included">See what’s included</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave to white -->
+    <div class="wave toWhite" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+      </svg>
+    </div>
+
+    <!-- PLAN -->
+    <section id="plan" aria-label="Our simple plan">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>Our simple plan</h2>
+            <p>Clear steps. No overwhelm. The goal is momentum — with fewer preventable delays.</p>
+          </div>
+        </div>
+
+        <div class="plan3">
+          <div class="step">
+            <div class="stepTop"><div class="numBox">01</div><div class="tagPill">Clarity</div></div>
+            <b>Book the licensing consult</b>
+            <span>We confirm your situation, timeline, facility context, and what path makes sense.</span>
+          </div>
+          <div class="step">
+            <div class="stepTop"><div class="numBox">02</div><div class="tagPill">Roadmap</div></div>
+            <b>Get your checklist + priorities</b>
+            <span>You’ll know what to do next, what to ignore, and how to sequence the work.</span>
+          </div>
+          <div class="step">
+            <div class="stepTop"><div class="numBox">03</div><div class="tagPill">Execute</div></div>
+            <b>Prepare clean materials</b>
+            <span>We help you reduce rework and stay aligned with practical readiness expectations.</span>
+          </div>
+        </div>
+
+        <div class="centerRow" style="margin-top:18px">
+          <a class="btn primary" href="#book">Book the Licensing Consult</a>
+          <a class="btn ghost" href="#faq">View FAQs</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave to soft -->
+    <div class="wave toSoft" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+      </svg>
+    </div>
+
+    <!-- INCLUDED -->
+    <section id="included" class="soft" aria-label="What's included">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>What’s included (RCFE)</h2>
+            <p>Support designed to keep licensing work organized, compliant, and moving forward.</p>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="card">
+            <h3>Core support</h3>
+            <ul class="list">
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div><b>Application clarity:</b> what’s required, what’s optional, and what to prioritize</div>
+              </li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div><b>Document readiness:</b> policies, procedures, and evidence organized the right way</div>
+              </li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div><b>Submission support:</b> clean handoff so you’re not stuck in preventable rework</div>
+              </li>
+            </ul>
+
+            <div class="callout">
+              <b>Note:</b> We provide operational/administrative guidance to help you prepare and submit clean materials.
+              For legal questions, we’ll point you to the appropriate professional.
+            </div>
+
+            <div class="centerRow" style="margin-top:14px">
+              <a class="btn primary" href="BOOKING_LINK_LIC">Book a Licensing Consultation</a>
+              <a class="btn link" href="tel:{{custom_values.companyphone_display}}">Call: {{custom_values.companyphone_display}}</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>You’ll leave with</h3>
+            <p>Tangible outputs — so you’re not just “more informed,” you’re ready to execute.</p>
+            <div class="miniRule"></div>
+            <ul class="list">
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>A prioritized checklist specific to your situation</div></li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>A “sequence” plan (what to do first, second, third)</div></li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>A list of likely risk areas to address early</div></li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>Clear next steps to keep momentum moving</div></li>
+            </ul>
+
+            <div class="callout">
+              If you’re also pursuing ALW, we can help route you through licensing + ALW steps in the right order.
+            </div>
+
+            <div class="centerRow" style="margin-top:14px">
+              <a class="btn ghost" href="ALW_APP_LINK">Go to ALW Application</a>
+              <a class="btn ghost" href="ARF_LIC_LINK">ARF Licensing</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave to white -->
+    <div class="wave toWhite" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+      </svg>
+    </div>
+
+    <!-- GUIDE -->
+    <section id="guide" aria-label="From Kamil">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>Your guide through the process</h2>
+            <p>We keep this practical and organized — so you’re not stuck guessing what’s next.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="guide">
+            <div class="avatar" aria-hidden="true"><div class="img"></div></div>
+            <div>
+              <h3>From Kamil</h3>
+              <p>
+                If you’re building or expanding an RCFE, you’re juggling a lot — facility decisions, timelines, documentation,
+                and “what the state actually expects.” Our job is to make the next step clear and help you avoid preventable delays.
+              </p>
+              <div class="centerRow" style="margin-top:12px">
+                <a class="btn primary" href="BOOKING_LINK_LIC">Book a Licensing Consultation</a>
+                <a class="btn link" href="mailto:{{custom_values.companyemail}}">Email: {{custom_values.companyemail}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave to soft -->
+    <div class="wave toSoft" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+      </svg>
+    </div>
+
+    <!-- BOOKING -->
+    <section id="book" class="soft" aria-label="Book licensing consult">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>Book a Licensing Consultation</h2>
+            <p>We’ll clarify what’s realistic for your situation and route you to the right next step.</p>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="card">
+            <h3>What to bring (if available)</h3>
+            <p>Even a quick overview is fine — we’ll keep this practical.</p>
+            <ul class="list">
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>Facility plan / address / county + your target timeline</div></li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>Where you are today (idea stage vs. active build vs. preparing to submit)</div></li>
+              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+                <div>Any known blockers (permits, staffing plan, documentation questions)</div></li>
+            </ul>
+
+            <div class="callout">
+              Every facility is different — we’ll walk through what’s realistic for your situation.
+            </div>
+
+            <div class="centerRow" style="margin-top:14px">
+              <a class="btn primary" href="BOOKING_LINK_LIC">Open Calendar</a>
+              <a class="btn link" href="tel:{{custom_values.companyphone_display}}">Call: {{custom_values.companyphone_display}}</a>
+            </div>
+          </div>
+
+          <div class="embed">
+            <div class="ratio">
+              <iframe src="BOOKING_IFRAME_LIC" title="Licensing Consultation Calendar" loading="lazy"></iframe>
+            </div>
+            <div class="embedNote">
+              If the calendar doesn’t load, use this link:
+              <a href="BOOKING_LINK_LIC" style="color:var(--accent);font-weight:900">Book a Licensing Consultation</a>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave to white -->
+    <div class="wave toWhite" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+      </svg>
+    </div>
+
+    <!-- FAQ -->
+    <section id="faq" aria-label="RCFE licensing FAQs">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>RCFE Licensing FAQs</h2>
+            <p>Clear answers — without overwhelming you.</p>
+          </div>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>Do you only help with RCFE?</summary>
+            <p>We support both RCFE and ARF. This page is specifically for RCFE licensing support.</p>
+          </details>
+          <details>
+            <summary>Do you help with ALW applications too?</summary>
+            <p>Yes. If you’re pursuing ALW, we can help route you through licensing + ALW application steps in the right order.</p>
+          </details>
+          <details>
+            <summary>What’s the best first step?</summary>
+            <p>Book a licensing consultation. We’ll clarify your situation and the cleanest next step.</p>
+          </details>
+          <details>
+            <summary>Is this legal advice?</summary>
+            <p>No — we provide operational and administrative guidance to help you prepare clean materials and avoid avoidable delays. For legal questions, we’ll point you to the appropriate professional.</p>
+          </details>
+          <details>
+            <summary>How long does RCFE licensing take?</summary>
+            <p>Timelines vary by situation and readiness. The consult helps you understand what’s realistic and what to prioritize to avoid preventable delays.</p>
+          </details>
+        </div>
+
+        <div class="centerRow" style="margin-top:18px">
+          <a class="btn primary" href="BOOKING_LINK_LIC">Book a Licensing Consultation</a>
+          <a class="btn ghost" href="#contact">Contact options</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<script>
+  (function(){
+    const replacements = {
+      "BOOKING_LINK_LIC": "https://api.leadconnectorhq.com/widget/bookings/alw-application-call05zqka",
+      "BOOKING_IFRAME_LIC": "https://api.leadconnectorhq.com/widget/booking/H3K9LIzRf7zxAwtfyrdN",
+
+      // nav links
+      "HOME_LINK": "./Home-page-html.html",
+      "BILLING_LINK": "./alw-billing-100html.html",
+      "LIC_RCFE_LINK": "./rcfe-licensing-html.html",
+      "ARF_LIC_LINK": "./arf-licensing-html.html",
+      "ALW_APP_LINK": "./alw-waiver-html.html",
+      "FUNDING_LINK": "./funding-html.html",
+      "CONSULTING_LINK": "./Consulting-html.html"
+    };
+
+    const root = document.querySelector(".mbsRcfeLic");
+    if(!root) return;
+
+    // Year
+    const yr = root.querySelector("#yr");
+    if(yr) yr.textContent = new Date().getFullYear();
+
+    // Replace href/src tokens
+    const setAttr = (sel, attr) => {
+      root.querySelectorAll(sel).forEach(el=>{
+        const v = el.getAttribute(attr);
+        if(!v) return;
+        Object.keys(replacements).forEach(k=>{
+          if(v.indexOf(k) !== -1) el.setAttribute(attr, v.split(k).join(replacements[k]));
+        });
+      });
+    };
+    setAttr("a[href]", "href");
+    setAttr("iframe[src]", "src");
+
+    // Mobile menu toggle
+    const toggle = root.querySelector(".mToggle");
+    const menu = root.querySelector(".menu");
+    if(toggle && menu){
+      toggle.addEventListener("click", ()=>{
+        const open = menu.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    }
+
+    // Dropdown click support (mobile)
+    root.querySelectorAll(".dd .ddBtn").forEach(btn=>{
+      btn.addEventListener("click",(e)=>{
+        e.preventDefault();
+        const dd = btn.closest(".dd");
+        const isOpen = dd.classList.toggle("open");
+        btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+    });
+
+    // Smooth scroll
+    root.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener("click",(e)=>{
+        const id = a.getAttribute("href");
+        if(!id || id === "#") return;
+        const el = root.querySelector(id);
+        if(!el) return;
+        e.preventDefault();
+        el.scrollIntoView({behavior:"smooth", block:"start"});
+      });
+    });
+
+    // === SCROLL REVEAL ===
+    root.querySelectorAll(".card, .step, .pCard, .cCard, .head h2, .proofChip").forEach(el=>{
+      if(!el.classList.contains("reveal")) el.classList.add("reveal");
+    });
+    (function(){
+      const obs = new IntersectionObserver((entries, ob)=>{
+        entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("visible"); ob.unobserve(e.target); }});
+      }, {threshold:0.10});
+      root.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+    })();
+  })();
+</script>
+</div><!-- /mbsRcfeLic -->

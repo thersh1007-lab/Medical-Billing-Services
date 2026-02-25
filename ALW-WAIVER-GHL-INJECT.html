@@ -1,0 +1,640 @@
+<!-- GHL INJECT: alw-waiver-html — paste entire block into one Custom Code element -->
+<!--
+MEDBILLINGCO.COM — ALW WAIVER APPLICATION PAGE (NO HEADER/FOOTER) — v1
+Paste into ONE GoHighLevel Custom Code block.
+
+Uses your provided images:
+Hero:
+https://assets.cdn.filesafe.space/mxGAJ81pMGDwP9gcmCOZ/media/699a089edf9bdfbd90b1ed5a.jpg
+Supporting:
+https://assets.cdn.filesafe.space/mxGAJ81pMGDwP9gcmCOZ/media/699a0cd420c0353099b2b4a6.jpg
+https://assets.cdn.filesafe.space/mxGAJ81pMGDwP9gcmCOZ/media/699a07ff20c035b20caf4887.jpg
+
+Calendar (ALW Waiver Consultation):
+Booking link:  https://api.leadconnectorhq.com/widget/bookings/alw-application-call
+Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsONye
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+  .mbsAlwApp{
+    --bg:#ffffff; --ink:#0b1220; --muted:#4b5563; --soft:#f6f8fb;
+    --accent:#168a5b; --accent2:#0f6e48;
+    --shadow:0 26px 64px rgba(2,6,23,.12);
+    --shadow2:0 14px 34px rgba(2,6,23,.10);
+    --line:rgba(15,23,42,.10);
+    --max:1160px;
+
+    --heroImg:url("https://assets.cdn.filesafe.space/mxGAJ81pMGDwP9gcmCOZ/media/699a089edf9bdfbd90b1ed5a.jpg");
+    --img1:url("https://assets.cdn.filesafe.space/mxGAJ81pMGDwP9gcmCOZ/media/699a0cd420c0353099b2b4a6.jpg");
+    --img2:url("https://assets.cdn.filesafe.space/mxGAJ81pMGDwP9gcmCOZ/media/699a07ff20c035b20caf4887.jpg");
+  }
+  .mbsAlwApp *{box-sizing:border-box}
+  .mbsAlwApp{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+  .mbsAlwApp a{color:inherit;text-decoration:none}
+  .mbsAlwApp img{max-width:100%;display:block}
+  .mbsAlwApp .wrap{width:min(var(--max),calc(100% - 48px));margin:0 auto}
+
+  /* Buttons */
+  .mbsAlwApp .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:12px 16px;border-radius:999px;
+    font-weight:900;font-size:14px;border:1px solid transparent;
+    transition:.18s ease;white-space:nowrap;user-select:none;
+  }
+  .mbsAlwApp .btn.primary{background:var(--accent);color:#fff;box-shadow:0 10px 22px rgba(22,138,91,.22)}
+  .mbsAlwApp .btn.primary:hover{background:var(--accent2);transform:translateY(-1px)}
+  .mbsAlwApp .btn.ghost{background:#fff;border-color:rgba(15,23,42,.14);color:rgba(2,6,23,.88)}
+  .mbsAlwApp .btn.ghost:hover{background:rgba(2,6,23,.04)}
+  .mbsAlwApp .btn.link{background:transparent;border-color:transparent;padding:10px 0;border-radius:12px;color:var(--accent);font-weight:900}
+  .mbsAlwApp .btn.link:hover{opacity:.9}
+
+  /* Hero */
+  .mbsAlwApp .hero{padding:22px 0 26px}
+  .mbsAlwApp .heroShell{
+    position:relative;border-radius:clamp(22px,3vw,34px);
+    overflow:hidden;box-shadow:var(--shadow);background:#0b1220;
+  }
+  .mbsAlwApp .heroBg{
+    position:absolute;inset:0;background-image:var(--heroImg);
+    background-size:cover;background-position:center;transform:scale(1.02);
+    filter:saturate(1.02) contrast(1.02);
+  }
+  .mbsAlwApp .heroOverlay{
+    position:absolute;inset:0;
+    background:
+      radial-gradient(900px 520px at 16% 26%, rgba(255,255,255,.16), rgba(255,255,255,0) 62%),
+      linear-gradient(90deg, rgba(11,18,32,.76) 0%, rgba(11,18,32,.40) 58%, rgba(11,18,32,.64) 100%);
+  }
+  .mbsAlwApp .heroInner{
+    position:relative;padding:clamp(28px,4.2vw,58px);
+    min-height:clamp(440px,58vh,640px);display:flex;align-items:flex-end;
+  }
+  .mbsAlwApp .pill{
+    display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;
+    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);
+    color:rgba(255,255,255,.92);font-weight:800;font-size:12.5px;width:fit-content;
+  }
+  .mbsAlwApp .dot{width:8px;height:8px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 4px rgba(22,138,91,.20)}
+  .mbsAlwApp .hero h1{
+    margin:14px 0 10px;font-size:clamp(30px,3.4vw,54px);
+    line-height:1.05;letter-spacing:-0.045em;color:#fff;text-shadow:0 10px 30px rgba(0,0,0,.25);
+  }
+  .mbsAlwApp .hero p{
+    margin:0;color:rgba(255,255,255,.88);font-size:15.2px;line-height:1.72;max-width:92ch;
+  }
+  .mbsAlwApp .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+
+  /* Proof chips */
+  .mbsAlwApp .proofBar{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+  .mbsAlwApp .proofChip{
+    display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:16px;
+    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);min-width:240px;
+  }
+  .mbsAlwApp .check{
+    width:22px;height:22px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    background:rgba(22,138,91,.20);border:1px solid rgba(22,138,91,.28);flex:0 0 auto;
+  }
+  .mbsAlwApp .proofChip b{display:block;font-size:12.8px;letter-spacing:-.01em}
+  .mbsAlwApp .proofChip span{display:block;font-size:12px;opacity:.9;margin-top:2px}
+
+  /* Sections + waves */
+  .mbsAlwApp section{padding:76px 0}
+  .mbsAlwApp .soft{background:var(--soft);border-top:1px solid rgba(15,23,42,.06);border-bottom:1px solid rgba(15,23,42,.06)}
+  .mbsAlwApp .head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:26px}
+  .mbsAlwApp .head h2{margin:0;font-size:clamp(24px,2.8vw,34px);letter-spacing:-.03em}
+  .mbsAlwApp .head p{margin:0;color:var(--muted);max-width:92ch;line-height:1.7;font-size:14.2px}
+  .mbsAlwApp .wave{height:44px;margin:-14px 0 -18px;pointer-events:none}
+  .mbsAlwApp .wave svg{width:100%;height:100%;display:block}
+  .mbsAlwApp .wave.toSoft path{fill:var(--soft)}
+  .mbsAlwApp .wave.toWhite path{fill:var(--bg)}
+
+  /* Cards + layout */
+  .mbsAlwApp .split{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:start}
+  .mbsAlwApp .card{
+    background:#fff;border:1px solid var(--line);border-radius:24px;padding:18px;
+    box-shadow:0 12px 24px rgba(2,6,23,.06);
+  }
+  .mbsAlwApp .card h3{margin:0 0 8px;letter-spacing:-.02em}
+  .mbsAlwApp .card p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
+  .mbsAlwApp .miniRule{height:1px;background:rgba(15,23,42,.08);margin:14px 0}
+  .mbsAlwApp .centerRow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+
+  .mbsAlwApp .tri{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .mbsAlwApp .grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .mbsAlwApp .pCard{
+    background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;
+    box-shadow:0 12px 24px rgba(2,6,23,.06);
+  }
+  .mbsAlwApp .pCard b{display:block;letter-spacing:-.02em;font-size:15px}
+  .mbsAlwApp .pCard span{display:block;margin-top:6px;color:var(--muted);line-height:1.65;font-size:13.6px}
+
+  .mbsAlwApp .list{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+  .mbsAlwApp .list li{display:flex;gap:10px;align-items:flex-start;color:rgba(2,6,23,.82);font-size:14px;line-height:1.6}
+  .mbsAlwApp .tick{
+    width:22px;height:22px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    background:rgba(22,138,91,.10);border:1px solid rgba(22,138,91,.18);color:var(--accent);flex:0 0 auto;
+    transform:translateY(1px);
+  }
+  .mbsAlwApp .callout{
+    margin-top:14px;padding:14px 14px;border-radius:18px;
+    background:rgba(22,138,91,.08);border:1px solid rgba(22,138,91,.16);
+    color:rgba(2,6,23,.80);line-height:1.65;font-size:13.8px;
+  }
+
+  /* Image blocks */
+  .mbsAlwApp .imgCard{
+    border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow2);background:#fff;
+  }
+  .mbsAlwApp .imgTop{
+    height:220px;background-image:var(--img1);background-size:cover;background-position:center;
+  }
+  .mbsAlwApp .imgTop.alt{background-image:var(--img2)}
+  .mbsAlwApp .imgBody{padding:16px}
+  .mbsAlwApp .imgBody b{display:block;letter-spacing:-.02em}
+  .mbsAlwApp .imgBody span{display:block;margin-top:6px;color:var(--muted);font-size:13.6px;line-height:1.6}
+
+  /* Steps */
+  .mbsAlwApp .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .mbsAlwApp .step{
+    background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;
+    box-shadow:0 12px 24px rgba(2,6,23,.06);
+  }
+  .mbsAlwApp .stepTop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+  .mbsAlwApp .numBox{
+    width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    background:rgba(22,138,91,.10);border:1px solid rgba(22,138,91,.20);color:var(--accent);
+    font-weight:900;letter-spacing:-.02em;font-size:18px;
+  }
+  .mbsAlwApp .tagPill{
+    padding:8px 12px;border-radius:999px;background:rgba(2,6,23,.04);border:1px solid rgba(2,6,23,.08);
+    color:rgba(2,6,23,.68);font-weight:900;font-size:12px;white-space:nowrap;
+  }
+  .mbsAlwApp .step b{display:block;letter-spacing:-.02em;font-size:15px}
+  .mbsAlwApp .step span{display:block;margin-top:6px;color:var(--muted);line-height:1.65;font-size:13.5px}
+
+  /* Booking embed */
+  .mbsAlwApp .embed{
+    border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow2);background:#fff;
+  }
+  .mbsAlwApp .ratio{position:relative;width:100%;padding-top:62%;background:rgba(2,6,23,.04)}
+  .mbsAlwApp .ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .mbsAlwApp .embedNote{padding:14px 16px;color:var(--muted);font-size:12.8px;line-height:1.55}
+
+  /* FAQ */
+  .mbsAlwApp .faq{display:grid;gap:10px}
+  .mbsAlwApp details{
+    background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 14px;
+    box-shadow:0 10px 20px rgba(2,6,23,.05);
+  }
+  .mbsAlwApp summary{cursor:pointer;font-weight:900;letter-spacing:-.01em;list-style:none}
+  .mbsAlwApp summary::-webkit-details-marker{display:none}
+  .mbsAlwApp details p{margin:10px 0 0;color:var(--muted);line-height:1.7;font-size:14px}
+
+  /* Responsive */
+  @media (max-width:1120px){
+    .mbsAlwApp .split{grid-template-columns:1fr}
+    .mbsAlwApp .tri{grid-template-columns:1fr}
+    .mbsAlwApp .grid6{grid-template-columns:repeat(2,1fr)}
+    .mbsAlwApp .steps{grid-template-columns:1fr}
+  }
+  @media (max-width:640px){
+    .mbsAlwApp .wrap{width:min(var(--max),calc(100% - 32px))}
+    .mbsAlwApp .ratio{padding-top:86%}
+    .mbsAlwApp .grid6{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion: reduce){ .mbsAlwApp .btn{transition:none} }
+
+  /* ========= POLISH PACK ========= */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+  .reveal.visible{opacity:1;transform:none}
+  .reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
+
+  /* Hero gradient */
+  .heroGradient{
+    background:linear-gradient(135deg,rgba(255,255,255,1) 40%,rgba(255,255,255,.70));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  }
+
+  /* Card + step hover lift */
+  @media(hover:hover){
+    .mbsAlwApp .card,.mbsAlwApp .step,.mbsAlwApp .pCard,.mbsAlwApp .imgCard{transition:transform .18s ease,box-shadow .18s ease}
+    .mbsAlwApp .card:hover,.mbsAlwApp .step:hover,.mbsAlwApp .pCard:hover,.mbsAlwApp .imgCard:hover{
+      transform:translateY(-3px);box-shadow:0 24px 60px rgba(2,6,23,.13);
+    }
+  }
+
+  /* FAQ chevron + reveal */
+  .mbsAlwApp summary{position:relative;padding-right:28px}
+  .mbsAlwApp summary::after{
+    content:'+';position:absolute;right:4px;top:0;
+    transition:transform .2s ease;font-weight:400;opacity:.65;font-size:18px;line-height:1.2;
+  }
+  .mbsAlwApp details[open] summary::after{transform:rotate(45deg)}
+  .mbsAlwApp details p{animation:faqRevealA .28s ease}
+  @keyframes faqRevealA{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+  /* Mobile sticky CTA */
+  .mbsAlwApp .stickyBook{
+    display:none;position:fixed;left:0;right:0;bottom:0;z-index:90;
+    padding:10px 12px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+    border-top:1px solid rgba(15,23,42,.10);
+  }
+  .mbsAlwApp .stickyBook .inner{
+    width:min(var(--max),calc(100% - 24px));margin:0 auto;
+    display:flex;gap:10px;align-items:center;justify-content:space-between;
+  }
+  .mbsAlwApp .stickyBook .miniTxt{
+    font-size:12.5px;color:rgba(2,6,23,.78);font-weight:900;letter-spacing:-.01em;
+  }
+  @media(max-width:640px){
+    .mbsAlwApp .stickyBook{display:block}
+    .mbsAlwApp main{padding-bottom:74px}
+  }
+</style>
+
+<div class="mbsAlwApp" id="alwTop">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="ALW waiver application hero">
+    <div class="wrap">
+      <div class="heroShell">
+        <div class="heroBg" role="img" aria-label="ALW application image"></div>
+        <div class="heroOverlay" aria-hidden="true"></div>
+
+        <div class="heroInner">
+          <div style="max-width:980px">
+            <div class="pill"><span class="dot"></span> Assisted Living Waiver (ALW) application support (California)</div>
+
+            <h1>ALW Waiver Application Support — <span class="heroGradient">clear steps, clean paperwork</span>, fewer avoidable delays.</h1>
+
+            <p>
+              If you’re starting ALW (or you’re stuck mid-process), we help you understand <b>what it is</b>, <b>why it matters</b>,
+              and <b>what’s next</b> — without overwhelming you. The goal is simple: a clear path, clean documentation, and a process you can follow.
+            </p>
+
+            <div class="ctaRow">
+              <a class="btn primary" href="#book">Book an ALW Application Call</a>
+              <a class="btn ghost" href="#included">What’s included</a>
+            </div>
+
+            <div class="proofBar" aria-label="Proof points">
+              <div class="proofChip">
+                <div class="check" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div><b>Clarity first</b><span>what to do • what to avoid</span></div>
+              </div>
+              <div class="proofChip">
+                <div class="check" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div><b>Documentation readiness</b><span>reduce rework loops</span></div>
+              </div>
+              <div class="proofChip">
+                <div class="check" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div><b>Operator-minded</b><span>practical next steps</span></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave to white -->
+  <div class="wave toWhite" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+    </svg>
+  </div>
+
+  <!-- WHAT IT IS / WHY IT MATTERS -->
+  <section id="what" aria-label="What ALW is">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <h2>What the ALW Waiver is (and why it matters)</h2>
+          <p>
+            The Assisted Living Waiver (ALW) is a pathway many providers pursue to support residents through a structured program.
+            The challenge is rarely “one big thing” — it’s usually small missteps that create delays, confusion, or rework.
+          </p>
+        </div>
+      </div>
+
+      <div class="split">
+        <div class="card">
+          <h3>Start simple</h3>
+          <p>
+            Most owners want the same thing: a clear path and confidence they’re doing it the right way.
+            We’ll help you understand the process, organize what’s required, and keep momentum moving.
+          </p>
+
+          <div class="miniRule"></div>
+
+          <ul class="list">
+            <li>
+              <div class="tick" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg>
+              </div>
+              <div><b>What it is:</b> a structured program pathway (we’ll clarify what applies to your situation)</div>
+            </li>
+            <li>
+              <div class="tick" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg>
+              </div>
+              <div><b>Why it matters:</b> it can change predictability and planning for your facility</div>
+            </li>
+            <li>
+              <div class="tick" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg>
+              </div>
+              <div><b>What gets people stuck:</b> unclear sequencing + documentation that triggers preventable rework</div>
+            </li>
+          </ul>
+
+          <div class="callout">
+            <b>Goal:</b> keep the website simple — then use the consult to map what really applies to you.
+          </div>
+
+          <div class="centerRow" style="margin-top:14px">
+            <a class="btn primary" href="#book">Book the ALW Application Call</a>
+            <a class="btn link" href="tel:{{custom_values.companyphone_display}}">Call: {{custom_values.companyphone_display}}</a>
+          </div>
+        </div>
+
+        <div class="imgCard" aria-label="Supporting image">
+          <div class="imgTop"></div>
+          <div class="imgBody">
+            <b>A clearer path reduces delays</b>
+            <span>We focus on sequencing, documentation readiness, and practical next steps — so you’re not stuck guessing.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave to soft -->
+  <div class="wave toSoft" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+    </svg>
+  </div>
+
+  <!-- INCLUDED -->
+  <section id="included" class="soft" aria-label="What's included">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <h2>What’s included (ALW application)</h2>
+          <p>
+            A structured approach to keep your application work organized, compliant, and moving forward — without overwhelm.
+          </p>
+        </div>
+      </div>
+
+      <div class="tri">
+        <div class="card">
+          <h3>Application clarity</h3>
+          <p>What’s required, what’s optional, what to prioritize, and what to do next.</p>
+        </div>
+        <div class="card">
+          <h3>Documentation readiness</h3>
+          <p>Organize materials so they’re consistent, complete, and less likely to create preventable rework.</p>
+        </div>
+        <div class="card">
+          <h3>Routing & sequencing</h3>
+          <p>We help you understand the order of steps so momentum doesn’t stall.</p>
+        </div>
+      </div>
+
+      <div class="split" style="margin-top:18px">
+        <div class="card">
+          <h3>Common issues we help prevent</h3>
+          <p>Most delays come from predictable patterns. We help you spot them early.</p>
+          <div class="miniRule"></div>
+
+          <div class="grid6">
+            <div class="pCard"><b>Wrong order</b><span>Doing the right tasks in the wrong sequence.</span></div>
+            <div class="pCard"><b>Missing pieces</b><span>Small gaps that trigger rework loops.</span></div>
+            <div class="pCard"><b>Unclear status</b><span>No visibility on what’s pending or next.</span></div>
+            <div class="pCard"><b>Timeline drift</b><span>Momentum slows when timelines aren’t mapped.</span></div>
+            <div class="pCard"><b>Documentation mismatch</b><span>Materials don’t align with expectations.</span></div>
+            <div class="pCard"><b>Overwhelm</b><span>Too much info, not enough “next step.”</span></div>
+          </div>
+
+          <div class="callout">
+            <b>Note:</b> We provide operational/administrative guidance to help you prepare clean materials.
+            For legal questions, we’ll point you to the appropriate professional.
+          </div>
+
+          <div class="centerRow" style="margin-top:14px">
+            <a class="btn primary" href="#book">Book the ALW Application Call</a>
+            <a class="btn ghost" href="#process">See the process</a>
+          </div>
+        </div>
+
+        <div class="imgCard" aria-label="Supporting image 2">
+          <div class="imgTop alt"></div>
+          <div class="imgBody">
+            <b>Simple on purpose</b>
+            <span>The website stays clean. The consult is where we map the details for your facility and timeline.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave to white -->
+  <div class="wave toWhite" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+    </svg>
+  </div>
+
+  <!-- PROCESS -->
+  <section id="process" aria-label="Process">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <h2>How the process works</h2>
+          <p>A clean, step-by-step flow that keeps you moving without overwhelm.</p>
+        </div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="stepTop"><div class="numBox">01</div><div class="tagPill">Clarify</div></div>
+          <b>Application call</b>
+          <span>We confirm your situation, timeline, and what path makes sense for you.</span>
+        </div>
+        <div class="step">
+          <div class="stepTop"><div class="numBox">02</div><div class="tagPill">Map</div></div>
+          <b>Checklist + sequence</b>
+          <span>You get a clear list of what’s needed, what to prioritize, and what to do next.</span>
+        </div>
+        <div class="step">
+          <div class="stepTop"><div class="numBox">03</div><div class="tagPill">Prepare</div></div>
+          <b>Documentation readiness</b>
+          <span>We help you organize materials to reduce preventable rework loops.</span>
+        </div>
+        <div class="step">
+          <div class="stepTop"><div class="numBox">04</div><div class="tagPill">Move</div></div>
+          <b>Clean handoff</b>
+          <span>Clear expectations and next actions — so you don’t get stuck guessing.</span>
+        </div>
+      </div>
+
+      <div class="centerRow" style="margin-top:18px">
+        <a class="btn primary" href="#book">Book the ALW Application Call</a>
+        <a class="btn ghost" href="#faq">View FAQs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave to soft -->
+  <div class="wave toSoft" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+    </svg>
+  </div>
+
+  <!-- BOOKING -->
+  <section id="book" class="soft" aria-label="Book ALW application call">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <h2>Book an ALW Application Call</h2>
+          <p>We’ll clarify what’s realistic for your situation and route you to the right next step.</p>
+        </div>
+      </div>
+
+      <div class="split">
+        <div class="card">
+          <h3>What to bring (if available)</h3>
+          <p>Even a quick overview is fine — we’ll keep this practical.</p>
+
+          <ul class="list">
+            <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+              <div>Facility type (RCFE/ARF), county, and target timeline</div></li>
+            <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+              <div>Where you are today (early research vs. actively applying vs. stuck)</div></li>
+            <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+              <div>Any known blockers (timelines, documentation questions, readiness issues)</div></li>
+          </ul>
+
+          <div class="callout">
+            The goal is clarity and a plan you can execute — without overwhelm.
+          </div>
+
+          <div class="centerRow" style="margin-top:14px">
+            <a class="btn primary" href="https://api.leadconnectorhq.com/widget/bookings/alw-application-call">Open Calendar</a>
+            <a class="btn link" href="mailto:{{custom_values.companyemail}}">Email: {{custom_values.companyemail}}</a>
+          </div>
+        </div>
+
+        <div class="embed">
+          <div class="ratio">
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsONye"
+              title="ALW Application Call Calendar"
+              loading="lazy">
+            </iframe>
+          </div>
+          <div class="embedNote">
+            If the calendar doesn’t load, use this link:
+            <a href="https://api.leadconnectorhq.com/widget/bookings/alw-application-call" style="color:var(--accent);font-weight:900">Book an ALW Application Call</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave to white -->
+  <div class="wave toWhite" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+    </svg>
+  </div>
+
+  <!-- FAQ -->
+  <section id="faq" aria-label="ALW application FAQs">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <h2>ALW Application FAQs</h2>
+          <p>Clear answers — without overwhelming you.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Is this only for brand-new applicants?</summary>
+          <p>No. We can help if you’re starting from scratch or if you’re stuck mid-process and need clarity on next steps.</p>
+        </details>
+        <details>
+          <summary>Do you handle licensing too?</summary>
+          <p>Yes. If licensing is relevant (RCFE/ARF), we’ll route you to the right licensing support page and sequence the work properly.</p>
+        </details>
+        <details>
+          <summary>Do you guarantee approvals?</summary>
+          <p>No. We don’t make guarantees on a website. The call is designed to clarify what applies to your situation and reduce preventable errors and delays.</p>
+        </details>
+        <details>
+          <summary>Is this legal advice?</summary>
+          <p>No — we provide operational/administrative guidance to help you prepare clean materials. For legal questions, consult a qualified professional.</p>
+        </details>
+      </div>
+
+      <div class="centerRow" style="margin-top:18px">
+        <a class="btn primary" href="#book">Book the ALW Application Call</a>
+        <a class="btn ghost" href="#alwTop">Back to top</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Mobile sticky CTA -->
+<div class="mbsAlwApp stickyBook" aria-label="Sticky book bar">
+  <div class="inner">
+    <div class="miniTxt">Ready to start your ALW application?</div>
+    <a class="btn primary" href="https://api.leadconnectorhq.com/widget/bookings/alw-application-call">Book ALW call</a>
+  </div>
+</div>
+
+<script>
+  // Smooth scroll (safe + scoped)
+  (function(){
+    const root = document.querySelector(".mbsAlwApp");
+    if(!root) return;
+    root.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener("click",(e)=>{
+        const id = a.getAttribute("href");
+        if(!id || id === "#") return;
+        const el = root.querySelector(id);
+        if(!el) return;
+        e.preventDefault();
+        el.scrollIntoView({behavior:"smooth", block:"start"});
+      });
+    });
+
+    // === SCROLL REVEAL ===
+    root.querySelectorAll(".card, .step, .pCard, .imgCard, .head h2, .proofChip").forEach(el=>{
+      if(!el.classList.contains("reveal")) el.classList.add("reveal");
+    });
+    (function(){
+      const obs = new IntersectionObserver((entries, ob)=>{
+        entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("visible"); ob.unobserve(e.target); }});
+      }, {threshold:0.10});
+      root.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+    })();
+  })();
+</script>

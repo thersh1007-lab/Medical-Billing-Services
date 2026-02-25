@@ -1,0 +1,975 @@
+<!-- GHL INJECT: alw-billing-100html — paste entire block into one Custom Code element -->
+<!--
+MEDBILLINGCO.COM — BILLING PAGE (SAME PREMIUM STYLE) — v1
+Single paste into ONE GoHighLevel Custom Code block.
+
+Default booking link set to the Billing Strategy Consult you already created:
+- Booking (page / open): https://api.leadconnectorhq.com/widget/bookings/billing-strategy-call
+- Embed (iframe):        https://api.leadconnectorhq.com/widget/booking/GCyM1GS3QXkgVDFllYMu
+
+EDIT THESE (search + replace) IF NEEDED:
+- BOOKING_LINK_BILLING
+- BOOKING_IFRAME_BILLING
+- PHONE_DISPLAY (leave custom value)
+- EMAIL (leave custom value)
+- Optional page links in nav: HOME_LINK, LIC_RCFE_LINK, LIC_ARF_LINK, ALW_APP_LINK, FUNDING_LINK, CONSULTING_LINK
+
+Logo:
+https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-4897-994e-1ec4194e612d.png
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+  /* =========================
+     SCOPE + TOKENS (same feel as homepage)
+     ========================= */
+  .mbsBilling{
+    --bg:#ffffff;
+    --ink:#0b1220;
+    --muted:#4b5563;
+    --line:rgba(15,23,42,.10);
+    --soft:#f6f8fb;
+
+    --accent:#168a5b;
+    --accent2:#0f6e48;
+
+    --shadow: 0 26px 64px rgba(2,6,23,.12);
+    --shadow2: 0 14px 34px rgba(2,6,23,.10);
+    --shadow3: 0 12px 26px rgba(2,6,23,.08);
+
+    --r:18px;
+    --r2:28px;
+    --max:1160px;
+
+    --heroImg: url("https://images.pexels.com/photos/7651555/pexels-photo-7651555.jpeg");
+  }
+
+  .mbsBilling *{box-sizing:border-box}
+  .mbsBilling{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+  .mbsBilling a{color:inherit;text-decoration:none}
+  .mbsBilling img{max-width:100%;display:block}
+  .mbsBilling .wrap{width:min(var(--max),calc(100% - 48px));margin:0 auto}
+
+  /* Buttons */
+  .mbsBilling .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:12px 16px;border-radius:999px;
+    font-weight:900;font-size:14px;
+    border:1px solid transparent;
+    transition:.18s ease;
+    white-space:nowrap;
+    user-select:none;
+  }
+  .mbsBilling .btn.primary{background:var(--accent);color:#fff;box-shadow:0 10px 22px rgba(22,138,91,.22)}
+  .mbsBilling .btn.primary:hover{background:var(--accent2);transform:translateY(-1px)}
+  .mbsBilling .btn.ghost{background:#fff;border-color:rgba(15,23,42,.14);color:rgba(2,6,23,.88)}
+  .mbsBilling .btn.ghost:hover{background:rgba(2,6,23,.04)}
+  .mbsBilling .btn.link{background:transparent;border-color:transparent;padding:10px 0;border-radius:12px;color:var(--accent);font-weight:900}
+  .mbsBilling .btn.link:hover{opacity:.9}
+
+  /* =========================
+     HEADER (logo only + nav + CTA)
+     ========================= */
+  .mbsBilling .hdr{
+    position:sticky; top:0; z-index:50;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(15,23,42,.08);
+  }
+  .mbsBilling .nav{
+    display:grid;
+    grid-template-columns: 220px 1fr auto;
+    align-items:center;
+    gap:16px;
+    padding:14px 0;
+  }
+  .mbsBilling .brand{display:flex;align-items:center;gap:10px;min-width:180px}
+  .mbsBilling .brand img{height:38px;width:auto}
+
+  .mbsBilling .menu{
+    display:flex;align-items:center;justify-content:center;
+    gap:10px;flex-wrap:wrap;
+  }
+  .mbsBilling .menu > a,
+  .mbsBilling .dd > button{
+    padding:10px 10px;border-radius:12px;
+    font-size:13px;color:rgba(2,6,23,.78);
+    border:0;background:transparent;cursor:pointer;
+    font-family:inherit;font-weight:900;
+  }
+  .mbsBilling .menu > a:hover,
+  .mbsBilling .dd > button:hover{background:rgba(2,6,23,.05)}
+  .mbsBilling .active{
+    background: rgba(22,138,91,.10);
+    border: 1px solid rgba(22,138,91,.18);
+    color: rgba(2,6,23,.86);
+  }
+
+  /* Dropdown */
+  .mbsBilling .dd{position:relative}
+  .mbsBilling .dd > button{display:inline-flex;align-items:center;gap:8px}
+  .mbsBilling .panel{
+    position:absolute; top:calc(100% + 10px); left:0;
+    min-width: 260px;
+    background:#fff;
+    border:1px solid rgba(15,23,42,.10);
+    border-radius: 16px;
+    box-shadow: var(--shadow2);
+    padding: 8px;
+    display:none;
+  }
+  .mbsBilling .panel a{
+    display:flex; gap:10px; align-items:flex-start;
+    padding:10px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    color: rgba(2,6,23,.82);
+    font-weight:900;
+  }
+  .mbsBilling .panel a:hover{background:rgba(2,6,23,.05)}
+  .mbsBilling .panel .mini{font-size:12px;color:var(--muted);font-weight:600;margin-top:2px}
+  .mbsBilling .dd:hover .panel{display:block}
+  .mbsBilling .dd.open .panel{display:block}
+
+  /* Mobile menu */
+  .mbsBilling .mToggle{
+    display:none;
+    justify-self:center;
+    padding:10px 12px;border-radius:12px;
+    border:1px solid rgba(15,23,42,.12);
+    background:#fff;font-weight:900;
+    cursor:pointer;
+  }
+
+  /* =========================
+     HERO
+     ========================= */
+  .mbsBilling .hero{padding: 22px 0 26px;}
+  .mbsBilling .heroShell{
+    position:relative;
+    border-radius: clamp(22px, 3vw, 34px);
+    overflow:hidden;
+    box-shadow: var(--shadow);
+    background: #0b1220;
+  }
+  .mbsBilling .heroBg{
+    position:absolute; inset:0;
+    background-image: var(--heroImg);
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.02);
+    filter: saturate(1.02) contrast(1.02);
+  }
+  .mbsBilling .heroOverlay{
+    position:absolute; inset:0;
+    background:
+      radial-gradient(900px 520px at 16% 26%, rgba(255,255,255,.18), rgba(255,255,255,0) 62%),
+      linear-gradient(90deg, rgba(11,18,32,.70) 0%, rgba(11,18,32,.34) 58%, rgba(11,18,32,.58) 100%);
+  }
+  .mbsBilling .heroInner{
+    position:relative;
+    padding: clamp(28px, 4.2vw, 58px);
+    min-height: clamp(420px, 58vh, 600px);
+    display:flex;
+    align-items:flex-end;
+  }
+  .mbsBilling .heroContent{max-width: 820px}
+  .mbsBilling .pill{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:8px 12px;border-radius:999px;
+    background: rgba(255,255,255,.14);
+    border: 1px solid rgba(255,255,255,.18);
+    color: rgba(255,255,255,.92);
+    font-weight:800;font-size:12.5px;
+    width:fit-content;
+  }
+  .mbsBilling .dot{width:8px;height:8px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 4px rgba(22,138,91,.20)}
+  .mbsBilling .hero h1{
+    margin:14px 0 8px;
+    font-size: clamp(30px, 3.4vw, 52px);
+    line-height: 1.06;
+    letter-spacing: -0.04em;
+    color:#fff;
+    text-shadow: 0 10px 30px rgba(0,0,0,.25);
+  }
+  .mbsBilling .scale{
+    margin:0 0 10px;
+    color: rgba(255,255,255,.92);
+    font-weight:900;
+    letter-spacing:-.01em;
+    font-size: 14px;
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  }
+  .mbsBilling .scale .bar{width:8px;height:8px;border-radius:99px;background:rgba(255,255,255,.85);opacity:.75}
+  .mbsBilling .hero p{
+    margin:0;
+    color: rgba(255,255,255,.86);
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 72ch;
+  }
+  .mbsBilling .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+
+  /* Proof chips */
+  .mbsBilling .proofBar{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+  .mbsBilling .proofChip{
+    display:flex;align-items:center;gap:10px;
+    padding:10px 12px;border-radius:16px;
+    background: rgba(255,255,255,.14);
+    border: 1px solid rgba(255,255,255,.18);
+    color: rgba(255,255,255,.92);
+    backdrop-filter: blur(10px);
+    min-width: 230px;
+  }
+  .mbsBilling .check{
+    width:22px;height:22px;border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+    background: rgba(22,138,91,.20);
+    border: 1px solid rgba(22,138,91,.28);
+    flex:0 0 auto;
+  }
+  .mbsBilling .proofChip b{display:block;font-size:12.8px;letter-spacing:-.01em}
+  .mbsBilling .proofChip span{display:block;font-size:12px;opacity:.9;margin-top:2px}
+
+  /* =========================
+     SECTIONS + WAVES
+     ========================= */
+  .mbsBilling section{padding: 76px 0}
+  .mbsBilling .soft{
+    background: var(--soft);
+    border-top:1px solid rgba(15,23,42,.06);
+    border-bottom:1px solid rgba(15,23,42,.06)
+  }
+  .mbsBilling .head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:26px}
+  .mbsBilling .head h2{margin:0;font-size: clamp(24px, 2.8vw, 34px);letter-spacing:-.03em}
+  .mbsBilling .head p{margin:0;color:var(--muted);max-width:76ch;line-height:1.7;font-size:14.2px}
+
+  .mbsBilling .wave{
+    height: 44px;
+    margin: -14px 0 -18px;
+    pointer-events:none;
+    position:relative;
+  }
+  .mbsBilling .wave svg{width:100%;height:100%;display:block}
+  .mbsBilling .wave.toSoft path{fill:var(--soft)}
+  .mbsBilling .wave.toWhite path{fill:var(--bg)}
+
+  /* Layout helpers */
+  .mbsBilling .centerRow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .mbsBilling .split{
+    display:grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 18px;
+    align-items:start;
+  }
+  .mbsBilling .card{
+    background:#fff;
+    border:1px solid rgba(15,23,42,.10);
+    border-radius: 24px;
+    padding: 18px;
+    box-shadow: 0 12px 24px rgba(2,6,23,.06);
+  }
+  .mbsBilling .card h3{margin:0 0 8px;letter-spacing:-.02em}
+  .mbsBilling .card p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
+  .mbsBilling .miniRule{height:1px;background:rgba(15,23,42,.08);margin:14px 0}
+
+  .mbsBilling .list{
+    margin:12px 0 0;
+    padding:0;
+    list-style:none;
+    display:grid;
+    gap:10px;
+  }
+  .mbsBilling .list li{
+    display:flex;gap:10px;align-items:flex-start;
+    color: rgba(2,6,23,.82);
+    font-size:14px;
+    line-height:1.6;
+  }
+  .mbsBilling .tick{
+    width:22px;height:22px;border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+    background: rgba(22,138,91,.10);
+    border:1px solid rgba(22,138,91,.18);
+    color: var(--accent);
+    flex:0 0 auto;
+    transform:translateY(1px);
+  }
+  .mbsBilling .callout{
+    margin-top:14px;
+    padding:14px 14px;
+    border-radius: 18px;
+    background: rgba(22,138,91,.08);
+    border:1px solid rgba(22,138,91,.16);
+    color: rgba(2,6,23,.80);
+    line-height:1.65;
+    font-size: 13.8px;
+  }
+
+  /* Steps */
+  .mbsBilling .steps{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .mbsBilling .step{
+    background:#fff;border:1px solid rgba(15,23,42,.10);
+    border-radius: 22px;
+    padding: 16px;
+    box-shadow: 0 12px 24px rgba(2,6,23,.06);
+  }
+  .mbsBilling .stepTop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+  .mbsBilling .numBox{
+    width:44px;height:44px;border-radius:14px;
+    display:flex;align-items:center;justify-content:center;
+    background: rgba(22,138,91,.10);
+    border:1px solid rgba(22,138,91,.20);
+    color: var(--accent);
+    font-weight:900;
+    letter-spacing:-.02em;
+    font-size:18px;
+  }
+  .mbsBilling .tagPill{
+    padding:8px 12px;border-radius:999px;
+    background: rgba(2,6,23,.04);
+    border:1px solid rgba(2,6,23,.08);
+    color: rgba(2,6,23,.68);
+    font-weight:900;
+    font-size:12px;
+    white-space:nowrap;
+  }
+  .mbsBilling .step b{display:block;letter-spacing:-.02em;font-size:15px}
+  .mbsBilling .step span{display:block;margin-top:6px;color:var(--muted);line-height:1.65;font-size:13.5px}
+
+  /* Booking embed */
+  .mbsBilling .embed{
+    border-radius: 28px;
+    overflow:hidden;
+    border:1px solid rgba(15,23,42,.10);
+    box-shadow: var(--shadow2);
+    background:#fff;
+  }
+  .mbsBilling .ratio{
+    position:relative;width:100%;
+    padding-top: 62%;
+    background: rgba(2,6,23,.04);
+  }
+  .mbsBilling .ratio iframe{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    border:0;
+  }
+  .mbsBilling .embedNote{padding: 14px 16px;color:var(--muted);font-size:12.8px;line-height:1.55}
+
+  /* FAQ */
+  .mbsBilling .faq{display:grid;gap:10px}
+  .mbsBilling details{
+    background:#fff;
+    border:1px solid rgba(15,23,42,.10);
+    border-radius: 18px;
+    padding: 14px 14px;
+    box-shadow: 0 10px 20px rgba(2,6,23,.05);
+  }
+  .mbsBilling summary{cursor:pointer;font-weight:900;letter-spacing:-.01em;list-style:none}
+  .mbsBilling summary::-webkit-details-marker{display:none}
+  .mbsBilling details p{margin:10px 0 0;color:var(--muted);line-height:1.7;font-size:14px}
+
+  /* Contact + footer */
+  .mbsBilling .contactGrid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .mbsBilling .cCard{
+    background:#fff;border:1px solid rgba(15,23,42,.10);
+    border-radius: 22px;
+    padding: 18px;
+    box-shadow: 0 12px 24px rgba(2,6,23,.06);
+  }
+  .mbsBilling .cCard b{display:block;letter-spacing:-.02em}
+  .mbsBilling .cCard span{display:block;margin-top:6px;color:var(--muted);font-size:13.8px;line-height:1.55}
+
+  .mbsBilling footer{
+    padding: 42px 0;
+    border-top: 1px solid rgba(15,23,42,.08);
+    background: #fff;
+  }
+  .mbsBilling .foot{
+    display:grid;
+    grid-template-columns: 1.1fr .9fr .9fr;
+    gap: 14px;
+    align-items:start;
+  }
+  .mbsBilling .foot h4{margin:0 0 10px;font-size:13px;letter-spacing:-.01em}
+  .mbsBilling .foot a{display:block;padding:8px 0;color:var(--muted);font-size:13.5px}
+  .mbsBilling .foot a:hover{color:var(--ink)}
+  .mbsBilling .copy{margin-top:12px;color:var(--muted);font-size:12.5px;line-height:1.6}
+
+  /* Responsive */
+  @media (max-width: 1120px){
+    .mbsBilling .split{grid-template-columns: 1fr}
+    .mbsBilling .steps{grid-template-columns: 1fr}
+    .mbsBilling .contactGrid{grid-template-columns: 1fr}
+    .mbsBilling .proofChip{min-width: 240px}
+  }
+  @media (max-width: 980px){
+    .mbsBilling .nav{grid-template-columns: 1fr auto}
+    .mbsBilling .menu{
+      display:none;
+      justify-content:flex-start;
+      grid-column: 1 / -1;
+      padding-bottom: 10px;
+    }
+    .mbsBilling .menu.open{display:flex}
+    .mbsBilling .mToggle{display:inline-flex}
+  }
+  @media (max-width: 520px){
+    .mbsBilling .wrap{width:min(var(--max),calc(100% - 32px))}
+    .mbsBilling .proofChip{min-width: 100%}
+    .mbsBilling .ratio{padding-top: 86%;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .mbsBilling .btn{transition:none}
+  }
+
+  /* ========= POLISH PACK ========= */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+  .reveal.visible{opacity:1;transform:none}
+  .reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
+
+  /* Hero gradient */
+  .heroGradient{
+    background:linear-gradient(135deg,rgba(255,255,255,1) 40%,rgba(255,255,255,.70));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  }
+
+  /* Card + step hover lift */
+  @media(hover:hover){
+    .mbsBilling .card,.mbsBilling .step,.mbsBilling .cCard{transition:transform .18s ease,box-shadow .18s ease}
+    .mbsBilling .card:hover,.mbsBilling .step:hover,.mbsBilling .cCard:hover{
+      transform:translateY(-3px);box-shadow:0 24px 60px rgba(2,6,23,.13);
+    }
+  }
+
+  /* Nav transition */
+  .mbsBilling .menu>a,.mbsBilling .dd>button{transition:background .15s ease,color .15s ease}
+
+  /* FAQ chevron + reveal animation */
+  .mbsBilling summary{position:relative;padding-right:28px}
+  .mbsBilling summary::after{
+    content:'+';position:absolute;right:4px;top:0;
+    transition:transform .2s ease;font-weight:400;opacity:.65;font-size:18px;line-height:1.2;
+  }
+  .mbsBilling details[open] summary::after{transform:rotate(45deg)}
+  .mbsBilling details p{animation:faqRevealB .28s ease}
+  @keyframes faqRevealB{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+</style>
+
+<div class="mbsBilling" id="top">
+  <!-- HEADER -->
+  <header class="hdr" role="banner">
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="HOME_LINK" aria-label="Medical Billing Services">
+          <img src="https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-4897-994e-1ec4194e612d.png" alt="Medical Billing Services Logo">
+        </a>
+
+        <button class="mToggle" type="button" aria-controls="primaryNav" aria-expanded="false">Menu</button>
+
+        <nav class="menu" id="primaryNav" aria-label="Primary Navigation">
+          <a class="active" href="#top">Billing</a>
+
+          <div class="dd" aria-label="Licensing dropdown">
+            <button class="ddBtn" type="button" aria-haspopup="true" aria-expanded="false">
+              Licensing
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" style="opacity:.8;transform:translateY(1px)">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="panel" role="menu" aria-label="Licensing options">
+              <a href="LIC_RCFE_LINK">
+                <div>
+                  <div>RCFE</div>
+                  <div class="mini">Residential Care Facility for the Elderly</div>
+                </div>
+              </a>
+              <a href="LIC_ARF_LINK">
+                <div>
+                  <div>ARF</div>
+                  <div class="mini">Adult Residential Facility</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <a href="ALW_APP_LINK">ALW application</a>
+          <a href="FUNDING_LINK">Increase Funding</a>
+          <a href="CONSULTING_LINK">RCFE Consulting</a>
+        </nav>
+
+        <!-- Primary CTA -->
+        <div style="justify-self:end;display:flex;align-items:center;gap:10px">
+          <a class="btn primary" href="BOOKING_LINK_BILLING">Book a Billing Consultation</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-label="Billing hero">
+      <div class="wrap">
+        <div class="heroShell">
+          <div class="heroBg" role="img" aria-label="Billing support image"></div>
+          <div class="heroOverlay" aria-hidden="true"></div>
+
+          <div class="heroInner">
+            <div class="heroContent">
+              <div class="pill"><span class="dot"></span> ALW billing end-to-end for California RCFE &amp; ARF providers</div>
+
+              <h1>ALW Billing That Feels Clear — Not <span class="heroGradient">Vague</span>.</h1>
+
+              <div class="scale">
+                <span class="bar"></span>
+                Over $1.5 Million Billed Monthly for ARF &amp; RCFE Providers.
+              </div>
+
+              <p>
+                If you’re tired of guessing what’s pending, what’s denied, and what’s next, we bring structure,
+                proactive follow-through, and operator-level guidance — built specifically for the Assisted Living Waiver (ALW) space.
+              </p>
+
+              <div class="ctaRow">
+                <a class="btn primary" href="BOOKING_LINK_BILLING">Book a Billing Consultation</a>
+             
+              </div>
+
+              <div class="proofBar" aria-label="Proof points">
+                <div class="proofChip">
+                  <div class="check" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div>
+                    <b>Clarity + visibility</b>
+                    <span>pending • denials • next</span>
+                  </div>
+                </div>
+
+                <div class="proofChip">
+                  <div class="check" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div>
+                    <b>Proactive follow-up</b>
+                    <span>issues surfaced early</span>
+                  </div>
+                </div>
+
+                <div class="proofChip">
+                  <div class="check" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div>
+                    <b>Pay-for-performance</b>
+                    <span>aligned incentives</span>
+                  </div>
+                </div>
+
+              </div><!-- /proofBar -->
+
+            </div><!-- /heroContent -->
+          </div><!-- /heroInner -->
+        </div><!-- /heroShell -->
+      </div><!-- /wrap -->
+    </section>
+
+    <!-- Wave to soft -->
+    <div class="wave toSoft" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+      </svg>
+    </div>
+
+    <!-- WHAT YOU GET -->
+    <section id="how" class="soft" aria-label="What you get">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>What you get when we handle your billing</h2>
+            <p>
+              We handle ALW billing end-to-end so your team isn’t chasing claims, denials, and Medi-Cal rules —
+              and you get clearer visibility into what’s happening.
+            </p>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="card">
+            <h3 style="margin:0 0 8px">The core outcomes</h3>
+            <ul class="list" aria-label="Billing outcomes list">
+              <li>
+                <div class="tick" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div><b>Clarity + visibility:</b> know what’s pending, what’s denied, and what’s next</div>
+              </li>
+              <li>
+                <div class="tick" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div><b>Proactive follow-up:</b> surface issues early and work toward resolution</div>
+              </li>
+              <li>
+                <div class="tick" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div><b>Cleaner communication:</b> consistent updates and fewer surprises</div>
+              </li>
+            </ul>
+
+            <div class="callout">
+              <b>No upfront costs. No hidden fees.</b> Our model is pay-for-performance — you only pay when you get paid.
+            </div>
+
+            <div class="centerRow" style="margin-top:14px">
+              <a class="btn primary" href="BOOKING_LINK_BILLING">Book a Billing Consultation</a>
+              <a class="btn link" href="tel:{{custom_values.companyphone_display}}">Call: {{custom_values.companyphone_display}}</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 style="margin:0 0 8px">More than billing conversations</h3>
+            <p>
+              Many clients call with operational questions that directly impact outcomes — not just billing.
+              Program changes, documentation readiness, best practices, and decision support.
+            </p>
+
+            <div class="miniRule"></div>
+
+            <p>
+              The goal isn’t to overwhelm you with details on a website — it’s to give you a clear path and get you into the right consult.
+              We’ll keep it practical: what’s happening now, what’s blocking results, and the cleanest next step.
+            </p>
+
+            <div class="callout">
+              If you’re comparing billing providers: we don’t lead with scare tactics.
+              We lead with clarity, structure, and a plan that can improve results over time.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave to white -->
+    <div class="wave toWhite" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+      </svg>
+    </div>
+
+    <!-- PROCESS -->
+    <section id="process" aria-label="Our process">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>How we bring structure (without chaos)</h2>
+            <p>
+              A simple, repeatable process that creates visibility and momentum — while keeping your day-to-day operations steady.
+            </p>
+          </div>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="stepTop">
+              <div class="numBox">01</div>
+              <div class="tagPill">Assess</div>
+            </div>
+            <b>Routing consult + quick assessment</b>
+            <span>We clarify where you are now, what’s unclear, and what a realistic plan looks like for your facility.</span>
+          </div>
+
+          <div class="step">
+            <div class="stepTop">
+              <div class="numBox">02</div>
+              <div class="tagPill">Stabilize</div>
+            </div>
+            <b>Clean handoff + initial stabilization</b>
+            <span>We align on process, communication cadence, documentation expectations, and what “good” looks like.</span>
+          </div>
+
+          <div class="step">
+            <div class="stepTop">
+              <div class="numBox">03</div>
+              <div class="tagPill">Improve</div>
+            </div>
+            <b>Proactive follow-through + optimization</b>
+            <span>We surface issues early, reduce surprises, and keep claims moving with consistent follow-through.</span>
+          </div>
+        </div>
+
+        <div class="centerRow" style="margin-top:18px">
+          <a class="btn primary" href="BOOKING_LINK_BILLING">Book a Billing Consultation</a>
+          <a class="btn ghost" href="#book">See calendar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave to soft -->
+    <div class="wave toSoft" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+      </svg>
+    </div>
+
+    <!-- BOOKING (Embed) -->
+    <section id="book" class="soft" aria-label="Book a billing consultation">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>Book a Billing Consultation</h2>
+            <p>
+              Tell us what you’re trying to solve — we’ll keep it simple and route you to the right next step.
+            </p>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="card">
+            <h3 style="margin:0 0 8px">Before you book</h3>
+            <p>To make the consult useful, come with any of the below (if available):</p>
+            <ul class="list" aria-label="Before booking list">
+              <li>
+                <div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div>What feels unclear right now (pending, denials, follow-up, timing)</div>
+              </li>
+              <li>
+                <div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div>Your current billing workflow (even a quick overview is fine)</div>
+              </li>
+              <li>
+                <div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div>Any constraints (staffing, documentation challenges, timing)</div>
+              </li>
+            </ul>
+
+            <div class="callout">
+              Sensitive documents? We’ll explain secure handling during the consult and keep requests minimal.
+            </div>
+
+            <div class="centerRow" style="margin-top:14px">
+              <a class="btn primary" href="BOOKING_LINK_BILLING">Open Calendar</a>
+              <a class="btn ghost" href="#faq">FAQs</a>
+            </div>
+          </div>
+
+          <div class="embed">
+            <div class="ratio">
+              <iframe
+                src="BOOKING_IFRAME_BILLING"
+                title="Billing Strategy Consult Calendar"
+                loading="lazy"
+                allow="fullscreen; autoplay; encrypted-media"></iframe>
+            </div>
+            <div class="embedNote">
+              If the calendar doesn’t load, use this link:
+              <a href="BOOKING_LINK_BILLING" style="color:var(--accent);font-weight:900">Book a Billing Consultation</a>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave to white -->
+    <div class="wave toWhite" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
+      </svg>
+    </div>
+
+    <!-- FAQ -->
+    <section id="faq" aria-label="Billing FAQs">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>Billing FAQs</h2>
+            <p>Clear answers — without overwhelming you.</p>
+          </div>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>Do you work with both RCFE and ARF providers?</summary>
+            <p>Yes — we focus on California RCFE and ARF providers operating inside the ALW ecosystem.</p>
+          </details>
+
+          <details>
+            <summary>What does “pay-for-performance” mean?</summary>
+            <p>In simple terms, the model is aligned with results — you only pay when you get paid. We’ll explain specifics and what’s realistic for your facility during the consult.</p>
+          </details>
+
+          <details>
+            <summary>We already have a biller. Should we still talk?</summary>
+            <p>If you’re seeing delays, denials, unclear status, or inconsistent follow-through, a short consult can clarify what’s happening and what to fix first.</p>
+          </details>
+
+          <details>
+            <summary>How do you handle sensitive documents?</summary>
+            <p>We keep document handling secure and access limited. We’ll outline the safest way to share what’s needed (and we keep requests minimal).</p>
+          </details>
+
+          <details>
+            <summary>What’s the best first step?</summary>
+            <p>Book a billing consultation. We’ll route you to the cleanest next step based on your current situation.</p>
+          </details>
+        </div>
+
+        <div class="centerRow" style="margin-top:18px">
+          <a class="btn primary" href="BOOKING_LINK_BILLING">Book a Billing Consultation</a>
+          <a class="btn ghost" href="#contact">Contact options</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="soft" aria-label="Contact">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>Talk to us</h2>
+            <p>Tell us what you’re trying to solve. We’ll keep it simple and point you to the right next step.</p>
+          </div>
+        </div>
+
+        <div class="contactGrid">
+          <div class="cCard">
+            <b>Call</b>
+            <span><a href="tel:{{custom_values.companyphone_display}}">{{custom_values.companyphone_display}}</a></span>
+          </div>
+
+          <div class="cCard">
+            <b>Email</b>
+            <span><a href="mailto:{{custom_values.companyemail}}">{{custom_values.companyemail}}</a></span>
+          </div>
+
+          <div class="cCard">
+            <b>Book</b>
+            <span>Use the calendar to schedule a billing consult.</span>
+            <div class="centerRow" style="margin-top:12px">
+              <a class="btn primary" href="BOOKING_LINK_BILLING">Open Calendar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <div class="brand" style="gap:10px">
+            <img src="https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-4897-994e-1ec4194e612d.png" alt="Medical Billing Services Logo" style="height:34px">
+          </div>
+          <div class="copy">
+            © <span id="yr"></span> Medical Billing Services. All rights reserved.
+            <br>RCFE / ARF • Assisted Living Waiver (ALW)
+          </div>
+        </div>
+
+        <div>
+          <h4>Billing</h4>
+          <a href="#how">What you get</a>
+          <a href="#process">Process</a>
+          <a href="#book">Book</a>
+        </div>
+
+        <div>
+          <h4>Support</h4>
+          <a href="#faq">FAQs</a>
+          <a href="#contact">Contact</a>
+          <a href="BOOKING_LINK_BILLING">Calendar</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Replace placeholders (safe defaults)
+  (function(){
+    const replacements = {
+      "BOOKING_LINK_BILLING": "https://api.leadconnectorhq.com/widget/bookings/billing-strategy-call",
+      "BOOKING_IFRAME_BILLING": "https://api.leadconnectorhq.com/widget/booking/GCyM1GS3QXkgVDFllYMu",
+
+      // Optional nav links (set these if you want real nav)
+      "HOME_LINK": "./Home-page-html.html",
+      "LIC_RCFE_LINK": "./rcfe-licensing-html.html",
+      "LIC_ARF_LINK": "./arf-licensing-html.html",
+      "ALW_APP_LINK": "./alw-waiver-html.html",
+      "FUNDING_LINK": "./funding-html.html",
+      "CONSULTING_LINK": "./Consulting-html.html"
+    };
+
+    const root = document.querySelector(".mbsBilling");
+    if(!root) return;
+
+    // Update year
+    const yr = document.getElementById("yr");
+    if(yr) yr.textContent = new Date().getFullYear();
+
+    // Replace href/src placeholder tokens
+    const setAttr = (sel, attr) => {
+      root.querySelectorAll(sel).forEach(el=>{
+        const v = el.getAttribute(attr);
+        if(!v) return;
+        Object.keys(replacements).forEach(k=>{
+          if(v.indexOf(k) !== -1){
+            el.setAttribute(attr, v.replaceAll(k, replacements[k]));
+          }
+        });
+      });
+    };
+    setAttr("a[href]", "href");
+    setAttr("iframe[src]", "src");
+
+    // Mobile menu toggle
+    const toggle = root.querySelector(".mToggle");
+    const nav = root.querySelector("#primaryNav");
+    if(toggle && nav){
+      toggle.addEventListener("click", ()=>{
+        const open = nav.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    }
+
+    // Dropdown click support (mobile + desktop)
+    root.querySelectorAll(".dd .ddBtn").forEach(btn=>{
+      btn.addEventListener("click", (e)=>{
+        e.preventDefault();
+        const dd = btn.closest(".dd");
+        const isOpen = dd.classList.toggle("open");
+        btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+    });
+
+    // === SCROLL REVEAL ===
+    const revealEls = root.querySelectorAll(".card, .step, .cCard, .head h2, .proofChip");
+    revealEls.forEach(el=>{ if(!el.classList.contains("reveal")) el.classList.add("reveal"); });
+    new IntersectionObserver((entries, obs)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("visible"); obs.unobserve(e.target); }});
+    }, {threshold:0.10}).observe(root);
+    // Observe all .reveal in root
+    (function observeAll(){
+      const all = root.querySelectorAll(".reveal");
+      const obs = new IntersectionObserver((entries, ob)=>{
+        entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("visible"); ob.unobserve(e.target); }});
+      }, {threshold:0.10});
+      all.forEach(el=>obs.observe(el));
+    })();
+  })();
+</script>
