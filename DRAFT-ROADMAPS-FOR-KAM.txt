@@ -1,0 +1,129 @@
+DRAFT SERVICE ROADMAPS — For Kam to Review & Revise
+=====================================================
+Created: Feb 25, 2026
+
+Kam — below are draft roadmaps for each service. These are starting points
+based on the current website content. Please review, revise, add/remove steps,
+and adjust the language to match how you actually walk clients through each service.
+
+Voice notes work great — just talk through each one like you're explaining it
+to a new client on a call.
+
+
+1. ALW BILLING (for existing providers already on the waiver)
+-------------------------------------------------------------
+Step 1: CONSULT
+  - We review your current billing setup and discuss what's working and what's not
+
+Step 2: AUDIT & ONBOARD
+  - Review your claims history, identify gaps, and set up our workflow
+  - Get access to what we need to start managing your billing
+
+Step 3: ACTIVE MANAGEMENT
+  - Submit claims, track statuses, follow up on denials
+  - Clear reporting so you always know what's pending, denied, or paid
+
+Step 4: ONGOING OPTIMIZATION
+  - Monthly reviews, proactive follow-up on pending/denied claims
+  - Revenue tracking and recommendations
+
+
+2. RCFE LICENSING (new facility or expanding)
+---------------------------------------------
+Step 1: CONSULT
+  - Assess your situation, facility plans, and licensing requirements
+  - Determine what's needed for your specific case
+
+Step 2: DOCUMENT PREP
+  - Organize all required documents and application materials
+  - Checklist specific to your facility
+
+Step 3: SUBMIT
+  - Clean application submission to CDSS with proper documentation
+  - Follow-through on status and any requests from the state
+
+Step 4: POST-APPROVAL
+  - Guidance on next steps after licensing approval
+  - ALW enrollment path if applicable
+
+
+3. ARF LICENSING (Adult Residential Facility)
+---------------------------------------------
+Step 1: CONSULT
+  - Assess your facility plans and ARF-specific requirements
+  - Understand the path and sequence
+
+Step 2: DOCUMENT PREP
+  - Organized checklist and all required documentation
+  - Application materials tailored to your facility
+
+Step 3: SUBMIT
+  - Clean application submission with status tracking
+  - Follow-through on requests and corrections
+
+Step 4: POST-APPROVAL
+  - Next steps after licensing
+  - Ongoing compliance guidance
+
+
+4. ALW WAIVER APPLICATION
+-------------------------
+Step 1: ELIGIBILITY REVIEW
+  - Determine if your facility qualifies for the ALW waiver
+  - Identify what's needed to move forward
+
+Step 2: DOCUMENT PREP
+  - Organize paperwork, complete required forms
+  - Gather all supporting documentation
+
+Step 3: SUBMIT
+  - Clean application with proper documentation
+  - Nothing missing, nothing incomplete
+
+Step 4: FOLLOW-UP
+  - Track application status
+  - Respond to state requests and guide you through to approval
+
+
+5. FUNDING / REVENUE OPTIMIZATION
+----------------------------------
+Step 1: REVENUE REVIEW
+  - Review your current ALW setup and what's limiting results
+  - Understand your facility context
+
+Step 2: IDENTIFY LEVERS
+  - Pinpoint practical opportunities owners commonly miss
+  - Grounded assessment, not overpromising
+
+Step 3: ACTION PLAN
+  - Map a clear plan with next actions (not theory)
+  - Outline what changes produce the most impact for your situation
+
+
+6. RCFE CONSULTING
+------------------
+Step 1: DISCOVERY
+  - Understand your facility, goals, and current challenges
+  - What are you trying to accomplish?
+
+Step 2: ASSESSMENT
+  - Evaluate operations, compliance, and growth opportunities
+  - Identify what's working and what needs attention
+
+Step 3: STRATEGIC PLAN
+  - Customized consulting deck with actionable recommendations
+  - Clear deliverables, not generic advice
+
+Step 4: SUPPORT
+  - Ongoing guidance as you execute the plan
+  - Follow-up to make sure things are moving
+
+
+=====================================================
+NOTES FOR KAM:
+- Please revise these to match your actual process
+- Add or remove steps as needed
+- The wording should sound like YOU, not AI
+- Voice notes are perfect — just talk through each service
+- These will become the roadmap sections on each page
+=====================================================
