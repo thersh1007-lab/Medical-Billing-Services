@@ -226,13 +226,8 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
   /* Proof chips */
   .mbsBilling .proofBar{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
   .mbsBilling .proofChip{
-    display:flex;align-items:center;gap:10px;
-    padding:10px 12px;border-radius:16px;
-    background: rgba(255,255,255,.14);
-    border: 1px solid rgba(255,255,255,.18);
-    color: rgba(255,255,255,.92);
-    backdrop-filter: blur(10px);
-    min-width: 230px;
+    display:flex;align-items:center;gap:10px;padding:6px 0;
+    color:rgba(255,255,255,.92);
   }
   .mbsBilling .check{
     width:22px;height:22px;border-radius:10px;
@@ -247,40 +242,24 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
   /* =========================
      SECTIONS + WAVES
      ========================= */
-  .mbsBilling section{padding: 76px 0}
-  .mbsBilling .soft{
-    background: var(--soft);
-    border-top:1px solid rgba(15,23,42,.06);
-    border-bottom:1px solid rgba(15,23,42,.06)
-  }
-  .mbsBilling .head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:26px}
-  .mbsBilling .head h2{margin:0;font-size: clamp(24px, 2.8vw, 34px);letter-spacing:-.03em}
-  .mbsBilling .head p{margin:0;color:var(--muted);max-width:76ch;line-height:1.7;font-size:14.2px}
-
-  .mbsBilling .wave{
-    height: 44px;
-    margin: -14px 0 -18px;
-    pointer-events:none;
-    position:relative;
-  }
-  .mbsBilling .wave svg{width:100%;height:100%;display:block}
-  .mbsBilling .wave.toSoft path{fill:var(--soft)}
-  .mbsBilling .wave.toWhite path{fill:var(--bg)}
+  .mbsBilling section{padding: 100px 0}
+  .mbsBilling .head{margin-bottom:40px;max-width:680px}
+  .mbsBilling .head h2{margin:0 0 10px;font-size:clamp(28px,3vw,40px);letter-spacing:-.035em}
+  .mbsBilling .head p{margin:0;color:var(--muted);line-height:1.75;font-size:15px}
 
   /* Layout helpers */
   .mbsBilling .centerRow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
   .mbsBilling .split{
     display:grid;
-    grid-template-columns: 1fr;
-    gap: 18px;
-    max-width:720px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
   .mbsBilling .card{
     background:#fff;
-    border:1px solid rgba(15,23,42,.10);
+    border:1px solid rgba(15,23,42,.06);
     border-radius: 24px;
-    padding: 18px;
-    box-shadow: 0 12px 24px rgba(2,6,23,.06);
+    padding: 24px;
+    box-shadow: none;
   }
   .mbsBilling .card h3{margin:0 0 8px;letter-spacing:-.02em}
   .mbsBilling .card p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
@@ -321,32 +300,33 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
 
   /* Guide (Kamil) */
   .mbsBilling .guide{
-    display:grid;grid-template-columns:1fr;gap:14px;max-width:720px;
+    display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;
+    padding:20px 24px;border-radius:22px;
+    background:rgba(22,138,91,.06);border:1px solid rgba(22,138,91,.14);
   }
   .mbsBilling .avatar{
-    width:120px;height:120px;border-radius:26px;overflow:hidden;
-    border:1px solid rgba(15,23,42,.10);box-shadow:0 12px 24px rgba(2,6,23,.08);
-    background:rgba(2,6,23,.04);
+    width:72px;height:72px;border-radius:50%;overflow:hidden;
+    border:1px solid rgba(15,23,42,.10);box-shadow:0 8px 18px rgba(2,6,23,.08);
+    background:rgba(2,6,23,.04);flex-shrink:0;
   }
   .mbsBilling .avatar .img{
     width:100%;height:100%;background-image:var(--guideImg);
     background-size:cover;background-position:center;
   }
-  .mbsBilling .guide h3{margin:0 0 6px;letter-spacing:-.02em}
-  .mbsBilling .guide p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
+  .mbsBilling .guide h3{margin:0 0 2px;letter-spacing:-.02em;font-size:15px}
+  .mbsBilling .guide p{margin:0;color:var(--muted);line-height:1.5;font-size:13.5px}
 
   /* Steps */
   .mbsBilling .steps{
     display:grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3,1fr);
     gap: 14px;
-    max-width:720px;
   }
   .mbsBilling .step{
-    background:#fff;border:1px solid rgba(15,23,42,.10);
+    background:#fff;border:1px solid rgba(15,23,42,.06);
     border-radius: 22px;
-    padding: 16px;
-    box-shadow: 0 12px 24px rgba(2,6,23,.06);
+    padding: 20px;
+    box-shadow: none;
   }
   .mbsBilling .stepTop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
   .mbsBilling .numBox{
@@ -395,10 +375,10 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
   .mbsBilling .faq{display:grid;gap:10px}
   .mbsBilling details{
     background:#fff;
-    border:1px solid rgba(15,23,42,.10);
+    border:1px solid rgba(15,23,42,.06);
     border-radius: 18px;
-    padding: 14px 14px;
-    box-shadow: 0 10px 20px rgba(2,6,23,.05);
+    padding: 20px;
+    box-shadow: none;
   }
   .mbsBilling summary{cursor:pointer;font-weight:900;letter-spacing:-.01em;list-style:none}
   .mbsBilling summary::-webkit-details-marker{display:none}
@@ -407,15 +387,14 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
   /* Contact + footer */
   .mbsBilling .contactGrid{
     display:grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3,1fr);
     gap: 14px;
-    max-width:720px;
   }
   .mbsBilling .cCard{
-    background:#fff;border:1px solid rgba(15,23,42,.10);
+    background:#fff;border:1px solid rgba(15,23,42,.06);
     border-radius: 22px;
-    padding: 18px;
-    box-shadow: 0 12px 24px rgba(2,6,23,.06);
+    padding: 24px;
+    box-shadow: none;
   }
   .mbsBilling .cCard b{display:block;letter-spacing:-.02em}
   .mbsBilling .cCard span{display:block;margin-top:6px;color:var(--muted);font-size:13.8px;line-height:1.55}
@@ -451,13 +430,15 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
     }
     .mbsBilling .menu.open{display:flex}
     .mbsBilling .mToggle{display:inline-flex}
+    .mbsBilling .split,.mbsBilling .steps{grid-template-columns:1fr;max-width:600px}
+    .mbsBilling .guide{grid-template-columns:auto 1fr}
   }
-  @media (max-width: 520px){
+  @media (max-width: 640px){
     .mbsBilling .wrap{width:min(var(--max),calc(100% - 32px))}
     .mbsBilling .proofChip{min-width: 100%}
-    .mbsBilling .ratio{padding-top: 86%;}
-    /* already single-column */
-    .mbsBilling .avatar{width:96px;height:96px;border-radius:22px}
+    .mbsBilling .ratio{padding-top: 86%}
+    .mbsBilling .contactGrid{grid-template-columns:1fr}
+    .mbsBilling .guide{grid-template-columns:1fr;text-align:center;justify-items:center}
   }
   @media (prefers-reduced-motion: reduce){
     .mbsBilling .btn{transition:none}
@@ -472,14 +453,6 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
   .heroGradient{
     background:linear-gradient(135deg,rgba(255,255,255,1) 40%,rgba(255,255,255,.70));
     -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  }
-
-  /* Card + step hover lift */
-  @media(hover:hover){
-    .mbsBilling .card,.mbsBilling .step,.mbsBilling .cCard{transition:transform .18s ease,box-shadow .18s ease}
-    .mbsBilling .card:hover,.mbsBilling .step:hover,.mbsBilling .cCard:hover{
-      transform:translateY(-3px);box-shadow:0 24px 60px rgba(2,6,23,.13);
-    }
   }
 
   /* Nav transition */
@@ -633,46 +606,19 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
       </div><!-- /wrap -->
     </section>
 
-    <!-- Wave to soft -->
-    <div class="wave toSoft" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
-
     <!-- GUIDE -->
-    <section id="guide" class="soft" aria-label="From Kamil">
+    <section id="guide" aria-label="From Kamil">
       <div class="wrap">
-        <div class="head">
+        <div class="guide">
+          <div class="avatar" aria-hidden="true"><div class="img"></div></div>
           <div>
-            <h2>Your guide through ALW billing</h2>
-            <p>We keep this practical and organized so you're not stuck guessing what's next.</p>
+            <h3>From Kamil</h3>
+            <p>If your billing feels unclear, that's exactly what we fix. Clarity on what's pending, denied, and next.</p>
           </div>
-        </div>
-        <div class="card">
-          <div class="guide">
-            <div class="avatar" aria-hidden="true"><div class="img"></div></div>
-            <div>
-              <h3>From Kamil</h3>
-              <p>
-                I've been on both sides of the ALW billing process, as an operator and as the person managing claims for other facilities.
-                If your billing feels unclear or you're not sure what's pending, denied, or next, that's exactly what we fix.
-              </p>
-              <div class="centerRow" style="margin-top:12px">
-                <a class="btn primary" href="BOOKING_LINK_BILLING">Book a Billing Consultation</a>
-              </div>
-            </div>
-          </div>
+          <a class="btn primary" href="#book">Book a Consultation</a>
         </div>
       </div>
     </section>
-
-    <!-- Wave to white -->
-    <div class="wave toWhite" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
 
     <!-- WHAT YOU GET -->
     <section id="how" aria-label="What you get">
@@ -714,11 +660,6 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
             <div class="callout">
               <b>No upfront costs. No hidden fees.</b> Our model is pay-for-performance. You only pay when you get paid.
             </div>
-
-            <div class="centerRow" style="margin-top:14px">
-              <a class="btn primary" href="BOOKING_LINK_BILLING">Book a Billing Consultation</a>
-              <a class="btn link" href="tel:{{custom_values.companyphone_display}}">Call: {{custom_values.companyphone_display}}</a>
-            </div>
           </div>
 
           <div class="card">
@@ -753,15 +694,8 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
       </div>
     </section>
 
-    <!-- Wave to soft -->
-    <div class="wave toSoft" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
-
     <!-- PROCESS -->
-    <section id="process" class="soft" aria-label="Our process">
+    <section id="process" aria-label="Our process">
       <div class="wrap">
         <div class="head">
           <div>
@@ -808,13 +742,6 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
       </div>
     </section>
 
-    <!-- Wave to white -->
-    <div class="wave toWhite" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
-
     <!-- BOOKING (Embed) -->
     <section id="book" aria-label="Book a billing consultation">
       <div class="wrap">
@@ -828,9 +755,9 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
         </div>
 
         <div class="split">
-          <div class="card">
-            <h3 style="margin:0 0 8px">Before you book</h3>
-            <p>To make the consult useful, come with any of the below (if available):</p>
+          <div>
+            <h3 style="margin:0 0 10px;letter-spacing:-.02em">Before you book</h3>
+            <p style="margin:0 0 16px;color:var(--muted);font-size:14px;line-height:1.7">To make the consult useful, come with any of the below (if available):</p>
             <ul class="list" aria-label="Before booking list">
               <li>
                 <div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -845,10 +772,6 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
                 <div>Any constraints (staffing, documentation challenges, timing)</div>
               </li>
             </ul>
-
-            <div class="callout">
-              Sensitive documents? We’ll explain secure handling during the consult and keep requests minimal.
-            </div>
 
             <div class="centerRow" style="margin-top:14px">
               <a class="btn primary" href="BOOKING_LINK_BILLING">Open Calendar</a>
@@ -873,15 +796,8 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
       </div>
     </section>
 
-    <!-- Wave to soft -->
-    <div class="wave toSoft" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
-
     <!-- FAQ -->
-    <section id="faq" class="soft" aria-label="Billing FAQs">
+    <section id="faq" aria-label="Billing FAQs">
       <div class="wrap">
         <div class="head">
           <div>
@@ -911,20 +827,8 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
             <p>We keep document handling secure and access limited. We’ll outline the safest way to share what’s needed (and we keep requests minimal).</p>
           </details>
         </div>
-
-        <div class="centerRow" style="margin-top:18px">
-          <a class="btn primary" href="BOOKING_LINK_BILLING">Book a Billing Consultation</a>
-          <a class="btn ghost" href="#contact">Contact options</a>
-        </div>
       </div>
     </section>
-
-    <!-- Wave to white -->
-    <div class="wave toWhite" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
 
     <!-- CONTACT -->
     <section id="contact" aria-label="Contact">

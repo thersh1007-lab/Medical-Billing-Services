@@ -130,7 +130,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
   }
   .mbsFunding .heroGrid{
     width:100%;
-    display:grid;grid-template-columns:1fr;gap:18px;
+    display:grid;grid-template-columns:1.2fr .8fr;gap:18px;
   }
   .mbsFunding .pill{
     display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;
@@ -150,9 +150,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
 
   .mbsFunding .proofBar{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap}
   .mbsFunding .proofChip{
-    display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:16px;
-    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.92);
-    backdrop-filter:blur(10px);
+    display:flex;align-items:center;gap:10px;padding:6px 0;color:rgba(255,255,255,.92);
   }
   .mbsFunding .check{
     width:22px;height:22px;border-radius:10px;display:flex;align-items:center;justify-content:center;
@@ -179,7 +177,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
   .mbsFunding .auditHead b{display:block;letter-spacing:-.02em}
   .mbsFunding .auditHead span{display:block;margin-top:4px;color:rgba(2,6,23,.70);font-weight:700;font-size:13px;line-height:1.45}
   .mbsFunding .auditBody{padding:14px 16px 16px}
-  .mbsFunding .kpis{display:grid;grid-template-columns:1fr;gap:10px;max-width:720px}
+  .mbsFunding .kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
   .mbsFunding .kpi{
     border:1px solid rgba(15,23,42,.10);
     border-radius:18px;padding:12px;background:#fff;
@@ -197,44 +195,38 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
     transform:translateY(1px);
   }
 
-  /* Sections + waves */
-  .mbsFunding section{padding:76px 0}
-  .mbsFunding .soft{background:var(--soft);border-top:1px solid rgba(15,23,42,.06);border-bottom:1px solid rgba(15,23,42,.06)}
-  .mbsFunding .head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:26px}
-  .mbsFunding .head h2{margin:0;font-size:clamp(24px,2.8vw,34px);letter-spacing:-.03em}
-  .mbsFunding .head p{margin:0;color:var(--muted);max-width:86ch;line-height:1.7;font-size:14.2px}
-  .mbsFunding .wave{height:44px;margin:-14px 0 -18px;pointer-events:none}
-  .mbsFunding .wave svg{width:100%;height:100%;display:block}
-  .mbsFunding .wave.toSoft path{fill:var(--soft)}
-  .mbsFunding .wave.toWhite path{fill:var(--bg)}
-
+  /* Sections */
+  .mbsFunding section{padding:100px 0}
+  .mbsFunding .head{margin-bottom:40px;max-width:680px}
+  .mbsFunding .head h2{margin:0 0 10px;font-size:clamp(28px,3vw,40px);letter-spacing:-.035em}
+  .mbsFunding .head p{margin:0;color:var(--muted);line-height:1.75;font-size:15px}
   /* Cards + layout */
-  .mbsFunding .split{display:grid;grid-template-columns:1fr;gap:18px;max-width:720px}
+  .mbsFunding .split{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   .mbsFunding .card{
-    background:#fff;border:1px solid var(--line);border-radius:24px;padding:18px;
-    box-shadow:0 12px 24px rgba(2,6,23,.06);
+    background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:24px;padding:24px;
+    box-shadow:none;
   }
   .mbsFunding .card h3{margin:0 0 8px;letter-spacing:-.02em}
   .mbsFunding .card p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
   .mbsFunding .centerRow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 
   /* 3 cards */
-  .mbsFunding .tri{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px}
+  .mbsFunding .tri{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 
   /* Leak grid */
-  .mbsFunding .grid6{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px}
+  .mbsFunding .grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .mbsFunding .pCard{
-    background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;
-    box-shadow:0 12px 24px rgba(2,6,23,.06);
+    background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:22px;padding:20px;
+    box-shadow:none;
   }
   .mbsFunding .pCard b{display:block;letter-spacing:-.02em;font-size:15px}
   .mbsFunding .pCard span{display:block;margin-top:6px;color:var(--muted);line-height:1.65;font-size:13.6px}
 
   /* Pillars */
-  .mbsFunding .pillars{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px}
+  .mbsFunding .pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
   .mbsFunding .pillar{
-    background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;
-    box-shadow:0 12px 24px rgba(2,6,23,.06);
+    background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:22px;padding:20px;
+    box-shadow:none;
   }
   .mbsFunding .pTop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
   .mbsFunding .numBox{
@@ -257,19 +249,21 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
 
   /* Guide section */
   .mbsFunding .guide{
-    display:grid;grid-template-columns:1fr;gap:14px;max-width:720px;
+    display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;
+    padding:20px 24px;border-radius:22px;
+    background:rgba(22,138,91,.06);border:1px solid rgba(22,138,91,.14);
   }
   .mbsFunding .avatar{
-    width:120px;height:120px;border-radius:26px;overflow:hidden;
-    border:1px solid rgba(15,23,42,.10);box-shadow:0 12px 24px rgba(2,6,23,.08);
-    background:rgba(2,6,23,.04);
+    width:72px;height:72px;border-radius:50%;overflow:hidden;
+    border:1px solid rgba(15,23,42,.10);box-shadow:0 8px 18px rgba(2,6,23,.08);
+    background:rgba(2,6,23,.04);flex-shrink:0;
   }
   .mbsFunding .avatar .img{
     width:100%;height:100%;background-image:var(--guideImg);
     background-size:cover;background-position:center;
   }
-  .mbsFunding .guide h3{margin:0 0 6px;letter-spacing:-.02em}
-  .mbsFunding .guide p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
+  .mbsFunding .guide h3{margin:0 0 2px;letter-spacing:-.02em;font-size:15px}
+  .mbsFunding .guide p{margin:0;color:var(--muted);line-height:1.5;font-size:13.5px}
 
   /* Booking embed */
   .mbsFunding .embed{
@@ -282,8 +276,8 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
   /* FAQ */
   .mbsFunding .faq{display:grid;gap:10px}
   .mbsFunding details{
-    background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 14px;
-    box-shadow:0 10px 20px rgba(2,6,23,.05);
+    background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:18px;padding:20px 20px;
+    box-shadow:none;
   }
   .mbsFunding summary{cursor:pointer;font-weight:900;letter-spacing:-.01em;list-style:none}
   .mbsFunding summary::-webkit-details-marker{display:none}
@@ -321,12 +315,14 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
     .mbsFunding .menu.open{display:flex}
     .mbsFunding .mToggle{display:inline-flex}
     .mbsFunding .hdrCtas{grid-column:1/-1;justify-content:flex-start}
+    .mbsFunding .heroGrid,.mbsFunding .split,.mbsFunding .tri,.mbsFunding .grid6,.mbsFunding .pillars{grid-template-columns:1fr;max-width:600px}
+    .mbsFunding .guide{grid-template-columns:auto 1fr}
   }
   @media (max-width:640px){
     .mbsFunding .wrap{width:min(var(--max),calc(100% - 32px))}
     .mbsFunding .ratio{padding-top:86%}
-    /* already single-column */
-    .mbsFunding .avatar{width:96px;height:96px;border-radius:22px}
+    .mbsFunding .heroGrid{grid-template-columns:1fr}
+    .mbsFunding .guide{grid-template-columns:1fr;text-align:center;justify-items:center}
     .mbsFunding .stickyBook{display:block}
     .mbsFunding main{padding-bottom:74px}
   }
@@ -349,10 +345,8 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
   }
   .mbsFunding .microProof span{
     display:inline-flex;align-items:center;gap:8px;
-    padding:8px 14px;border-radius:999px;
-    background:rgba(255,255,255,.14);border:1px solid rgba(22,138,91,.30);
+    padding:6px 0;
     color:rgba(255,255,255,.92);font-weight:800;font-size:12.5px;
-    backdrop-filter:blur(10px);
   }
   .mbsFunding .microProof span::before{
     content:'✓';color:var(--accent);font-weight:900;font-size:13px;
@@ -368,21 +362,13 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
     font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.6px;
     color:rgba(2,6,23,.52);margin:0 0 14px;
   }
-  .mbsFunding .heroStatKpis{display:grid;grid-template-columns:1fr;gap:10px}
+  .mbsFunding .heroStatKpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
   .mbsFunding .heroKpi{
     padding:12px;border-radius:16px;background:rgba(22,138,91,.06);
     border:1px solid rgba(22,138,91,.14);
   }
   .mbsFunding .heroKpi b{display:block;font-size:22px;font-weight:900;letter-spacing:-0.8px;color:var(--accent)}
   .mbsFunding .heroKpi span{display:block;font-size:11.5px;color:rgba(2,6,23,.58);font-weight:700;margin-top:3px;line-height:1.3}
-
-  /* Card + pillar hover lift */
-  @media(hover:hover){
-    .mbsFunding .card,.mbsFunding .pillar,.mbsFunding .pCard{transition:transform .18s ease,box-shadow .18s ease}
-    .mbsFunding .card:hover,.mbsFunding .pillar:hover,.mbsFunding .pCard:hover{
-      transform:translateY(-3px);box-shadow:0 24px 60px rgba(2,6,23,.13);
-    }
-  }
 
   /* Nav transition */
   .mbsFunding .menu>a,.mbsFunding .dd>button{transition:background .15s ease,color .15s ease}
@@ -530,37 +516,16 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
         </div><!-- /heroShell -->
       </div><!-- /wrap -->
     </section>
-    <!-- Wave to white -->
-    <div class="wave toWhite" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
-
     <!-- GUIDE -->
     <section id="guide" aria-label="From Kamil">
       <div class="wrap">
-        <div class="head">
+        <div class="guide">
+          <div class="avatar" aria-hidden="true"><div class="img"></div></div>
           <div>
-            <h2>Your guide through funding optimization</h2>
-            <p>We keep this grounded and practical so you get a real plan, not just theory.</p>
+            <h3>From Kamil</h3>
+            <p>We find avoidable leakage in your workflow and turn it into recovered revenue.</p>
           </div>
-        </div>
-        <div class="card">
-          <div class="guide">
-            <div class="avatar" aria-hidden="true"><div class="img"></div></div>
-            <div>
-              <h3>From Kamil</h3>
-              <p>
-                If you suspect your current ALW revenue doesn't reflect your true level of care,
-                we identify practical levers and map a grounded plan. No overpromising, just clarity
-                on what's realistic for your facility.
-              </p>
-              <div class="centerRow" style="margin-top:12px">
-                <a class="btn primary" href="BOOKING_LINK_FUNDING">Book a Revenue Call</a>
-              </div>
-            </div>
-          </div>
+          <a class="btn primary" href="#book">Book a Revenue Call</a>
         </div>
       </div>
     </section>
@@ -597,22 +562,11 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
           <b>Important:</b> We don’t publish guarantees. The call is about evaluating what’s realistic for your situation and mapping usable next steps.
         </div>
 
-        <div class="centerRow" style="margin-top:14px">
-          <a class="btn primary" href="#leaks">See common revenue leaks</a>
-          <a class="btn ghost" href="#book">Book the call</a>
-        </div>
       </div>
     </section>
 
-    <!-- Wave to soft -->
-    <div class="wave toSoft" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
-
     <!-- LEAKS -->
-    <section id="leaks" class="soft" aria-label="Where revenue leaks">
+    <section id="leaks" aria-label="Where revenue leaks">
       <div class="wrap">
         <div class="head">
           <div>
@@ -633,19 +587,8 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
           <div class=”pCard”><b>Prioritized action plans</b><span>We define clear next-best actions so you always know what to focus on and progress stays consistent.</span></div>
         </div>
 
-        <div class="centerRow" style="margin-top:18px">
-          <a class="btn primary" href="#playbook">See the Funding Playbook</a>
-          <a class="btn ghost" href="#book">Book the Revenue Call</a>
-        </div>
       </div>
     </section>
-
-    <!-- Wave to white -->
-    <div class="wave toWhite" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
 
     <!-- PLAYBOOK -->
     <section id="playbook" aria-label="Funding playbook">
@@ -693,15 +636,8 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
       </div>
     </section>
 
-    <!-- Wave to soft -->
-    <div class="wave toSoft" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
-
     <!-- SCOPE -->
-    <section id="scope" class="soft" aria-label="What the revenue call covers">
+    <section id="scope" aria-label="What the revenue call covers">
       <div class="wrap">
         <div class="head">
           <div>
@@ -741,10 +677,6 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
                 <div>Your goal: improve predictability, improve outcomes, or confirm you’re already optimized.</div></li>
             </ul>
 
-            <div class="centerRow" style="margin-top:14px">
-              <a class="btn primary" href="#book">Book now</a>
-              <a class="btn ghost" href="ALW_APP_LINK">ALW application</a>
-            </div>
           </div>
         </div>
       </div>
@@ -761,16 +693,16 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
         </div>
 
         <div class="split">
-          <div class="card">
-            <h3>Before you book</h3>
-            <p>
+          <div>
+            <h3 style="margin:0 0 10px;letter-spacing:-.02em">Before you book</h3>
+            <p style="margin:0 0 16px;color:var(--muted);font-size:14px;line-height:1.7">
               If you’re not in ALW yet (or you’re still in licensing), that’s fine, we’ll route you to the right next step.
               This call is about clarity and sequencing.
             </p>
 
-            <div class="callout">
+            <p style="margin:0 0 16px;color:var(--muted);font-size:14px;line-height:1.7">
               Prefer email? <a href="mailto:{{custom_values.companyemail}}" style="color:var(--accent);font-weight:900">{{custom_values.companyemail}}</a>
-            </div>
+            </p>
 
             <div class="centerRow" style="margin-top:14px">
               <a class="btn primary" href="BOOKING_LINK_REV">Open Calendar</a>
@@ -791,15 +723,8 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
       </div>
     </section>
 
-    <!-- Wave to soft -->
-    <div class="wave toSoft" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
-
     <!-- FAQ -->
-    <section id="faq" class="soft" aria-label="Funding / revenue FAQs">
+    <section id="faq" aria-label="Funding / revenue FAQs">
       <div class="wrap">
         <div class="head">
           <div>
@@ -827,10 +752,6 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
           </details>
         </div>
 
-        <div class="centerRow" style="margin-top:18px">
-          <a class="btn primary" href="BOOKING_LINK_REV">Book a Revenue Call</a>
-          <a class="btn ghost" href="#top">Back to top</a>
-        </div>
       </div>
     </section>
 

@@ -99,9 +99,7 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
   /* Proof chips */
   .mbsAlwApp .proofBar{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
   .mbsAlwApp .proofChip{
-    display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:16px;
-    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.92);
-    backdrop-filter:blur(10px);min-width:240px;
+    display:flex;align-items:center;gap:10px;padding:6px 0;color:rgba(255,255,255,.92);
   }
   .mbsAlwApp .check{
     width:22px;height:22px;border-radius:10px;display:flex;align-items:center;justify-content:center;
@@ -110,33 +108,27 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
   .mbsAlwApp .proofChip b{display:block;font-size:12.8px;letter-spacing:-.01em}
   .mbsAlwApp .proofChip span{display:block;font-size:12px;opacity:.9;margin-top:2px}
 
-  /* Sections + waves */
-  .mbsAlwApp section{padding:76px 0}
-  .mbsAlwApp .soft{background:var(--soft);border-top:1px solid rgba(15,23,42,.06);border-bottom:1px solid rgba(15,23,42,.06)}
-  .mbsAlwApp .head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:26px}
-  .mbsAlwApp .head h2{margin:0;font-size:clamp(24px,2.8vw,34px);letter-spacing:-.03em}
-  .mbsAlwApp .head p{margin:0;color:var(--muted);max-width:92ch;line-height:1.7;font-size:14.2px}
-  .mbsAlwApp .wave{height:44px;margin:-14px 0 -18px;pointer-events:none}
-  .mbsAlwApp .wave svg{width:100%;height:100%;display:block}
-  .mbsAlwApp .wave.toSoft path{fill:var(--soft)}
-  .mbsAlwApp .wave.toWhite path{fill:var(--bg)}
-
+  /* Sections */
+  .mbsAlwApp section{padding:100px 0}
+  .mbsAlwApp .head{margin-bottom:40px;max-width:680px}
+  .mbsAlwApp .head h2{margin:0 0 10px;font-size:clamp(28px,3vw,40px);letter-spacing:-.035em}
+  .mbsAlwApp .head p{margin:0;color:var(--muted);line-height:1.75;font-size:15px}
   /* Cards + layout */
-  .mbsAlwApp .split{display:grid;grid-template-columns:1fr;gap:18px;max-width:720px}
+  .mbsAlwApp .split{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   .mbsAlwApp .card{
-    background:#fff;border:1px solid var(--line);border-radius:24px;padding:18px;
-    box-shadow:0 12px 24px rgba(2,6,23,.06);
+    background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:24px;padding:24px;
+    box-shadow:none;
   }
   .mbsAlwApp .card h3{margin:0 0 8px;letter-spacing:-.02em}
   .mbsAlwApp .card p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
   .mbsAlwApp .miniRule{height:1px;background:rgba(15,23,42,.08);margin:14px 0}
   .mbsAlwApp .centerRow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 
-  .mbsAlwApp .tri{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px}
-  .mbsAlwApp .grid6{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px}
+  .mbsAlwApp .tri{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .mbsAlwApp .grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .mbsAlwApp .pCard{
-    background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;
-    box-shadow:0 12px 24px rgba(2,6,23,.06);
+    background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:22px;padding:20px;
+    box-shadow:none;
   }
   .mbsAlwApp .pCard b{display:block;letter-spacing:-.02em;font-size:15px}
   .mbsAlwApp .pCard span{display:block;margin-top:6px;color:var(--muted);line-height:1.65;font-size:13.6px}
@@ -156,19 +148,21 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
 
   /* Guide section */
   .mbsAlwApp .guide{
-    display:grid;grid-template-columns:1fr;gap:14px;max-width:720px;
+    display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;
+    padding:20px 24px;border-radius:22px;
+    background:rgba(22,138,91,.06);border:1px solid rgba(22,138,91,.14);
   }
   .mbsAlwApp .avatar{
-    width:120px;height:120px;border-radius:26px;overflow:hidden;
-    border:1px solid rgba(15,23,42,.10);box-shadow:0 12px 24px rgba(2,6,23,.08);
-    background:rgba(2,6,23,.04);
+    width:72px;height:72px;border-radius:50%;overflow:hidden;
+    border:1px solid rgba(15,23,42,.10);box-shadow:0 8px 18px rgba(2,6,23,.08);
+    background:rgba(2,6,23,.04);flex-shrink:0;
   }
   .mbsAlwApp .avatar .img{
     width:100%;height:100%;background-image:var(--guideImg);
     background-size:cover;background-position:center;
   }
-  .mbsAlwApp .guide h3{margin:0 0 6px;letter-spacing:-.02em}
-  .mbsAlwApp .guide p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
+  .mbsAlwApp .guide h3{margin:0 0 2px;letter-spacing:-.02em;font-size:15px}
+  .mbsAlwApp .guide p{margin:0;color:var(--muted);line-height:1.5;font-size:13.5px}
 
   /* Image blocks */
   .mbsAlwApp .imgCard{
@@ -183,10 +177,10 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
   .mbsAlwApp .imgBody span{display:block;margin-top:6px;color:var(--muted);font-size:13.6px;line-height:1.6}
 
   /* Steps */
-  .mbsAlwApp .steps{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px}
+  .mbsAlwApp .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .mbsAlwApp .step{
-    background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;
-    box-shadow:0 12px 24px rgba(2,6,23,.06);
+    background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:22px;padding:20px;
+    box-shadow:none;
   }
   .mbsAlwApp .stepTop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
   .mbsAlwApp .numBox{
@@ -212,8 +206,8 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
   /* FAQ */
   .mbsAlwApp .faq{display:grid;gap:10px}
   .mbsAlwApp details{
-    background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 14px;
-    box-shadow:0 10px 20px rgba(2,6,23,.05);
+    background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:18px;padding:20px 20px;
+    box-shadow:none;
   }
   .mbsAlwApp summary{cursor:pointer;font-weight:900;letter-spacing:-.01em;list-style:none}
   .mbsAlwApp summary::-webkit-details-marker{display:none}
@@ -283,12 +277,13 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
     .mbsAlwApp .menu.open{display:flex}
     .mbsAlwApp .mToggle{display:inline-flex}
     .mbsAlwApp .hdrCtas{grid-column:1/-1;justify-content:flex-start}
+    .mbsAlwApp .split,.mbsAlwApp .tri,.mbsAlwApp .steps,.mbsAlwApp .grid6{grid-template-columns:1fr;max-width:600px}
+    .mbsAlwApp .guide{grid-template-columns:auto 1fr}
   }
   @media (max-width:640px){
     .mbsAlwApp .wrap{width:min(var(--max),calc(100% - 32px))}
     .mbsAlwApp .ratio{padding-top:86%}
-    /* already single-column */
-    .mbsAlwApp .avatar{width:96px;height:96px;border-radius:22px}
+    .mbsAlwApp .guide{grid-template-columns:1fr;text-align:center;justify-items:center}
   }
   @media (prefers-reduced-motion: reduce){ .mbsAlwApp .btn{transition:none} }
 
@@ -301,14 +296,6 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
   .heroGradient{
     background:linear-gradient(135deg,rgba(255,255,255,1) 40%,rgba(255,255,255,.70));
     -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  }
-
-  /* Card + step hover lift */
-  @media(hover:hover){
-    .mbsAlwApp .card,.mbsAlwApp .step,.mbsAlwApp .pCard,.mbsAlwApp .imgCard{transition:transform .18s ease,box-shadow .18s ease}
-    .mbsAlwApp .card:hover,.mbsAlwApp .step:hover,.mbsAlwApp .pCard:hover,.mbsAlwApp .imgCard:hover{
-      transform:translateY(-3px);box-shadow:0 24px 60px rgba(2,6,23,.13);
-    }
   }
 
   /* FAQ chevron + reveal */
@@ -460,46 +447,19 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
     </div>
   </section>
 
-  <!-- Wave to white -->
-  <div class="wave toWhite" aria-hidden="true">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-    </svg>
-  </div>
-
-  <!-- GUIDE -->
+    <!-- GUIDE -->
     <section id="guide" aria-label="From Kamil">
       <div class="wrap">
-        <div class="head">
+        <div class="guide">
+          <div class="avatar" aria-hidden="true"><div class="img"></div></div>
           <div>
-            <h2>Your guide through the ALW application</h2>
-            <p>We keep this practical and organized so you're not carrying it alone.</p>
+            <h3>From Kamil</h3>
+            <p>We help you understand the path, organize your paperwork, and keep the ALW process moving.</p>
           </div>
-        </div>
-        <div class="card">
-          <div class="guide">
-            <div class="avatar" aria-hidden="true"><div class="img"></div></div>
-            <div>
-              <h3>From Kamil</h3>
-              <p>
-                The ALW application process is tedious and detailed. If you're starting fresh or stuck mid-process,
-                we help you understand the path, organize your paperwork, and submit clean documentation so nothing gets delayed.
-              </p>
-              <div class="centerRow" style="margin-top:12px">
-                <a class="btn primary" href="BOOKING_LINK_ALW">Book an ALW Application Call</a>
-              </div>
-            </div>
-          </div>
+          <a class="btn primary" href="#book">Book ALW Application Call</a>
         </div>
       </div>
     </section>
-
-  <!-- Wave to white -->
-  <div class="wave toWhite" aria-hidden="true">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-    </svg>
-  </div>
 
   <!-- WHAT IT IS / WHY IT MATTERS -->
   <section id="what" aria-label="What ALW is">
@@ -549,10 +509,6 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
             <b>Goal:</b> keep the website simple, then use the consult to map what really applies to you.
           </div>
 
-          <div class="centerRow" style="margin-top:14px">
-            <a class="btn primary" href="#book">Book the ALW Application Call</a>
-            <a class="btn link" href="tel:{{custom_values.companyphone_display}}">Call: {{custom_values.companyphone_display}}</a>
-          </div>
         </div>
 
         <div class="imgCard" aria-label="Supporting image">
@@ -566,15 +522,8 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
     </div>
   </section>
 
-  <!-- Wave to soft -->
-  <div class="wave toSoft" aria-hidden="true">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-    </svg>
-  </div>
-
   <!-- INCLUDED -->
-  <section id="included" class="soft" aria-label="What's included">
+  <section id="included" aria-label="What's included">
     <div class="wrap">
       <div class="head">
         <div>
@@ -620,10 +569,6 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
             For legal questions, we’ll point you to the appropriate professional.
           </div>
 
-          <div class="centerRow" style="margin-top:14px">
-            <a class="btn primary" href="#book">Book the ALW Application Call</a>
-            <a class="btn ghost" href="#process">See the process</a>
-          </div>
         </div>
 
         <div class="imgCard" aria-label="Supporting image 2">
@@ -636,13 +581,6 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
       </div>
     </div>
   </section>
-
-  <!-- Wave to white -->
-  <div class="wave toWhite" aria-hidden="true">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-    </svg>
-  </div>
 
   <!-- PROCESS -->
   <section id="process" aria-label="Process">
@@ -684,15 +622,8 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
     </div>
   </section>
 
-  <!-- Wave to soft -->
-  <div class="wave toSoft" aria-hidden="true">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-    </svg>
-  </div>
-
   <!-- BOOKING -->
-  <section id="book" class="soft" aria-label="Book ALW application call">
+  <section id="book" aria-label="Book ALW application call">
     <div class="wrap">
       <div class="head">
         <div>
@@ -702,9 +633,9 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
       </div>
 
       <div class="split">
-        <div class="card">
-          <h3>What to bring (if available)</h3>
-          <p>Even a quick overview is fine. We’ll keep this practical.</p>
+        <div>
+          <h3 style="margin:0 0 10px;letter-spacing:-.02em">What to bring (if available)</h3>
+          <p style="margin:0 0 16px;color:var(--muted);font-size:14px;line-height:1.7">Even a quick overview is fine. We’ll keep this practical.</p>
 
           <ul class="list">
             <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
@@ -714,10 +645,6 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
             <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
               <div>Any known blockers (timelines, documentation questions, readiness issues)</div></li>
           </ul>
-
-          <div class="callout">
-            The goal is clarity and a plan you can execute, without overwhelm.
-          </div>
 
           <div class="centerRow" style="margin-top:14px">
             <a class="btn primary" href="https://api.leadconnectorhq.com/widget/bookings/alw-application-call">Open Calendar</a>
@@ -741,13 +668,6 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
       </div>
     </div>
   </section>
-
-  <!-- Wave to white -->
-  <div class="wave toWhite" aria-hidden="true">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-    </svg>
-  </div>
 
   <!-- FAQ -->
   <section id="faq" aria-label="ALW application FAQs">
@@ -776,11 +696,6 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
           <summary>Is this legal advice?</summary>
           <p>No. We provide operational/administrative guidance to help you prepare clean materials. For legal questions, consult a qualified professional.</p>
         </details>
-      </div>
-
-      <div class="centerRow" style="margin-top:18px">
-        <a class="btn primary" href="#book">Book the ALW Application Call</a>
-        <a class="btn ghost" href="#alwTop">Back to top</a>
       </div>
     </div>
   </section>

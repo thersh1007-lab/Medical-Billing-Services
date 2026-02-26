@@ -34,13 +34,8 @@
     --mbs-shadow-hero: 0 30px 90px rgba(11,18,32,.18);
   }
 
-  /* ---- Page backdrop (subtle, makes white cards “lift”) ---- */
-  html, body{
-    background:
-      radial-gradient(900px 520px at 12% -10%, rgba(14,127,84,.10), transparent 60%),
-      radial-gradient(900px 520px at 88%  0%, rgba(14,127,84,.07), transparent 55%),
-      var(--mbs-page) !important;
-  }
+  /* ---- Page backdrop ---- */
+  html, body{ background: #ffffff !important; }
 
   /* ---- Sticky header: more premium (soft glass + consistent shadow) ---- */
   .mbs3-hdr{
@@ -82,20 +77,6 @@
     overflow: hidden !important;
 
     transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-  }
-
-  /* Hover lift (desktop only) */
-  @media (hover:hover){
-    .c-column:hover > .vertical.inner.borderFull.radius20,
-    .c-column:hover > .vertical.inner.borderFull.radius25,
-    .c-nested-column:hover > .vertical.inner.borderFull.radius20,
-    .c-nested-column:hover > .vertical.inner.borderFull.radius25,
-    .c-row.borderFull.radius20:hover,
-    .c-row.borderFull.radius25:hover{
-      transform: translateY(-2px);
-      box-shadow: var(--mbs-shadow-hover) !important;
-      border-color: rgba(11,18,32,.14) !important;
-    }
   }
 
   /* Make *any* bg layer inside rounded bordered sections/rows clip correctly */
@@ -275,9 +256,8 @@ CONSULTING_LINK
 
   .mbsConsultV2 .proofBar{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap}
   .mbsConsultV2 .proofChip{
-    display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:16px;
-    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.92);
-    backdrop-filter:blur(10px);
+    display:flex;align-items:center;gap:10px;padding:6px 0;
+    color:rgba(255,255,255,.92);
   }
   .mbsConsultV2 .check{
     width:22px;height:22px;border-radius:10px;display:flex;align-items:center;justify-content:center;
@@ -287,22 +267,16 @@ CONSULTING_LINK
   .mbsConsultV2 .proofChip span{display:block;font-size:12px;opacity:.9;margin-top:2px}
 
   /* Sections */
-  .mbsConsultV2 section{padding:76px 0}
-  .mbsConsultV2 .soft{background:var(--soft);border-top:1px solid rgba(15,23,42,.06);border-bottom:1px solid rgba(15,23,42,.06)}
-  .mbsConsultV2 .head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:26px}
-  .mbsConsultV2 .head h2{margin:0;font-size:clamp(24px,2.8vw,34px);letter-spacing:-.03em}
-  .mbsConsultV2 .head p{margin:0;color:var(--muted);max-width:92ch;line-height:1.7;font-size:14.2px}
-
-  .mbsConsultV2 .wave{height:44px;margin:-14px 0 -18px;pointer-events:none}
-  .mbsConsultV2 .wave svg{width:100%;height:100%;display:block}
-  .mbsConsultV2 .wave.toSoft path{fill:var(--soft)}
-  .mbsConsultV2 .wave.toWhite path{fill:var(--bg)}
+  .mbsConsultV2 section{padding:100px 0}
+  .mbsConsultV2 .head{margin-bottom:40px;max-width:680px}
+  .mbsConsultV2 .head h2{margin:0 0 10px;font-size:clamp(28px,3vw,40px);letter-spacing:-.035em}
+  .mbsConsultV2 .head p{margin:0;color:var(--muted);line-height:1.75;font-size:15px}
 
   /* Cards / grids */
-  .mbsConsultV2 .tri{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px}
+  .mbsConsultV2 .tri{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .mbsConsultV2 .card{
-    background:#fff;border:1px solid var(--line);border-radius:24px;padding:18px;
-    box-shadow:0 12px 24px rgba(2,6,23,.06);
+    background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:24px;padding:24px;
+    box-shadow:none;
   }
   .mbsConsultV2 .card h3{margin:0 0 8px;letter-spacing:-.02em}
   .mbsConsultV2 .card p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
@@ -318,25 +292,27 @@ CONSULTING_LINK
 
   /* Guide section */
   .mbsConsultV2 .guide{
-    display:grid;grid-template-columns:1fr;gap:14px;max-width:720px;
+    display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;
+    padding:20px 24px;border-radius:22px;
+    background:rgba(22,138,91,.06);border:1px solid rgba(22,138,91,.14);
   }
   .mbsConsultV2 .avatar{
-    width:120px;height:120px;border-radius:26px;overflow:hidden;
-    border:1px solid rgba(15,23,42,.10);box-shadow:0 12px 24px rgba(2,6,23,.08);
-    background:rgba(2,6,23,.04);
+    width:72px;height:72px;border-radius:50%;overflow:hidden;
+    border:1px solid rgba(15,23,42,.10);box-shadow:0 8px 18px rgba(2,6,23,.08);
+    background:rgba(2,6,23,.04);flex-shrink:0;
   }
   .mbsConsultV2 .avatar .img{
     width:100%;height:100%;background-image:var(--guideImg);
     background-size:cover;background-position:center;
   }
-  .mbsConsultV2 .guide h3{margin:0 0 6px;letter-spacing:-.02em}
-  .mbsConsultV2 .guide p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
+  .mbsConsultV2 .guide h3{margin:0 0 2px;letter-spacing:-.02em;font-size:15px}
+  .mbsConsultV2 .guide p{margin:0;color:var(--muted);line-height:1.5;font-size:13.5px}
 
   /* Phases */
-  .mbsConsultV2 .phases{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px}
+  .mbsConsultV2 .phases{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .mbsConsultV2 .phase{
-    background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;
-    box-shadow:0 12px 24px rgba(2,6,23,.06);
+    background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:22px;padding:20px;
+    box-shadow:none;
   }
   .mbsConsultV2 .phaseTop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
   .mbsConsultV2 .numBox{
@@ -354,8 +330,8 @@ CONSULTING_LINK
   /* Accordion details */
   .mbsConsultV2 .faq{display:grid;gap:10px}
   .mbsConsultV2 details{
-    background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 14px;
-    box-shadow:0 10px 20px rgba(2,6,23,.05);
+    background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:18px;padding:20px;
+    box-shadow:none;
   }
   .mbsConsultV2 summary{cursor:pointer;font-weight:900;letter-spacing:-.01em;list-style:none}
   .mbsConsultV2 summary::-webkit-details-marker{display:none}
@@ -371,7 +347,7 @@ CONSULTING_LINK
   }
 
   /* Booking */
-  .mbsConsultV2 .split{display:grid;grid-template-columns:1fr;gap:18px;max-width:720px}
+  .mbsConsultV2 .split{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   .mbsConsultV2 .embed{
     border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow2);background:#fff;
   }
@@ -411,12 +387,13 @@ CONSULTING_LINK
     .mbsConsultV2 .menu.open{display:flex}
     .mbsConsultV2 .mToggle{display:inline-flex}
     .mbsConsultV2 .hdrCtas{grid-column:1/-1;justify-content:flex-start}
+    .mbsConsultV2 .split,.mbsConsultV2 .tri,.mbsConsultV2 .phases{grid-template-columns:1fr;max-width:600px}
+    .mbsConsultV2 .guide{grid-template-columns:auto 1fr}
   }
   @media (max-width:640px){
     .mbsConsultV2 .wrap{width:min(var(--max),calc(100% - 32px))}
     .mbsConsultV2 .ratio{padding-top:86%}
-    /* already single-column */
-    .mbsConsultV2 .avatar{width:96px;height:96px;border-radius:22px}
+    .mbsConsultV2 .guide{grid-template-columns:1fr;text-align:center;justify-items:center}
     .mbsConsultV2 .stickyBook{display:block}
     .mbsConsultV2 main{padding-bottom:74px}
   }
@@ -431,14 +408,6 @@ CONSULTING_LINK
   .heroGradient{
     background:linear-gradient(135deg,rgba(255,255,255,1) 40%,rgba(255,255,255,.70));
     -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  }
-
-  /* Card + phase hover lift */
-  @media(hover:hover){
-    .mbsConsultV2 .card,.mbsConsultV2 .phase{transition:transform .18s ease,box-shadow .18s ease}
-    .mbsConsultV2 .card:hover,.mbsConsultV2 .phase:hover{
-      transform:translateY(-3px);box-shadow:0 24px 60px rgba(2,6,23,.13);
-    }
   }
 
   /* Nav transition */
@@ -576,47 +545,19 @@ CONSULTING_LINK
       </div>
     </section>
 
-    <!-- Wave -->
-    <div class="wave toWhite" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
-
     <!-- GUIDE -->
     <section id="guide" aria-label="From Kamil">
       <div class="wrap">
-        <div class="head">
+        <div class="guide">
+          <div class="avatar" aria-hidden="true"><div class="img"></div></div>
           <div>
-            <h2>Your guide through RCFE consulting</h2>
-            <p>Structured guidance from someone who operates facilities, not just advises on them.</p>
+            <h3>From Kamil</h3>
+            <p>Phased consulting for RCFE operators who want a clear, executable plan.</p>
           </div>
-        </div>
-        <div class="card">
-          <div class="guide">
-            <div class="avatar" aria-hidden="true"><div class="img"></div></div>
-            <div>
-              <h3>From Kamil</h3>
-              <p>
-                I own and operate my own facilities. When I consult, it comes from direct experience
-                with the same challenges you're facing. The goal is a clear, actionable plan you can
-                actually execute.
-              </p>
-              <div class="centerRow" style="margin-top:12px">
-                <a class="btn primary" href="BOOKING_LINK_CONSULT">Book an RCFE Consulting Call</a>
-              </div>
-            </div>
-          </div>
+          <a class="btn primary" href="#book">Book a Consultation</a>
         </div>
       </div>
     </section>
-
-    <!-- Wave -->
-    <div class="wave toWhite" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
 
     <!-- WHAT THIS IS -->
     <section id="what" aria-label="What RCFE consulting is">
@@ -656,22 +597,11 @@ CONSULTING_LINK
           <b>Important:</b> We provide operational/administrative guidance. For legal advice, consult a qualified professional.
         </div>
 
-        <div class="centerRow" style="margin-top:14px">
-          <a class="btn primary" href="#book">Book the call</a>
-          <a class="btn ghost" href="#deliverables">What you’ll get</a>
-        </div>
       </div>
     </section>
 
-    <!-- Wave -->
-    <div class="wave toSoft" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
-
     <!-- PHASES -->
-    <section id="phases" class="soft" aria-label="Consulting phases">
+    <section id="phases" aria-label="Consulting phases">
       <div class="wrap">
         <div class="head">
           <div>
@@ -729,13 +659,6 @@ CONSULTING_LINK
       </div>
     </section>
 
-    <!-- Wave -->
-    <div class="wave toWhite" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
-
     <!-- DELIVERABLES -->
     <section id="deliverables" aria-label="Deliverables">
       <div class="wrap">
@@ -767,22 +690,11 @@ CONSULTING_LINK
           If ALW is part of your plan, we’ll make sure the consulting roadmap accounts for that, keeping things clear for your website visitors.
         </div>
 
-        <div class="centerRow" style="margin-top:14px">
-          <a class="btn primary" href="#book">Book the call</a>
-          <a class="btn ghost" href="ALW_FUNDING_LINK">ALW Revenue</a>
-        </div>
       </div>
     </section>
 
-    <!-- Wave -->
-    <div class="wave toSoft" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
-
     <!-- WHO -->
-    <section id="who" class="soft" aria-label="Who RCFE consulting is for">
+    <section id="who" aria-label="Who RCFE consulting is for">
       <div class="wrap">
         <div class="head">
           <div>
@@ -808,10 +720,6 @@ CONSULTING_LINK
           </div>
         </div>
 
-        <div class="centerRow" style="margin-top:18px">
-          <a class="btn primary" href="#book">Book a consulting call</a>
-          <a class="btn ghost" href="#faq">FAQs</a>
-        </div>
       </div>
     </section>
 
@@ -826,28 +734,24 @@ CONSULTING_LINK
         </div>
 
         <div class="split">
-          <div class="card">
-            <h3>What to bring (if available)</h3>
-            <p style="margin:0;color:var(--muted);line-height:1.7;font-size:14px">
+          <div>
+            <h3 style=”margin:0 0 10px;letter-spacing:-.02em”>What to bring (if available)</h3>
+            <p style=”margin:0 0 16px;color:var(--muted);font-size:14px;line-height:1.7”>
               You do not need “perfect paperwork.” A simple overview is enough for the first call.
             </p>
 
-            <ul class="list">
-              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+            <ul class=”list”>
+              <li><div class=”tick” aria-hidden=”true”><svg width=”14” height=”14” viewBox=”0 0 24 24” fill=”none”><path d=”M20 6L9 17l-5-5” stroke=”currentColor” stroke-width=”2.2”/></svg></div>
                 <div>Where you are today (idea stage, licensing stage, operating, expanding)</div></li>
-              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+              <li><div class=”tick” aria-hidden=”true”><svg width=”14” height=”14” viewBox=”0 0 24 24” fill=”none”><path d=”M20 6L9 17l-5-5” stroke=”currentColor” stroke-width=”2.2”/></svg></div>
                 <div>County / target timeline / any known blockers</div></li>
-              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
+              <li><div class=”tick” aria-hidden=”true”><svg width=”14” height=”14” viewBox=”0 0 24 24” fill=”none”><path d=”M20 6L9 17l-5-5” stroke=”currentColor” stroke-width=”2.2”/></svg></div>
                 <div>Your top outcome (clarity, readiness, operations, sustain/scale)</div></li>
             </ul>
 
-            <div class="callout">
-              This is a consulting conversation. We’ll keep it simple and map the right phase(s) for your situation.
-            </div>
-
-            <div class="centerRow" style="margin-top:14px">
-              <a class="btn primary" href="BOOKING_LINK_CONSULT">Open Calendar</a>
-              <a class="btn link" href="mailto:{{custom_values.companyemail}}">Email: {{custom_values.companyemail}}</a>
+            <div class=”centerRow” style=”margin-top:14px”>
+              <a class=”btn primary” href=”BOOKING_LINK_CONSULT”>Open Calendar</a>
+              <a class=”btn link” href=”mailto:{{custom_values.companyemail}}”>Email: {{custom_values.companyemail}}</a>
             </div>
           </div>
 
@@ -865,7 +769,7 @@ CONSULTING_LINK
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="soft" aria-label="RCFE consulting FAQs">
+    <section id="faq" aria-label="RCFE consulting FAQs">
       <div class="wrap">
         <div class="head">
           <div>
@@ -901,10 +805,6 @@ CONSULTING_LINK
           </details>
         </div>
 
-        <div class="centerRow" style="margin-top:18px">
-          <a class="btn primary" href="BOOKING_LINK_CONSULT">Book a Consulting Call</a>
-          <a class="btn ghost" href="#top">Back to top</a>
-        </div>
       </div>
     </section>
   </main>

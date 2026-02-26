@@ -109,16 +109,15 @@ Default booking uses your existing Licensing Consultation calendar:
   }
 
   /* Sections */
-  .mbsArfLic section{padding:76px 0}
-  .mbsArfLic .soft{background:var(--soft);border-top:1px solid rgba(15,23,42,.06);border-bottom:1px solid rgba(15,23,42,.06)}
-  .mbsArfLic .head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:26px}
-  .mbsArfLic .head h2{margin:0;font-size:clamp(24px,2.8vw,34px);letter-spacing:-.03em}
-  .mbsArfLic .head p{margin:0;color:var(--muted);max-width:82ch;line-height:1.7;font-size:14.2px}
+  .mbsArfLic section{padding:100px 0}
+  .mbsArfLic .head{margin-bottom:40px;max-width:680px}
+  .mbsArfLic .head h2{margin:0 0 10px;font-size:clamp(28px,3vw,40px);letter-spacing:-.035em}
+  .mbsArfLic .head p{margin:0;color:var(--muted);line-height:1.75;font-size:15px}
 
   /* Split hero */
   .mbsArfLic .hero{padding:28px 0 28px}
   .mbsArfLic .heroGrid{
-    display:grid;grid-template-columns:1fr;gap:18px;max-width:720px;
+    display:grid;grid-template-columns:1fr 1fr;gap:18px;
   }
   .mbsArfLic .heroLeft{
     border:1px solid var(--line); border-radius:28px; padding:clamp(20px,3vw,30px);
@@ -164,10 +163,10 @@ Default booking uses your existing Licensing Consultation calendar:
   }
 
   /* Cards / grids */
-  .mbsArfLic .grid3{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px}
+  .mbsArfLic .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .mbsArfLic .card{
-    background:#fff;border:1px solid var(--line);border-radius:24px;padding:18px;
-    box-shadow:0 12px 24px rgba(2,6,23,.06);
+    background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:24px;padding:24px;
+    box-shadow:none;
   }
   .mbsArfLic .card h3{margin:0 0 8px;letter-spacing:-.02em}
   .mbsArfLic .card p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
@@ -179,7 +178,7 @@ Default booking uses your existing Licensing Consultation calendar:
 
   /* Compare strip */
   .mbsArfLic .compare{
-    display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px;max-width:720px;
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;
   }
   .mbsArfLic .cmp{
     border:1px dashed rgba(15,23,42,.16); border-radius:20px; padding:14px;
@@ -191,8 +190,8 @@ Default booking uses your existing Licensing Consultation calendar:
   /* Timeline problems */
   .mbsArfLic .timeline{display:grid;gap:10px}
   .mbsArfLic .tItem{
-    background:#fff;border:1px solid var(--line);border-radius:20px;padding:14px;
-    box-shadow:0 10px 20px rgba(2,6,23,.05);
+    background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:20px;padding:18px;
+    box-shadow:none;
     display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start;
   }
   .mbsArfLic .tNum{
@@ -204,10 +203,10 @@ Default booking uses your existing Licensing Consultation calendar:
   .mbsArfLic .tItem span{display:block;margin-top:6px;color:var(--muted);font-size:13.6px;line-height:1.65}
 
   /* Roadmap steps (4) */
-  .mbsArfLic .steps4{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px}
+  .mbsArfLic .steps4{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
   .mbsArfLic .step{
-    background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;
-    box-shadow:0 12px 24px rgba(2,6,23,.06);
+    background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:22px;padding:20px;
+    box-shadow:none;
   }
   .mbsArfLic .stepTop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
   .mbsArfLic .tagPill{
@@ -218,7 +217,7 @@ Default booking uses your existing Licensing Consultation calendar:
   .mbsArfLic .step span{display:block;margin-top:6px;color:var(--muted);line-height:1.65;font-size:13.5px}
 
   /* Booking embed */
-  .mbsArfLic .split{display:grid;grid-template-columns:1fr;gap:18px;max-width:720px}
+  .mbsArfLic .split{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   .mbsArfLic .embed{
     border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow2);background:#fff;
   }
@@ -227,11 +226,15 @@ Default booking uses your existing Licensing Consultation calendar:
   .mbsArfLic .embedNote{padding:14px 16px;color:var(--muted);font-size:12.8px;line-height:1.55}
 
   /* Guide */
-  .mbsArfLic .guide{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px}
+  .mbsArfLic .guide{
+    display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;
+    padding:20px 24px;border-radius:22px;
+    background:rgba(15,110,72,.06);border:1px solid rgba(15,110,72,.14);
+  }
   .mbsArfLic .avatar{
-    width:120px;height:120px;border-radius:26px;overflow:hidden;
-    border:1px solid rgba(15,23,42,.10);box-shadow:0 12px 24px rgba(2,6,23,.08);
-    background:rgba(2,6,23,.04);
+    width:72px;height:72px;border-radius:50%;overflow:hidden;
+    border:1px solid rgba(15,23,42,.10);box-shadow:0 8px 18px rgba(2,6,23,.08);
+    background:rgba(2,6,23,.04);flex-shrink:0;
   }
   .mbsArfLic .avatar .img{
     width:100%;height:100%;background-image:var(--guideImg);
@@ -241,8 +244,8 @@ Default booking uses your existing Licensing Consultation calendar:
   /* FAQ */
   .mbsArfLic .faq{display:grid;gap:10px}
   .mbsArfLic details{
-    background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 14px;
-    box-shadow:0 10px 20px rgba(2,6,23,.05);
+    background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:18px;padding:20px;
+    box-shadow:none;
   }
   .mbsArfLic summary{cursor:pointer;font-weight:900;letter-spacing:-.01em;list-style:none;position:relative;padding-right:28px}
   .mbsArfLic summary::-webkit-details-marker{display:none}
@@ -255,10 +258,10 @@ Default booking uses your existing Licensing Consultation calendar:
   @keyframes faqRevealArf{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 
   /* Contact + footer */
-  .mbsArfLic .contactGrid{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px}
+  .mbsArfLic .contactGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .mbsArfLic .cCard{
-    background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;
-    box-shadow:0 12px 24px rgba(2,6,23,.06);
+    background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:22px;padding:24px;
+    box-shadow:none;
   }
   .mbsArfLic .cCard b{display:block;letter-spacing:-.02em}
   .mbsArfLic .cCard span{display:block;margin-top:6px;color:var(--muted);font-size:13.8px;line-height:1.55}
@@ -293,12 +296,14 @@ Default booking uses your existing Licensing Consultation calendar:
     .mbsArfLic .menu{display:none;justify-content:flex-start;grid-column:1/-1;padding-bottom:10px}
     .mbsArfLic .menu.open{display:flex}
     .mbsArfLic .mToggle{display:inline-flex}
+    .mbsArfLic .heroGrid,.mbsArfLic .split,.mbsArfLic .grid3,.mbsArfLic .compare,.mbsArfLic .steps4,.mbsArfLic .pillars{grid-template-columns:1fr;max-width:600px}
+    .mbsArfLic .guide{grid-template-columns:auto 1fr}
   }
   @media (max-width:640px){
     .mbsArfLic .wrap{width:min(var(--max),calc(100% - 32px))}
     .mbsArfLic .ratio{padding-top:86%}
-    /* already single-column */
-    .mbsArfLic .avatar{width:96px;height:96px;border-radius:22px}
+    .mbsArfLic .contactGrid{grid-template-columns:1fr}
+    .mbsArfLic .guide{grid-template-columns:1fr;text-align:center;justify-items:center}
     .mbsArfLic .stickyBook{display:block}
     .mbsArfLic main{padding-bottom:74px}
     .mbsArfLic .foot{grid-template-columns:1fr}
@@ -309,12 +314,7 @@ Default booking uses your existing Licensing Consultation calendar:
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
   .reveal.visible{opacity:1;transform:none}
 
-  @media(hover:hover){
-    .mbsArfLic .card,.mbsArfLic .step,.mbsArfLic .tItem,.mbsArfLic .cCard{transition:transform .18s ease,box-shadow .18s ease}
-    .mbsArfLic .card:hover,.mbsArfLic .step:hover,.mbsArfLic .tItem:hover,.mbsArfLic .cCard:hover{
-      transform:translateY(-3px);box-shadow:0 24px 60px rgba(2,6,23,.13);
-    }
-  }
+
 </style>
 
 <div class="mbsArfLic" id="top">
@@ -493,15 +493,11 @@ Default booking uses your existing Licensing Consultation calendar:
           <b>Not sure which applies?</b> Book a licensing consult and we'll confirm your facility type and the cleanest path forward.
         </div>
 
-        <div class="ctaRow">
-          <a class="btn primary" href="#book">Book ARF consult</a>
-          <a class="btn ghost" href="RCFE_PAGE_LINK">Go to RCFE page</a>
-        </div>
       </div>
     </section>
 
     <!-- PROBLEMS -->
-    <section id="stuck" class="soft" aria-label="Where ARF applications get stuck">
+    <section id="stuck" aria-label="Where ARF applications get stuck">
       <div class="wrap">
         <div class="head">
           <div>
@@ -520,10 +516,6 @@ Default booking uses your existing Licensing Consultation calendar:
           <div class="tItem"><div class="tNum">4</div><div><b>Timeline pressure</b><span>Facility planning, staffing, and licensing tasks aren't coordinated, causing last-minute scrambles.</span></div></div>
         </div>
 
-        <div class="ctaRow" style="margin-top:18px">
-          <a class="btn primary" href="#book">Book ARF consult (avoid rework)</a>
-          <a class="btn ghost" href="#roadmap">See the roadmap</a>
-        </div>
       </div>
     </section>
 
@@ -568,7 +560,7 @@ Default booking uses your existing Licensing Consultation calendar:
     </section>
 
     <!-- INCLUDED -->
-    <section id="included" class="soft" aria-label="What you get for ARF licensing">
+    <section id="included" aria-label="What you get for ARF licensing">
       <div class="wrap">
         <div class="head">
           <div>
@@ -593,10 +585,6 @@ Default booking uses your existing Licensing Consultation calendar:
               <b>Note:</b> We provide operational/administrative guidance. For legal advice, we'll direct you to the appropriate professional.
             </div>
 
-            <div class="ctaRow">
-              <a class="btn primary" href="#book">Book consult</a>
-              <a class="btn link" href="mailto:{{custom_values.companyemail}}">Email us</a>
-            </div>
           </div>
 
           <div class="card">
@@ -616,10 +604,6 @@ Default booking uses your existing Licensing Consultation calendar:
               If that's relevant to you, we'll route the conversation accordingly.
             </div>
 
-            <div class="ctaRow">
-              <a class="btn ghost" href="ALW_APP_LINK">ALW application</a>
-              <a class="btn ghost" href="CONSULTING_LINK">RCFE consulting</a>
-            </div>
           </div>
         </div>
       </div>
@@ -628,34 +612,19 @@ Default booking uses your existing Licensing Consultation calendar:
     <!-- GUIDE -->
     <section id="guide" aria-label="Your guide">
       <div class="wrap">
-        <div class="head">
+        <div class="guide">
+          <div class="avatar" aria-hidden="true"><div class="img"></div></div>
           <div>
-            <h2>Your guide through ARF licensing</h2>
-            <p>Practical. Organized. Built around momentum, not overwhelm.</p>
+            <h3>From Kamil</h3>
+            <p>We make ARF licensing clear, organized, and free of preventable delays.</p>
           </div>
-        </div>
-
-        <div class="card">
-          <div class="guide">
-            <div class="avatar" aria-hidden="true"><div class="img"></div></div>
-            <div>
-              <h3>From Kamil</h3>
-              <p class="mini">
-                ARF licensing can feel like a moving target when you're building, staffing, and trying to keep timelines realistic.
-                Our role is to make the next step clear and help you avoid preventable delays from sequencing mistakes and documentation rework.
-              </p>
-              <div class="ctaRow" style="margin-top:12px">
-                <a class="btn primary" href="#book">Book ARF consult</a>
-                <a class="btn link" href="tel:{{custom_values.companyphone_display}}">Call: {{custom_values.companyphone_display}}</a>
-              </div>
-            </div>
-          </div>
+          <a class="btn primary" href="#book">Book ARF Consult</a>
         </div>
       </div>
     </section>
 
     <!-- BOOKING -->
-    <section id="book" class="soft" aria-label="Book ARF consult">
+    <section id="book" aria-label="Book ARF consult">
       <div class="wrap">
         <div class="head">
           <div>
@@ -665,9 +634,9 @@ Default booking uses your existing Licensing Consultation calendar:
         </div>
 
         <div class="split">
-          <div class="card">
-            <h3>What to bring (if available)</h3>
-            <p class="mini">Even a quick overview is fine. We'll keep this practical.</p>
+          <div>
+            <h3 style="margin:0 0 10px;letter-spacing:-.02em">What to bring (if available)</h3>
+            <p class="mini" style="margin:0 0 16px;color:var(--muted);font-size:14px;line-height:1.7">Even a quick overview is fine. We'll keep this practical.</p>
             <ul class="bullets" style="margin-top:10px">
               <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
                 <div>Facility address/county + target timeline</div></li>
@@ -676,10 +645,6 @@ Default booking uses your existing Licensing Consultation calendar:
               <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
                 <div>Known blockers (permits, staffing plan, documentation questions)</div></li>
             </ul>
-
-            <div class="callout">
-              Every facility is different. The consult is about clarity, sequencing, and readiness.
-            </div>
 
             <div class="ctaRow">
               <a class="btn primary" href="BOOKING_LINK_ARF">Open calendar</a>
@@ -729,15 +694,11 @@ Default booking uses your existing Licensing Consultation calendar:
           </details>
         </div>
 
-        <div class="ctaRow" style="margin-top:18px">
-          <a class="btn primary" href="#book">Book ARF consult</a>
-          <a class="btn ghost" href="RCFE_PAGE_LINK">RCFE page</a>
-        </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="soft" aria-label="Contact">
+    <section id="contact" aria-label="Contact">
       <div class="wrap">
         <div class="head">
           <div>

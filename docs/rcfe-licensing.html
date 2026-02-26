@@ -152,9 +152,8 @@ Booking links (Licensing Consultation Calendar):
   /* Proof chips */
   .mbsRcfeLic .proofBar{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
   .mbsRcfeLic .proofChip{
-    display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:16px;
-    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.92);
-    backdrop-filter:blur(10px);
+    display:flex;align-items:center;gap:10px;padding:6px 0;
+    color:rgba(255,255,255,.92);
   }
   .mbsRcfeLic .check{
     width:22px;height:22px;border-radius:10px;display:flex;align-items:center;justify-content:center;
@@ -163,22 +162,17 @@ Booking links (Licensing Consultation Calendar):
   .mbsRcfeLic .proofChip b{display:block;font-size:12.8px;letter-spacing:-.01em}
   .mbsRcfeLic .proofChip span{display:block;font-size:12px;opacity:.9;margin-top:2px}
 
-  /* Sections + waves */
-  .mbsRcfeLic section{padding:76px 0}
-  .mbsRcfeLic .soft{background:var(--soft);border-top:1px solid rgba(15,23,42,.06);border-bottom:1px solid rgba(15,23,42,.06)}
-  .mbsRcfeLic .head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:26px}
-  .mbsRcfeLic .head h2{margin:0;font-size:clamp(24px,2.8vw,34px);letter-spacing:-.03em}
-  .mbsRcfeLic .head p{margin:0;color:var(--muted);max-width:78ch;line-height:1.7;font-size:14.2px}
-  .mbsRcfeLic .wave{height:44px;margin:-14px 0 -18px;pointer-events:none;position:relative}
-  .mbsRcfeLic .wave svg{width:100%;height:100%;display:block}
-  .mbsRcfeLic .wave.toSoft path{fill:var(--soft)}
-  .mbsRcfeLic .wave.toWhite path{fill:var(--bg)}
+  /* Sections */
+  .mbsRcfeLic section{padding:100px 0}
+  .mbsRcfeLic .head{margin-bottom:40px;max-width:680px}
+  .mbsRcfeLic .head h2{margin:0 0 10px;font-size:clamp(28px,3vw,40px);letter-spacing:-.035em}
+  .mbsRcfeLic .head p{margin:0;color:var(--muted);line-height:1.75;font-size:15px}
 
   /* Cards + layout */
-  .mbsRcfeLic .split{display:grid;grid-template-columns:1fr;gap:18px;max-width:720px}
+  .mbsRcfeLic .split{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   .mbsRcfeLic .card{
-    background:#fff;border:1px solid rgba(15,23,42,.10);border-radius:24px;padding:18px;
-    box-shadow:0 12px 24px rgba(2,6,23,.06);
+    background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:24px;padding:24px;
+    box-shadow:none;
   }
   .mbsRcfeLic .card h3{margin:0 0 8px;letter-spacing:-.02em}
   .mbsRcfeLic .card p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
@@ -201,17 +195,17 @@ Booking links (Licensing Consultation Calendar):
   /* Problem cards grid */
   .mbsRcfeLic .grid6{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px}
   .mbsRcfeLic .pCard{
-    background:#fff;border:1px solid rgba(15,23,42,.10);border-radius:22px;padding:16px;
-    box-shadow:0 12px 24px rgba(2,6,23,.06);
+    background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:22px;padding:20px;
+    box-shadow:none;
   }
   .mbsRcfeLic .pCard b{display:block;letter-spacing:-.02em;font-size:15px}
   .mbsRcfeLic .pCard span{display:block;margin-top:6px;color:var(--muted);line-height:1.65;font-size:13.6px}
 
   /* Plan (3 steps) */
-  .mbsRcfeLic .plan3{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px}
+  .mbsRcfeLic .plan3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .mbsRcfeLic .step{
-    background:#fff;border:1px solid rgba(15,23,42,.10);border-radius:22px;padding:16px;
-    box-shadow:0 12px 24px rgba(2,6,23,.06);
+    background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:22px;padding:20px;
+    box-shadow:none;
   }
   .mbsRcfeLic .stepTop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
   .mbsRcfeLic .numBox{
@@ -228,19 +222,21 @@ Booking links (Licensing Consultation Calendar):
 
   /* Guide section */
   .mbsRcfeLic .guide{
-    display:grid;grid-template-columns:1fr;gap:14px;max-width:720px;
+    display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;
+    padding:20px 24px;border-radius:22px;
+    background:rgba(22,138,91,.06);border:1px solid rgba(22,138,91,.14);
   }
   .mbsRcfeLic .avatar{
-    width:120px;height:120px;border-radius:26px;overflow:hidden;
-    border:1px solid rgba(15,23,42,.10);box-shadow:0 12px 24px rgba(2,6,23,.08);
-    background:rgba(2,6,23,.04);
+    width:72px;height:72px;border-radius:50%;overflow:hidden;
+    border:1px solid rgba(15,23,42,.10);box-shadow:0 8px 18px rgba(2,6,23,.08);
+    background:rgba(2,6,23,.04);flex-shrink:0;
   }
   .mbsRcfeLic .avatar .img{
     width:100%;height:100%;background-image:var(--guideImg);
     background-size:cover;background-position:center;
   }
-  .mbsRcfeLic .guide h3{margin:0 0 6px;letter-spacing:-.02em}
-  .mbsRcfeLic .guide p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
+  .mbsRcfeLic .guide h3{margin:0 0 2px;letter-spacing:-.02em;font-size:15px}
+  .mbsRcfeLic .guide p{margin:0;color:var(--muted);line-height:1.5;font-size:13.5px}
 
   /* Booking embed */
   .mbsRcfeLic .embed{
@@ -253,8 +249,8 @@ Booking links (Licensing Consultation Calendar):
   /* FAQ */
   .mbsRcfeLic .faq{display:grid;gap:10px}
   .mbsRcfeLic details{
-    background:#fff;border:1px solid rgba(15,23,42,.10);border-radius:18px;padding:14px 14px;
-    box-shadow:0 10px 20px rgba(2,6,23,.05);
+    background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:18px;padding:20px;
+    box-shadow:none;
   }
   .mbsRcfeLic summary{cursor:pointer;font-weight:900;letter-spacing:-.01em;list-style:none}
   .mbsRcfeLic summary::-webkit-details-marker{display:none}
@@ -263,8 +259,8 @@ Booking links (Licensing Consultation Calendar):
   /* Contact + footer */
   .mbsRcfeLic .contactGrid{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px}
   .mbsRcfeLic .cCard{
-    background:#fff;border:1px solid rgba(15,23,42,.10);border-radius:22px;padding:18px;
-    box-shadow:0 12px 24px rgba(2,6,23,.06);
+    background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:22px;padding:24px;
+    box-shadow:none;
   }
   .mbsRcfeLic .cCard b{display:block;letter-spacing:-.02em}
   .mbsRcfeLic .cCard span{display:block;margin-top:6px;color:var(--muted);font-size:13.8px;line-height:1.55}
@@ -300,14 +296,15 @@ Booking links (Licensing Consultation Calendar):
     .mbsRcfeLic .menu.open{display:flex}
     .mbsRcfeLic .mToggle{display:inline-flex}
     .mbsRcfeLic .hdrCtas{grid-column:1/-1;justify-content:flex-start}
+    .mbsRcfeLic .split,.mbsRcfeLic .plan3{grid-template-columns:1fr;max-width:600px}
+    .mbsRcfeLic .guide{grid-template-columns:auto 1fr}
   }
   @media (max-width:640px){
     .mbsRcfeLic .wrap{width:min(var(--max),calc(100% - 32px))}
     .mbsRcfeLic .ratio{padding-top:86%}
-    /* already single-column */
-    .mbsRcfeLic .avatar{width:96px;height:96px;border-radius:22px}
+    .mbsRcfeLic .guide{grid-template-columns:1fr;text-align:center;justify-items:center}
     .mbsRcfeLic .stickyBook{display:block}
-    .mbsRcfeLic main{padding-bottom:74px} /* room for sticky CTA */
+    .mbsRcfeLic main{padding-bottom:74px}
   }
   @media (prefers-reduced-motion: reduce){ .mbsRcfeLic .btn{transition:none} }
 
@@ -322,13 +319,6 @@ Booking links (Licensing Consultation Calendar):
     -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
   }
 
-  /* Card + step hover lift */
-  @media(hover:hover){
-    .mbsRcfeLic .card,.mbsRcfeLic .step,.mbsRcfeLic .pCard,.mbsRcfeLic .cCard{transition:transform .18s ease,box-shadow .18s ease}
-    .mbsRcfeLic .card:hover,.mbsRcfeLic .step:hover,.mbsRcfeLic .pCard:hover,.mbsRcfeLic .cCard:hover{
-      transform:translateY(-3px);box-shadow:0 24px 60px rgba(2,6,23,.13);
-    }
-  }
 
   /* Nav transition */
   .mbsRcfeLic .menu>a,.mbsRcfeLic .dd>button{transition:background .15s ease,color .15s ease}
@@ -465,48 +455,19 @@ Booking links (Licensing Consultation Calendar):
       </div>
     </section>
 
-    <!-- Wave to white -->
-    <div class="wave toWhite" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
-
     <!-- GUIDE -->
     <section id="guide" aria-label="From Kamil">
       <div class="wrap">
-        <div class="head">
+        <div class="guide">
+          <div class="avatar" aria-hidden="true"><div class="img"></div></div>
           <div>
-            <h2>Your guide through the process</h2>
-            <p>We keep this practical and organized, so you're not stuck guessing what's next.</p>
+            <h3>From Kamil</h3>
+            <p>We make the next step clear and help you avoid preventable licensing delays.</p>
           </div>
-        </div>
-
-        <div class="card">
-          <div class="guide">
-            <div class="avatar" aria-hidden="true"><div class="img"></div></div>
-            <div>
-              <h3>From Kamil</h3>
-              <p>
-                If you're building or expanding an RCFE, you're juggling a lot. Facility decisions, timelines, documentation,
-                and "what the state actually expects." Our job is to make the next step clear and help you avoid preventable delays.
-              </p>
-              <div class="centerRow" style="margin-top:12px">
-                <a class="btn primary" href="BOOKING_LINK_LIC">Book a Licensing Consultation</a>
-                <a class="btn link" href="mailto:{{custom_values.companyemail}}">Email: {{custom_values.companyemail}}</a>
-              </div>
-            </div>
-          </div>
+          <a class="btn primary" href="#book">Book a Consultation</a>
         </div>
       </div>
     </section>
-
-    <!-- Wave to white -->
-    <div class="wave toWhite" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
 
     <!-- WHAT IT IS -->
     <section id="what" aria-label="What RCFE licensing is">
@@ -558,10 +519,6 @@ Booking links (Licensing Consultation Calendar):
               <b>Planning ALW?</b> RCFE licensing is commonly a prerequisite step. We can route licensing + ALW in the right order.
             </div>
 
-            <div class="centerRow" style="margin-top:14px">
-              <a class="btn primary" href="BOOKING_LINK_LIC">Book a Licensing Consultation</a>
-              <a class="btn ghost" href="ALW_APP_LINK">ALW Application</a>
-            </div>
           </div>
         </div>
       </div>
@@ -602,15 +559,8 @@ Booking links (Licensing Consultation Calendar):
       </div>
     </section>
 
-    <!-- Wave to soft -->
-    <div class="wave toSoft" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
-
     <!-- INCLUDED -->
-    <section id="included" class="soft" aria-label="What's included">
+    <section id="included" aria-label="What's included">
       <div class="wrap">
         <div class="head">
           <div>
@@ -664,24 +614,13 @@ Booking links (Licensing Consultation Calendar):
               If you’re also pursuing ALW, we can help route you through licensing + ALW steps in the right order.
             </div>
 
-            <div class="centerRow" style="margin-top:14px">
-              <a class="btn ghost" href="ALW_APP_LINK">Go to ALW Application</a>
-              <a class="btn ghost" href="ARF_LIC_LINK">ARF Licensing</a>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Wave to soft -->
-    <div class="wave toSoft" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
-
     <!-- BOOKING -->
-    <section id="book" class="soft" aria-label="Book licensing consult">
+    <section id="book" aria-label="Book licensing consult">
       <div class="wrap">
         <div class="head">
           <div>
@@ -691,9 +630,9 @@ Booking links (Licensing Consultation Calendar):
         </div>
 
         <div class="split">
-          <div class="card">
-            <h3>What to bring (if available)</h3>
-            <p>Even a quick overview is fine. We’ll keep this practical.</p>
+          <div>
+            <h3 style="margin:0 0 10px;letter-spacing:-.02em">What to bring (if available)</h3>
+            <p style="margin:0 0 16px;color:var(--muted);font-size:14px;line-height:1.7">Even a quick overview is fine. We’ll keep this practical.</p>
             <ul class="list">
               <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
                 <div>Facility plan / address / county + your target timeline</div></li>
@@ -703,11 +642,7 @@ Booking links (Licensing Consultation Calendar):
                 <div>Any known blockers (permits, staffing plan, documentation questions)</div></li>
             </ul>
 
-            <div class="callout">
-              Every facility is different. We’ll walk through what’s realistic for your situation.
-            </div>
-
-            <div class="centerRow" style="margin-top:14px">
+            <div class="centerRow" style="margin-top:18px">
               <a class="btn primary" href="BOOKING_LINK_LIC">Open Calendar</a>
               <a class="btn link" href="tel:{{custom_values.companyphone_display}}">Call: {{custom_values.companyphone_display}}</a>
             </div>
@@ -725,13 +660,6 @@ Booking links (Licensing Consultation Calendar):
         </div>
       </div>
     </section>
-
-    <!-- Wave to white -->
-    <div class="wave toWhite" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-      </svg>
-    </div>
 
     <!-- FAQ -->
     <section id="faq" aria-label="RCFE licensing FAQs">
@@ -766,10 +694,6 @@ Booking links (Licensing Consultation Calendar):
           </details>
         </div>
 
-        <div class="centerRow" style="margin-top:18px">
-          <a class="btn primary" href="BOOKING_LINK_LIC">Book a Licensing Consultation</a>
-          <a class="btn ghost" href="#contact">Contact options</a>
-        </div>
       </div>
     </section>
   </main>
