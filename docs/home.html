@@ -488,11 +488,129 @@ Quick edits (search these):
     font-size:13.5px;
   }
 
+  /* ===================== SERVICE DETAIL SECTIONS ===================== */
+  .mbs3-svc{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:42px;
+    align-items:center;
+  }
+  .mbs3-svc--flip .mbs3-svc-text{ order:2; }
+  .mbs3-svc--flip .mbs3-svc-visual{ order:1; }
+
+  .mbs3-svc-kicker{
+    display:inline-block;
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 10px;
+  }
+  .mbs3-svc-text h2{
+    font-size:clamp(24px,2.6vw,32px);
+    letter-spacing:-.5px;
+    margin:0 0 12px;
+  }
+  .mbs3-svc-text > p{
+    color:rgba(11,18,32,.64);
+    line-height:1.65;
+    margin:0 0 18px;
+  }
+  .mbs3-checks{
+    list-style:none;
+    padding:0;
+    margin:0 0 22px;
+  }
+  .mbs3-checks li{
+    position:relative;
+    padding:8px 0 8px 30px;
+    color:rgba(11,18,32,.74);
+    line-height:1.5;
+    font-weight:600;
+  }
+  .mbs3-checks li::before{
+    content:'';
+    position:absolute;
+    left:0; top:11px;
+    width:18px; height:18px;
+    border-radius:50%;
+    background:var(--accent);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3E%3Cpath d='M6.5 11.5L3 8l1-1 2.5 2.5 5-5 1 1z'/%3E%3C/svg%3E");
+    background-size:14px; background-position:center; background-repeat:no-repeat;
+  }
+  .mbs3-svc-visual{
+    border-radius:22px;
+    overflow:hidden;
+    background:var(--soft);
+    border:1px solid rgba(11,18,32,.08);
+    box-shadow:0 16px 40px rgba(11,18,32,.06);
+    aspect-ratio:4/3;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .mbs3-svc-visual img{
+    width:100%; height:100%;
+    object-fit:cover;
+  }
+  .mbs3-svc-icon{
+    width:72px; height:72px;
+    border-radius:18px;
+    background:rgba(22,138,91,.08);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .mbs3-svc-icon svg{ width:32px; height:32px; color:var(--accent); }
+
+  /* Video section */
+  .mbs3-video-wrap{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:42px;
+    align-items:center;
+  }
+  .mbs3-video-frame{
+    position:relative;
+    border-radius:22px;
+    overflow:hidden;
+    background:#0b1220;
+    box-shadow:0 20px 50px rgba(11,18,32,.14);
+    aspect-ratio:16/9;
+  }
+  .mbs3-video-frame iframe{
+    position:absolute;inset:0;
+    width:100%;height:100%;
+    border:none;
+  }
+  .mbs3-video-placeholder{
+    position:absolute;inset:0;
+    display:flex;
+    align-items:center;justify-content:center;
+    background:linear-gradient(135deg,#0b1220 0%,#1a2640 100%);
+    color:rgba(255,255,255,.5);
+    font-size:14px;
+    font-weight:700;
+  }
+  .mbs3-video-text h2{
+    font-size:clamp(24px,2.6vw,32px);
+    letter-spacing:-.5px;
+    margin:0 0 12px;
+  }
+  .mbs3-video-text p{
+    color:rgba(11,18,32,.64);
+    line-height:1.65;
+    margin:0 0 18px;
+  }
+
   /* ===================== RESPONSIVE ===================== */
   @media (max-width: 980px){
     .mbs3-hero-left{ padding:clamp(24px,3vw,42px); }
     .mbs3-tiles{ grid-template-columns: repeat(2, 1fr); }
     .mbs3-grid-2{ grid-template-columns:1fr; }
+    .mbs3-svc{ grid-template-columns:1fr; gap:28px; }
+    .mbs3-svc--flip .mbs3-svc-text{ order:1; }
+    .mbs3-svc--flip .mbs3-svc-visual{ order:2; }
+    .mbs3-video-wrap{ grid-template-columns:1fr; gap:28px; }
     .mbs3-checklist{ grid-template-columns:1fr; }
     .mbs3-quotes{ grid-template-columns:1fr; }
     .mbs3-h1{ font-size:46px; }
@@ -909,6 +1027,123 @@ Quick edits (search these):
       <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
     </svg>
   </div>
+
+  <!-- ============ VIDEO / KAMIL INTRO ============ -->
+  <section class="mbs3-section mbs3-section--white" id="intro" style="padding-bottom:28px;">
+    <div class="mbs3-shell">
+      <div class="mbs3-video-wrap">
+        <div class="mbs3-video-frame">
+          <div class="mbs3-video-placeholder">Video coming soon</div>
+        </div>
+        <div class="mbs3-video-text">
+          <span class="mbs3-svc-kicker">Meet Kamil</span>
+          <h2>We help you operate with less guessing.</h2>
+          <p>
+            RCFE owner and operator with 15+ years in the ALW space.
+            Our goal is to give you a clear path and get you into the right consult.
+            From there, we'll explain what's realistic for your facility and execute with structure.
+          </p>
+          <a class="mbs3-btn mbs3-btn--primary mb-open-consult" href="BOOKING_LINK">Book a Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICE: STATE LICENSING ============ -->
+  <section class="mbs3-section mbs3-section--soft" id="svc-licensing">
+    <div class="mbs3-shell">
+      <div class="mbs3-svc reveal">
+        <div class="mbs3-svc-text">
+          <span class="mbs3-svc-kicker">Licensing</span>
+          <h2>State Licensing (RCFE + ARF)</h2>
+          <p>Start a new facility or expand with clear requirements and a clean process. We help you avoid preventable delays, organize documentation, and keep momentum moving.</p>
+          <ul class="mbs3-checks">
+            <li>Clear requirements: what matters, what doesn't</li>
+            <li>Documentation readiness, organized the right way</li>
+            <li>Clean submission + follow-through (less rework)</li>
+          </ul>
+          <a class="mbs3-btn mbs3-btn--primary" href="LIC_RCFE_LINK">Start Licensing <span>→</span></a>
+        </div>
+        <div class="mbs3-svc-visual">
+          <div class="mbs3-svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICE: ALW BILLING ============ -->
+  <section class="mbs3-section mbs3-section--white" id="svc-billing">
+    <div class="mbs3-shell">
+      <div class="mbs3-svc mbs3-svc--flip reveal">
+        <div class="mbs3-svc-text">
+          <span class="mbs3-svc-kicker">Billing</span>
+          <h2>ALW Billing</h2>
+          <p>If you're already in ALW, we bring structure and proactive follow-through so you're not guessing what's pending, denied, or next.</p>
+          <ul class="mbs3-checks">
+            <li>Visibility into what's happening</li>
+            <li>Proactive follow-up on issues early</li>
+            <li>Cleaner communication and fewer surprises</li>
+          </ul>
+          <a class="mbs3-btn mbs3-btn--primary" href="BILLING_LINK">Explore ALW Billing <span>→</span></a>
+        </div>
+        <div class="mbs3-svc-visual">
+          <div class="mbs3-svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICE: ALW FUNDING / REVENUE ============ -->
+  <section class="mbs3-section mbs3-section--soft" id="svc-funding">
+    <div class="mbs3-shell">
+      <div class="mbs3-svc reveal">
+        <div class="mbs3-svc-text">
+          <span class="mbs3-svc-kicker">Revenue</span>
+          <h2>ALW Funding / Revenue Optimization</h2>
+          <p>If you suspect your current ALW revenue doesn't reflect your true level of care, we identify practical levers and map a grounded plan, without overpromising.</p>
+          <ul class="mbs3-checks">
+            <li>Review what's limiting results now</li>
+            <li>Identify common levers owners miss</li>
+            <li>Give you a clear next-step plan</li>
+          </ul>
+          <a class="mbs3-btn mbs3-btn--primary" href="FUNDING_LINK">Explore Revenue Improvement <span>→</span></a>
+        </div>
+        <div class="mbs3-svc-visual">
+          <div class="mbs3-svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICE: RCFE CONSULTING ============ -->
+  <section class="mbs3-section mbs3-section--white" id="svc-consulting">
+    <div class="mbs3-shell">
+      <div class="mbs3-svc mbs3-svc--flip reveal">
+        <div class="mbs3-svc-text">
+          <span class="mbs3-svc-kicker">Consulting</span>
+          <h2>RCFE Consulting</h2>
+          <p>Many providers aren't looking for "a cheaper biller." They want better outcomes. If a change costs more but produces substantially more, the math changes.</p>
+          <ul class="mbs3-checks">
+            <li>Review your current setup and what's limiting results</li>
+            <li>Identify practical levers inside ALW that owners commonly miss</li>
+            <li>Outline a clear plan with next actions (not theory)</li>
+          </ul>
+          <a class="mbs3-btn mbs3-btn--primary" href="CONSULTING_LINK">Learn More <span>→</span></a>
+        </div>
+        <div class="mbs3-svc-visual">
+          <div class="mbs3-svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- WHY DIFFERENT -->
   <section class="mbs3-section mbs3-section--white" id="difference">
