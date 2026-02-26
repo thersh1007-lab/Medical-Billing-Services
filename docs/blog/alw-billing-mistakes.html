@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 ALW Billing Mistakes That Cost Facilities Thousands | Kamil's RCFE Tips &amp; Tricks</title>
+<meta name="description" content="After billing over $1.5 million monthly for RCFE and ARF providers, here are the five most common ALW billing mistakes we see and what they actually cost you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<style>
+  /* Scope + tokens */
+  .mbsPost{
+    --bg:#ffffff;
+    --ink:#0b1220;
+    --muted:#4b5563;
+    --line:rgba(15,23,42,.10);
+    --soft:#f6f8fb;
+    --accent:#168a5b;
+    --accent2:#0f6e48;
+    --shadow:0 26px 64px rgba(2,6,23,.12);
+    --shadow2:0 14px 34px rgba(2,6,23,.10);
+    --r:18px;
+    --r2:28px;
+    --max:1160px;
+    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    margin:0;
+  }
+  .mbsPost *{box-sizing:border-box;margin:0}
+  .mbsPost a{color:inherit;text-decoration:none}
+  .mbsPost img{max-width:100%;display:block}
+  .mbsPost .wrap{width:min(var(--max),calc(100% - 48px));margin:0 auto}
+
+  /* Buttons */
+  .mbsPost .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:999px;font-weight:900;font-size:14px;border:1px solid transparent;transition:.18s ease;white-space:nowrap}
+  .mbsPost .btn.primary{background:var(--accent);color:#fff;box-shadow:0 10px 22px rgba(22,138,91,.22)}
+  .mbsPost .btn.primary:hover{background:var(--accent2);transform:translateY(-1px)}
+  .mbsPost .btn.ghost{background:#fff;border-color:rgba(15,23,42,.14);color:rgba(2,6,23,.88)}
+  .mbsPost .btn.ghost:hover{background:rgba(2,6,23,.04)}
+
+  /* Header */
+  .mbsPost .hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(15,23,42,.08)}
+  .mbsPost .nav{display:grid;grid-template-columns:220px 1fr auto;align-items:center;gap:16px;padding:14px 0}
+  .mbsPost .brand{display:flex;align-items:center;gap:10px;min-width:180px}
+  .mbsPost .brand img{height:38px;width:auto}
+  .mbsPost .menu{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+  .mbsPost .menu>a,.mbsPost .dd>button{padding:10px 10px;border-radius:12px;font-size:13px;color:rgba(2,6,23,.78);border:0;background:transparent;cursor:pointer;font-family:inherit;font-weight:900;transition:background .15s ease}
+  .mbsPost .menu>a:hover,.mbsPost .dd>button:hover{background:rgba(2,6,23,.05)}
+  .mbsPost .active{background:rgba(22,138,91,.10);border:1px solid rgba(22,138,91,.18);color:rgba(2,6,23,.86)}
+  .mbsPost .dd{position:relative}
+  .mbsPost .dd>button{display:inline-flex;align-items:center;gap:8px}
+  .mbsPost .panel{position:absolute;top:calc(100% + 10px);left:0;min-width:260px;background:#fff;border:1px solid rgba(15,23,42,.10);border-radius:16px;box-shadow:var(--shadow2);padding:8px;display:none}
+  .mbsPost .panel a{display:flex;gap:10px;align-items:flex-start;padding:10px;border-radius:12px;font-size:13px;color:rgba(2,6,23,.82);font-weight:900}
+  .mbsPost .panel a:hover{background:rgba(2,6,23,.05)}
+  .mbsPost .panel .mini{font-size:12px;color:var(--muted);font-weight:600;margin-top:2px}
+  .mbsPost .dd:hover .panel{display:block}
+  .mbsPost .dd.open .panel{display:block}
+  .mbsPost .mToggle{display:none;justify-self:center;padding:10px 12px;border-radius:12px;border:1px solid rgba(15,23,42,.12);background:#fff;font-weight:900;cursor:pointer}
+
+  /* Blog article layout */
+  .mbsPost .articleWrap{max-width:760px;margin:0 auto;padding:0 24px}
+  .mbsPost .breadcrumb{padding:24px 0 0;font-size:13px;color:var(--muted)}
+  .mbsPost .breadcrumb a{color:var(--accent);font-weight:700}
+  .mbsPost .postHero{padding:20px 0 32px}
+  .mbsPost .postHero h1{margin:12px 0 10px;font-size:clamp(28px,3.4vw,42px);line-height:1.1;letter-spacing:-.03em}
+  .mbsPost .postMeta{font-size:13.5px;color:var(--muted);display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .mbsPost .postMeta .dot{width:4px;height:4px;border-radius:99px;background:var(--muted);opacity:.5}
+  .mbsPost .heroImg{width:100%;border-radius:var(--r);overflow:hidden;margin:24px 0 0}
+  .mbsPost .heroImg img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+
+  /* Article body */
+  .mbsPost .articleBody{padding:32px 0 48px}
+  .mbsPost .articleBody p{margin:0 0 18px;font-size:17px;line-height:1.8;color:rgba(2,6,23,.82)}
+  .mbsPost .articleBody h2{margin:36px 0 14px;font-size:clamp(22px,2.4vw,28px);letter-spacing:-.025em;line-height:1.2}
+  .mbsPost .articleBody ul,.mbsPost .articleBody ol{margin:0 0 18px;padding-left:20px}
+  .mbsPost .articleBody li{margin-bottom:8px;font-size:16px;line-height:1.7;color:rgba(2,6,23,.82)}
+  .mbsPost .articleBody strong{font-weight:800}
+  .mbsPost .articleBody .inlineImg{width:100%;border-radius:var(--r);overflow:hidden;margin:28px 0}
+  .mbsPost .articleBody .inlineImg img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+
+  /* Callout box */
+  .mbsPost .callout{margin:24px 0;padding:18px 20px;border-radius:var(--r);background:rgba(22,138,91,.07);border:1px solid rgba(22,138,91,.16);font-size:15px;line-height:1.7;color:rgba(2,6,23,.80)}
+  .mbsPost .callout strong{color:var(--accent)}
+
+  /* Inline CTA card */
+  .mbsPost .ctaCard{margin:40px 0;padding:28px;border-radius:var(--r2);background:rgba(22,138,91,.06);border:1px solid rgba(22,138,91,.14)}
+  .mbsPost .ctaCard h3{margin:0 0 8px;font-size:20px;letter-spacing:-.02em}
+  .mbsPost .ctaCard p{margin:0 0 16px;color:var(--muted);font-size:15px;line-height:1.7}
+
+  /* Related posts */
+  .mbsPost .related{padding:48px 0 60px;border-top:1px solid var(--line)}
+  .mbsPost .related h2{margin:0 0 20px;font-size:22px;letter-spacing:-.02em}
+  .mbsPost .relatedGrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .mbsPost .blogCard{display:block;background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:var(--r);overflow:hidden;box-shadow:0 4px 16px rgba(2,6,23,.05);transition:transform .18s ease,box-shadow .18s ease}
+  .mbsPost .blogCard:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(2,6,23,.10)}
+  .mbsPost .blogImg{overflow:hidden}
+  .mbsPost .blogImg img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .3s ease}
+  .mbsPost .blogCard:hover .blogImg img{transform:scale(1.03)}
+  .mbsPost .blogCard h3{margin:14px 16px 6px;font-size:16px;letter-spacing:-.01em;line-height:1.3}
+  .mbsPost .blogCard p{margin:0 16px 10px;font-size:13.5px;color:var(--muted);line-height:1.6}
+  .mbsPost .readMore{display:block;margin:0 16px 16px;font-size:13px;font-weight:800;color:var(--accent)}
+
+  /* Footer */
+  .mbsPost footer{padding:42px 0;border-top:1px solid rgba(15,23,42,.08);background:#fff}
+  .mbsPost .foot{display:grid;grid-template-columns:1.1fr .9fr .9fr;gap:14px;align-items:start}
+  .mbsPost .foot h4{margin:0 0 10px;font-size:13px;letter-spacing:-.01em}
+  .mbsPost .foot a{display:block;padding:8px 0;color:var(--muted);font-size:13.5px}
+  .mbsPost .foot a:hover{color:var(--ink)}
+  .mbsPost .copy{margin-top:12px;color:var(--muted);font-size:12.5px;line-height:1.6}
+
+  /* Responsive */
+  @media(max-width:980px){
+    .mbsPost .nav{grid-template-columns:1fr auto}
+    .mbsPost .menu{display:none;justify-content:flex-start;grid-column:1/-1;padding-bottom:10px}
+    .mbsPost .menu.open{display:flex}
+    .mbsPost .mToggle{display:inline-flex}
+  }
+  @media(max-width:640px){
+    .mbsPost .relatedGrid{grid-template-columns:1fr}
+    .mbsPost .articleWrap{padding:0 16px}
+  }
+  @media(max-width:520px){
+    .mbsPost .foot{grid-template-columns:1fr}
+  }
+</style>
+
+<div class="mbsPost" id="top">
+  <!-- HEADER -->
+  <header class="hdr" role="banner">
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="HOME_LINK" aria-label="Medical Billing Services">
+          <img src="https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-4897-994e-1ec4194e612d.png" alt="Medical Billing Services Logo">
+        </a>
+        <button class="mToggle" type="button" aria-controls="primaryNav" aria-expanded="false">Menu</button>
+        <nav class="menu" id="primaryNav" aria-label="Primary Navigation">
+          <div class="dd">
+            <button class="ddBtn" type="button" aria-haspopup="true" aria-expanded="false">
+              State Licensing
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" style="opacity:.8;transform:translateY(1px)"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="panel" role="menu">
+              <a href="LIC_RCFE_LINK"><div><div>RCFE Licensing</div><div class="mini">Residential Care Facility for the Elderly</div></div></a>
+              <a href="LIC_ARF_LINK"><div><div>ARF Licensing</div><div class="mini">Adult Residential Facility</div></div></a>
+            </div>
+          </div>
+          <div class="dd">
+            <button class="ddBtn" type="button" aria-haspopup="true" aria-expanded="false">
+              ALW Waiver Support
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" style="opacity:.8;transform:translateY(1px)"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="panel" role="menu">
+              <a href="BILLING_LINK"><div><div>ALW Billing</div><div class="mini">End-to-end billing for RCFE &amp; ARF providers</div></div></a>
+              <a href="ALW_APP_LINK"><div><div>ALW Application</div><div class="mini">Waiver application guidance and support</div></div></a>
+            </div>
+          </div>
+          <a href="FUNDING_LINK">ALW Funding/Revenue</a>
+          <a href="CONSULTING_LINK">RCFE Consulting</a>
+          <a class="active" href="BLOG_LINK">Tips &amp; Tricks</a>
+        </nav>
+        <div style="justify-self:end;display:flex;align-items:center;gap:10px">
+          <a class="btn primary" href="BOOKING_LINK">Book a Consultation</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ARTICLE -->
+  <main>
+    <div class="articleWrap">
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a href="BLOG_LINK">Tips &amp; Tricks</a> &nbsp;/&nbsp; ALW Billing Mistakes
+      </div>
+
+      <!-- Post Hero -->
+      <div class="postHero">
+        <h1>5 ALW Billing Mistakes That Cost Facilities Thousands</h1>
+        <div class="postMeta">
+          <span>By Kamil</span>
+          <span class="dot"></span>
+          <span>Feb 2026</span>
+          <span class="dot"></span>
+          <span>7 min read</span>
+        </div>
+        <div class="heroImg">
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=675&fit=crop" alt="Financial documents and calculator on a desk">
+        </div>
+      </div>
+
+      <!-- Article Body -->
+      <div class="articleBody">
+
+        <p>We have billed over $1.5 million monthly for RCFE and ARF providers across California. After 15+ years, we have seen every billing mistake in the book. Here are the five that come up most, and what they are actually costing you.</p>
+
+        <p>These are not edge cases or rare situations. These are the mistakes we find in almost every facility we onboard. The good news is that every single one of them is fixable once you know what to look for.</p>
+
+        <!-- Mistake 1 -->
+        <h2>1. Proration Errors on Move-In and Move-Out</h2>
+
+        <p>When a resident moves in mid-month or transfers out before the end of the month, the billing has to be prorated correctly. This sounds straightforward, but it trips up more facilities than you would expect.</p>
+
+        <p>Most facilities either overbill or underbill on prorated months. Overbilling triggers audits and clawbacks from the state, which means you end up paying money back plus dealing with the administrative burden of correcting the record. Underbilling means lost revenue that you never recover because the billing window closes.</p>
+
+        <p>A single proration error on one resident might only be a few hundred dollars. But when you factor in the number of move-ins and move-outs across a year, the picture changes fast. Most facilities see 6 to 10 resident transitions per year. At a few hundred dollars per error, that adds up to roughly $60,000 in annual impact. Some of that is money you gave back in clawbacks. Some of it is money you never collected in the first place.</p>
+
+        <p>The fix sounds simple: get the dates right and calculate the daily rate correctly. But in practice, it requires consistent processes. You need a system that flags every move-in and move-out, calculates the proration automatically, and verifies it before submission. It is not a math problem. It is a workflow problem.</p>
+
+        <!-- Mistake 2 -->
+        <h2>2. Clinical-to-Billing Communication Gaps</h2>
+
+        <p>This one is the silent revenue killer. Care staff document changes in a resident's condition or service level every day. A resident's needs increase. Their care plan gets updated. The clinical team adjusts their daily routine. All of that is happening on the care side of the house.</p>
+
+        <p>But if those changes do not make it to the billing team in time, you are billing for the wrong tier. And with ALW, the service authorization level directly affects your reimbursement rate. A resident who moved from a Tier 3 to a Tier 4 level of care represents a significant difference in monthly revenue. If billing does not know about the change for two or three weeks, that is money left on the table.</p>
+
+        <p>We see this gap cause 1 to 2 tier mismatches per quarter in most facilities we onboard. That is not because the care staff are doing a bad job. They are focused on care, as they should be. The problem is that there is no structured handoff between clinical documentation and billing submission. The two teams are working in parallel but not communicating in real time.</p>
+
+        <p>The solution is a defined communication workflow. When a care plan changes, billing needs to know within 24 to 48 hours. Not next month. Not whenever someone remembers to send an email. Within 48 hours, documented and tracked.</p>
+
+        <!-- Mistake 3 -->
+        <h2>3. Missing A-La-Carte Charges</h2>
+
+        <p>Many ALW-approved services can be billed as add-ons beyond the base rate. These are legitimate, reimbursable services that your facility is already providing but may not be capturing on the billing side.</p>
+
+        <p>This includes things like specialized personal care beyond what is covered in the base tier, transportation coordination for medical appointments, meal delivery for specific dietary needs, and certain types of behavioral support services. Every one of these can be billed separately when properly documented and authorized.</p>
+
+        <p>The problem is that most facilities treat the base rate as the only rate. They provide these additional services because the resident needs them, but they never submit a separate claim for the add-on. The service gets delivered, the cost gets absorbed, and the revenue never shows up.</p>
+
+        <p>Facilities that do not track and bill these individually are leaving roughly $24,000 per year on the table, per facility. That is not a guess. That is the average gap we find when we audit a new provider's billing during onboarding.</p>
+
+        <p>Fixing this requires two things. First, you need a complete list of every billable add-on service your facility is authorized to provide. Second, you need a tracking system that captures when those services are delivered so they can be included in your next billing cycle.</p>
+
+        <!-- Inline image between mistakes 3 and 4 -->
+        <div class="inlineImg">
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&h=500&fit=crop" alt="Paperwork and documents spread across a desk">
+        </div>
+
+        <!-- Mistake 4 -->
+        <h2>4. Coding Errors That Trigger Denials</h2>
+
+        <p>Every claim you submit needs the right procedure codes, authorization numbers, and service dates. One wrong digit and the claim gets denied. It does not matter if the service was provided correctly, documented properly, and fully authorized. If the code on the claim form does not match what the payer expects, it comes back.</p>
+
+        <p>Most denials are not from fraud. They are not from billing for services you did not provide. They are from typos, outdated procedure codes, or authorization number mismatches. A code that was valid last quarter may have been updated. An authorization number that was entered manually may have one digit transposed. These are small errors with big consequences.</p>
+
+        <p>Here is the part that really hurts: denied claims have a resubmission window. If you do not catch the denial, correct the error, and resubmit within that window, the claim becomes a permanent revenue loss. You cannot bill for it later. The money is simply gone.</p>
+
+        <p>The facilities that avoid this problem have two things in common. They use automated code validation before submission so errors get caught before the claim goes out. And they have a denial management process that reviews every rejected claim within 48 hours and resubmits corrected claims immediately.</p>
+
+        <div class="callout">
+          <strong>By the numbers:</strong> A 4.2% profitability loss from just one missed payment per quarter. A 12.5% profit loss from 3-month billing delays. These are not hypothetical. They are what we see in facility after facility before they switch to structured billing.
+        </div>
+
+        <!-- Mistake 5 -->
+        <h2>5. Manual Processes That Slow Everything Down</h2>
+
+        <p>Facilities still using spreadsheets or paper-based billing are seeing 3+ month delays between service delivery and payment. Think about what that means for your operation. You provided care in January. You submitted the billing manually in February, maybe March. The claim gets processed. Payment arrives sometime in April or May. That is 3 months of cash flow you do not have.</p>
+
+        <p>During those 3 months, you are still paying staff. Still paying rent. Still buying supplies. Still covering every operational cost. You are funding your facility out of pocket while waiting for revenue that should have arrived weeks ago.</p>
+
+        <p>Research across the facilities we work with shows a 4.2% profitability loss from just one missed payment per quarter. And that number jumps to a 12.5% profit loss when billing delays stretch to 3 months. For a facility generating $50,000 per month in ALW revenue, a 12.5% loss is $75,000 per year. That is not a rounding error. That is a staff position, a facility upgrade, or the difference between profitable and break-even.</p>
+
+        <p>The fix is moving away from manual processes entirely. Automated billing systems submit claims faster, catch errors before submission, and track every claim through the payment cycle. When a claim gets denied, you know about it the same week instead of discovering it 60 days later.</p>
+
+        <!-- The Bottom Line -->
+        <h2>The Bottom Line</h2>
+
+        <p>These are not rare problems. They are the most common ones. And they compound. A facility dealing with all five of these issues simultaneously is losing revenue from multiple directions at once. Proration errors stack on top of missed add-on charges. Coding denials stack on top of tier mismatches. Manual delays make all of it worse because you do not catch the problems until months after they happen.</p>
+
+        <p>Fixing them requires a structured billing workflow, not just "being more careful." Telling your staff to double-check things does not solve a systems problem. You need defined processes, automated validation, real-time communication between clinical and billing teams, and a denial management system that catches rejected claims before the resubmission window closes.</p>
+
+        <p>That is what we build for every provider we work with. Not a generic billing service, but a complete workflow designed for ALW billing specifically. Because the details matter, and the details are where the money is.</p>
+
+        <!-- Inline CTA Card -->
+        <div class="ctaCard">
+          <h3>Want to stop leaving money on the table?</h3>
+          <p>We handle ALW billing end-to-end for RCFE and ARF providers across California.</p>
+          <a class="btn primary" href="BILLING_LINK">See our ALW Billing Service &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Related Posts -->
+    <div class="articleWrap">
+      <div class="related">
+        <h2>Related Posts</h2>
+        <div class="relatedGrid">
+          <a class="blogCard" href="rcfe-funding-revenue.html">
+            <div class="blogImg">
+              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=340&fit=crop" alt="Financial growth and revenue planning">
+            </div>
+            <h3>How California RCFE Owners Are Increasing Revenue (Without Adding Beds)</h3>
+            <p>Practical strategies for maximizing revenue per resident through ALW billing, proper rate structures, and funding programs.</p>
+            <span class="readMore">Read more</span>
+          </a>
+          <a class="blogCard" href="alw-waiver-application-guide.html">
+            <div class="blogImg">
+              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=340&fit=crop" alt="Professional reviewing application documents">
+            </div>
+            <h3>The ALW Application: What Most Providers Get Wrong</h3>
+            <p>Common pitfalls in the Assisted Living Waiver application process and how to avoid delays that cost you months of revenue.</p>
+            <span class="readMore">Read more</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <div class="brand" style="gap:10px">
+            <img src="https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-4897-994e-1ec4194e612d.png" alt="Medical Billing Services Logo" style="height:34px">
+          </div>
+          <div class="copy">&copy; <span id="yr"></span> Medical Billing Services. All rights reserved.<br>RCFE / ARF &bull; Assisted Living Waiver (ALW)</div>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <a href="HOME_LINK">Home</a>
+          <a href="BILLING_LINK">ALW Billing</a>
+          <a href="FUNDING_LINK">Funding</a>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="BLOG_LINK">Tips &amp; Tricks</a>
+          <a href="CONSULTING_LINK">Consulting</a>
+          <a href="BOOKING_LINK">Book a Consult</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  (function(){
+    var links = {
+      "HOME_LINK":"../home.html",
+      "BILLING_LINK":"../alw-billing.html",
+      "LIC_RCFE_LINK":"../rcfe-licensing.html",
+      "LIC_ARF_LINK":"../arf-licensing.html",
+      "ALW_APP_LINK":"../alw-waiver.html",
+      "FUNDING_LINK":"../funding.html",
+      "CONSULTING_LINK":"../consulting.html",
+      "BLOG_LINK":"../blog.html",
+      "BOOKING_LINK":"https://api.leadconnectorhq.com/widget/bookings/billing-strategy-call"
+    };
+    var root = document.querySelector('.mbsPost');
+    if(root){
+      root.querySelectorAll('a[href],button').forEach(function(el){
+        var v=el.getAttribute('href');
+        if(v && links[v]) el.setAttribute('href', links[v]);
+      });
+    }
+    var yr=document.getElementById('yr');
+    if(yr) yr.textContent=new Date().getFullYear();
+    // Mobile toggle
+    var t=root&&root.querySelector('.mToggle'),n=root&&root.querySelector('#primaryNav');
+    if(t&&n){t.addEventListener('click',function(){var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false')})}
+    // Dropdown
+    if(root){root.querySelectorAll('.dd .ddBtn').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();var d=b.closest('.dd');var o=d.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')})})}
+  })();
+</script>
+</body>
+</html>

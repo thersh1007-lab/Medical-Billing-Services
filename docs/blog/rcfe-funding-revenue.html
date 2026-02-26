@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How California RCFE Owners Are Increasing Revenue (Without Adding Beds) | Kamil's RCFE Tips &amp; Tricks</title>
+<meta name="description" content="California has multiple funding streams, reimbursement models, and grant programs that most RCFE operators have never heard of. Here is how to find and capture them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<style>
+  /* Scope + tokens */
+  .mbsPost{
+    --bg:#ffffff;
+    --ink:#0b1220;
+    --muted:#4b5563;
+    --line:rgba(15,23,42,.10);
+    --soft:#f6f8fb;
+    --accent:#168a5b;
+    --accent2:#0f6e48;
+    --shadow:0 26px 64px rgba(2,6,23,.12);
+    --shadow2:0 14px 34px rgba(2,6,23,.10);
+    --r:18px;
+    --r2:28px;
+    --max:1160px;
+    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    margin:0;
+  }
+  .mbsPost *{box-sizing:border-box;margin:0}
+  .mbsPost a{color:inherit;text-decoration:none}
+  .mbsPost img{max-width:100%;display:block}
+  .mbsPost .wrap{width:min(var(--max),calc(100% - 48px));margin:0 auto}
+
+  /* Buttons */
+  .mbsPost .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:999px;font-weight:900;font-size:14px;border:1px solid transparent;transition:.18s ease;white-space:nowrap}
+  .mbsPost .btn.primary{background:var(--accent);color:#fff;box-shadow:0 10px 22px rgba(22,138,91,.22)}
+  .mbsPost .btn.primary:hover{background:var(--accent2);transform:translateY(-1px)}
+  .mbsPost .btn.ghost{background:#fff;border-color:rgba(15,23,42,.14);color:rgba(2,6,23,.88)}
+  .mbsPost .btn.ghost:hover{background:rgba(2,6,23,.04)}
+
+  /* Header */
+  .mbsPost .hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(15,23,42,.08)}
+  .mbsPost .nav{display:grid;grid-template-columns:220px 1fr auto;align-items:center;gap:16px;padding:14px 0}
+  .mbsPost .brand{display:flex;align-items:center;gap:10px;min-width:180px}
+  .mbsPost .brand img{height:38px;width:auto}
+  .mbsPost .menu{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+  .mbsPost .menu>a,.mbsPost .dd>button{padding:10px 10px;border-radius:12px;font-size:13px;color:rgba(2,6,23,.78);border:0;background:transparent;cursor:pointer;font-family:inherit;font-weight:900;transition:background .15s ease}
+  .mbsPost .menu>a:hover,.mbsPost .dd>button:hover{background:rgba(2,6,23,.05)}
+  .mbsPost .active{background:rgba(22,138,91,.10);border:1px solid rgba(22,138,91,.18);color:rgba(2,6,23,.86)}
+  .mbsPost .dd{position:relative}
+  .mbsPost .dd>button{display:inline-flex;align-items:center;gap:8px}
+  .mbsPost .panel{position:absolute;top:calc(100% + 10px);left:0;min-width:260px;background:#fff;border:1px solid rgba(15,23,42,.10);border-radius:16px;box-shadow:var(--shadow2);padding:8px;display:none}
+  .mbsPost .panel a{display:flex;gap:10px;align-items:flex-start;padding:10px;border-radius:12px;font-size:13px;color:rgba(2,6,23,.82);font-weight:900}
+  .mbsPost .panel a:hover{background:rgba(2,6,23,.05)}
+  .mbsPost .panel .mini{font-size:12px;color:var(--muted);font-weight:600;margin-top:2px}
+  .mbsPost .dd:hover .panel{display:block}
+  .mbsPost .dd.open .panel{display:block}
+  .mbsPost .mToggle{display:none;justify-self:center;padding:10px 12px;border-radius:12px;border:1px solid rgba(15,23,42,.12);background:#fff;font-weight:900;cursor:pointer}
+
+  /* Blog article layout */
+  .mbsPost .articleWrap{max-width:760px;margin:0 auto;padding:0 24px}
+  .mbsPost .breadcrumb{padding:24px 0 0;font-size:13px;color:var(--muted)}
+  .mbsPost .breadcrumb a{color:var(--accent);font-weight:700}
+  .mbsPost .postHero{padding:20px 0 32px}
+  .mbsPost .postHero h1{margin:12px 0 10px;font-size:clamp(28px,3.4vw,42px);line-height:1.1;letter-spacing:-.03em}
+  .mbsPost .postMeta{font-size:13.5px;color:var(--muted);display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .mbsPost .postMeta .dot{width:4px;height:4px;border-radius:99px;background:var(--muted);opacity:.5}
+  .mbsPost .heroImg{width:100%;border-radius:var(--r);overflow:hidden;margin:24px 0 0}
+  .mbsPost .heroImg img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+
+  /* Article body */
+  .mbsPost .articleBody{padding:32px 0 48px}
+  .mbsPost .articleBody p{margin:0 0 18px;font-size:17px;line-height:1.8;color:rgba(2,6,23,.82)}
+  .mbsPost .articleBody h2{margin:36px 0 14px;font-size:clamp(22px,2.4vw,28px);letter-spacing:-.025em;line-height:1.2}
+  .mbsPost .articleBody ul,.mbsPost .articleBody ol{margin:0 0 18px;padding-left:20px}
+  .mbsPost .articleBody li{margin-bottom:8px;font-size:16px;line-height:1.7;color:rgba(2,6,23,.82)}
+  .mbsPost .articleBody strong{font-weight:800}
+  .mbsPost .articleBody .inlineImg{width:100%;border-radius:var(--r);overflow:hidden;margin:28px 0}
+  .mbsPost .articleBody .inlineImg img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+
+  /* Callout box */
+  .mbsPost .callout{margin:24px 0;padding:18px 20px;border-radius:var(--r);background:rgba(22,138,91,.07);border:1px solid rgba(22,138,91,.16);font-size:15px;line-height:1.7;color:rgba(2,6,23,.80)}
+  .mbsPost .callout strong{color:var(--accent)}
+
+  /* Inline CTA card */
+  .mbsPost .ctaCard{margin:40px 0;padding:28px;border-radius:var(--r2);background:rgba(22,138,91,.06);border:1px solid rgba(22,138,91,.14)}
+  .mbsPost .ctaCard h3{margin:0 0 8px;font-size:20px;letter-spacing:-.02em}
+  .mbsPost .ctaCard p{margin:0 0 16px;color:var(--muted);font-size:15px;line-height:1.7}
+
+  /* Related posts */
+  .mbsPost .related{padding:48px 0 60px;border-top:1px solid var(--line)}
+  .mbsPost .related h2{margin:0 0 20px;font-size:22px;letter-spacing:-.02em}
+  .mbsPost .relatedGrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .mbsPost .blogCard{display:block;background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:var(--r);overflow:hidden;box-shadow:0 4px 16px rgba(2,6,23,.05);transition:transform .18s ease,box-shadow .18s ease}
+  .mbsPost .blogCard:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(2,6,23,.10)}
+  .mbsPost .blogImg{overflow:hidden}
+  .mbsPost .blogImg img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .3s ease}
+  .mbsPost .blogCard:hover .blogImg img{transform:scale(1.03)}
+  .mbsPost .blogCard h3{margin:14px 16px 6px;font-size:16px;letter-spacing:-.01em;line-height:1.3}
+  .mbsPost .blogCard p{margin:0 16px 10px;font-size:13.5px;color:var(--muted);line-height:1.6}
+  .mbsPost .readMore{display:block;margin:0 16px 16px;font-size:13px;font-weight:800;color:var(--accent)}
+
+  /* Footer */
+  .mbsPost footer{padding:42px 0;border-top:1px solid rgba(15,23,42,.08);background:#fff}
+  .mbsPost .foot{display:grid;grid-template-columns:1.1fr .9fr .9fr;gap:14px;align-items:start}
+  .mbsPost .foot h4{margin:0 0 10px;font-size:13px;letter-spacing:-.01em}
+  .mbsPost .foot a{display:block;padding:8px 0;color:var(--muted);font-size:13.5px}
+  .mbsPost .foot a:hover{color:var(--ink)}
+  .mbsPost .copy{margin-top:12px;color:var(--muted);font-size:12.5px;line-height:1.6}
+
+  /* Responsive */
+  @media(max-width:980px){
+    .mbsPost .nav{grid-template-columns:1fr auto}
+    .mbsPost .menu{display:none;justify-content:flex-start;grid-column:1/-1;padding-bottom:10px}
+    .mbsPost .menu.open{display:flex}
+    .mbsPost .mToggle{display:inline-flex}
+  }
+  @media(max-width:640px){
+    .mbsPost .relatedGrid{grid-template-columns:1fr}
+    .mbsPost .articleWrap{padding:0 16px}
+  }
+  @media(max-width:520px){
+    .mbsPost .foot{grid-template-columns:1fr}
+  }
+</style>
+
+<div class="mbsPost" id="top">
+  <!-- HEADER -->
+  <header class="hdr" role="banner">
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="HOME_LINK" aria-label="Medical Billing Services">
+          <img src="https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-4897-994e-1ec4194e612d.png" alt="Medical Billing Services Logo">
+        </a>
+        <button class="mToggle" type="button" aria-controls="primaryNav" aria-expanded="false">Menu</button>
+        <nav class="menu" id="primaryNav" aria-label="Primary Navigation">
+          <div class="dd">
+            <button class="ddBtn" type="button" aria-haspopup="true" aria-expanded="false">
+              State Licensing
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" style="opacity:.8;transform:translateY(1px)"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="panel" role="menu">
+              <a href="LIC_RCFE_LINK"><div><div>RCFE Licensing</div><div class="mini">Residential Care Facility for the Elderly</div></div></a>
+              <a href="LIC_ARF_LINK"><div><div>ARF Licensing</div><div class="mini">Adult Residential Facility</div></div></a>
+            </div>
+          </div>
+          <div class="dd">
+            <button class="ddBtn" type="button" aria-haspopup="true" aria-expanded="false">
+              ALW Waiver Support
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" style="opacity:.8;transform:translateY(1px)"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="panel" role="menu">
+              <a href="BILLING_LINK"><div><div>ALW Billing</div><div class="mini">End-to-end billing for RCFE &amp; ARF providers</div></div></a>
+              <a href="ALW_APP_LINK"><div><div>ALW Application</div><div class="mini">Waiver application guidance and support</div></div></a>
+            </div>
+          </div>
+          <a href="FUNDING_LINK">ALW Funding/Revenue</a>
+          <a href="CONSULTING_LINK">RCFE Consulting</a>
+          <a class="active" href="BLOG_LINK">Tips &amp; Tricks</a>
+        </nav>
+        <div style="justify-self:end;display:flex;align-items:center;gap:10px">
+          <a class="btn primary" href="BOOKING_LINK">Book a Consultation</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ARTICLE -->
+  <main>
+    <div class="articleWrap">
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a href="BLOG_LINK">Tips &amp; Tricks</a> &nbsp;/&nbsp; RCFE Funding &amp; Revenue
+      </div>
+
+      <!-- Post Hero -->
+      <div class="postHero">
+        <h1>How California RCFE Owners Are Increasing Revenue (Without Adding Beds)</h1>
+        <div class="postMeta">
+          <span>By Kamil</span>
+          <span class="dot"></span>
+          <span>Feb 2026</span>
+          <span class="dot"></span>
+          <span>7 min read</span>
+        </div>
+        <div class="heroImg">
+          <img src="https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?w=1200&h=675&fit=crop" alt="Business growth and revenue planning charts">
+        </div>
+      </div>
+
+      <!-- Article Body -->
+      <div class="articleBody">
+
+        <p>Most RCFE owners are leaving money on the table. Not because they are doing something wrong, but because they do not know what is available. California has multiple funding streams, reimbursement models, and grant programs that most facility operators have never heard of.</p>
+
+        <p>We work with RCFE and ARF providers across the state. The pattern is almost always the same. Operators are focused on filling beds and managing day-to-day operations, which makes sense. But while they are heads-down on care delivery, there are revenue opportunities sitting right next to them that never get captured. Not because they are complicated, but because nobody told them they existed.</p>
+
+        <p>Here are the five biggest ones we see.</p>
+
+        <!-- Section 1 -->
+        <h2>1. Understanding Residential Habilitation</h2>
+
+        <p>One of the most underused revenue streams for ALW-enrolled facilities is residential habilitation. This is a billable service where you help residents build or maintain skills for daily living. Things like meal preparation, personal hygiene routines, community integration, and social skills development.</p>
+
+        <p>The current rate is approximately $6.75 per 15-minute unit. That might not sound like much on its own, but it adds up fast when you look at the full picture. For a facility with 6 residents receiving just 2 hours of habilitation services per day, you are looking at significant additional monthly revenue that most facilities are not capturing.</p>
+
+        <p>The reason most operators miss this is simple: they are already providing these services. Staff are already helping residents with daily living skills as part of routine care. The difference is documentation and billing. If you are not documenting habilitation activities as separate billable services and submitting claims for them, you are doing the work without getting paid for it.</p>
+
+        <p>This is not about adding new services or hiring new staff. It is about recognizing that what your team is already doing qualifies as a billable service under ALW, and building the documentation workflow to capture it.</p>
+
+        <div class="callout">
+          <strong>Did you know?</strong> Residential habilitation is billed at approximately $6.75 per 15-minute unit. For a 6-bed facility, even modest daily habilitation services can add thousands in monthly revenue that most operators never capture.
+        </div>
+
+        <!-- Section 2 -->
+        <h2>2. Fee-for-Service Models That Actually Work</h2>
+
+        <p>The traditional model for most RCFEs is a flat monthly rate. Every resident pays the same amount regardless of what services they actually use. It is simple and predictable, but it creates two problems.</p>
+
+        <p>First, residents who need less care are overpaying relative to what they receive. That makes your facility less competitive for lower-acuity residents who have options. Second, residents with higher care needs are underpaying relative to the work your staff is doing. You are absorbing the cost difference, which eats into your margins.</p>
+
+        <p>A fee-for-service model solves both problems. You charge a lower base rate that covers standard room, board, and basic care. Then you add charges for specific services as they are delivered. Transportation to medical appointments. Specialized dietary preparation. Additional personal care beyond the base level. Behavioral support services.</p>
+
+        <p>This works well for two reasons. Lower-acuity residents pay less and are more likely to choose your facility over competitors with higher flat rates. Higher-acuity residents generate appropriate revenue for the actual level of care they receive. Your staff's work is properly compensated instead of being subsidized by residents who need less help.</p>
+
+        <p>Transparency is the key to making this work. Residents and their families need to understand exactly what they are paying for, what is included in the base rate, and what constitutes an additional charge. When you lay it out clearly and honestly, most families prefer this model because they can see exactly where their money goes.</p>
+
+        <!-- Section 3 -->
+        <h2>3. Three Grant Sources Most Owners Miss</h2>
+
+        <p>California is one of the most heavily funded states in the country when it comes to health, housing, and community services. The state allocated $11.4 billion in SSI/SSP payments for fiscal year 2023-24. Beyond that, there are over $3 billion in competitive grants available across health, housing, and community service categories.</p>
+
+        <p>Most RCFE owners have never applied for any of them. Not because they would not qualify, but because they do not know these programs exist. Here are three specific sources that get overlooked consistently:</p>
+
+        <ol>
+          <li><strong>Department of Social Services grants</strong> for facility improvements and safety upgrades. These are designed to help licensed care facilities maintain and improve their physical infrastructure. If your building needs ADA improvements, fire safety upgrades, or general renovations, there may be grant funding available to offset the cost.</li>
+          <li><strong>California Department of Aging programs</strong> that fund community-based services. These programs support organizations that provide care and services to older adults and adults with disabilities. If your facility delivers qualifying services, you may be eligible for program funding that supplements your resident revenue.</li>
+          <li><strong>Local Area Agency on Aging contracts</strong> for specific service delivery. Each county in California has an Area Agency on Aging that contracts with local providers to deliver services like meal programs, caregiver support, and health promotion. These contracts can provide a steady supplemental revenue stream for facilities that qualify.</li>
+        </ol>
+
+        <p>The application process for each of these is different. Some are competitive grants with application windows. Some are ongoing contracts that you apply for once and renew annually. The timelines, requirements, and funding amounts vary. But the first step is the same for all of them: knowing they exist and understanding whether your facility qualifies.</p>
+
+        <div class="callout">
+          <strong>By the numbers:</strong> California allocated $11.4 billion in SSI/SSP for 2023-24, with over $3 billion in competitive grants across health, housing, and community services. Most RCFE owners have never applied for any of them.
+        </div>
+
+        <!-- Section 4 -->
+        <h2>4. Technology That Pays for Itself</h2>
+
+        <p>This is not about buying expensive software or overhauling your entire operation. It is about using the right tools to capture revenue you are already earning but not billing for.</p>
+
+        <p>There are three categories of technology that make the biggest difference for RCFE operators:</p>
+
+        <ul>
+          <li><strong>Electronic Health Records (EHR) systems</strong> that flag billable services automatically. When a staff member documents a habilitation activity or an additional care service, the system identifies it as billable and routes it to the billing workflow. No more relying on someone to remember to submit a separate claim.</li>
+          <li><strong>Automated billing platforms</strong> that reduce claim denials. These systems validate procedure codes, check authorization numbers, and catch errors before claims are submitted. A denied claim costs you time and money. A claim that goes out clean the first time gets paid faster and with less administrative effort.</li>
+          <li><strong>Telehealth infrastructure</strong> that qualifies you for additional reimbursement codes. Since 2020, telehealth has become a permanent part of the California healthcare reimbursement landscape. Facilities that can facilitate telehealth visits for their residents can bill for the coordination and support services involved.</li>
+        </ul>
+
+        <p>The common concern with technology investments is cost. And that is a fair question. But the facilities we work with that invest in the right tools typically see the cost recovered within 3 to 6 months through improved billing accuracy and faster payment cycles. After that recovery period, the technology is generating net positive revenue every month.</p>
+
+        <p>The key word there is "right." Not every EHR system is built for ALW billing. Not every billing platform understands RCFE-specific reimbursement codes. The technology has to match your specific operation, not the other way around.</p>
+
+        <!-- Section 5 -->
+        <h2>5. Which of These Apply to YOUR Facility?</h2>
+
+        <p>Here is the honest answer: it depends. Your facility's license type, your current payer mix, your staffing model, and your location all affect which revenue streams are available and practical for your specific situation.</p>
+
+        <p>A 6-bed RCFE in a rural area has different opportunities than a 50-bed facility in Los Angeles. A facility that is already enrolled in ALW has access to billing options that a non-enrolled facility does not. A facility with staff trained in habilitation documentation can start capturing that revenue immediately, while another facility might need to invest in training first.</p>
+
+        <p>That is why we do not give blanket recommendations. "Every facility should do X" is not useful advice when every facility is different. What we do instead is look at your specific situation: your license, your residents, your payer sources, your staff, your location. Then we identify which of these revenue streams are realistic for you and what it would take to start capturing them.</p>
+
+        <p>Some facilities we work with see results within 30 days. Others need 60 to 90 days to build the documentation workflows and get the billing infrastructure in place. But in almost every case, there is revenue available that the operator did not know about before we looked at it together.</p>
+
+        <p>The facilities that do best are the ones that treat revenue optimization as an ongoing process, not a one-time fix. Rates change. New programs launch. Authorization requirements get updated. Staying current on what is available is how you stay ahead.</p>
+
+        <!-- Inline CTA Card -->
+        <div class="ctaCard">
+          <h3>Ready to find out what you are missing?</h3>
+          <p>We help California RCFE owners identify and capture revenue they did not know was available.</p>
+          <a class="btn primary" href="FUNDING_LINK">See our Funding &amp; Revenue Service &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Related Posts -->
+    <div class="articleWrap">
+      <div class="related">
+        <h2>Related Posts</h2>
+        <div class="relatedGrid">
+          <a class="blogCard" href="alw-billing-mistakes.html">
+            <div class="blogImg">
+              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=340&fit=crop" alt="Financial documents and calculator on a desk">
+            </div>
+            <h3>5 ALW Billing Mistakes That Cost Facilities Thousands</h3>
+            <p>After billing over $1.5 million monthly for RCFE and ARF providers, here are the five most common ALW billing mistakes and what they actually cost you.</p>
+            <span class="readMore">Read more</span>
+          </a>
+          <a class="blogCard" href="rcfe-licensing-california.html">
+            <div class="blogImg">
+              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=340&fit=crop" alt="Professional reviewing licensing documents">
+            </div>
+            <h3>What to Know Before Applying for an RCFE License in California</h3>
+            <p>The RCFE licensing process in California has specific requirements that trip up most first-time applicants. Here is what to prepare for before you start.</p>
+            <span class="readMore">Read more</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <div class="brand" style="gap:10px">
+            <img src="https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-4897-994e-1ec4194e612d.png" alt="Medical Billing Services Logo" style="height:34px">
+          </div>
+          <div class="copy">&copy; <span id="yr"></span> Medical Billing Services. All rights reserved.<br>RCFE / ARF &bull; Assisted Living Waiver (ALW)</div>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <a href="HOME_LINK">Home</a>
+          <a href="BILLING_LINK">ALW Billing</a>
+          <a href="FUNDING_LINK">Funding</a>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="BLOG_LINK">Tips &amp; Tricks</a>
+          <a href="CONSULTING_LINK">Consulting</a>
+          <a href="BOOKING_LINK">Book a Consult</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  (function(){
+    var links = {
+      "HOME_LINK":"../home.html",
+      "BILLING_LINK":"../alw-billing.html",
+      "LIC_RCFE_LINK":"../rcfe-licensing.html",
+      "LIC_ARF_LINK":"../arf-licensing.html",
+      "ALW_APP_LINK":"../alw-waiver.html",
+      "FUNDING_LINK":"../funding.html",
+      "CONSULTING_LINK":"../consulting.html",
+      "BLOG_LINK":"../blog.html",
+      "BOOKING_LINK":"https://api.leadconnectorhq.com/widget/bookings/billing-strategy-call"
+    };
+    var root = document.querySelector('.mbsPost');
+    if(root){
+      root.querySelectorAll('a[href],button').forEach(function(el){
+        var v=el.getAttribute('href');
+        if(v && links[v]) el.setAttribute('href', links[v]);
+      });
+    }
+    var yr=document.getElementById('yr');
+    if(yr) yr.textContent=new Date().getFullYear();
+    // Mobile toggle
+    var t=root&&root.querySelector('.mToggle'),n=root&&root.querySelector('#primaryNav');
+    if(t&&n){t.addEventListener('click',function(){var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false')})}
+    // Dropdown
+    if(root){root.querySelectorAll('.dd .ddBtn').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();var d=b.closest('.dd');var o=d.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')})})}
+  })();
+</script>
+</body>
+</html>

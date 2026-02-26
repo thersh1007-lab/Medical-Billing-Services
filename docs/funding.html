@@ -383,6 +383,21 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
   .mbsFunding details[open] summary::after{transform:rotate(45deg)}
   .mbsFunding details p{animation:faqRevealF .28s ease}
   @keyframes faqRevealF{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+  .mbsFunding #tips{padding:80px 0 60px}
+  .mbsFunding .tipsHead{text-align:center;margin-bottom:36px}
+  .mbsFunding .tipsHead h2{margin:0 0 10px;font-size:clamp(28px,3vw,38px);letter-spacing:-.035em}
+  .mbsFunding .tipsHead p{margin:0 auto;max-width:520px;color:var(--muted);font-size:15px;line-height:1.7}
+  .mbsFunding .tipsGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .mbsFunding .tipCard{display:block;background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:18px;overflow:hidden;box-shadow:0 4px 16px rgba(2,6,23,.05);transition:transform .18s ease,box-shadow .18s ease}
+  .mbsFunding .tipCard:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(2,6,23,.10)}
+  .mbsFunding .tipImg{overflow:hidden}
+  .mbsFunding .tipImg img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .3s ease}
+  .mbsFunding .tipCard:hover .tipImg img{transform:scale(1.03)}
+  .mbsFunding .tipCard h3{margin:14px 16px 6px;font-size:16px;letter-spacing:-.01em;line-height:1.3}
+  .mbsFunding .tipCard p{margin:0 16px 10px;font-size:13.5px;color:var(--muted);line-height:1.6}
+  .mbsFunding .tipRead{display:block;margin:0 16px 16px;font-size:13px;font-weight:800;color:var(--accent)}
+  @media(max-width:768px){.mbsFunding .tipsGrid{grid-template-columns:1fr}}
 </style>
 
 <div class="mbsFunding" id="top">
@@ -446,6 +461,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
 
           <a class="active" href="FUNDING_LINK">ALW Funding/Revenue</a>
           <a href="CONSULTING_LINK">RCFE Consulting</a>
+          <a href="BLOG_LINK">Tips &amp; Tricks</a>
         </nav>
 
         <div class="hdrCtas">
@@ -756,6 +772,40 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
       </div>
     </section>
 
+
+    <!-- TIPS & TRICKS -->
+    <section id="tips">
+      <div class="wrap">
+        <div class="tipsHead">
+          <h2>Kamil's RCFE Tips &amp; Tricks</h2>
+          <p>Real answers to the questions facility owners ask most.</p>
+        </div>
+        <div class="tipsGrid">
+          <a class="tipCard" href="BLOG_POST_5">
+            <div class="tipImg"><img src="https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?w=600&h=340&fit=crop" alt="RCFE funding and revenue" loading="lazy"></div>
+            <h3>How RCFE Owners Are Increasing Revenue (Without Adding Beds)</h3>
+            <p>Most owners are leaving money on the table because they don't know what's available.</p>
+            <span class="tipRead">Read more →</span>
+          </a>
+          <a class="tipCard" href="BLOG_POST_3">
+            <div class="tipImg"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=340&fit=crop" alt="ALW billing mistakes" loading="lazy"></div>
+            <h3>5 ALW Billing Mistakes That Cost Facilities Thousands</h3>
+            <p>We've billed over $1.5M monthly. Here are the mistakes we see most.</p>
+            <span class="tipRead">Read more →</span>
+          </a>
+          <a class="tipCard" href="BLOG_POST_1">
+            <div class="tipImg"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=340&fit=crop" alt="RCFE licensing tips" loading="lazy"></div>
+            <h3>What to Know Before Applying for an RCFE License</h3>
+            <p>What most new owners wish they knew before starting the licensing process.</p>
+            <span class="tipRead">Read more →</span>
+          </a>
+        </div>
+        <div style="text-align:center;margin-top:28px">
+          <a class="btn ghost" href="BLOG_LINK">See all tips &amp; tricks</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- FOOTER -->
@@ -783,6 +833,7 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
           <h4>Support</h4>
           <a href="#faq">FAQs</a>
           <a href="BOOKING_LINK_REV">Calendar</a>
+          <a href="BLOG_LINK">Tips &amp; Tricks</a>
         </div>
       </div>
     </div>
@@ -840,6 +891,10 @@ HOME_LINK, RCFE_LIC_LINK, ARF_LIC_LINK, ALW_APP_LINK, CONSULTING_LINK, FUNDING_L
       "ALW_APP_LINK": "./alw-waiver.html",
       "CONSULTING_LINK": "./consulting.html",
       "FUNDING_LINK": "./funding.html",
+      "BLOG_LINK": "./blog.html",
+      "BLOG_POST_5": "./blog/rcfe-funding-revenue.html",
+      "BLOG_POST_3": "./blog/alw-billing-mistakes.html",
+      "BLOG_POST_1": "./blog/rcfe-licensing-california.html",
 
       // schema URL swap (optional)
       "FUNDING_PAGE_URL": "./funding.html"
