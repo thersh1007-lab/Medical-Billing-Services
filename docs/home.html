@@ -415,24 +415,61 @@ Quick edits (search these):
   }
 
   /* Testimonials */
+  /* Testimonials (dark section) */
+  .mbs3-section--dark{
+    background:#0b1220;
+    color:#fff;
+  }
+  .mbs3-section--dark h2{ color:#fff; }
+  .mbs3-section--dark .mbs3-sub{ color:rgba(255,255,255,.6); }
   .mbs3-quotes{
     display:grid;
     grid-template-columns: repeat(3, 1fr);
-    gap:18px;
-    margin-top:18px;
+    gap:22px;
+    margin-top:28px;
   }
   .mbs3-quote{
-    padding:18px;
+    padding:26px;
     border-radius:20px;
-    border:1px solid rgba(11,18,32,.08);
-    background:rgba(255,255,255,.78);
+    border:1px solid rgba(255,255,255,.10);
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(8px);
+    display:flex;
+    flex-direction:column;
+  }
+  .mbs3-quote-head{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:16px;
+  }
+  .mbs3-quote-avatar{
+    width:52px; height:52px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid rgba(255,255,255,.15);
+    flex-shrink:0;
+  }
+  .mbs3-quote-meta b{
+    display:block;
+    color:#fff;
+    font-size:15px;
   }
   .mbs3-quote p{
-    margin:0 0 10px;
-    color:rgba(11,18,32,.70);
-    line-height:1.6;
+    margin:0 0 16px;
+    color:rgba(255,255,255,.78);
+    line-height:1.65;
+    font-size:15px;
+    flex:1;
   }
-  .mbs3-quote b{ display:block; color:rgba(11,18,32,.82); }
+  .mbs3-section--dark .mbs3-quote-role{
+    color:rgba(255,255,255,.45);
+  }
+  .mbs3-stars{
+    color:#f6ad55;
+    letter-spacing:2px;
+    font-size:15px;
+  }
 
   /* FAQ */
   .mbs3-faq{
@@ -1049,6 +1086,52 @@ Quick edits (search these):
     </div>
   </section>
 
+  <!-- ============ TESTIMONIALS (dark) ============ -->
+  <section class="mbs3-section mbs3-section--dark">
+    <div class="mbs3-shell">
+      <h2>Owners choose us for follow-through</h2>
+      <p class="mbs3-sub">A calm, structured process so you're not carrying everything alone.</p>
+
+      <div class="mbs3-quotes">
+        <div class="mbs3-quote reveal reveal-d1">
+          <div class="mbs3-quote-head">
+            <img class="mbs3-quote-avatar" src="TESTIMONIAL_IMG_1" alt="RCFE Administrator" />
+            <div class="mbs3-quote-meta">
+              <b>RCFE Administrator</b>
+              <span class="mbs3-quote-role">32-bed facility, Riverside County</span>
+            </div>
+          </div>
+          <p>"We finally had a clear plan and the process stopped feeling chaotic. Our AR days dropped from 67 to 22."</p>
+          <div class="mbs3-stars">★★★★★</div>
+        </div>
+
+        <div class="mbs3-quote reveal reveal-d2">
+          <div class="mbs3-quote-head">
+            <img class="mbs3-quote-avatar" src="TESTIMONIAL_IMG_2" alt="ARF Operator" />
+            <div class="mbs3-quote-meta">
+              <b>ARF Operator</b>
+              <span class="mbs3-quote-role">Adult Residential Facility, San Bernardino</span>
+            </div>
+          </div>
+          <p>"The checklist alone saved us weeks of back-and-forth with the state. The sequencing advice was exactly what we needed."</p>
+          <div class="mbs3-stars">★★★★★</div>
+        </div>
+
+        <div class="mbs3-quote reveal reveal-d3">
+          <div class="mbs3-quote-head">
+            <img class="mbs3-quote-avatar" src="TESTIMONIAL_IMG_3" alt="Provider Operator" />
+            <div class="mbs3-quote-meta">
+              <b>Provider Operator</b>
+              <span class="mbs3-quote-role">RCFE startup, licensing + ALW track</span>
+            </div>
+          </div>
+          <p>"Fast answers, realistic next steps, and real follow-through. Not just a call where someone reads off a checklist."</p>
+          <div class="mbs3-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ SERVICE: STATE LICENSING ============ -->
   <section class="mbs3-section mbs3-section--soft" id="svc-licensing">
     <div class="mbs3-shell">
@@ -1259,34 +1342,7 @@ Quick edits (search these):
     </svg>
   </div>
 
-  <!-- TESTIMONIALS -->
-  <section class="mbs3-section mbs3-section--white">
-    <div class="mbs3-shell">
-      <h2>Owners choose us for follow-through</h2>
-      <p class="mbs3-sub">A calm, structured process so you’re not carrying everything alone.</p>
-
-      <div class=”mbs3-quotes”>
-        <div class=”mbs3-quote reveal reveal-d1”>
-          <div class=”mbs3-stars”>★★★★★</div>
-          <p>”We finally had a clear plan and the process stopped feeling chaotic. Our AR days dropped from 67 to 22.”</p>
-          <b>RCFE Administrator</b>
-          <span class=”mbs3-quote-role”>32-bed facility, Riverside County</span>
-        </div>
-        <div class=”mbs3-quote reveal reveal-d2”>
-          <div class=”mbs3-stars”>★★★★★</div>
-          <p>”The checklist alone saved us weeks of back-and-forth with the state. The sequencing advice was exactly what we needed.”</p>
-          <b>ARF Operator</b>
-          <span class=”mbs3-quote-role”>Adult Residential Facility, San Bernardino</span>
-        </div>
-        <div class=”mbs3-quote reveal reveal-d3”>
-          <div class=”mbs3-stars”>★★★★★</div>
-          <p>“Fast answers, realistic next steps, and real follow-through. Not just a call where someone reads off a checklist.”</p>
-          <b>Provider Operator</b>
-          <span class=”mbs3-quote-role”>RCFE startup, licensing + ALW track</span>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- (Testimonials moved up, after video section) -->
 
   <!-- FAQ -->
   <section class="mbs3-section mbs3-section--white" id="faq" style="padding-top:0;">
@@ -1423,6 +1479,13 @@ Quick edits (search these):
       "CONSULTING_LINK": "./consulting.html"
     };
 
+    // Testimonial headshots — replace these URLs with iStock/Shutterstock purchases
+    var testimonialImgs = {
+      "TESTIMONIAL_IMG_1": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop&crop=face",
+      "TESTIMONIAL_IMG_2": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face",
+      "TESTIMONIAL_IMG_3": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&h=200&fit=crop&crop=face"
+    };
+
     // Replace BOOKING_LINK placeholders
     document.querySelectorAll('.mbs3 a[href="BOOKING_LINK"]').forEach(function(a){ a.href = BOOKING; });
 
@@ -1432,6 +1495,11 @@ Quick edits (search these):
       root.querySelectorAll('a[href]').forEach(function(el){
         var v = el.getAttribute('href');
         if(v && navLinks[v]) el.setAttribute('href', navLinks[v]);
+      });
+      // Replace testimonial image placeholders
+      root.querySelectorAll('img[src]').forEach(function(img){
+        var s = img.getAttribute('src');
+        if(s && testimonialImgs[s]) img.setAttribute('src', testimonialImgs[s]);
       });
     }
 
