@@ -281,6 +281,10 @@ Default booking uses your existing Licensing Consultation calendar:
     font-size:12.5px;color:rgba(2,6,23,.78);font-weight:900;letter-spacing:-.01em;
   }
 
+  /* Image strip */
+  .mbsArfLic .imgStrip{padding:0 24px;max-width:calc(var(--max) + 48px);margin:0 auto}
+  .mbsArfLic .imgStrip img{width:100%;height:clamp(200px,28vh,340px);object-fit:cover;border-radius:clamp(16px,2vw,24px);box-shadow:0 20px 50px rgba(11,18,32,.10)}
+
   /* Responsive */
   @media (max-width:1120px){
     /* already single-column */
@@ -471,6 +475,26 @@ Default booking uses your existing Licensing Consultation calendar:
       </div>
     </div>
 
+    <!-- GUIDE -->
+    <section id="guide" aria-label="Your guide">
+      <div class="wrap">
+        <div class="guide">
+          <div class="avatar" aria-hidden="true"><div class="img"></div></div>
+          <div>
+            <h3>From Kamil</h3>
+            <p>We make ARF licensing clear, organized, and free of preventable delays.</p>
+          </div>
+          <a class="btn primary" href="#book">Book ARF Consult</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMAGE STRIP: consulting / professional -->
+    <!-- Replace src with Shutterstock #2527263287 (lawyer consulting client) after purchase -->
+    <div class="imgStrip reveal" style="padding:20px 24px">
+      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1400&h=500&fit=crop&crop=center" alt="Professional licensing consultation" loading="lazy" />
+    </div>
+
     <!-- ROADMAP (with consolidated "what you get" content) -->
     <section id="roadmap" aria-label="ARF licensing roadmap">
       <div class="wrap">
@@ -517,20 +541,6 @@ Default booking uses your existing Licensing Consultation calendar:
         <div class="ctaRow" style="margin-top:18px">
           <a class="btn primary" href="#book">Book the ARF consult</a>
           <a class="btn ghost" href="#faq">View FAQs</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- GUIDE -->
-    <section id="guide" aria-label="Your guide">
-      <div class="wrap">
-        <div class="guide">
-          <div class="avatar" aria-hidden="true"><div class="img"></div></div>
-          <div>
-            <h3>From Kamil</h3>
-            <p>We make ARF licensing clear, organized, and free of preventable delays.</p>
-          </div>
-          <a class="btn primary" href="#book">Book ARF Consult</a>
         </div>
       </div>
     </section>
@@ -785,7 +795,7 @@ Default booking uses your existing Licensing Consultation calendar:
     });
 
     // Scroll reveal
-    root.querySelectorAll(".card, .step, .cCard, .head h2, .proofChip").forEach(el=>{
+    root.querySelectorAll(".card, .step, .cCard, .head h2, .proofChip, .imgStrip").forEach(el=>{
       if(!el.classList.contains("reveal")) el.classList.add("reveal");
     });
     (function(){

@@ -18,11 +18,10 @@ What this version fixes/improves:
 ✅ Top CTA bar + main header aligned to same max-width grid
 ✅ Sticky header (optional) + mobile menu
 ✅ Hero layout matches your screenshot (pill label, big headline, buttons, chips, 4 service cards)
-✅ Sections included: Services, Why Different, Checklist (lead magnet), Testimonials, Kam’s Corner, FAQ, Final CTA, Footer
+✅ Sections included: Services, Testimonials, Service Details, FAQ, Final CTA, Footer
 
 Quick edits (search these):
 - BOOKING_LINK
-- CHECKLIST_ANCHOR (defaults to #checklist)
 - HERO_IMAGE_URL
 - LOGO_TEXT (or swap to image)
 - Custom Values (optional): business name + phone display
@@ -612,6 +611,20 @@ Quick edits (search these):
     margin:0 0 18px;
   }
 
+  /* ===================== IMAGE STRIPS ===================== */
+  .mbs3-imgStrip{
+    padding:0 var(--pad);
+    max-width:calc(var(--max) + 48px);
+    margin:0 auto;
+  }
+  .mbs3-imgStrip img{
+    width:100%;
+    height:clamp(200px,28vh,340px);
+    object-fit:cover;
+    border-radius:clamp(16px,2vw,24px);
+    box-shadow:0 20px 50px rgba(11,18,32,.10);
+  }
+
   /* ===================== RESPONSIVE ===================== */
   @media (max-width: 980px){
     .mbs3-hero-left{ padding:clamp(24px,3vw,42px); }
@@ -1027,6 +1040,12 @@ Quick edits (search these):
     </div>
   </div>
 
+  <!-- IMAGE STRIP: warm professional scene -->
+  <!-- Replace src with Shutterstock #2457436113 (happy senior couple with consultant) after purchase -->
+  <div class="mbs3-imgStrip reveal">
+    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1400&h=500&fit=crop&crop=center" alt="Professional consultation with clients" loading="lazy" />
+  </div>
+
   <!-- Wave: gradient → white -->
   <div class="mbs3-wave toWhite" aria-hidden="true">
     <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
@@ -1177,90 +1196,18 @@ Quick edits (search these):
     </div>
   </section>
 
-  <!-- RESOURCES -->
-  <section class="mbs3-section mbs3-section--white" id="resources" style="padding-top:0;">
-    <div class="mbs3-shell">
-      <h2>Resources</h2>
-      <p class="mbs3-sub">
-        Practical tools you can use today, especially if you’re preparing for ALW, licensing, or a billing clean-up.
-      </p>
-
-      <div class="mbs3-grid-2">
-        <div class="mbs3-card">
-          <h3 style="margin:0 0 10px; font-size:18px;">ALW readiness checklist</h3>
-          <p style="margin:0 0 14px; color:rgba(11,18,32,.62); line-height:1.6;">
-            The exact items that commonly delay owners, plus what to fix first.
-          </p>
-          <a class="mbs3-btn mbs3-btn--primary" href="#checklist">Get the checklist</a>
-        </div>
-
-        <div class="mbs3-card">
-          <h3 style="margin:0 0 10px; font-size:18px;">Book the right consult</h3>
-          <p style="margin:0 0 14px; color:rgba(11,18,32,.62); line-height:1.6;">
-            Not sure if you need billing help, licensing help, or an ALW plan? We’ll route you fast.
-          </p>
-          <a class="mbs3-btn mb-open-consult" href="BOOKING_LINK">Book a consult</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- IMAGE STRIP: professional team / financial -->
+  <!-- Replace src with Shutterstock #2460220503 (group looking at laptop pie chart) after purchase -->
+  <div class=”mbs3-imgStrip reveal” style=”padding-top:18px”>
+    <img src=”https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1400&h=500&fit=crop&crop=center” alt=”Business professionals collaborating” loading=”lazy” />
+  </div>
 
   <!-- Wave: white → soft -->
-  <div class="mbs3-wave toSoft" aria-hidden="true">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path d="M0,64 C240,128 480,128 720,64 C960,0 1200,0 1440,64 L1440,120 L0,120 Z"></path>
+  <div class=”mbs3-wave toSoft” aria-hidden=”true”>
+    <svg viewBox=”0 0 1440 120” preserveAspectRatio=”none”>
+      <path d=”M0,64 C240,128 480,128 720,64 C960,0 1200,0 1440,64 L1440,120 L0,120 Z”></path>
     </svg>
   </div>
-
-  <!-- CHECKLIST / LEAD MAGNET -->
-  <section class="mbs3-section mbs3-section--soft" id="checklist">
-    <div class="mbs3-shell">
-      <h2>Free ALW readiness checklist</h2>
-      <p class="mbs3-sub">
-        Get the checklist and the most common “delay fixes” so you can move faster with fewer surprises.
-      </p>
-
-      <div class="mbs3-card">
-        <div class="mbs3-checklist">
-          <div>
-            <h3 style="margin:0 0 10px; font-size:18px;">What’s inside</h3>
-            <ul class="mbs3-list">
-              <li>Document readiness list owners miss (and pay for later)</li>
-              <li>Common delay points + how to prevent them</li>
-              <li>Clean “next step” roadmap (so you stop guessing)</li>
-            </ul>
-            <p class="mbs3-small" style="margin-top:14px;">
-              Tip: If you’re already mid-process, bring your current status. We’ll help you identify the fastest unblock.
-            </p>
-          </div>
-
-          <div>
-            <!-- Replace this form with your GHL form embed if you want -->
-            <form class="mbs3-form" onsubmit="event.preventDefault(); window.location.href='BOOKING_LINK';">
-              <input class="mbs3-input" type="text" name="name" placeholder="Your name" required />
-              <input class="mbs3-input" type="email" name="email" placeholder="Email address" required />
-              <input class="mbs3-input" type="tel" name="phone" placeholder="Phone (optional)" />
-              <button class="mbs3-btn mbs3-btn--primary" type="submit">Send me the checklist</button>
-
-              <div class="mbs3-small">
-                By submitting, you agree to receive email/SMS updates from {{custom_values.snapshot__business_name}}.
-                Reply STOP to unsubscribe. We do not sell your number.
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Wave: soft → white -->
-  <div class="mbs3-wave toWhite" aria-hidden="true">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path d="M0,64 C240,0 480,0 720,64 C960,128 1200,128 1440,64 L1440,120 L0,120 Z"></path>
-    </svg>
-  </div>
-
-  <!-- (Testimonials moved up, after video section) -->
 
   <!-- FAQ -->
   <section class="mbs3-section mbs3-section--white" id="faq" style="padding-top:24px;">
@@ -1333,7 +1280,6 @@ Quick edits (search these):
           </p>
         </div>
         <div style="display:flex; gap:12px; flex-wrap:wrap;">
-          <a class="mbs3-btn" href="#checklist">Get the checklist</a>
           <a class="mbs3-btn mbs3-btn--primary mb-open-consult" href="BOOKING_LINK">Book a consult</a>
         </div>
       </div>
@@ -1366,7 +1312,6 @@ Quick edits (search these):
           <h4>Services</h4>
           <a href="#services">Our Services</a>
           <a href="#faq">FAQs</a>
-          <a href="#checklist">Checklist</a>
         </div>
 
         <div>
