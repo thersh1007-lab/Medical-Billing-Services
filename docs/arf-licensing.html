@@ -7,15 +7,15 @@
 </head>
 <body>
 <!--
-MEDBILLINGCO.COM — ARF LICENSING PAGE (SEO-DISTINCT PREMIUM STYLE) — v1
+MEDBILLINGCO.COM — ARF LICENSING PAGE (SEO-DISTINCT PREMIUM STYLE) — v2
 Paste into ONE GoHighLevel Custom Code block.
 
-This layout is intentionally different from the RCFE page for SEO:
-- Split hero (no full-bleed background hero)
-- Top notice bar (RCFE vs ARF self-check CTA)
-- ARF vs RCFE compare strip
-- "Where apps get stuck" timeline style
-- FAQ Schema (JSON-LD) + ProfessionalService schema
+v2 changes:
+- Converted split hero to full-bleed hero (matches RCFE pattern)
+- Removed "Where applications get stuck" section (negative framing)
+- Removed ARF vs RCFE comparison strip (confusing)
+- Simplified "What is ARF" to compact info row (no section heading)
+- Consolidated "What you get" into roadmap steps + callout
 
 Default booking uses your existing Licensing Consultation calendar:
 - Booking link:  https://api.leadconnectorhq.com/widget/bookings/alw-application-call05zqka
@@ -34,6 +34,9 @@ Default booking uses your existing Licensing Consultation calendar:
     --shadow:0 20px 54px rgba(2,6,23,.10);
     --shadow2:0 12px 28px rgba(2,6,23,.08);
     --max:1160px;
+
+    /* Hero image */
+    --heroImg:url("https://assets.cdn.filesafe.space/mxGAJ81pMGDwP9gcmCOZ/media/699a089e20c0358e5bafb30c.jpg");
 
     /* Guide portrait (Kamil) */
     --guideImg:url("https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/a2244902-df92-4288-b09a-8fa156d5065c.png");
@@ -108,59 +111,61 @@ Default booking uses your existing Licensing Consultation calendar:
     background:#fff;font-weight:900;cursor:pointer;
   }
 
+  /* Hero (full-bleed) */
+  .mbsArfLic .hero{padding:22px 0 26px}
+  .mbsArfLic .heroShell{
+    position:relative;border-radius:clamp(22px,3vw,34px);
+    overflow:hidden;box-shadow:var(--shadow);background:#0b1220;
+  }
+  .mbsArfLic .heroBg{
+    position:absolute;inset:0;background-image:var(--heroImg);
+    background-size:cover;background-position:center;transform:scale(1.02);
+    filter:saturate(1.02) contrast(1.02);
+  }
+  .mbsArfLic .heroOverlay{
+    position:absolute;inset:0;
+    background:
+      radial-gradient(900px 520px at 16% 26%, rgba(255,255,255,.16), rgba(255,255,255,0) 62%),
+      linear-gradient(90deg, rgba(11,18,32,.74) 0%, rgba(11,18,32,.36) 58%, rgba(11,18,32,.62) 100%);
+  }
+  .mbsArfLic .heroInner{
+    position:relative;padding:clamp(28px,4.2vw,58px);
+    min-height:clamp(440px,58vh,620px);
+    display:flex;align-items:flex-end;
+  }
+  .mbsArfLic .pill{
+    display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;
+    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);
+    color:rgba(255,255,255,.92);font-weight:800;font-size:12.5px;width:fit-content;
+  }
+  .mbsArfLic .dot{width:8px;height:8px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 4px rgba(15,110,72,.20)}
+  .mbsArfLic .hero h1{
+    margin:14px 0 10px;font-size:clamp(30px,3.4vw,54px);
+    line-height:1.05;letter-spacing:-0.045em;color:#fff;text-shadow:0 10px 30px rgba(0,0,0,.25);
+  }
+  .mbsArfLic .hero p{
+    margin:0;color:rgba(255,255,255,.88);font-size:15.2px;line-height:1.72;max-width:78ch;
+  }
+  .mbsArfLic .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+
+  /* Proof chips */
+  .mbsArfLic .proofBar{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+  .mbsArfLic .proofChip{
+    display:flex;align-items:center;gap:10px;padding:6px 0;
+    color:rgba(255,255,255,.92);
+  }
+  .mbsArfLic .check{
+    width:22px;height:22px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    background:rgba(15,110,72,.20);border:1px solid rgba(15,110,72,.28);flex:0 0 auto;
+  }
+  .mbsArfLic .proofChip b{display:block;font-size:12.8px;letter-spacing:-.01em}
+  .mbsArfLic .proofChip span{display:block;font-size:12px;opacity:.9;margin-top:2px}
+
   /* Sections */
   .mbsArfLic section{padding:100px 0}
   .mbsArfLic .head{margin-bottom:40px;max-width:680px}
   .mbsArfLic .head h2{margin:0 0 10px;font-size:clamp(28px,3vw,40px);letter-spacing:-.035em}
   .mbsArfLic .head p{margin:0;color:var(--muted);line-height:1.75;font-size:15px}
-
-  /* Split hero */
-  .mbsArfLic .hero{padding:28px 0 28px}
-  .mbsArfLic .heroGrid{
-    display:grid;grid-template-columns:1fr 1fr;gap:18px;
-  }
-  .mbsArfLic .heroLeft{
-    border:1px solid var(--line); border-radius:28px; padding:clamp(20px,3vw,30px);
-    box-shadow:var(--shadow); background:
-      radial-gradient(700px 240px at 10% 10%, rgba(15,110,72,.10), rgba(15,110,72,0) 60%),
-      linear-gradient(180deg, rgba(2,6,23,.02), rgba(2,6,23,0));
-  }
-  .mbsArfLic .pill{
-    display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;
-    background:rgba(15,110,72,.10);border:1px solid rgba(15,110,72,.16);
-    color:rgba(2,6,23,.86);font-weight:900;font-size:12.5px;width:fit-content;
-  }
-  .mbsArfLic .dot{width:8px;height:8px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 4px rgba(15,110,72,.18)}
-  .mbsArfLic .heroLeft h1{
-    margin:12px 0 10px;font-size:clamp(30px,3.4vw,50px);
-    line-height:1.06;letter-spacing:-0.045em;color:rgba(2,6,23,.94);
-  }
-  .mbsArfLic .heroLeft p{
-    margin:0;color:rgba(2,6,23,.78);font-size:15px;line-height:1.75;max-width:80ch;
-  }
-  .mbsArfLic .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
-
-  .mbsArfLic .heroRight{
-    border:1px solid var(--line); border-radius:28px; overflow:hidden;
-    box-shadow:var(--shadow2); background:#fff; display:flex; flex-direction:column;
-  }
-  .mbsArfLic .heroImg{
-    height:220px; background:#eaf2ef; border-bottom:1px solid rgba(15,23,42,.08);
-    background-image:url("HERO_IMAGE_URL");
-    background-size:cover;background-position:center;
-  }
-  .mbsArfLic .heroCard{
-    padding:18px; display:grid; gap:12px;
-  }
-  .mbsArfLic .heroCard h3{margin:0;letter-spacing:-.02em}
-  .mbsArfLic .mini{color:var(--muted);font-size:13.8px;line-height:1.6;margin:0}
-  .mbsArfLic .bullets{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-  .mbsArfLic .bullets li{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.55;color:rgba(2,6,23,.80)}
-  .mbsArfLic .tick{
-    width:22px;height:22px;border-radius:10px;display:flex;align-items:center;justify-content:center;
-    background:rgba(15,110,72,.10);border:1px solid rgba(15,110,72,.18);color:var(--accent);
-    flex:0 0 auto; transform:translateY(1px);
-  }
 
   /* Cards / grids */
   .mbsArfLic .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -176,32 +181,6 @@ Default booking uses your existing Licensing Consultation calendar:
     color:rgba(2,6,23,.80);line-height:1.65;font-size:13.8px;
   }
 
-  /* Compare strip */
-  .mbsArfLic .compare{
-    display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;
-  }
-  .mbsArfLic .cmp{
-    border:1px dashed rgba(15,23,42,.16); border-radius:20px; padding:14px;
-    background:rgba(2,6,23,.015);
-  }
-  .mbsArfLic .cmp b{display:block;letter-spacing:-.01em}
-  .mbsArfLic .cmp span{display:block;margin-top:6px;color:var(--muted);font-size:13.6px;line-height:1.6}
-
-  /* Timeline problems */
-  .mbsArfLic .timeline{display:grid;gap:10px}
-  .mbsArfLic .tItem{
-    background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:20px;padding:18px;
-    box-shadow:none;
-    display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start;
-  }
-  .mbsArfLic .tNum{
-    width:40px;height:40px;border-radius:14px;display:flex;align-items:center;justify-content:center;
-    background:rgba(15,110,72,.10);border:1px solid rgba(15,110,72,.18);color:var(--accent);
-    font-weight:900;
-  }
-  .mbsArfLic .tItem b{display:block;letter-spacing:-.01em}
-  .mbsArfLic .tItem span{display:block;margin-top:6px;color:var(--muted);font-size:13.6px;line-height:1.65}
-
   /* Roadmap steps (4) */
   .mbsArfLic .steps4{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
   .mbsArfLic .step{
@@ -209,6 +188,11 @@ Default booking uses your existing Licensing Consultation calendar:
     box-shadow:none;
   }
   .mbsArfLic .stepTop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+  .mbsArfLic .tNum{
+    width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    background:rgba(15,110,72,.10);border:1px solid rgba(15,110,72,.18);color:var(--accent);
+    font-weight:900;
+  }
   .mbsArfLic .tagPill{
     padding:8px 12px;border-radius:999px;background:rgba(2,6,23,.04);border:1px solid rgba(2,6,23,.08);
     color:rgba(2,6,23,.68);font-weight:900;font-size:12px;white-space:nowrap;
@@ -224,6 +208,15 @@ Default booking uses your existing Licensing Consultation calendar:
   .mbsArfLic .ratio{position:relative;width:100%;padding-top:62%;background:rgba(2,6,23,.04)}
   .mbsArfLic .ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .mbsArfLic .embedNote{padding:14px 16px;color:var(--muted);font-size:12.8px;line-height:1.55}
+
+  /* Tick lists (booking section) */
+  .mbsArfLic .bullets{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .mbsArfLic .bullets li{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.55;color:rgba(2,6,23,.80)}
+  .mbsArfLic .tick{
+    width:22px;height:22px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    background:rgba(15,110,72,.10);border:1px solid rgba(15,110,72,.18);color:var(--accent);
+    flex:0 0 auto; transform:translateY(1px);
+  }
 
   /* Guide */
   .mbsArfLic .guide{
@@ -296,7 +289,7 @@ Default booking uses your existing Licensing Consultation calendar:
     .mbsArfLic .menu{display:none;justify-content:flex-start;grid-column:1/-1;padding-bottom:10px}
     .mbsArfLic .menu.open{display:flex}
     .mbsArfLic .mToggle{display:inline-flex}
-    .mbsArfLic .heroGrid,.mbsArfLic .split,.mbsArfLic .grid3,.mbsArfLic .compare,.mbsArfLic .steps4,.mbsArfLic .pillars{grid-template-columns:1fr;max-width:600px}
+    .mbsArfLic .split,.mbsArfLic .grid3,.mbsArfLic .steps4{grid-template-columns:1fr;max-width:600px}
     .mbsArfLic .guide{grid-template-columns:auto 1fr}
   }
   @media (max-width:640px){
@@ -313,6 +306,12 @@ Default booking uses your existing Licensing Consultation calendar:
   /* Polish */
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
   .reveal.visible{opacity:1;transform:none}
+
+  /* Hero gradient text */
+  .heroGradient{
+    background:linear-gradient(135deg,rgba(255,255,255,1) 40%,rgba(255,255,255,.70));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  }
 
 
 </style>
@@ -389,74 +388,61 @@ Default booking uses your existing Licensing Consultation calendar:
   </header>
 
   <main>
-    <!-- HERO (split) -->
+    <!-- HERO (full-bleed) -->
     <section class="hero" aria-label="ARF licensing hero">
       <div class="wrap">
-        <div class="heroGrid">
-          <div class="heroLeft">
-            <div class="pill"><span class="dot"></span> California ARF licensing support</div>
+        <div class="heroShell">
+          <div class="heroBg" role="img" aria-label="Adult residential facility licensing image"></div>
+          <div class="heroOverlay" aria-hidden="true"></div>
 
-            <h1>Adult Residential Facility (ARF) licensing, made clear, organized, and executable.</h1>
+          <div class="heroInner">
+            <div style="max-width:900px">
+              <div class="pill"><span class="dot"></span> California ARF licensing support</div>
 
-            <p>
-              An <b>ARF license</b> is for facilities providing <b>24-hour, non-medical care and supervision</b>
-              for adults (commonly ages <b>18-59</b>, with certain 60+ exceptions under specific rules).
-              If you're opening, buying, or changing operations, we help you understand the path,
-              sequence the work correctly, and prepare clean materials to reduce preventable delays.
-            </p>
+              <h1>Adult Residential Facility (ARF) licensing, made clear, organized, and <span class="heroGradient">executable</span>.</h1>
 
-            <div class="ctaRow">
-              <a class="btn primary" href="#book">Book an ARF Licensing Consultation</a>
-              <a class="btn ghost" href="#what">What ARF is (quick)</a>
-            </div>
+              <p>
+                An <b>ARF license</b> is for facilities providing <b>24-hour, non-medical care and supervision</b>
+                for adults (commonly ages <b>18-59</b>, with certain 60+ exceptions under specific rules).
+                If you're opening, buying, or changing operations, we help you understand the path,
+                sequence the work correctly, and prepare clean materials to reduce preventable delays.
+              </p>
 
-            <div class="callout">
-              <b>Goal:</b> reduce rework + reduce delays by making the next step obvious and keeping your paperwork "review-ready."
-            </div>
-          </div>
-
-          <div class="heroRight">
-            <div class="heroImg" role="img" aria-label="Adult residential facility licensing image"></div>
-            <div class="heroCard">
-              <h3>Quick eligibility check</h3>
-              <p class="mini">If these sound like you, you're in the right place:</p>
-              <ul class="bullets">
-                <li><div class="tick" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg>
-                </div><div>You're serving <b>adults</b> needing supervision and assistance in a residential setting.</div></li>
-
-                <li><div class="tick" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg>
-                </div><div>You want the <b>application sequence</b> to be correct (so you don't backtrack).</div></li>
-
-                <li><div class="tick" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg>
-                </div><div>You want to avoid <b>documentation gaps</b> that trigger follow-ups and resubmissions.</div></li>
-              </ul>
-
-              <div class="ctaRow" style="margin-top:6px">
-                <a class="btn primary" href="BOOKING_LINK_ARF">Open calendar</a>
-                <a class="btn link" href="tel:{{custom_values.companyphone_display}}">Call us</a>
+              <div class="ctaRow">
+                <a class="btn primary" href="#book">Book an ARF Licensing Consultation</a>
+                <a class="btn ghost" href="#roadmap">See the roadmap</a>
               </div>
+
+              <div class="proofBar" aria-label="Proof points">
+                <div class="proofChip">
+                  <div class="check" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div><b>Adults needing support</b><span>residential care setting</span></div>
+                </div>
+                <div class="proofChip">
+                  <div class="check" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div><b>Correct application sequence</b><span>no backtracking</span></div>
+                </div>
+                <div class="proofChip">
+                  <div class="check" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div><b>Clean documentation</b><span>avoid gaps + rework</span></div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- WHAT -->
-    <section id="what" aria-label="What ARF licensing is">
+    <!-- WHAT (compact definition row, no section heading) -->
+    <div id="what" style="padding:40px 0">
       <div class="wrap">
-        <div class="head">
-          <div>
-            <h2>What is an ARF license in California?</h2>
-            <p>
-              ARFs are licensed through California's Community Care Licensing (CCLD/CDSS) and provide 24-hour, non-medical care and supervision
-              for adults who need support with daily living and safety.
-            </p>
-          </div>
-        </div>
-
         <div class="grid3">
           <div class="card">
             <h3>Population served</h3>
@@ -478,48 +464,13 @@ Default booking uses your existing Licensing Consultation calendar:
           </div>
         </div>
 
-        <div class="compare" aria-label="ARF vs RCFE comparison">
-          <div class="cmp">
-            <b>ARF (Adult Residential Facility)</b>
-            <span>Adult-focused residential care model (often ages 18-59) with 24-hour non-medical supervision and support.</span>
-          </div>
-          <div class="cmp">
-            <b>RCFE (Residential Care Facility for the Elderly)</b>
-            <span>Elder-focused residential care model (typically serving seniors). If you're primarily serving older adults, RCFE may be the right track.</span>
-          </div>
-        </div>
-
         <div class="callout">
           <b>Not sure which applies?</b> Book a licensing consult and we'll confirm your facility type and the cleanest path forward.
         </div>
-
       </div>
-    </section>
+    </div>
 
-    <!-- PROBLEMS -->
-    <section id="stuck" aria-label="Where ARF applications get stuck">
-      <div class="wrap">
-        <div class="head">
-          <div>
-            <h2>Where ARF applications get stuck</h2>
-            <p>
-              The most common delays come from sequencing mistakes and paperwork that isn't "review-ready."
-              Here's what we help you avoid.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline">
-          <div class="tItem"><div class="tNum">1</div><div><b>Wrong order of operations</b><span>People work hard on the wrong tasks first, then have to redo steps when requirements come into focus.</span></div></div>
-          <div class="tItem"><div class="tNum">2</div><div><b>Documentation gaps</b><span>Missing items or misaligned policies trigger follow-ups, corrections, and resubmission cycles.</span></div></div>
-          <div class="tItem"><div class="tNum">3</div><div><b>Readiness mismatch</b><span>Operations and documentation don't match what reviewers expect to see, which slows approvals.</span></div></div>
-          <div class="tItem"><div class="tNum">4</div><div><b>Timeline pressure</b><span>Facility planning, staffing, and licensing tasks aren't coordinated, causing last-minute scrambles.</span></div></div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ROADMAP -->
+    <!-- ROADMAP (with consolidated "what you get" content) -->
     <section id="roadmap" aria-label="ARF licensing roadmap">
       <div class="wrap">
         <div class="head">
@@ -533,17 +484,17 @@ Default booking uses your existing Licensing Consultation calendar:
           <div class="step">
             <div class="stepTop"><div class="tNum" style="width:44px;height:44px">01</div><div class="tagPill">Assess</div></div>
             <b>Confirm facility type + scenario</b>
-            <span>New license, change of ownership, change of location, or operational change. We clarify what applies.</span>
+            <span>New license, change of ownership, change of location, or operational change. We clarify what applies and what to prioritize.</span>
           </div>
           <div class="step">
             <div class="stepTop"><div class="tNum" style="width:44px;height:44px">02</div><div class="tagPill">Checklist</div></div>
             <b>Build your requirements list</b>
-            <span>What's required vs optional, what to do first, and what to stop doing.</span>
+            <span>What's required vs optional, what to do first, and a sequence plan so you do the right things in the right order.</span>
           </div>
           <div class="step">
             <div class="stepTop"><div class="tNum" style="width:44px;height:44px">03</div><div class="tagPill">Organize</div></div>
             <b>Make documentation "review-ready"</b>
-            <span>We help you reduce gaps, inconsistencies, and formatting issues that cause delays.</span>
+            <span>We help you reduce gaps, inconsistencies, and formatting issues so your materials are clean before submission.</span>
           </div>
           <div class="step">
             <div class="stepTop"><div class="tNum" style="width:44px;height:44px">04</div><div class="tagPill">Submit</div></div>
@@ -552,59 +503,19 @@ Default booking uses your existing Licensing Consultation calendar:
           </div>
         </div>
 
+        <div class="callout">
+          <b>What you'll leave with:</b> a prioritized checklist specific to your facility and timeline, a sequence plan (what to do first / next / later), and a list of common risk areas to address early.
+        </div>
+
+        <div class="callout" style="margin-top:10px">
+          <b>Note:</b> We provide operational/administrative guidance. For legal advice, we'll direct you to the appropriate professional.
+          Some adult community care facilities also coordinate with Regional Centers and service levels depending on the population and program model.
+          If that's relevant to you, we'll route the conversation accordingly.
+        </div>
+
         <div class="ctaRow" style="margin-top:18px">
           <a class="btn primary" href="#book">Book the ARF consult</a>
-          <a class="btn ghost" href="#included">What you get</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- INCLUDED -->
-    <section id="included" aria-label="What you get for ARF licensing">
-      <div class="wrap">
-        <div class="head">
-          <div>
-            <h2>What you get (ARF licensing support)</h2>
-            <p>Clear deliverables, so you leave the consult ready to execute.</p>
-          </div>
-        </div>
-
-        <div class="split">
-          <div class="card">
-            <h3>Core support</h3>
-            <ul class="bullets" style="margin-top:10px">
-              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
-                <div><b>Clarity on requirements:</b> what applies to your scenario and what to prioritize</div></li>
-              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
-                <div><b>Documentation readiness:</b> reduce gaps and rework before submission</div></li>
-              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
-                <div><b>Sequence planning:</b> do the right things in the right order</div></li>
-            </ul>
-
-            <div class="callout">
-              <b>Note:</b> We provide operational/administrative guidance. For legal advice, we'll direct you to the appropriate professional.
-            </div>
-
-          </div>
-
-          <div class="card">
-            <h3>You'll leave with</h3>
-            <p class="mini">Tangible outputs, not just "more information."</p>
-            <ul class="bullets" style="margin-top:10px">
-              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
-                <div>A prioritized checklist specific to your facility and timeline</div></li>
-              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
-                <div>A sequence plan (what to do first / next / later)</div></li>
-              <li><div class="tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2"/></svg></div>
-                <div>A list of common risk areas to address early</div></li>
-            </ul>
-
-            <div class="callout">
-              Some adult community care facilities also coordinate with Regional Centers and service levels depending on the population and program model.
-              If that's relevant to you, we'll route the conversation accordingly.
-            </div>
-
-          </div>
+          <a class="btn ghost" href="#faq">View FAQs</a>
         </div>
       </div>
     </section>
@@ -747,7 +658,7 @@ Default booking uses your existing Licensing Consultation calendar:
         <div>
           <h4>ARF Licensing</h4>
           <a href="#roadmap">Roadmap</a>
-          <a href="#included">What you get</a>
+          <a href="#faq">FAQs</a>
           <a href="#book">Book</a>
         </div>
 
@@ -811,10 +722,7 @@ Default booking uses your existing Licensing Consultation calendar:
       "ALW_APP_LINK": "./alw-waiver.html",
       "FUNDING_LINK": "./funding.html",
       "CONSULTING_LINK": "./consulting.html",
-      "ARF_PAGE_URL": "./arf-licensing.html",
-
-      // hero image token
-      "HERO_IMAGE_URL": "https://assets.cdn.filesafe.space/mxGAJ81pMGDwP9gcmCOZ/media/699a089e20c0358e5bafb30c.jpg"
+      "ARF_PAGE_URL": "./arf-licensing.html"
     };
 
     const root = document.querySelector(".mbsArfLic");
@@ -836,12 +744,6 @@ Default booking uses your existing Licensing Consultation calendar:
     };
     setAttr("a[href]", "href");
     setAttr("iframe[src]", "src");
-
-    // Replace HERO_IMAGE_URL in hero image background
-    const heroImg = root.querySelector(".heroImg");
-    if(heroImg){
-      heroImg.style.backgroundImage = `url("${replacements.HERO_IMAGE_URL}")`;
-    }
 
     // Schema URL swap
     const serviceSchema = root.querySelector("#arfServiceSchema");
@@ -882,7 +784,7 @@ Default booking uses your existing Licensing Consultation calendar:
     });
 
     // Scroll reveal
-    root.querySelectorAll(".card, .step, .tItem, .cCard, .head h2").forEach(el=>{
+    root.querySelectorAll(".card, .step, .cCard, .head h2, .proofChip").forEach(el=>{
       if(!el.classList.contains("reveal")) el.classList.add("reveal");
     });
     (function(){

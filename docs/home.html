@@ -574,9 +574,10 @@ Quick edits (search these):
   /* Video section */
   .mbs3-video-wrap{
     display:grid;
-    grid-template-columns:1fr;
-    gap:28px;
-    max-width:720px;
+    grid-template-columns:1fr 1fr;
+    gap:36px;
+    align-items:center;
+    max-width:1080px;
   }
   .mbs3-video-frame{
     position:relative;
@@ -621,6 +622,7 @@ Quick edits (search these):
     .mbs3-brand{ min-width:auto; }
     .mbs3-nav{ display:none; }
     .mbs3-menu-btn{ display:inline-flex; }
+    .mbs3-video-wrap{ grid-template-columns:1fr; max-width:600px; }
   }
   @media (max-width: 560px){
     .mbs3-hero-left{ padding:30px 22px 22px; }
@@ -1759,29 +1761,13 @@ CONSULT MODAL (4-STEP)
   .mb-bullets{ margin: 12px 0 0 0; padding: 0 0 0 18px; color: var(--mb-muted); font-size: 15.5px; line-height:1.55; }
   .mb-bullets li{ margin: 8px 0; }
 
-  .mb-calendarWrap{
-    margin-top: 14px;
-    border:1px solid var(--mb-line);
-    border-radius: 16px;
-    overflow:hidden;
-    background:#fff;
-    display:none;
+  .mb-calendar-link{
+    display:block;
+    text-align:center;
+    margin:16px auto;
+    text-decoration:none;
+    font-size:16px;
   }
-  .mb-calendarTitle{
-    padding: 10px 12px;
-    border-bottom:1px solid var(--mb-line);
-    font-size: 14px;
-    font-weight: 800;
-    color: var(--mb-ink);
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
-  }
-  .mb-calendarHint{ font-size: 13px; font-weight: 650; color: var(--mb-muted); }
-
-  .mb-iframe{ width:100%; height: 520px; border:0; display:block; background:#fff; }
-  @media (max-width: 520px){ .mb-iframe{ height: 620px; } }
 
   .mb-pane{ display:none; }
   .mb-pane.is-show{ display:block; }
@@ -2021,8 +2007,12 @@ CONSULT MODAL (4-STEP)
         <!-- STEP 4 -->
         <div class="mb-pane" data-step="4">
           <p class="mb-help" style="margin-top:0;">
-            Schedule your selected consult below. You'll receive confirmation after booking.
+            Your info has been saved. Click below to open the scheduling page &mdash; your details will be prefilled.
           </p>
+
+          <a class="mb-btn mb-btn--primary mb-calendar-link" id="mbCalendarLink" href="#" target="_blank" rel="noopener">
+            Open Scheduling Page
+          </a>
 
           <div class="mb-actions">
             <button class="mb-btn" type="button" id="mbBack4">Back</button>
@@ -2042,14 +2032,6 @@ CONSULT MODAL (4-STEP)
             <li>Choose the consult you actually need</li>
             <li>Clear next steps after booking</li>
           </ul>
-        </div>
-
-        <div class="mb-calendarWrap" id="mbCalendarWrap">
-          <div class="mb-calendarTitle">
-            <span id="mbCalendarTitleText">Schedule your consult</span>
-            <span class="mb-calendarHint">Step 4</span>
-          </div>
-          <iframe class="mb-iframe" id="mbCalendar" src="about:blank" loading="lazy" title="Book a consult"></iframe>
         </div>
 
         <div class="mb-side__card" id="mbCAOnlyCard" style="margin-top:14px;">
@@ -2136,9 +2118,7 @@ CONSULT MODAL (4-STEP)
     4: modal.querySelector('[data-step-ind="4"]')
   };
 
-  const calendarWrap = document.getElementById("mbCalendarWrap");
-  const calendarFrame = document.getElementById("mbCalendar");
-  const calendarTitleText = document.getElementById("mbCalendarTitleText");
+  const calendarLink = document.getElementById("mbCalendarLink");
 
   const choicesWrap = document.getElementById("mbChoices");
   const btnNext3 = document.getElementById("mbNext3");
@@ -2188,8 +2168,6 @@ CONSULT MODAL (4-STEP)
       else stepInd[i].classList.remove("is-done");
     });
     stepInd[n].classList.add("is-active");
-
-    calendarWrap.style.display = (n === 4) ? "block" : "none";
   }
 
   function normalizeZip(){
@@ -2343,8 +2321,27 @@ CONSULT MODAL (4-STEP)
       tags: [TAGS.step3, consultTag],
       consult_choice: { key:selectedConsult.key, label:selectedConsult.label, calendar_url:selectedConsult.calendarUrl }
     }));
-    calendarTitleText.textContent = `Schedule: ${selectedConsult.label}`;
-    calendarFrame.src = selectedConsult.calendarUrl || "about:blank";
+
+    // Build calendar URL with prefilled params
+    const params = new URLSearchParams();
+    const firstName = (f.first.value || "").trim();
+    const lastName = (f.last.value || "").trim();
+    if (firstName) params.set("first_name", firstName);
+    if (lastName) params.set("last_name", lastName);
+    params.set("name", [firstName, lastName].filter(Boolean).join(" "));
+    const email = (f.email.value || "").trim();
+    if (email) params.set("email", email);
+    const phone = (f.phone.value || "").trim();
+    if (phone) params.set("phone", phone);
+
+    const calUrl = selectedConsult.calendarUrl;
+    if (calUrl && calUrl !== "CALENDAR_URL_5_PLACEHOLDER") {
+      const sep = calUrl.includes("?") ? "&" : "?";
+      calendarLink.href = calUrl + sep + params.toString();
+    } else {
+      calendarLink.href = "#";
+    }
+
     await postWebhook(getPayload({ event:"step_viewed", step:4, tags:[TAGS.step4, consultTag] }));
     setStep(4);
   });
@@ -2352,10 +2349,10 @@ CONSULT MODAL (4-STEP)
   btnBack4.addEventListener("click", () => setStep(3));
   btnDone.addEventListener("click", () => closeModal());
 
-  calendarWrap.addEventListener("click", async () => {
+  calendarLink.addEventListener("click", async () => {
     const consultTag = selectedConsult?.tag || (selectedConsult ? `consult: ${selectedConsult.label}`.toLowerCase() : null);
     await postWebhook(getPayload({
-      event: "calendar_interaction",
+      event: "calendar_click",
       tags: [TAGS.booked].concat(consultTag ? [consultTag] : [])
     }));
   });
