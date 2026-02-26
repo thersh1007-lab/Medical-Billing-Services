@@ -416,10 +416,6 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
   .mbsBilling .foot a:hover{color:var(--ink)}
   .mbsBilling .copy{margin-top:12px;color:var(--muted);font-size:12.5px;line-height:1.6}
 
-  /* Image strip */
-  .mbsBilling .imgStrip{padding:0 24px;max-width:calc(var(--max) + 48px);margin:0 auto}
-  .mbsBilling .imgStrip img{width:100%;height:clamp(200px,28vh,340px);object-fit:cover;border-radius:clamp(16px,2vw,24px);box-shadow:0 20px 50px rgba(11,18,32,.10)}
-
   /* Responsive */
   @media (max-width: 1120px){
     /* already single-column */
@@ -624,12 +620,6 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
         </div>
       </div>
     </section>
-
-    <!-- IMAGE STRIP: financial / billing -->
-    <!-- Replace src with Shutterstock #2460220503 (group looking at laptop pie chart - billing/revenue) after purchase -->
-    <div class="imgStrip reveal" style="padding:20px 24px">
-      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1400&h=500&fit=crop&crop=center" alt="Financial analysis and billing review" loading="lazy" />
-    </div>
 
     <!-- PROCESS -->
     <section id="process" aria-label="Our process">
@@ -900,7 +890,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
     });
 
     // === SCROLL REVEAL ===
-    const revealEls = root.querySelectorAll(".card, .step, .cCard, .head h2, .proofChip, .imgStrip");
+    const revealEls = root.querySelectorAll(".card, .step, .cCard, .head h2, .proofChip");
     revealEls.forEach(el=>{ if(!el.classList.contains("reveal")) el.classList.add("reveal"); });
     new IntersectionObserver((entries, obs)=>{
       entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("visible"); obs.unobserve(e.target); }});

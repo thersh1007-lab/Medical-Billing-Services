@@ -525,10 +525,6 @@ Quick edits (search these):
   }
 
   /* ===================== SERVICE DETAIL SECTIONS ===================== */
-  .mbs3-svc{
-    max-width:720px;
-  }
-
   .mbs3-svc-kicker{
     display:inline-block;
     font-size:12px;
@@ -611,18 +607,28 @@ Quick edits (search these):
     margin:0 0 18px;
   }
 
-  /* ===================== IMAGE STRIPS ===================== */
-  .mbs3-imgStrip{
-    padding:0 var(--pad);
-    max-width:calc(var(--max) + 48px);
-    margin:0 auto;
+  /* ===================== SERVICE DETAIL SPLIT (text + image) ===================== */
+  .mbs3-svc-split{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:42px;
+    align-items:center;
+    max-width:1080px;
   }
-  .mbs3-imgStrip img{
-    width:100%;
-    height:clamp(200px,28vh,340px);
-    object-fit:cover;
-    border-radius:clamp(16px,2vw,24px);
+  .mbs3-svc-img{
+    border-radius:22px;
+    overflow:hidden;
     box-shadow:0 20px 50px rgba(11,18,32,.10);
+    aspect-ratio:4/3;
+  }
+  .mbs3-svc-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  @media(max-width:860px){
+    .mbs3-svc-split{grid-template-columns:1fr;max-width:620px}
+    .mbs3-svc-img{aspect-ratio:16/9}
   }
 
   /* ===================== RESPONSIVE ===================== */
@@ -1040,12 +1046,6 @@ Quick edits (search these):
     </div>
   </div>
 
-  <!-- IMAGE STRIP: warm professional scene -->
-  <!-- Replace src with Shutterstock #2457436113 (happy senior couple with consultant) after purchase -->
-  <div class="mbs3-imgStrip reveal">
-    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1400&h=500&fit=crop&crop=center" alt="Professional consultation with clients" loading="lazy" />
-  </div>
-
   <!-- Wave: gradient → white -->
   <div class="mbs3-wave toWhite" aria-hidden="true">
     <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
@@ -1121,9 +1121,10 @@ Quick edits (search these):
   </section>
 
   <!-- ============ SERVICE: STATE LICENSING ============ -->
+  <!-- Replace img src with Shutterstock #2527263287 (lawyer consulting client) after purchase -->
   <section class="mbs3-section mbs3-section--soft" id="svc-licensing">
     <div class="mbs3-shell">
-      <div class="mbs3-svc reveal">
+      <div class="mbs3-svc-split reveal">
         <div class="mbs3-svc-text">
           <span class="mbs3-svc-kicker">Licensing</span>
           <h2>State Licensing (RCFE + ARF)</h2>
@@ -1135,14 +1136,18 @@ Quick edits (search these):
           </ul>
           <a class="mbs3-btn mbs3-btn--primary" href="LIC_RCFE_LINK">Start Licensing <span>→</span></a>
         </div>
+        <div class="mbs3-svc-img">
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=600&fit=crop&crop=center" alt="Professional licensing consultation" loading="lazy" />
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============ SERVICE: ALW BILLING ============ -->
+  <!-- Replace img src with Shutterstock #2460220503 (group looking at laptop pie chart) after purchase -->
   <section class="mbs3-section mbs3-section--white" id="svc-billing">
     <div class="mbs3-shell">
-      <div class="mbs3-svc reveal">
+      <div class="mbs3-svc-split reveal">
         <div class="mbs3-svc-text">
           <span class="mbs3-svc-kicker">Billing</span>
           <h2>ALW Billing</h2>
@@ -1154,14 +1159,18 @@ Quick edits (search these):
           </ul>
           <a class="mbs3-btn mbs3-btn--primary" href="BILLING_LINK">Explore ALW Billing <span>→</span></a>
         </div>
+        <div class="mbs3-svc-img">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop&crop=center" alt="Financial analysis and billing review" loading="lazy" />
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============ SERVICE: ALW FUNDING / REVENUE ============ -->
+  <!-- Replace img src with Shutterstock #1766696999 (financial businessman analyzing graph) after purchase -->
   <section class="mbs3-section mbs3-section--soft" id="svc-funding">
     <div class="mbs3-shell">
-      <div class="mbs3-svc reveal">
+      <div class="mbs3-svc-split reveal">
         <div class="mbs3-svc-text">
           <span class="mbs3-svc-kicker">Revenue</span>
           <h2>ALW Funding / Revenue Optimization</h2>
@@ -1173,14 +1182,18 @@ Quick edits (search these):
           </ul>
           <a class="mbs3-btn mbs3-btn--primary" href="FUNDING_LINK">Explore Revenue Improvement <span>→</span></a>
         </div>
+        <div class="mbs3-svc-img">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=center" alt="Revenue analysis and financial performance" loading="lazy" />
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============ SERVICE: RCFE CONSULTING ============ -->
+  <!-- Replace img src with Shutterstock #2604271191 (business professionals collaborating on strategy) after purchase -->
   <section class="mbs3-section mbs3-section--white" id="svc-consulting">
     <div class="mbs3-shell">
-      <div class="mbs3-svc reveal">
+      <div class="mbs3-svc-split reveal">
         <div class="mbs3-svc-text">
           <span class="mbs3-svc-kicker">Consulting</span>
           <h2>RCFE Consulting</h2>
@@ -1192,15 +1205,12 @@ Quick edits (search these):
           </ul>
           <a class="mbs3-btn mbs3-btn--primary" href="CONSULTING_LINK">Learn More <span>→</span></a>
         </div>
+        <div class="mbs3-svc-img">
+          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop&crop=center" alt="Business consulting strategy session" loading="lazy" />
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- IMAGE STRIP: professional team / financial -->
-  <!-- Replace src with Shutterstock #2460220503 (group looking at laptop pie chart) after purchase -->
-  <div class=”mbs3-imgStrip reveal” style=”padding-top:18px”>
-    <img src=”https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1400&h=500&fit=crop&crop=center” alt=”Business professionals collaborating” loading=”lazy” />
-  </div>
 
   <!-- Wave: white → soft -->
   <div class=”mbs3-wave toSoft” aria-hidden=”true”>

@@ -268,10 +268,6 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
   .mbsAlwApp .foot a:hover{color:var(--ink)}
   .mbsAlwApp .copy{margin-top:12px;color:var(--muted);font-size:12.5px;line-height:1.6}
 
-  /* Image strip */
-  .mbsAlwApp .imgStrip{padding:0 24px;max-width:calc(var(--max) + 48px);margin:0 auto}
-  .mbsAlwApp .imgStrip img{width:100%;height:clamp(200px,28vh,340px);object-fit:cover;border-radius:clamp(16px,2vw,24px);box-shadow:0 20px 50px rgba(11,18,32,.10)}
-
   /* Responsive */
   @media (max-width:1120px){
     /* already single-column */
@@ -465,12 +461,6 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
         </div>
       </div>
     </section>
-
-    <!-- IMAGE STRIP: care / application support -->
-    <!-- Replace src with Shutterstock #2613218953 (consultant shaking hands) after purchase -->
-    <div class="imgStrip reveal" style="padding:20px 24px">
-      <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1400&h=500&fit=crop&crop=center" alt="Professional application support and guidance" loading="lazy" />
-    </div>
 
   <!-- WHAT IT IS / WHY IT MATTERS -->
   <section id="what" aria-label="What ALW is">
@@ -769,7 +759,7 @@ Embed iframe:  https://api.leadconnectorhq.com/widget/booking/xJc3bSlX9mhoNwFsON
     });
 
     // === SCROLL REVEAL ===
-    root.querySelectorAll(".card, .step, .pCard, .imgCard, .imgStrip, .head h2, .proofChip").forEach(el=>{
+    root.querySelectorAll(".card, .step, .pCard, .imgCard, .head h2, .proofChip").forEach(el=>{
       if(!el.classList.contains("reveal")) el.classList.add("reveal");
     });
     (function(){
