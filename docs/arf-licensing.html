@@ -118,7 +118,7 @@ Default booking uses your existing Licensing Consultation calendar:
   /* Split hero */
   .mbsArfLic .hero{padding:28px 0 28px}
   .mbsArfLic .heroGrid{
-    display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:stretch;
+    display:grid;grid-template-columns:1fr;gap:18px;max-width:720px;
   }
   .mbsArfLic .heroLeft{
     border:1px solid var(--line); border-radius:28px; padding:clamp(20px,3vw,30px);
@@ -164,7 +164,7 @@ Default booking uses your existing Licensing Consultation calendar:
   }
 
   /* Cards / grids */
-  .mbsArfLic .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .mbsArfLic .grid3{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px}
   .mbsArfLic .card{
     background:#fff;border:1px solid var(--line);border-radius:24px;padding:18px;
     box-shadow:0 12px 24px rgba(2,6,23,.06);
@@ -179,7 +179,7 @@ Default booking uses your existing Licensing Consultation calendar:
 
   /* Compare strip */
   .mbsArfLic .compare{
-    display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;
+    display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px;max-width:720px;
   }
   .mbsArfLic .cmp{
     border:1px dashed rgba(15,23,42,.16); border-radius:20px; padding:14px;
@@ -204,7 +204,7 @@ Default booking uses your existing Licensing Consultation calendar:
   .mbsArfLic .tItem span{display:block;margin-top:6px;color:var(--muted);font-size:13.6px;line-height:1.65}
 
   /* Roadmap steps (4) */
-  .mbsArfLic .steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .mbsArfLic .steps4{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px}
   .mbsArfLic .step{
     background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;
     box-shadow:0 12px 24px rgba(2,6,23,.06);
@@ -218,7 +218,7 @@ Default booking uses your existing Licensing Consultation calendar:
   .mbsArfLic .step span{display:block;margin-top:6px;color:var(--muted);line-height:1.65;font-size:13.5px}
 
   /* Booking embed */
-  .mbsArfLic .split{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:start}
+  .mbsArfLic .split{display:grid;grid-template-columns:1fr;gap:18px;max-width:720px}
   .mbsArfLic .embed{
     border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow2);background:#fff;
   }
@@ -227,7 +227,7 @@ Default booking uses your existing Licensing Consultation calendar:
   .mbsArfLic .embedNote{padding:14px 16px;color:var(--muted);font-size:12.8px;line-height:1.55}
 
   /* Guide */
-  .mbsArfLic .guide{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center}
+  .mbsArfLic .guide{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px}
   .mbsArfLic .avatar{
     width:120px;height:120px;border-radius:26px;overflow:hidden;
     border:1px solid rgba(15,23,42,.10);box-shadow:0 12px 24px rgba(2,6,23,.08);
@@ -255,7 +255,7 @@ Default booking uses your existing Licensing Consultation calendar:
   @keyframes faqRevealArf{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 
   /* Contact + footer */
-  .mbsArfLic .contactGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .mbsArfLic .contactGrid{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px}
   .mbsArfLic .cCard{
     background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;
     box-shadow:0 12px 24px rgba(2,6,23,.06);
@@ -286,12 +286,7 @@ Default booking uses your existing Licensing Consultation calendar:
 
   /* Responsive */
   @media (max-width:1120px){
-    .mbsArfLic .heroGrid{grid-template-columns:1fr}
-    .mbsArfLic .grid3{grid-template-columns:1fr}
-    .mbsArfLic .compare{grid-template-columns:1fr}
-    .mbsArfLic .steps4{grid-template-columns:1fr}
-    .mbsArfLic .split{grid-template-columns:1fr}
-    .mbsArfLic .contactGrid{grid-template-columns:1fr}
+    /* already single-column */
   }
   @media (max-width:980px){
     .mbsArfLic .nav{grid-template-columns:1fr auto}
@@ -302,7 +297,7 @@ Default booking uses your existing Licensing Consultation calendar:
   @media (max-width:640px){
     .mbsArfLic .wrap{width:min(var(--max),calc(100% - 32px))}
     .mbsArfLic .ratio{padding-top:86%}
-    .mbsArfLic .guide{grid-template-columns:1fr}
+    /* already single-column */
     .mbsArfLic .avatar{width:96px;height:96px;border-radius:22px}
     .mbsArfLic .stickyBook{display:block}
     .mbsArfLic main{padding-bottom:74px}

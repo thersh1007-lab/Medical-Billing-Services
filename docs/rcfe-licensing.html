@@ -175,7 +175,7 @@ Booking links (Licensing Consultation Calendar):
   .mbsRcfeLic .wave.toWhite path{fill:var(--bg)}
 
   /* Cards + layout */
-  .mbsRcfeLic .split{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:start}
+  .mbsRcfeLic .split{display:grid;grid-template-columns:1fr;gap:18px;max-width:720px}
   .mbsRcfeLic .card{
     background:#fff;border:1px solid rgba(15,23,42,.10);border-radius:24px;padding:18px;
     box-shadow:0 12px 24px rgba(2,6,23,.06);
@@ -199,7 +199,7 @@ Booking links (Licensing Consultation Calendar):
   }
 
   /* Problem cards grid */
-  .mbsRcfeLic .grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .mbsRcfeLic .grid6{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px}
   .mbsRcfeLic .pCard{
     background:#fff;border:1px solid rgba(15,23,42,.10);border-radius:22px;padding:16px;
     box-shadow:0 12px 24px rgba(2,6,23,.06);
@@ -208,7 +208,7 @@ Booking links (Licensing Consultation Calendar):
   .mbsRcfeLic .pCard span{display:block;margin-top:6px;color:var(--muted);line-height:1.65;font-size:13.6px}
 
   /* Plan (3 steps) */
-  .mbsRcfeLic .plan3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .mbsRcfeLic .plan3{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px}
   .mbsRcfeLic .step{
     background:#fff;border:1px solid rgba(15,23,42,.10);border-radius:22px;padding:16px;
     box-shadow:0 12px 24px rgba(2,6,23,.06);
@@ -228,7 +228,7 @@ Booking links (Licensing Consultation Calendar):
 
   /* Guide section */
   .mbsRcfeLic .guide{
-    display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center;
+    display:grid;grid-template-columns:1fr;gap:14px;max-width:720px;
   }
   .mbsRcfeLic .avatar{
     width:120px;height:120px;border-radius:26px;overflow:hidden;
@@ -261,7 +261,7 @@ Booking links (Licensing Consultation Calendar):
   .mbsRcfeLic details p{margin:10px 0 0;color:var(--muted);line-height:1.7;font-size:14px}
 
   /* Contact + footer */
-  .mbsRcfeLic .contactGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .mbsRcfeLic .contactGrid{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px}
   .mbsRcfeLic .cCard{
     background:#fff;border:1px solid rgba(15,23,42,.10);border-radius:22px;padding:18px;
     box-shadow:0 12px 24px rgba(2,6,23,.06);
@@ -292,10 +292,7 @@ Booking links (Licensing Consultation Calendar):
 
   /* Responsive */
   @media (max-width:1120px){
-    .mbsRcfeLic .split{grid-template-columns:1fr}
-    .mbsRcfeLic .grid6{grid-template-columns:repeat(2,1fr)}
-    .mbsRcfeLic .plan3{grid-template-columns:1fr}
-    .mbsRcfeLic .contactGrid{grid-template-columns:1fr}
+    /* already single-column */
   }
   @media (max-width:980px){
     .mbsRcfeLic .nav{grid-template-columns:1fr auto}
@@ -307,8 +304,7 @@ Booking links (Licensing Consultation Calendar):
   @media (max-width:640px){
     .mbsRcfeLic .wrap{width:min(var(--max),calc(100% - 32px))}
     .mbsRcfeLic .ratio{padding-top:86%}
-    .mbsRcfeLic .grid6{grid-template-columns:1fr}
-    .mbsRcfeLic .guide{grid-template-columns:1fr}
+    /* already single-column */
     .mbsRcfeLic .avatar{width:96px;height:96px;border-radius:22px}
     .mbsRcfeLic .stickyBook{display:block}
     .mbsRcfeLic main{padding-bottom:74px} /* room for sticky CTA */

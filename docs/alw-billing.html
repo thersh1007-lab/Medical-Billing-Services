@@ -271,9 +271,9 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
   .mbsBilling .centerRow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
   .mbsBilling .split{
     display:grid;
-    grid-template-columns: 1.05fr .95fr;
+    grid-template-columns: 1fr;
     gap: 18px;
-    align-items:start;
+    max-width:720px;
   }
   .mbsBilling .card{
     background:#fff;
@@ -321,7 +321,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
 
   /* Guide (Kamil) */
   .mbsBilling .guide{
-    display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center;
+    display:grid;grid-template-columns:1fr;gap:14px;max-width:720px;
   }
   .mbsBilling .avatar{
     width:120px;height:120px;border-radius:26px;overflow:hidden;
@@ -338,8 +338,9 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
   /* Steps */
   .mbsBilling .steps{
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 14px;
+    max-width:720px;
   }
   .mbsBilling .step{
     background:#fff;border:1px solid rgba(15,23,42,.10);
@@ -406,8 +407,9 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
   /* Contact + footer */
   .mbsBilling .contactGrid{
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 14px;
+    max-width:720px;
   }
   .mbsBilling .cCard{
     background:#fff;border:1px solid rgba(15,23,42,.10);
@@ -436,9 +438,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
 
   /* Responsive */
   @media (max-width: 1120px){
-    .mbsBilling .split{grid-template-columns: 1fr}
-    .mbsBilling .steps{grid-template-columns: 1fr}
-    .mbsBilling .contactGrid{grid-template-columns: 1fr}
+    /* already single-column */
     .mbsBilling .proofChip{min-width: 240px}
   }
   @media (max-width: 980px){
@@ -456,7 +456,7 @@ https://storage.googleapis.com/msgsndr/mxGAJ81pMGDwP9gcmCOZ/media/6b80e20f-c19b-
     .mbsBilling .wrap{width:min(var(--max),calc(100% - 32px))}
     .mbsBilling .proofChip{min-width: 100%}
     .mbsBilling .ratio{padding-top: 86%;}
-    .mbsBilling .guide{grid-template-columns:1fr}
+    /* already single-column */
     .mbsBilling .avatar{width:96px;height:96px;border-radius:22px}
   }
   @media (prefers-reduced-motion: reduce){
